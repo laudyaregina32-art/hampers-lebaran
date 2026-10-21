@@ -18,24 +18,30 @@ function buildWAUrl(message) {
   return `${WA_BASE}?text=${encodeURIComponent(message)}`;
 }
 
-// Inject URL ke semua tombol WA yang pakai data-wa-message
-document.addEventListener('DOMContentLoaded', () => {
+// Inject URL ke semua tombol WA dan copyright tahun saat idle agar tidak memblokir render / reflow awal
+const initNonCritical = () => {
   document.querySelectorAll('[data-wa-message]').forEach(el => {
     const msg = el.dataset.waMessage;
-    el.href = buildWAUrl(msg);
+    if (msg) el.href = buildWAUrl(msg);
   });
-
-  // Copyright tahun dinamis
   document.querySelectorAll('.js-year').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
+};
 
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(initNonCritical);
+} else {
+  setTimeout(initNonCritical, 50);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   // ----- Mobile Navbar Controller & Resilience Handler -----
   const navbarCollapse = document.getElementById('navbarMain');
   const navbarToggler = document.querySelector('.navbar-toggler');
 
   if (navbarCollapse && navbarToggler) {
-    const isMobile = () => window.innerWidth < 992;
+    const isMobile = () => window.matchMedia('(max-width: 991.98px)').matches;
 
     const openNavbar = () => {
       navbarCollapse.classList.add('show');
@@ -180,8 +186,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.hl-navbar');
   if (navbar) {
     let ticking = false;
+    let isScrolled = false;
     const updateScrollState = () => {
-      navbar.classList.toggle('is-scrolled', window.scrollY > 10);
+      const shouldBeScrolled = window.scrollY > 10;
+      if (shouldBeScrolled !== isScrolled) {
+        isScrolled = shouldBeScrolled;
+        navbar.classList.toggle('is-scrolled', isScrolled);
+      }
       ticking = false;
     };
     window.addEventListener('scroll', () => {
@@ -190,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ticking = true;
       }
     }, { passive: true });
-    updateScrollState();
   }
 
   // ----- Product image thumbnails -----
