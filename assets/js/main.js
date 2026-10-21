@@ -70,12 +70,66 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----- Smooth scroll untuk anchor links (navbar offset) -----
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      try {
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const navH = navbar ? navbar.offsetHeight : 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      } catch (err) {
+        // Abaikan jika bukan query selector valid
+      }
+    });
+  });
+
+  // ----- Accordion Interactivity Fallback -----
+  // Memastikan semua tombol FAQ selalu bisa dipencet & membuka jawaban
+  document.querySelectorAll('.hl-accordion .accordion-button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // Jika Bootstrap Collapse sudah aktif dan bekerja via bootstrap bundle, delegasikan ke Bootstrap
+      if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        return;
+      }
+
       e.preventDefault();
-      const navH = navbar ? navbar.offsetHeight : 0;
-      const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const targetSel = this.getAttribute('data-bs-target') || this.getAttribute('href');
+      if (!targetSel) return;
+
+      const targetEl = document.querySelector(targetSel);
+      if (!targetEl) return;
+
+      const isExpanded = this.getAttribute('aria-expanded') === 'true' || targetEl.classList.contains('show');
+      const parentSel = targetEl.getAttribute('data-bs-parent');
+
+      // Tutup item lain dalam accordion yang sama jika single-open (accordion parent)
+      if (parentSel && !isExpanded) {
+        const parentEl = document.querySelector(parentSel);
+        if (parentEl) {
+          parentEl.querySelectorAll('.accordion-collapse.show').forEach(openEl => {
+            if (openEl !== targetEl) {
+              openEl.classList.remove('show');
+              const otherBtn = parentEl.querySelector(`[data-bs-target="#${openEl.id}"], [href="#${openEl.id}"]`);
+              if (otherBtn) {
+                otherBtn.classList.add('collapsed');
+                otherBtn.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        }
+      }
+
+      if (isExpanded) {
+        targetEl.classList.remove('show');
+        this.classList.add('collapsed');
+        this.setAttribute('aria-expanded', 'false');
+      } else {
+        targetEl.classList.add('show');
+        this.classList.remove('collapsed');
+        this.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
