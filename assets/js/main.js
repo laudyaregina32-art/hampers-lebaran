@@ -90,32 +90,51 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleNavbar();
     });
 
-    // Handler klik dropdown "Paket" di desktop & mobile agar bisa dibuka/tutup dan dipilih
+    // Handler klik dropdown "Paket" di desktop & mobile agar bisa dibuka/tutup dan selalu berada di bawah navbar (tidak keluar frame)
     const dropdownToggles = navbarCollapse.querySelectorAll('.dropdown-toggle');
     dropdownToggles.forEach(toggle => {
+      // Pastikan atribut static selalu aktif agar Popper tidak pernah melempar dropdown ke atas
+      toggle.setAttribute('data-bs-display', 'static');
+
+      // Sinkronkan konfigurasi instance Bootstrap Dropdown jika ada
+      if (typeof bootstrap !== 'undefined' && bootstrap.Dropdown) {
+        try {
+          bootstrap.Dropdown.getOrCreateInstance(toggle, {
+            display: 'static',
+            autoClose: true
+          });
+        } catch (err) {}
+      }
+
       toggle.addEventListener('click', function(e) {
         const parentDropdown = this.closest('.dropdown');
         const menu = parentDropdown ? parentDropdown.querySelector('.dropdown-menu') : null;
         if (!menu) return;
 
-        // Cegah lompat langsung agar pengguna bisa melihat dan memilih sub-paket
+        // Cegah navigasi instan agar menu pilihan paket terbuka rapi di bawah toggle
         e.preventDefault();
         e.stopPropagation();
 
         const isOpen = menu.classList.contains('show');
         if (isOpen) {
           menu.classList.remove('show');
+          menu.removeAttribute('style');
           this.classList.remove('show');
           this.setAttribute('aria-expanded', 'false');
           if (parentDropdown) parentDropdown.classList.remove('show');
         } else {
           // Tutup dropdown lain yang mungkin sedang terbuka
-          document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
+          document.querySelectorAll('.dropdown-menu.show').forEach(m => {
+            m.classList.remove('show');
+            m.removeAttribute('style');
+          });
           document.querySelectorAll('.dropdown-toggle.show').forEach(t => {
             t.classList.remove('show');
             t.setAttribute('aria-expanded', 'false');
           });
 
+          // Hapus style inline bawaan Popper jika sempat terinjeksi
+          menu.removeAttribute('style');
           menu.classList.add('show');
           this.classList.add('show');
           this.setAttribute('aria-expanded', 'true');
@@ -147,7 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const parentDropdown = toggle.closest('.dropdown');
         if (parentDropdown && !parentDropdown.contains(e.target)) {
           const menu = parentDropdown.querySelector('.dropdown-menu');
-          if (menu) menu.classList.remove('show');
+          if (menu) {
+            menu.classList.remove('show');
+            menu.removeAttribute('style');
+          }
           toggle.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
           parentDropdown.classList.remove('show');
