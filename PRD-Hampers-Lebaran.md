@@ -1,4 +1,4 @@
-# PRD — Website Hampers Lebaran
+﻿# PRD — Website Hampers Lebaran
 
 **Versi dokumen:** 1.0  
 **Tanggal:** 20 Oktober 2026  
@@ -321,13 +321,13 @@ Ganti semua placeholder sebelum produksi; jangan deploy `example.com`.
   <meta property="og:title" content="Hampers Lebaran [Nama Brand]">
   <meta property="og:description" content="Pilihan hampers Lebaran untuk keluarga, relasi, dan perusahaan.">
   <meta property="og:url" content="https://www.example.com/">
-  <meta property="og:image" content="https://www.example.com/assets/images/og-hampers-lebaran.jpg">
+  <meta property="og:image" content="https://www.example.com/assets/images/og-hampers-lebaran.webp">
   <meta property="og:image:alt" content="Pilihan hampers Lebaran dari [Nama Brand]">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampers Lebaran [Nama Brand]">
   <meta name="twitter:description" content="Pilihan hampers Lebaran untuk keluarga, relasi, dan perusahaan.">
-  <meta name="twitter:image" content="https://www.example.com/assets/images/og-hampers-lebaran.jpg">
+  <meta name="twitter:image" content="https://www.example.com/assets/images/og-hampers-lebaran.webp">
 </head>
 ```
 
@@ -343,7 +343,7 @@ Gunakan hanya setelah placeholder diganti dengan data nyata. Tambahkan tipe khus
   "@id": "https://www.example.com/#organization",
   "name": "[Nama Brand]",
   "url": "https://www.example.com/",
-  "logo": "https://www.example.com/assets/images/logo.png",
+  "logo": "https://www.example.com/assets/images/logo.webp",
   "sameAs": [
     "https://www.instagram.com/[akun-valid]"
   ],

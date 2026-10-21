@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -7,7 +7,7 @@
   <title>Hampers Lebaran 2026 — Paket Hadiah Idulfitri Premium &amp; Korporat</title>
   <meta name="description"
     content="Pusat hampers Lebaran premium 2026: kurasi kue kering artisan, set perlengkapan ibadah, dan custom corporate berlogo perusahaan. Konsultasikan via WhatsApp.">
-  <link rel="canonical" href="https://www.hamperslebaran.id/">
+  <link rel="canonical" href="https://hamperslebaran.vercel.app/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Hampers Lebaran">
   <meta name="theme-color" content="#777873">
@@ -26,19 +26,19 @@
   <meta property="og:title" content="Hampers Lebaran 2026 — Paket Hadiah Idulfitri Premium &amp; Korporat">
   <meta property="og:description"
     content="Pusat hampers Lebaran premium 2026: kurasi kue kering artisan, set perlengkapan ibadah, dan custom corporate berlogo perusahaan. Konsultasikan via WhatsApp.">
-  <meta property="og:url" content="https://www.hamperslebaran.id/">
-  <meta property="og:image" content="https://www.hamperslebaran.id/assets/images/og-hampers-lebaran.jpg">
+  <meta property="og:url" content="https://hamperslebaran.vercel.app/">
+  <meta property="og:image" content="https://hamperslebaran.vercel.app/assets/images/og-hampers-lebaran.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampers Lebaran 2026 — Paket Hadiah Idulfitri Premium &amp; Korporat">
-  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:type" content="image/webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampers Lebaran 2026 — Paket Hadiah Idulfitri Premium &amp; Korporat">
   <meta name="twitter:description"
     content="Pusat hampers Lebaran premium 2026: kurasi kue kering artisan, set perlengkapan ibadah, dan custom corporate berlogo perusahaan. Konsultasikan via WhatsApp.">
-  <meta name="twitter:image" content="https://www.hamperslebaran.id/assets/images/og-hampers-lebaran.jpg">
+  <meta name="twitter:image" content="https://hamperslebaran.vercel.app/assets/images/og-hampers-lebaran.webp">
 
   <!-- Favicon -->
   <link rel="icon"
@@ -54,18 +54,20 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Schema.org JSON-LD (Rich Graph Standard 2026-2027) -->
+  <!-- ============================================================ -->
+  <!-- Schema.org JSON-LD (Rich Graph Standard 2026-2027) — FIXED  -->
+  <!-- ============================================================ -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.hamperslebaran.id/#organization",
+      "@id": "https://hamperslebaran.vercel.app/#organization",
       "name": "Hampers Lebaran",
-      "url": "https://www.hamperslebaran.id/",
-      "logo": "https://www.hamperslebaran.id/assets/images/logo.png",
-      "image": "https://www.hamperslebaran.id/assets/images/og-hampers-lebaran.jpg",
+      "url": "https://hamperslebaran.vercel.app/",
+      "logo": "https://hamperslebaran.vercel.app/assets/images/logo.webp",
+      "image": "https://hamperslebaran.vercel.app/assets/images/og-hampers-lebaran.webp",
       "description": "Pusat penyedia hampers Lebaran eksklusif, parcel Idulfitri premium, kue kering artisan, dan custom hampers korporat.",
       "telephone": "+6281234567890",
       "priceRange": "Rp 450.000 - Rp 3.500.000+",
@@ -89,30 +91,66 @@
           "opens": "08:00",
           "closes": "21:00"
         }
-      ]
+      ],
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "ID",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 3,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "IDR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "ID"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 3,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 5,
+            "unitCode": "DAY"
+          }
+        }
+      }
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.hamperslebaran.id/#website",
-      "url": "https://www.hamperslebaran.id/",
+      "@id": "https://hamperslebaran.vercel.app/#website",
+      "url": "https://hamperslebaran.vercel.app/",
       "name": "Hampers Lebaran",
       "description": "Spesialis hampers & parcel Lebaran premium Idulfitri.",
-      "publisher": { "@id": "https://www.hamperslebaran.id/#organization" },
+      "publisher": { "@id": "https://hamperslebaran.vercel.app/#organization" },
       "inLanguage": "id-ID"
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.hamperslebaran.id/#webpage",
-      "url": "https://www.hamperslebaran.id/",
+      "@id": "https://hamperslebaran.vercel.app/#webpage",
+      "url": "https://hamperslebaran.vercel.app/",
       "name": "Hampers Lebaran 2026 — Paket Hadiah Idulfitri Premium & Korporat",
-      "isPartOf": { "@id": "https://www.hamperslebaran.id/#website" },
-      "about": { "@id": "https://www.hamperslebaran.id/#organization" },
+      "isPartOf": { "@id": "https://hamperslebaran.vercel.app/#website" },
+      "about": { "@id": "https://hamperslebaran.vercel.app/#organization" },
       "description": "Pusat hampers Lebaran premium 2026: kurasi kue kering artisan, set perlengkapan ibadah, dan custom corporate berlogo perusahaan. Konsultasikan via WhatsApp.",
       "inLanguage": "id-ID"
     },
     {
       "@type": "ItemList",
-      "@id": "https://www.hamperslebaran.id/#catalog",
+      "@id": "https://hamperslebaran.vercel.app/#catalog",
       "name": "Katalog Paket Hampers Lebaran 2026",
       "itemListElement": [
         {
@@ -120,14 +158,65 @@
           "position": 1,
           "item": {
             "@type": "Product",
+            "@id": "https://hamperslebaran.vercel.app/paket/hampers-premium/#product",
             "name": "Hampers Premium",
-            "url": "https://www.hamperslebaran.id/paket/hampers-premium/",
+            "url": "https://hamperslebaran.vercel.app/paket/hampers-premium/",
+            "image": [
+              "https://hamperslebaran.vercel.app/assets/images/paket-premium.webp",
+              "https://hamperslebaran.vercel.app/assets/images/paket-premium-2.webp"
+            ],
+            "description": "Hampers Lebaran premium dengan kemasan mewah berisi kue kering butter Eropa, kurma pilihan, dan perlengkapan ibadah berkualitas. Cocok untuk hadiah spesial keluarga dan rekan bisnis.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hampers Lebaran"
+            },
+            "sku": "HL-PRM-001",
             "offers": {
               "@type": "Offer",
+              "url": "https://hamperslebaran.vercel.app/paket/hampers-premium/",
               "priceCurrency": "IDR",
               "price": "750000",
+              "priceValidUntil": "2026-12-31",
+              "validFrom": "2025-01-01",
               "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-12-31"
+              "itemCondition": "https://schema.org/NewCondition",
+              "seller": { "@id": "https://hamperslebaran.vercel.app/#organization" },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "ID",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 3,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn",
+                "refundType": "https://schema.org/FullRefund"
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "IDR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "ID"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 3,
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 5,
+                    "unitCode": "DAY"
+                  }
+                }
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -153,14 +242,65 @@
           "position": 2,
           "item": {
             "@type": "Product",
+            "@id": "https://hamperslebaran.vercel.app/paket/hampers-kue-camilan/#product",
             "name": "Hampers Kue & Camilan",
-            "url": "https://www.hamperslebaran.id/paket/hampers-kue-camilan/",
+            "url": "https://hamperslebaran.vercel.app/paket/hampers-kue-camilan/",
+            "image": [
+              "https://hamperslebaran.vercel.app/assets/images/paket-kue-camilan.webp",
+              "https://hamperslebaran.vercel.app/assets/images/paket-kue-camilan-2.webp"
+            ],
+            "description": "Koleksi kue kering tradisional pilihan seperti nastar, kastengel, dan putri salju dalam kemasan cantik dan rapi. Pilihan favorit untuk hampers Lebaran keluarga.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hampers Lebaran"
+            },
+            "sku": "HL-KC-002",
             "offers": {
               "@type": "Offer",
+              "url": "https://hamperslebaran.vercel.app/paket/hampers-kue-camilan/",
               "priceCurrency": "IDR",
               "price": "450000",
+              "priceValidUntil": "2026-12-31",
+              "validFrom": "2025-01-01",
               "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-12-31"
+              "itemCondition": "https://schema.org/NewCondition",
+              "seller": { "@id": "https://hamperslebaran.vercel.app/#organization" },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "ID",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 3,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn",
+                "refundType": "https://schema.org/FullRefund"
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "IDR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "ID"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 3,
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 5,
+                    "unitCode": "DAY"
+                  }
+                }
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -186,14 +326,65 @@
           "position": 3,
           "item": {
             "@type": "Product",
+            "@id": "https://hamperslebaran.vercel.app/paket/hampers-perlengkapan-ibadah/#product",
             "name": "Hampers Perlengkapan Ibadah",
-            "url": "https://www.hamperslebaran.id/paket/hampers-perlengkapan-ibadah/",
+            "url": "https://hamperslebaran.vercel.app/paket/hampers-perlengkapan-ibadah/",
+            "image": [
+              "https://hamperslebaran.vercel.app/assets/images/paket-ibadah.webp",
+              "https://hamperslebaran.vercel.app/assets/images/paket-ibadah-2.webp"
+            ],
+            "description": "Hadiah Lebaran bernilai dengan pilihan Al-Qur'an, sajadah halus, mukena berkualitas tinggi, dan tasbih premium dalam kemasan eksklusif.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hampers Lebaran"
+            },
+            "sku": "HL-IBD-003",
             "offers": {
               "@type": "Offer",
+              "url": "https://hamperslebaran.vercel.app/paket/hampers-perlengkapan-ibadah/",
               "priceCurrency": "IDR",
               "price": "550000",
+              "priceValidUntil": "2026-12-31",
+              "validFrom": "2025-01-01",
               "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-12-31"
+              "itemCondition": "https://schema.org/NewCondition",
+              "seller": { "@id": "https://hamperslebaran.vercel.app/#organization" },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "ID",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 3,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn",
+                "refundType": "https://schema.org/FullRefund"
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "IDR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "ID"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 3,
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 5,
+                    "unitCode": "DAY"
+                  }
+                }
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -219,12 +410,29 @@
           "position": 4,
           "item": {
             "@type": "Product",
+            "@id": "https://hamperslebaran.vercel.app/paket/hampers-custom/#product",
             "name": "Hampers Custom & Corporate",
-            "url": "https://www.hamperslebaran.id/paket/hampers-custom/",
+            "url": "https://hamperslebaran.vercel.app/paket/hampers-custom/",
+            "image": [
+              "https://hamperslebaran.vercel.app/assets/images/paket-korporat.webp",
+              "https://hamperslebaran.vercel.app/assets/images/paket-korporat-2.webp"
+            ],
+            "description": "Solusi hampers korporat dengan branding logo perusahaan, isi yang dapat disesuaikan, dan kartu ucapan custom. Melayani pesanan dari puluhan hingga ribuan paket dengan invoice resmi dan faktur pajak.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hampers Lebaran"
+            },
+            "sku": "HL-CST-004",
             "offers": {
               "@type": "Offer",
+              "url": "https://hamperslebaran.vercel.app/paket/hampers-custom/",
               "priceCurrency": "IDR",
               "price": "750000",
+              "priceValidUntil": "2026-12-31",
+              "validFrom": "2025-01-01",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition",
+              "seller": { "@id": "https://hamperslebaran.vercel.app/#organization" },
               "priceSpecification": {
                 "@type": "PriceSpecification",
                 "price": "750000",
@@ -233,8 +441,42 @@
                 "maxPrice": "3500000",
                 "valueAddedTaxIncluded": false
               },
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-12-31"
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "ID",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 3,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn",
+                "refundType": "https://schema.org/FullRefund"
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "IDR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "ID"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 7,
+                    "maxValue": 14,
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 5,
+                    "unitCode": "DAY"
+                  }
+                }
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -259,7 +501,7 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.hamperslebaran.id/#faq",
+      "@id": "https://hamperslebaran.vercel.app/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -322,8 +564,9 @@
   <header>
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
-        <a class="navbar-brand hl-navbar-brand d-flex align-items-center" href="index.html" aria-label="Hampers Lebaran — Halaman Beranda">
-          <img src="assets/images/logo.png" alt="Logo Hampers Lebaran" class="hl-navbar-logo" width="48" height="48">
+        <a class="navbar-brand hl-navbar-brand d-flex align-items-center" href="index.html"
+          aria-label="Hampers Lebaran — Halaman Beranda">
+          <img src="assets/images/logo.webp" alt="Logo Hampers Lebaran" class="hl-navbar-logo" width="48" height="48">
           <span class="hl-navbar-brand-text">Hampers<span class="hl-brand-accent">Lebaran</span></span>
         </a>
         <button class="navbar-toggler hl-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
@@ -458,7 +701,9 @@
           <div class="col-lg-5 order-lg-2 order-1">
             <div class="hl-hero__img-col">
               <div class="hl-hero__img-wrap">
-                <img src="assets/images/hero-hampers.jpg" alt="Hampers Lebaran premium dalam kemasan elegan" class="hl-hero__img" width="500" height="625" style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-lg);" loading="eager">
+                <img src="assets/images/hero-hampers.webp" alt="Hampers Lebaran premium dalam kemasan elegan"
+                  class="hl-hero__img" width="500" height="625"
+                  style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-lg);" loading="eager">
               </div>
               <div class="hl-hero__badge d-none d-md-flex">
                 <div class="hl-hero__badge-icon">🎁</div>
@@ -521,7 +766,8 @@
           <div class="col-sm-6 col-lg-3">
             <a href="paket/hampers-premium/index.html" class="hl-card" aria-label="Lihat Hampers Premium">
               <div class="hl-card__img-wrap">
-                <img src="assets/images/paket-premium.jpg" alt="Hampers Lebaran Premium" width="400" height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/paket-premium.webp" alt="Hampers Lebaran Premium" width="400" height="500"
+                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Terlaris</p>
@@ -540,7 +786,8 @@
           <div class="col-sm-6 col-lg-3">
             <a href="paket/hampers-kue-camilan/index.html" class="hl-card" aria-label="Lihat Hampers Kue dan Camilan">
               <div class="hl-card__img-wrap">
-                <img src="assets/images/paket-kue-camilan.jpg" alt="Hampers Kue &amp; Camilan Lebaran" width="400" height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/paket-kue-camilan.webp" alt="Hampers Kue &amp; Camilan Lebaran" width="400"
+                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Favorit</p>
@@ -559,7 +806,8 @@
             <a href="paket/hampers-perlengkapan-ibadah/index.html" class="hl-card"
               aria-label="Lihat Hampers Perlengkapan Ibadah">
               <div class="hl-card__img-wrap">
-                <img src="assets/images/paket-ibadah.jpg" alt="Hampers Perlengkapan Ibadah Lebaran" width="400" height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/paket-ibadah.webp" alt="Hampers Perlengkapan Ibadah Lebaran" width="400"
+                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Bermakna</p>
@@ -578,7 +826,8 @@
           <div class="col-sm-6 col-lg-3">
             <a href="paket/hampers-custom/index.html" class="hl-card" aria-label="Lihat Hampers Custom Corporate">
               <div class="hl-card__img-wrap">
-                <img src="assets/images/paket-korporat.jpg" alt="Hampers Custom Corporate Lebaran" width="400" height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/paket-korporat.webp" alt="Hampers Custom Corporate Lebaran" width="400"
+                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Korporat</p>
@@ -718,7 +967,8 @@
         <div class="hl-portfolio-grid">
           <!-- Item 1 -->
           <div class="hl-portfolio-item">
-            <img src="assets/images/porto-korporat-50.jpg" alt="Hampers premium untuk acara korporat" width="300" height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <img src="assets/images/porto-korporat-50.webp" alt="Hampers premium untuk acara korporat" width="300"
+              height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             <div class="hl-portfolio-item__overlay">
               <div class="hl-portfolio-item__caption">Hampers Korporat Akhir Tahun<br><small
                   style="font-weight:400;opacity:0.8">50 paket · Custom branding</small></div>
@@ -726,7 +976,8 @@
           </div>
           <!-- Item 2 -->
           <div class="hl-portfolio-item">
-            <img src="assets/images/porto-kue-rotan.jpg" alt="Hampers kue lebaran dalam basket rotan" width="300" height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <img src="assets/images/porto-kue-rotan.webp" alt="Hampers kue lebaran dalam basket rotan" width="300"
+              height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             <div class="hl-portfolio-item__overlay">
               <div class="hl-portfolio-item__caption">Hampers Kue dalam Basket Rotan<br><small
                   style="font-weight:400;opacity:0.8">Edisi Lebaran 2025</small></div>
@@ -734,7 +985,8 @@
           </div>
           <!-- Item 3 -->
           <div class="hl-portfolio-item">
-            <img src="assets/images/porto-ibadah-mewah.jpg" alt="Hampers perlengkapan ibadah dalam kotak elegant" width="300" height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <img src="assets/images/porto-ibadah-mewah.webp" alt="Hampers perlengkapan ibadah dalam kotak elegant"
+              width="300" height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             <div class="hl-portfolio-item__overlay">
               <div class="hl-portfolio-item__caption">Hampers Perlengkapan Ibadah<br><small
                   style="font-weight:400;opacity:0.8">Kemasan premium eksklusif</small></div>
@@ -759,7 +1011,8 @@
           <div class="col-md-4">
             <a href="blog/tips-memilih-hampers-lebaran/index.html" class="hl-card">
               <div class="hl-card__img-wrap hl-card__img-wrap--landscape">
-                <img src="assets/images/blog-tips-memilih.jpg" alt="Tips Memilih Hampers Lebaran" width="400" height="267" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/blog-tips-memilih.webp" alt="Tips Memilih Hampers Lebaran" width="400"
+                  height="267" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <div class="hl-meta">
@@ -780,7 +1033,8 @@
           <div class="col-md-4">
             <a href="blog/hampers-lebaran-korporat/index.html" class="hl-card">
               <div class="hl-card__img-wrap hl-card__img-wrap--landscape">
-                <img src="assets/images/blog-korporat.jpg" alt="Hampers Lebaran Korporat" width="400" height="267" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/blog-korporat.webp" alt="Hampers Lebaran Korporat" width="400" height="267"
+                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <div class="hl-meta">
@@ -801,7 +1055,8 @@
           <div class="col-md-4">
             <a href="blog/kue-kering-lebaran-populer/index.html" class="hl-card">
               <div class="hl-card__img-wrap hl-card__img-wrap--landscape">
-                <img src="assets/images/blog-kue-kering.jpg" alt="Kue Kering Lebaran Populer" width="400" height="267" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="assets/images/blog-kue-kering.webp" alt="Kue Kering Lebaran Populer" width="400" height="267"
+                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <div class="hl-meta">
@@ -841,7 +1096,9 @@
                 </h3>
                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Sangat disarankan memesan <strong>3 hingga 4 minggu sebelum Hari Raya Idulfitri</strong> agar terhindar dari lonjakan ekspedisi pengiriman dan memastikan ketersediaan kuota produksi, terutama untuk pesanan dengan kustomisasi logo perusahaan.
+                    Sangat disarankan memesan <strong>3 hingga 4 minggu sebelum Hari Raya Idulfitri</strong> agar
+                    terhindar dari lonjakan ekspedisi pengiriman dan memastikan ketersediaan kuota produksi, terutama
+                    untuk pesanan dengan kustomisasi logo perusahaan.
                   </div>
                 </div>
               </div>
@@ -855,7 +1112,9 @@
                 </h3>
                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Pilih paket yang Anda inginkan dari katalog, lalu hubungi kami via WhatsApp untuk konsultasi langsung. Tim kami akan membantu memilih paket, mengonfirmasi detail pesanan, dan mengatur proses pemesanan dengan mudah dan cepat.
+                    Pilih paket yang Anda inginkan dari katalog, lalu hubungi kami via WhatsApp untuk konsultasi
+                    langsung. Tim kami akan membantu memilih paket, mengonfirmasi detail pesanan, dan mengatur proses
+                    pemesanan dengan mudah dan cepat.
                   </div>
                 </div>
               </div>
@@ -869,7 +1128,8 @@
                 </h3>
                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Ya, kami menyediakan opsi kustomisasi untuk isi paket, kemasan box eksklusif, dan kartu ucapan khusus. Untuk pesanan korporat, tersedia opsi penambahan logo perusahaan dan merchandise khusus.
+                    Ya, kami menyediakan opsi kustomisasi untuk isi paket, kemasan box eksklusif, dan kartu ucapan
+                    khusus. Untuk pesanan korporat, tersedia opsi penambahan logo perusahaan dan merchandise khusus.
                   </div>
                 </div>
               </div>
@@ -883,7 +1143,9 @@
                 </h3>
                 <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Waktu produksi berkisar 1–3 hari kerja untuk paket reguler ready-to-ship, dan 7–14 hari kerja untuk pesanan custom korporat dalam jumlah besar. Hubungi kami via WhatsApp untuk estimasi lead time yang akurat.
+                    Waktu produksi berkisar 1–3 hari kerja untuk paket reguler ready-to-ship, dan 7–14 hari kerja untuk
+                    pesanan custom korporat dalam jumlah besar. Hubungi kami via WhatsApp untuk estimasi lead time yang
+                    akurat.
                   </div>
                 </div>
               </div>
@@ -897,7 +1159,9 @@
                 </h3>
                 <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Ya, kami berpengalaman melayani pesanan korporat dari puluhan hingga ribuan paket untuk karyawan, klien, dan mitra bisnis. Kami juga menyediakan surat penawaran resmi, invoice perusahaan, dan faktur pajak.
+                    Ya, kami berpengalaman melayani pesanan korporat dari puluhan hingga ribuan paket untuk karyawan,
+                    klien, dan mitra bisnis. Kami juga menyediakan surat penawaran resmi, invoice perusahaan, dan faktur
+                    pajak.
                   </div>
                 </div>
               </div>
@@ -911,7 +1175,9 @@
                 </h3>
                 <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                   <div class="accordion-body">
-                    Harga paket tertera transparan di katalog mulai dari Rp 450.000 hingga Rp 1.500.000. Untuk kebutuhan custom dengan anggaran tertentu, Anda dapat berkonsultasi langsung via WhatsApp untuk mendapatkan penawaran terbaik dan kompetitif.
+                    Harga paket tertera transparan di katalog mulai dari Rp 450.000 hingga Rp 1.500.000. Untuk kebutuhan
+                    custom dengan anggaran tertentu, Anda dapat berkonsultasi langsung via WhatsApp untuk mendapatkan
+                    penawaran terbaik dan kompetitif.
                   </div>
                 </div>
               </div>
@@ -947,7 +1213,12 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4">
-          <a href="index.html" style="display:inline-flex;align-items:center;gap:0.65rem;text-decoration:none;margin-bottom:0.75rem;"><img src="assets/images/logo.png" alt="Logo Hampers Lebaran" style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"><span style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--hl-footer-text);line-height:1;">Hampers<span style="color:var(--hl-warm);">Lebaran</span></span></a>
+          <a href="index.html"
+            style="display:inline-flex;align-items:center;gap:0.65rem;text-decoration:none;margin-bottom:0.75rem;"><img
+              src="assets/images/logo.webp" alt="Logo Hampers Lebaran"
+              style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"><span
+              style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--hl-footer-text);line-height:1;">Hampers<span
+                style="color:var(--hl-warm);">Lebaran</span></span></a>
           <p class="hl-footer__desc">Hadiah Lebaran bermakna untuk keluarga, sahabat, dan rekanan bisnis. Tersedia
             pilihan paket dan kustomisasi sesuai kebutuhan.</p>
           <div class="d-flex gap-3">
