@@ -3,8 +3,6 @@
    Design tokens & components prefix: hl-
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
-
 /* ----- Design Tokens ----- */
 :root {
   --hl-bg: #f3f3f0;
@@ -53,6 +51,27 @@ body {
   font-size: 1.05rem;
   line-height: 1.68;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Base Container & Grid to eliminate render blocking & layout shift */
+.container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
 }
 
 img {
