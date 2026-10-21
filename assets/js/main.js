@@ -90,55 +90,55 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleNavbar();
     });
 
-    // Handler klik dropdown "Paket" di desktop & mobile agar bisa dibuka/tutup dan selalu berada di bawah navbar (tidak keluar frame)
+    // Handler klik dropdown "Paket" di desktop & mobile
     const dropdownToggles = navbarCollapse.querySelectorAll('.dropdown-toggle');
+
+    /**
+     * Buka/tutup sub-menu dropdown paket secara manual (tidak bergantung Bootstrap JS)
+     * agar selalu bekerja di mobile maupun desktop.
+     */
+    const openDropdown = (toggle, menu, parentDropdown) => {
+      // Bersihkan style inline Popper jika ada, lalu tambahkan class show
+      menu.removeAttribute('style');
+      menu.classList.add('show');
+      toggle.classList.add('show');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (parentDropdown) parentDropdown.classList.add('show');
+    };
+
+    const closeDropdown = (toggle, menu, parentDropdown) => {
+      menu.classList.remove('show');
+      menu.removeAttribute('style');
+      toggle.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (parentDropdown) parentDropdown.classList.remove('show');
+    };
+
+    const closeAllDropdowns = () => {
+      dropdownToggles.forEach(t => {
+        const pd = t.closest('.dropdown');
+        const m = pd ? pd.querySelector('.dropdown-menu') : null;
+        if (m) closeDropdown(t, m, pd);
+      });
+    };
+
     dropdownToggles.forEach(toggle => {
-      // Pastikan atribut static selalu aktif agar Popper tidak pernah melempar dropdown ke atas
-      toggle.setAttribute('data-bs-display', 'static');
-
-      // Sinkronkan konfigurasi instance Bootstrap Dropdown jika ada
-      if (typeof bootstrap !== 'undefined' && bootstrap.Dropdown) {
-        try {
-          bootstrap.Dropdown.getOrCreateInstance(toggle, {
-            display: 'static',
-            autoClose: true
-          });
-        } catch (err) {}
-      }
-
       toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
         const parentDropdown = this.closest('.dropdown');
         const menu = parentDropdown ? parentDropdown.querySelector('.dropdown-menu') : null;
         if (!menu) return;
 
-        // Cegah navigasi instan agar menu pilihan paket terbuka rapi di bawah toggle
-        e.preventDefault();
-        e.stopPropagation();
-
         const isOpen = menu.classList.contains('show');
-        if (isOpen) {
-          menu.classList.remove('show');
-          menu.removeAttribute('style');
-          this.classList.remove('show');
-          this.setAttribute('aria-expanded', 'false');
-          if (parentDropdown) parentDropdown.classList.remove('show');
-        } else {
-          // Tutup dropdown lain yang mungkin sedang terbuka
-          document.querySelectorAll('.dropdown-menu.show').forEach(m => {
-            m.classList.remove('show');
-            m.removeAttribute('style');
-          });
-          document.querySelectorAll('.dropdown-toggle.show').forEach(t => {
-            t.classList.remove('show');
-            t.setAttribute('aria-expanded', 'false');
-          });
 
-          // Hapus style inline bawaan Popper jika sempat terinjeksi
-          menu.removeAttribute('style');
-          menu.classList.add('show');
-          this.classList.add('show');
-          this.setAttribute('aria-expanded', 'true');
-          if (parentDropdown) parentDropdown.classList.add('show');
+        // Tutup semua dropdown dulu
+        closeAllDropdowns();
+
+        // Jika sebelumnya tutup → buka; jika sudah buka → biarkan tertutup
+        if (!isOpen) {
+          openDropdown(this, menu, parentDropdown);
         }
       });
     });
@@ -161,20 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Tutup saat user klik di luar area navbar atau dropdown
     document.addEventListener('click', (e) => {
-      // Tutup dropdown menu jika klik di luar area dropdown
-      dropdownToggles.forEach(toggle => {
-        const parentDropdown = toggle.closest('.dropdown');
-        if (parentDropdown && !parentDropdown.contains(e.target)) {
-          const menu = parentDropdown.querySelector('.dropdown-menu');
-          if (menu) {
-            menu.classList.remove('show');
-            menu.removeAttribute('style');
-          }
-          toggle.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
-          parentDropdown.classList.remove('show');
-        }
+      // Tutup dropdown menu jika klik di luar semua area dropdown
+      const anyDropdownContains = Array.from(dropdownToggles).some(toggle => {
+        const pd = toggle.closest('.dropdown');
+        return pd && pd.contains(e.target);
       });
+      if (!anyDropdownContains) {
+        closeAllDropdowns();
+      }
 
       if (isMobile() && navbarCollapse.classList.contains('show')) {
         const isClickInside = navbarCollapse.contains(e.target) || navbarToggler.contains(e.target);
