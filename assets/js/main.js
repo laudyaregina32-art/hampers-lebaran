@@ -30,6 +30,152 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = new Date().getFullYear();
   });
 
+  // ----- Mobile Navbar Controller & Resilience Handler -----
+  const navbarCollapse = document.getElementById('navbarMain');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+
+  if (navbarCollapse && navbarToggler) {
+    const isMobile = () => window.innerWidth < 992;
+
+    const openNavbar = () => {
+      navbarCollapse.classList.add('show');
+      navbarToggler.setAttribute('aria-expanded', 'true');
+      navbarToggler.classList.add('is-active');
+    };
+
+    const closeNavbar = () => {
+      navbarCollapse.classList.remove('show');
+      navbarToggler.setAttribute('aria-expanded', 'false');
+      navbarToggler.classList.remove('is-active');
+
+      // Tutup semua submenu dropdown di dalam navbar saat collapse ditutup
+      navbarCollapse.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+        menu.classList.remove('show');
+      });
+      navbarCollapse.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('show');
+      });
+    };
+
+    const toggleNavbar = () => {
+      const isExpanded = navbarCollapse.classList.contains('show');
+      if (isExpanded) {
+        closeNavbar();
+      } else {
+        openNavbar();
+      }
+    };
+
+    // Handler klik tombol toggler hamburger
+    navbarToggler.addEventListener('click', (e) => {
+      // Jika Bootstrap Collapse aktif dan telah menangani event, sinkronkan class
+      if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        setTimeout(() => {
+          const isOpen = navbarCollapse.classList.contains('show') || navbarCollapse.classList.contains('collapsing');
+          navbarToggler.classList.toggle('is-active', isOpen);
+          navbarToggler.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }, 60);
+        return;
+      }
+
+      // Fallback jika Bootstrap JS CDN lambat / tidak tersedia
+      e.preventDefault();
+      toggleNavbar();
+    });
+
+    // Handler klik dropdown "Paket" di desktop & mobile agar bisa dibuka/tutup dan dipilih
+    const dropdownToggles = navbarCollapse.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        const parentDropdown = this.closest('.dropdown');
+        const menu = parentDropdown ? parentDropdown.querySelector('.dropdown-menu') : null;
+        if (!menu) return;
+
+        // Cegah lompat langsung agar pengguna bisa melihat dan memilih sub-paket
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = menu.classList.contains('show');
+        if (isOpen) {
+          menu.classList.remove('show');
+          this.classList.remove('show');
+          this.setAttribute('aria-expanded', 'false');
+          if (parentDropdown) parentDropdown.classList.remove('show');
+        } else {
+          // Tutup dropdown lain yang mungkin sedang terbuka
+          document.querySelectorAll('.dropdown-menu.show').forEach(m => m.classList.remove('show'));
+          document.querySelectorAll('.dropdown-toggle.show').forEach(t => {
+            t.classList.remove('show');
+            t.setAttribute('aria-expanded', 'false');
+          });
+
+          menu.classList.add('show');
+          this.classList.add('show');
+          this.setAttribute('aria-expanded', 'true');
+          if (parentDropdown) parentDropdown.classList.add('show');
+        }
+      });
+    });
+
+    // Otomatis tutup navbar saat link navigasi atau dropdown item di-klik
+    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .hl-btn-wa');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMobile()) {
+          closeNavbar();
+          if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          }
+        }
+      });
+    });
+
+    // Tutup saat user klik di luar area navbar atau dropdown
+    document.addEventListener('click', (e) => {
+      // Tutup dropdown menu jika klik di luar area dropdown
+      dropdownToggles.forEach(toggle => {
+        const parentDropdown = toggle.closest('.dropdown');
+        if (parentDropdown && !parentDropdown.contains(e.target)) {
+          const menu = parentDropdown.querySelector('.dropdown-menu');
+          if (menu) menu.classList.remove('show');
+          toggle.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          parentDropdown.classList.remove('show');
+        }
+      });
+
+      if (isMobile() && navbarCollapse.classList.contains('show')) {
+        const isClickInside = navbarCollapse.contains(e.target) || navbarToggler.contains(e.target);
+        if (!isClickInside) {
+          closeNavbar();
+          if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          }
+        }
+      }
+    });
+
+    // Tutup dengan tombol Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMobile() && navbarCollapse.classList.contains('show')) {
+        closeNavbar();
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          }
+        }
+      }
+    });
+  }
+
   // ----- Navbar scroll shadow -----
   const navbar = document.querySelector('.hl-navbar');
   if (navbar) {
