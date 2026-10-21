@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -44,14 +44,21 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
 
+  <!-- Preconnect & Performance Preloads -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/hero-hampers.webp" fetchpriority="high">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap">
+  </noscript>
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- ============================================================ -->
@@ -674,7 +681,7 @@
                 <div class="hl-hero__proof-card">
                   <div class="hl-hero__proof-icon" aria-hidden="true">✨</div>
                   <div>
-                    <h4 class="hl-hero__proof-title">Kurasi Premium &amp; Halal</h4>
+                    <p class="hl-hero__proof-title">Kurasi Premium &amp; Halal</p>
                     <p class="hl-hero__proof-desc">Kue kering butter Eropa, kurma pilihan, &amp; perlengkapan ibadah
                       berkualitas.</p>
                   </div>
@@ -682,7 +689,7 @@
                 <div class="hl-hero__proof-card">
                   <div class="hl-hero__proof-icon" aria-hidden="true">🎨</div>
                   <div>
-                    <h4 class="hl-hero__proof-title">Kustomisasi Kartu &amp; Logo</h4>
+                    <p class="hl-hero__proof-title">Kustomisasi Kartu &amp; Logo</p>
                     <p class="hl-hero__proof-desc">Pilihan kartu ucapan kaligrafi, pita tematik, dan branding instansi
                       perusahaan.</p>
                   </div>
@@ -703,7 +710,7 @@
               <div class="hl-hero__img-wrap">
                 <img src="assets/images/hero-hampers.webp" alt="Hampers Lebaran premium dalam kemasan elegan"
                   class="hl-hero__img" width="500" height="625"
-                  style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-lg);" loading="eager">
+                  style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-lg);" loading="eager" fetchpriority="high">
               </div>
               <div class="hl-hero__badge d-none d-md-flex">
                 <div class="hl-hero__badge-icon">🎁</div>
@@ -1313,7 +1320,7 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmB9UBnDdRolMKvbJ1XrGo9O2KuH"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>

@@ -176,18 +176,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ----- Navbar scroll shadow -----
+  // ----- Navbar scroll shadow (requestAnimationFrame to avoid forced reflow) -----
   const navbar = document.querySelector('.hl-navbar');
   if (navbar) {
-    const onScroll = () => {
-      if (window.scrollY > 10) {
-        navbar.style.boxShadow = '0 4px 20px rgba(40,42,39,0.08)';
-      } else {
-        navbar.style.boxShadow = '';
-      }
+    let ticking = false;
+    const updateScrollState = () => {
+      navbar.classList.toggle('is-scrolled', window.scrollY > 10);
+      ticking = false;
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateScrollState();
   }
 
   // ----- Product image thumbnails -----
