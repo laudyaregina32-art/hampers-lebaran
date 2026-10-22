@@ -377,41 +377,33 @@ Uji secara nyata pada 360, 390, 768, 1024, dan 1440px.
 
 Jika menggunakan HTML statis, komponen di atas dapat berupa potongan markup yang konsisten, bukan harus memakai framework JavaScript.
 
-## 17. Struktur File yang Disarankan
+## 17. Struktur File (Flat Root)
 
 ```text
 hampers-lebaran/
 ├── index.html
-├── tentang/
-│   └── index.html
-├── paket/
-│   ├── index.html
-│   ├── hampers-premium/
-│   │   └── index.html
-│   └── hampers-custom/
-│       └── index.html
-├── portofolio/
-│   └── index.html
-├── blog/
-│   ├── index.html
-│   └── contoh-artikel/
-│       └── index.html
-├── kontak/
-│   └── index.html
-├── faq/
-│   └── index.html
-├── kebijakan-privasi/
-│   └── index.html
-├── syarat-ketentuan/
-│   └── index.html
-├── 404.html
+├── tentang.html
+├── paket.html
+├── paket-hampers-premium.html
+├── paket-hampers-kue-camilan.html
+├── paket-hampers-perlengkapan-ibadah.html
+├── paket-hampers-custom.html
+├── portofolio.html
+├── blog.html
+├── blog-tips-memilih-hampers-lebaran.html
+├── blog-kue-kering-lebaran-populer.html
+├── blog-hampers-lebaran-korporat.html
+├── blog-tren-kemasan-hampers.html
+├── faq.html
+├── kontak.html
+├── kebijakan-privasi.html
+├── syarat-ketentuan.html
 ├── assets/
 │   ├── css/
 │   │   └── style.css
 │   ├── js/
 │   │   └── main.js
-│   ├── images/
-│   └── icons/
+│   └── images/
 ├── robots.txt
 └── sitemap.xml
 ```
