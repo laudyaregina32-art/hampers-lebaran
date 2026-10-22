@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const menu = parentDropdown ? parentDropdown.querySelector('.dropdown-menu') : null;
         if (!menu) return;
 
-        const isOpen = menu.classList.contains('show');
+        const isOpen = menu.classList.contains('show') || (parentDropdown && parentDropdown.classList.contains('show'));
 
         // Tutup semua dropdown dulu
         closeAllDropdowns();
@@ -324,23 +324,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const allBackToTopBtns = document.querySelectorAll('.js-back-to-top, #hlBackToTop, .hl-footer-btt');
 
   const scrollToTop = (e) => {
-    if (e) e.preventDefault();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     window.scrollTo({
       top: 0,
+      left: 0,
       behavior: 'smooth'
     });
   };
 
   allBackToTopBtns.forEach(btn => {
     btn.addEventListener('click', scrollToTop);
+    btn.addEventListener('touchend', scrollToTop, { passive: true });
   });
 
   if (backToTopBtn) {
     let tickingBtt = false;
     const toggleBackToTop = () => {
-      // Tampilkan jika scroll > 200px atau saat mencapai ujung bawah halaman
-      const isPastThreshold = window.scrollY > 200;
-      const isNearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 150);
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const isPastThreshold = scrollY > 120;
+      const isNearBottom = (window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 150);
 
       if (isPastThreshold || isNearBottom) {
         backToTopBtn.classList.add('is-visible');
@@ -350,12 +355,15 @@ document.addEventListener('DOMContentLoaded', () => {
       tickingBtt = false;
     };
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
       if (!tickingBtt) {
         requestAnimationFrame(toggleBackToTop);
         tickingBtt = true;
       }
-    }, { passive: true });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
 
     toggleBackToTop();
   }
