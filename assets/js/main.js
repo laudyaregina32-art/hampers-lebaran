@@ -318,4 +318,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // ----- Back to Top Button Controller -----
+  const backToTopBtn = document.getElementById('hlBackToTop');
+  if (backToTopBtn) {
+    let tickingBtt = false;
+    const toggleBackToTop = () => {
+      if (window.scrollY > 280) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+      tickingBtt = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!tickingBtt) {
+        requestAnimationFrame(toggleBackToTop);
+        tickingBtt = true;
+      }
+    }, { passive: true });
+
+    toggleBackToTop();
+
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });
