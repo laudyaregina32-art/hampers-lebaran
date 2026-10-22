@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hamperslebaran.vercel.app/sitemap.xml
+Sitemap: https://hamperslebaran.biz.id/sitemap.xml

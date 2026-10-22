@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hamperslebaran.vercel.app/</loc>
+    <loc>https://hamperslebaran.biz.id/</loc>
     <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/paket/</loc>
+    <loc>https://hamperslebaran.biz.id/paket/</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/paket/hampers-premium/</loc>
+    <loc>https://hamperslebaran.biz.id/paket/hampers-premium/</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/paket/hampers-kue-camilan/</loc>
+    <loc>https://hamperslebaran.biz.id/paket/hampers-kue-camilan/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/paket/hampers-perlengkapan-ibadah/</loc>
+    <loc>https://hamperslebaran.biz.id/paket/hampers-perlengkapan-ibadah/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/paket/hampers-custom/</loc>
+    <loc>https://hamperslebaran.biz.id/paket/hampers-custom/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/portofolio/</loc>
+    <loc>https://hamperslebaran.biz.id/portofolio/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/tentang/</loc>
+    <loc>https://hamperslebaran.biz.id/tentang/</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/blog/</loc>
+    <loc>https://hamperslebaran.biz.id/blog/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/blog/tips-memilih-hampers-lebaran/</loc>
+    <loc>https://hamperslebaran.biz.id/blog/tips-memilih-hampers-lebaran/</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/faq/</loc>
+    <loc>https://hamperslebaran.biz.id/faq/</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/kontak/</loc>
+    <loc>https://hamperslebaran.biz.id/kontak/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/kebijakan-privasi/</loc>
+    <loc>https://hamperslebaran.biz.id/kebijakan-privasi/</loc>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://hamperslebaran.vercel.app/syarat-ketentuan/</loc>
+    <loc>https://hamperslebaran.biz.id/syarat-ketentuan/</loc>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
