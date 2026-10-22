@@ -319,12 +319,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ----- Back to Top Button Controller -----
+  // ----- Back to Top Button Controllers (Floating & Footer) -----
   const backToTopBtn = document.getElementById('hlBackToTop');
+  const allBackToTopBtns = document.querySelectorAll('.js-back-to-top, #hlBackToTop, .hl-footer-btt');
+
+  const scrollToTop = (e) => {
+    if (e) e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  allBackToTopBtns.forEach(btn => {
+    btn.addEventListener('click', scrollToTop);
+  });
+
   if (backToTopBtn) {
     let tickingBtt = false;
     const toggleBackToTop = () => {
-      if (window.scrollY > 280) {
+      // Tampilkan jika scroll > 200px atau saat mencapai ujung bawah halaman
+      const isPastThreshold = window.scrollY > 200;
+      const isNearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 150);
+
+      if (isPastThreshold || isNearBottom) {
         backToTopBtn.classList.add('is-visible');
       } else {
         backToTopBtn.classList.remove('is-visible');
@@ -340,13 +358,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     toggleBackToTop();
-
-    backToTopBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
   }
 });
