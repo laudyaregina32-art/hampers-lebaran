@@ -321,13 +321,13 @@ Ganti semua placeholder sebelum produksi; jangan deploy `example.com`.
   <meta property="og:title" content="Hampers Lebaran [Nama Brand]">
   <meta property="og:description" content="Pilihan hampers Lebaran untuk keluarga, relasi, dan perusahaan.">
   <meta property="og:url" content="https://www.example.com/">
-  <meta property="og:image" content="https://www.example.com/assets/images/og-hampers-lebaran.webp">
+  <meta property="og:image" content="https://www.example.com/assets/images/og-hampers-idul-fitri.webp">
   <meta property="og:image:alt" content="Pilihan hampers Lebaran dari [Nama Brand]">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampers Lebaran [Nama Brand]">
   <meta name="twitter:description" content="Pilihan hampers Lebaran untuk keluarga, relasi, dan perusahaan.">
-  <meta name="twitter:image" content="https://www.example.com/assets/images/og-hampers-lebaran.webp">
+  <meta name="twitter:image" content="https://www.example.com/assets/images/og-hampers-idul-fitri.webp">
 </head>
 ```
 
