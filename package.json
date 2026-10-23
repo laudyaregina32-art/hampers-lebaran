@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "seo:check": "node scripts/audit-schema.mjs"
+  },
+  "devDependencies": {
+    "@adobe/structured-data-validator": "^1.7.0",
+    "@marbec/web-auto-extractor": "^2.2.1"
+  }
+}
