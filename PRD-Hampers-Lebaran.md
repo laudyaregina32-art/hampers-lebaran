@@ -349,7 +349,7 @@ Gunakan hanya setelah placeholder diganti dengan data nyata. Tambahkan tipe khus
   ],
   "contactPoint": [{
     "@type": "ContactPoint",
-    "telephone": "+6281913905507",
+    "telephone": "+6282131087971",
     "contactType": "customer service",
     "availableLanguage": ["Indonesian"]
   }]
