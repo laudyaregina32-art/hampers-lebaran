@@ -5,6 +5,25 @@
 
 'use strict';
 
+// ----- Clean URL Handler (Sembunyikan ekstensi .html dari address bar browser) -----
+(() => {
+  try {
+    if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) {
+      const path = window.location.pathname;
+      if (path.endsWith('.html')) {
+        let cleanPath = path.slice(0, -5);
+        if (cleanPath.endsWith('/index') || cleanPath === 'index' || cleanPath === '/index') {
+          cleanPath = cleanPath.replace(/\/index$/, '') || '/';
+        }
+        const cleanUrl = cleanPath + window.location.search + window.location.hash;
+        window.history.replaceState(null, document.title, cleanUrl);
+      }
+    }
+  } catch (err) {
+    // Abaikan pada environment file://
+  }
+})();
+
 // ----- WhatsApp CTA Helpers -----
 const WA_NUMBER = '6281913905507';
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;

@@ -1,0 +1,28 @@
+# ==============================================================================
+# Hampers Lebaran — Apache / LiteSpeed Configuration (Clean URLs & Fast Delivery)
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Redirect URL yang mengandung .html ke URL bersih tanpa .html (301 Permanent)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
+
+  # 2. Redirect /index ke root /
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index [NC]
+  RewriteRule ^ / [R=301,L]
+
+  # 3. Serve file .html jika URL diakses tanpa ekstensi
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# Security Headers & Caching
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

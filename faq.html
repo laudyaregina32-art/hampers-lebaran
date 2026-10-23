@@ -4,6 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Clean URL Script (Sembunyikan ekstensi .html dari address bar) -->
+  <script>
+    (function(){try{if(window.history&&window.history.replaceState&&window.location.protocol.startsWith('http')){var p=window.location.pathname;if(p.endsWith('.html')){var c=p.slice(0,-5);if(c.endsWith('/index')||c==='index'||c==='/index'){c=c.replace(/\/index$/,'')||'/';}window.history.replaceState(null,document.title,c+window.location.search+window.location.hash);}}}catch(e){}})();
+  </script>
   <title>FAQ — Pertanyaan yang Sering Diajukan Seputar Pemesanan Hampers Lebaran</title>
   <meta name="description"
     content="Jawaban lengkap seputar cara pemesanan, minimal order, estimasi waktu produksi, kustomisasi logo, pengiriman luar kota, dan kebijakan pembayaran resmi.">
@@ -40,9 +44,10 @@
     content="Jawaban lengkap seputar cara pemesanan, minimal order, estimasi waktu produksi, kustomisasi logo, pengiriman luar kota, dan kebijakan pembayaran resmi.">
   <meta name="twitter:image" content="https://hamperslebaran.biz.id/assets/images/og-hampers-lebaran.webp">
 
-  <!-- Favicon -->
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+    <!-- Favicon & Web App Icons -->
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+  <link rel="shortcut icon" type="image/webp" href="assets/images/logo.webp">
+  <link rel="apple-touch-icon" href="assets/images/logo.webp">
 
   <!-- Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
