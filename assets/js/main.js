@@ -365,11 +365,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (backToTopBtn) {
     let tickingBtt = false;
     const toggleBackToTop = () => {
-      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      const isPastThreshold = scrollY > 120;
-      const isNearBottom = (window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 150);
-
-      if (isPastThreshold || isNearBottom) {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (scrollY > 250) {
         backToTopBtn.classList.add('is-visible');
       } else {
         backToTopBtn.classList.remove('is-visible');
@@ -386,8 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('touchmove', handleScroll, { passive: true });
-
-    toggleBackToTop();
   }
 
   // ----- Instant Page Prefetcher (Zero-latency navigation, eliminates white blink) -----
