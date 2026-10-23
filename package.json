@@ -4,6 +4,9 @@
   },
   "devDependencies": {
     "@adobe/structured-data-validator": "^1.7.0",
-    "@marbec/web-auto-extractor": "^2.2.1"
+    "@marbec/web-auto-extractor": "^2.2.1",
+    "clean-css": "^5.3.3",
+    "purgecss": "^8.0.0",
+    "sharp": "^0.35.5"
   }
 }
