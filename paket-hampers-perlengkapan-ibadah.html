@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Clean URL Script (Sembunyikan ekstensi .html dari address bar) -->
   <script>
-    (function(){try{if(window.history&&window.history.replaceState&&window.location.protocol.startsWith('http')){var p=window.location.pathname;if(p.endsWith('.html')){var c=p.slice(0,-5);if(c.endsWith('/index')||c==='index'||c==='/index'){c=c.replace(/\/index$/,'')||'/';}window.history.replaceState(null,document.title,c+window.location.search+window.location.hash);}}}catch(e){}})();
+    (function () { try { if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) { var p = window.location.pathname; if (p.endsWith('.html')) { var c = p.slice(0, -5); if (c.endsWith('/index') || c === 'index' || c === '/index') { c = c.replace(/\/index$/, '') || '/'; } window.history.replaceState(null, document.title, c + window.location.search + window.location.hash); } } } catch (e) { } })();
   </script>
   <title>Hampers Perlengkapan Ibadah Lebaran — Sajadah, Al-Qur'an &amp; Tasbih Premium</title>
   <meta name="description"
@@ -44,7 +44,7 @@
     content="Hadiah Lebaran bernilai ibadah: set sajadah bulu premium, mushaf Al-Qur'an terjemah, dan tasbih kayu gaharu dalam hardbox eksklusif Idulfitri.">
   <meta name="twitter:image" content="https://www.hamperslebaran.id/assets/images/og-hampers-lebaran.webp">
 
-    <!-- Favicon & Web App Icons -->
+  <!-- Favicon & Web App Icons -->
   <link rel="icon" type="image/webp" href="assets/images/logo.webp">
   <link rel="shortcut icon" type="image/webp" href="assets/images/logo.webp">
   <link rel="apple-touch-icon" href="assets/images/logo.webp">
@@ -73,18 +73,97 @@
       "@id": "https://hamperslebaran.biz.id/paket-hampers-perlengkapan-ibadah.html#product",
       "name": "Hampers Perlengkapan Ibadah Lebaran",
       "sku": "HL-IBADAH-2026",
+      "mpn": "HL-IBADAH-2026",
       "category": "Gift Basket > Perlengkapan Ibadah",
-      "image": "https://www.hamperslebaran.id/assets/images/og-hampers-lebaran.webp",
+      "image": [
+        "https://www.hamperslebaran.id/assets/images/og-hampers-lebaran.webp",
+        "https://www.hamperslebaran.id/assets/images/sajadah.webp",
+        "https://www.hamperslebaran.id/assets/images/tasbih.webp",
+        "https://www.hamperslebaran.id/assets/images/hampers-eid.webp"
+      ],
       "description": "Set hadiah bernilai berkah: sajadah bulu premium, mushaf Al-Qur'an terjemah, dan tasbih kayu dalam hardbox elegan.",
       "brand": { "@type": "Brand", "name": "Hampers Lebaran" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Aisyah R." },
+          "datePublished": "2026-03-15",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Sajadahnya sangat halus dan tebal, Al-Qur'an terjemahannya jelas, tasbihnya wangi kayu gaharu. Packaging rapi dan cocok untuk hadiah mertua."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Budi Santoso" },
+          "datePublished": "2026-03-10",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Pesan 10 pcs untuk rekan kantor, semua puas. Bordir nama di sajadah rapi dan pengiriman tepat waktu sebelum Lebaran."
+        }
+      ],
       "offers": {
         "@type": "Offer",
         "url": "https://hamperslebaran.biz.id/paket-hampers-perlengkapan-ibadah.html",
         "priceCurrency": "IDR",
         "price": "550000",
+        "priceValidUntil": "2026-12-31T23:59:59+07:00",
+        "validFrom": "2026-01-01T00:00:00+07:00",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
-        "seller": { "@type": "Organization", "name": "Hampers Lebaran" }
+        "seller": { "@type": "Organization", "name": "Hampers Lebaran" },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "ID",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 3,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/ReturnShippingFees",
+          "returnShippingFeesAmount": {
+            "@type": "MonetaryAmount",
+            "value": "25000",
+            "currency": "IDR"
+          }
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "IDR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "ID"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 2,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        }
       }
     },
     {
@@ -119,8 +198,8 @@
             <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="paket.html" role="button"
-                id="navDropdownPaket" aria-expanded="false">Paket</a>
+              <a class="nav-link dropdown-toggle active" href="paket.html" role="button" id="navDropdownPaket"
+                aria-expanded="false">Paket</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="paket.html">Semua Paket</a></li>
                 <li>
