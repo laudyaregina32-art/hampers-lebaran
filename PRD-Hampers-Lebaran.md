@@ -56,7 +56,7 @@ Target angka ditentukan setelah baseline tersedia; jangan mengarang target konve
 - Halaman Beranda, Tentang, Paket (dropdown), Portofolio, Blog.
 - Halaman detail paket dan artikel.
 - Navigasi responsive Bootstrap dengan dropdown.
-- CTA WhatsApp menuju `https://wa.me/6281913905507`.
+- CTA WhatsApp menuju `https://wa.me/6282131087971`.
 - Katalog paket, galeri, FAQ, formulir brief sederhana opsional.
 - SEO on-page dan teknis, structured data yang sesuai, Open Graph, sitemap, robots.txt, canonical, favicon, halaman legal.
 - Aksesibilitas dasar, performa, analitik dengan persetujuan bila diperlukan, dan dokumentasi deployment.
@@ -184,8 +184,8 @@ Jawaban harus sesuai kebijakan bisnis nyata, bukan asumsi.
 
 ## 7. Persyaratan WhatsApp
 
-Nomor tujuan: `6281913905507`  
-Format link: `https://wa.me/6281913905507?text={URL_ENCODED_MESSAGE}`
+Nomor tujuan: `6282131087971`  
+Format link: `https://wa.me/6282131087971?text={URL_ENCODED_MESSAGE}`
 
 Contoh pesan:
 “Halo, saya ingin bertanya tentang paket hampers Lebaran. Boleh minta katalog, isi paket, harga, dan estimasi produksinya?”
@@ -382,7 +382,7 @@ Jangan menambahkan `address`, `priceRange`, jam operasional, rating, atau social
 ### Fungsional
 - [ ] Navbar berisi Beranda, Tentang, Paket dropdown, Portofolio, Blog.
 - [ ] Navbar berfungsi pada desktop dan mobile.
-- [ ] Seluruh CTA WhatsApp mengarah ke nomor `6281913905507`.
+- [ ] Seluruh CTA WhatsApp mengarah ke nomor `6282131087971`.
 - [ ] CTA pada detail paket menyertakan nama paket pada pesan awal.
 - [ ] Seluruh halaman penting memiliki tautan internal dan footer konsisten.
 - [ ] Semua kartu produk/portofolio/artikel membuka halaman yang benar.

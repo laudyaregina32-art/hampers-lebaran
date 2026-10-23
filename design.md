@@ -302,10 +302,10 @@ Baris paling bawah: copyright dengan tahun dinamis saat implementasi. Jangan men
 ## 12. Tombol WhatsApp
 
 URL dasar:
-`https://wa.me/6281913905507`
+`https://wa.me/6282131087971`
 
 Contoh dengan teks:
-`https://wa.me/6281913905507?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20hampers%20Lebaran.`
+`https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20hampers%20Lebaran.`
 
 Pesan detail paket dapat dibentuk dengan `encodeURIComponent()` di JavaScript atau disiapkan sebagai URL statis. Hindari memasukkan data pribadi yang tidak diperlukan.
 

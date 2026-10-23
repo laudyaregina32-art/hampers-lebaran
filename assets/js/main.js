@@ -25,7 +25,7 @@
 })();
 
 // ----- WhatsApp CTA Helpers -----
-const WA_NUMBER = '6281913905507';
+const WA_NUMBER = '6282131087971';
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;
 
 /**

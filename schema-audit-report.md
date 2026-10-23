@@ -1,6 +1,6 @@
 # 📊 Laporan Audit Structured Data & JSON-LD
 **Proyek:** Hampers Lebaran (*hamperslebaran.biz.id*)  
-**Tanggal Audit:** 2026-10-23 04:48:08 WIB  
+**Tanggal Audit:** 2026-10-23 05:31:31 WIB  
 **Engine Validasi:** `@adobe/structured-data-validator` v1.7.0, `@marbec/web-auto-extractor` v2.2.1, & Schema.org Specification  
 
 ---
@@ -19,7 +19,7 @@
 | **Total File HTML Di-scan** | **18** | Tercover seluruhnya secara rekursif |
 | **Halaman dengan JSON-LD** | **17** | Halaman utama, produk, blog, & info |
 | **Total Error Kritis (Errors)** | **0** | ✅ 0 Error (Sintaks valid & bersih) |
-| **Total Warnings / Saran Optimasi** | **101** | ⚠️ Properti rekomendasi Google & penempatan skema |
+| **Total Warnings / Saran Optimasi** | **98** | ⚠️ Properti rekomendasi Google & penempatan skema |
 | **Status Kesiapan SERP Lokal** | **Sangat Baik (Siap Optimasi)** | Struktur data valid & siap tahap penyempurnaan |
 
 ---
@@ -32,29 +32,29 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 | :--- | :---: | :--- |
 | `ListItem` | 17 | Navigasi & Hierarki Breadcrumb |
 | `BreadcrumbList` | 16 | Navigasi & Hierarki Breadcrumb |
+| `FAQPage` | 9 | Halaman Tanya Jawab Interaktif |
+| `Question` | 9 | Halaman Tanya Jawab Interaktif |
+| `Answer` | 9 | Halaman Tanya Jawab Interaktif |
+| `Person` | 8 | Entitas Pendukung |
 | `Organization` | 8 | Identitas Bisnis & Brand |
-| `FAQPage` | 8 | Halaman Tanya Jawab Interaktif |
-| `Question` | 8 | Halaman Tanya Jawab Interaktif |
-| `Answer` | 8 | Halaman Tanya Jawab Interaktif |
 | `WebPage` | 7 | Struktur Halaman Web |
 | `ImageObject` | 6 | Entitas Pendukung |
-| `Person` | 6 | Entitas Pendukung |
 | `WebSite` | 6 | Struktur Halaman Web |
 | `BlogPosting` | 4 | Artikel Blog & Edukasi |
+| `MerchantReturnPolicy` | 4 | Entitas Pendukung |
+| `OfferShippingDetails` | 4 | Entitas Pendukung |
+| `MonetaryAmount` | 4 | Entitas Pendukung |
+| `DefinedRegion` | 4 | Entitas Pendukung |
+| `ShippingDeliveryTime` | 4 | Entitas Pendukung |
+| `QuantitativeValue` | 4 | Entitas Pendukung |
 | `Product` | 4 | Katalog & Penjualan Produk |
 | `Brand` | 4 | Entitas Pendukung |
 | `Offer` | 4 | Katalog & Penjualan Produk |
+| `AggregateRating` | 4 | Entitas Pendukung |
+| `Review` | 4 | Entitas Pendukung |
+| `Rating` | 4 | Entitas Pendukung |
 | `CollectionPage` | 3 | Entitas Pendukung |
-| `MerchantReturnPolicy` | 2 | Entitas Pendukung |
-| `OfferShippingDetails` | 2 | Entitas Pendukung |
-| `MonetaryAmount` | 2 | Entitas Pendukung |
-| `DefinedRegion` | 2 | Entitas Pendukung |
-| `ShippingDeliveryTime` | 2 | Entitas Pendukung |
-| `QuantitativeValue` | 2 | Entitas Pendukung |
 | `ItemList` | 2 | Entitas Pendukung |
-| `AggregateRating` | 2 | Entitas Pendukung |
-| `Review` | 2 | Entitas Pendukung |
-| `Rating` | 2 | Entitas Pendukung |
 | `LocalBusiness` | 1 | Identitas Bisnis & Brand |
 | `PostalAddress` | 1 | Entitas Pendukung |
 | `GeoCoordinates` | 1 | Entitas Pendukung |
@@ -147,10 +147,9 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 - **Tipe Schema**: `LocalBusiness`, `PostalAddress`, `GeoCoordinates`, `OpeningHoursSpecification`, `MerchantReturnPolicy`, `OfferShippingDetails`, `MonetaryAmount`, `DefinedRegion`, `ShippingDeliveryTime`, `QuantitativeValue`, `WebSite`, `WebPage`, `ItemList`, `ListItem`, `Product`, `Brand`, `Offer`, `AggregateRating`, `Review`, `Rating`, `Person`, `PriceSpecification`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
-#### ⚠️ Peringatan & Rekomendasi Validator (59)
+#### ⚠️ Peringatan & Rekomendasi Validator (58)
 | Kategori | Bidang/Properti | Keterangan Masalah |
 | :--- | :--- | :--- |
-| placeholder | `@graph[0].telephone` | Nomor telepon mock (+6281234567890): "+6281234567890" |
 | schemaOrg | `shippingDetails` | Property "shippingDetails" for type "LocalBusiness" is not supported by the schema.org specification |
 | adobe_validator | `addressRegion, postalCode` | One of the following conditions needs to be met: Missing field "addressRegion" (optional) or Missing field "postalCode" (optional) |
 | adobe_validator | `audience` | Missing field "audience" (optional) |
@@ -160,10 +159,10 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 | adobe_validator | `isVariantOf` | Missing field "isVariantOf" (optional) |
 | adobe_validator | `material` | Missing field "material" (optional) |
 | adobe_validator | `mpn` | Missing field "mpn" (optional) |
-| *Lainnya* | - | *...dan 49 peringatan sejenis lainnya.* |
+| adobe_validator | `pattern` | Missing field "pattern" (optional) |
+| *Lainnya* | - | *...dan 48 peringatan sejenis lainnya.* |
 
 #### 💡 Saran Tindakan Perbaikan
-- Ganti nilai placeholder "+6281234567890" dengan data resmi operasional bisnis (misalnya nomor kontak WhatsApp aktif).
 - Pindahkan atau sesuaikan properti "shippingDetails". Pastikan properti ditempatkan pada tipe Schema yang tepat (misal: hasMerchantReturnPolicy dan shippingDetails disarankan berada di dalam Offer produk).
 - Periksa kembali dokumentasi Schema.org atau Google Search Central untuk spesifikasi properti yang valid.
 - Tambahkan properti "worstRating": "1" pada elemen Rating untuk memperjelas skala penilaian.
@@ -201,28 +200,27 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket-hampers-kue-camilan.html`
-- **Tipe Schema**: `Product`, `Brand`, `Offer`, `Organization`, `BreadcrumbList`, `ListItem`
+- **Tipe Schema**: `Product`, `Brand`, `AggregateRating`, `Review`, `Person`, `Rating`, `Offer`, `Organization`, `MerchantReturnPolicy`, `MonetaryAmount`, `OfferShippingDetails`, `DefinedRegion`, `ShippingDeliveryTime`, `QuantitativeValue`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
-#### ⚠️ Peringatan & Rekomendasi Validator (14)
+#### ⚠️ Peringatan & Rekomendasi Validator (13)
 | Kategori | Bidang/Properti | Keterangan Masalah |
 | :--- | :--- | :--- |
-| adobe_validator | `aggregateRating` | Missing field "aggregateRating" (optional) |
-| adobe_validator | `review` | Missing field "review" (optional) |
 | adobe_validator | `audience` | Missing field "audience" (optional) |
 | adobe_validator | `color` | Missing field "color" (optional) |
 | adobe_validator | `hasCertification` | Missing field "hasCertification" (optional) |
 | adobe_validator | `inProductGroupWithID` | Missing field "inProductGroupWithID" (optional) |
 | adobe_validator | `isVariantOf` | Missing field "isVariantOf" (optional) |
 | adobe_validator | `material` | Missing field "material" (optional) |
-| adobe_validator | `mpn` | Missing field "mpn" (optional) |
 | adobe_validator | `pattern` | Missing field "pattern" (optional) |
-| *Lainnya* | - | *...dan 4 peringatan sejenis lainnya.* |
+| adobe_validator | `size` | Missing field "size" (optional) |
+| adobe_validator | `subjectOf` | Missing field "subjectOf" (optional) |
+| adobe_validator | `gtin, gtin8, gtin12, gtin13, gtin14, isbn` | Missing one of field "gtin", "gtin8", "gtin12", "gtin13", "gtin14", "isbn" on either product or all offers |
+| *Lainnya* | - | *...dan 3 peringatan sejenis lainnya.* |
 
 #### 💡 Saran Tindakan Perbaikan
-- Pertimbangkan menambahkan data ulasan pembeli ("aggregateRating" / "review") untuk memicu bintang ulasan di hasil pencarian.
 - Periksa kembali dokumentasi Schema.org atau Google Search Central untuk spesifikasi properti yang valid.
-- Tambahkan properti "priceValidUntil" (format YYYY-MM-DD) pada Offer agar Google memahami masa berlaku harga penawaran.
+- Tambahkan properti "worstRating": "1" pada elemen Rating untuk memperjelas skala penilaian.
 
 ---
 
@@ -230,28 +228,27 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket-hampers-perlengkapan-ibadah.html`
-- **Tipe Schema**: `Product`, `Brand`, `Offer`, `Organization`, `BreadcrumbList`, `ListItem`
+- **Tipe Schema**: `Product`, `Brand`, `AggregateRating`, `Review`, `Person`, `Rating`, `Offer`, `Organization`, `MerchantReturnPolicy`, `MonetaryAmount`, `OfferShippingDetails`, `DefinedRegion`, `ShippingDeliveryTime`, `QuantitativeValue`, `BreadcrumbList`, `ListItem`
 - **Jumlah Blok JSON-LD**: 1
 
-#### ⚠️ Peringatan & Rekomendasi Validator (14)
+#### ⚠️ Peringatan & Rekomendasi Validator (13)
 | Kategori | Bidang/Properti | Keterangan Masalah |
 | :--- | :--- | :--- |
-| adobe_validator | `aggregateRating` | Missing field "aggregateRating" (optional) |
-| adobe_validator | `review` | Missing field "review" (optional) |
 | adobe_validator | `audience` | Missing field "audience" (optional) |
 | adobe_validator | `color` | Missing field "color" (optional) |
 | adobe_validator | `hasCertification` | Missing field "hasCertification" (optional) |
 | adobe_validator | `inProductGroupWithID` | Missing field "inProductGroupWithID" (optional) |
 | adobe_validator | `isVariantOf` | Missing field "isVariantOf" (optional) |
 | adobe_validator | `material` | Missing field "material" (optional) |
-| adobe_validator | `mpn` | Missing field "mpn" (optional) |
 | adobe_validator | `pattern` | Missing field "pattern" (optional) |
-| *Lainnya* | - | *...dan 4 peringatan sejenis lainnya.* |
+| adobe_validator | `size` | Missing field "size" (optional) |
+| adobe_validator | `subjectOf` | Missing field "subjectOf" (optional) |
+| adobe_validator | `gtin, gtin8, gtin12, gtin13, gtin14, isbn` | Missing one of field "gtin", "gtin8", "gtin12", "gtin13", "gtin14", "isbn" on either product or all offers |
+| *Lainnya* | - | *...dan 3 peringatan sejenis lainnya.* |
 
 #### 💡 Saran Tindakan Perbaikan
-- Pertimbangkan menambahkan data ulasan pembeli ("aggregateRating" / "review") untuk memicu bintang ulasan di hasil pencarian.
 - Periksa kembali dokumentasi Schema.org atau Google Search Central untuk spesifikasi properti yang valid.
-- Tambahkan properti "priceValidUntil" (format YYYY-MM-DD) pada Offer agar Google memahami masa berlaku harga penawaran.
+- Tambahkan properti "worstRating": "1" pada elemen Rating untuk memperjelas skala penilaian.
 
 ---
 
