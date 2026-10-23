@@ -22,41 +22,36 @@ const pages = [
   'tentang.html'
 ];
 
-const cssBlock = `  <!-- Critical CSS Inlined for 0ms Render-Blocking -->
-  <style>${criticalCss}</style>
-  <link rel="preload" href="assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/main.min.css"></noscript>`;
-
 for (const p of pages) {
   let content = fs.readFileSync(p, 'utf8');
 
-  // Replace any existing stylesheet links for bootstrap.min.css and style.css
-  const linkRegex = /<!--\s*Stylesheets[^>]*-->[\s\S]*?<link\s+rel="stylesheet"\s+href="assets\/css\/bootstrap\.min\.css">\s*<link\s+rel="stylesheet"\s+href="assets\/css\/style\.css">/g;
-  
-  if (linkRegex.test(content)) {
-    content = content.replace(linkRegex, `<!-- Stylesheets -->\n${cssBlock}`);
-  } else {
-    // Alternative match without comment
-    const altRegex = /<link\s+rel="stylesheet"\s+href="assets\/css\/bootstrap\.min\.css">\s*<link\s+rel="stylesheet"\s+href="assets\/css\/style\.css">/g;
-    content = content.replace(altRegex, cssBlock);
-  }
+  // Replace existing <style>...</style> block
+  content = content.replace(/<style>:root\{[\s\S]*?<\/style>/g, `<style>${criticalCss}</style>`);
 
-  // Update card sizes on index.html to match 170px rendered mobile width
+  // Index specific updates
   if (p === 'index.html') {
-    content = content.replace(
-      /sizes="\(max-width: 576px\) calc\(100vw - 32px\), \(max-width: 992px\) calc\(50vw - 24px\), 280px"/g,
-      'sizes="(max-width: 576px) 170px, (max-width: 992px) calc(50vw - 24px), 280px"'
-    );
-  }
+    // Ensure home.min.css is loaded
+    content = content.replace(/assets\/css\/main\.min\.css/g, 'assets/css/home.min.css');
 
-  // Update card sizes on paket.html
-  if (p === 'paket.html') {
+    // Preload matches 400w
     content = content.replace(
-      /sizes="\(max-width: 576px\) calc\(100vw - 32px\), \(max-width: 992px\) calc\(50vw - 24px\), 280px"/g,
-      'sizes="(max-width: 576px) 170px, (max-width: 992px) calc(50vw - 24px), 280px"'
+      /<link\s+rel="preload"\s+as="image"\s+href="assets\/images\/hampers-idul-fitri[^"]*"\s*(?:imagesrcset="[^"]*"\s*)?(?:imagesizes="[^"]*"\s*)?fetchpriority="high">/g,
+      '<link rel="preload" as="image" href="assets/images/hampers-idul-fitri-400.webp" fetchpriority="high">'
+    );
+
+    // Picture element: desktop source min-width 577px, fallback src 400w
+    content = content.replace(
+      /<picture>[\s\S]*?<img[^>]*class="hl-hero__img"[^>]*>[\s\S]*?<\/picture>/g,
+      `<picture>
+                  <source media="(min-width: 577px)" srcset="assets/images/hampers-idul-fitri-600.webp">
+                  <img src="assets/images/hampers-idul-fitri-400.webp"
+                    alt="Paket Hampers Lebaran Eksklusif 2026"
+                    class="hl-hero__img" width="400" height="500"
+                    fetchpriority="high" decoding="async">
+                </picture>`
     );
   }
 
   fs.writeFileSync(p, content);
-  console.log(`Updated ${p} with critical CSS and non-blocking bundle`);
+  console.log(`Updated ${p}`);
 }
