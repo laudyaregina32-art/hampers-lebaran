@@ -506,6 +506,42 @@ h2.hl-heading { font-size: clamp(1.85rem, 3.4vw, 2.55rem); }
   font-weight: 600;
 }
 
+.hl-info-box {
+  background: var(--hl-surface-muted);
+  border: 1px solid var(--hl-border);
+  border-radius: var(--hl-radius-md);
+  padding: 1.25rem 1.4rem;
+  font-size: 0.88rem;
+  color: var(--hl-text-muted);
+  box-shadow: 0 2px 10px rgba(40, 42, 39, 0.04);
+  margin-top: 1.5rem;
+}
+.hl-info-box .row {
+  align-items: flex-start !important;
+}
+.hl-info-box__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+}
+.hl-info-box__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hl-accent-dark);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+.hl-info-box__val {
+  font-weight: 700;
+  margin: 0;
+  color: var(--hl-text);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
 `;
 
 const minCritical = new CleanCSS({ level: 2 }).minify(criticalRaw);
