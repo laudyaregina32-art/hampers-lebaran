@@ -1,4 +1,64 @@
+# ==============================================================================
+# Robots.txt untuk Hampers Lebaran (https://hamperslebaran.biz.id/)
+# Dioptimalkan untuk Googlebot, Google Images, Bingbot, dan AI Search (GEO/AEO 2026-2027)
+# ==============================================================================
+
+# Aturan Global untuk Seluruh Web Crawler
 User-agent: *
 Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Disallow: /scripts/
+Disallow: /scratch/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.log$
 
+# Optimasi Spesifik Googlebot (Web & Smartphone)
+User-agent: Googlebot
+User-agent: Googlebot-Mobile
+Allow: /
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Disallow: /scripts/
+Disallow: /scratch/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.md$
+
+# Optimasi Google Image Search (Katalog Produk & Galeri Foto)
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /
+Disallow: /scripts/
+Disallow: /node_modules/
+
+# Optimasi Bingbot & Mesin Pencari Utama Lainnya
+User-agent: Bingbot
+User-agent: msnbot
+Allow: /
+Allow: /assets/
+Disallow: /scripts/
+Disallow: /scratch/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Optimasi Generative AI Search (Google Gemini, ChatGPT, Perplexity, Claude)
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+Allow: /
+Disallow: /scripts/
+Disallow: /scratch/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.md$
+
+# Lokasi Peta Situs Resmi (XML Sitemap)
 Sitemap: https://hamperslebaran.biz.id/sitemap.xml
+Host: https://hamperslebaran.biz.id
