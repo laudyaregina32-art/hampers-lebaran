@@ -753,18 +753,106 @@
 
     .hl-trust-strip {
       background: var(--hl-warm);
-      padding: 1.45rem 0;
-      border-top: 1px solid rgba(213, 214, 208, .6);
-      border-bottom: 1px solid rgba(213, 214, 208, .6)
+      padding: clamp(1.25rem, 3vw, 1.6rem) 0;
+      border-top: 1px solid rgba(213, 214, 208, .7);
+      border-bottom: 1px solid rgba(213, 214, 208, .7)
+    }
+
+    .hl-trust-container {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      max-width: 360px;
+      margin-inline: auto
     }
 
     .hl-trust-item {
       display: flex;
       align-items: center;
-      gap: .75rem;
-      font-size: .96rem;
+      gap: .85rem;
+      background: rgba(255, 255, 255, .75);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(213, 214, 208, .9);
+      border-radius: 12px;
+      padding: .65rem 1.05rem;
+      box-shadow: 0 2px 8px rgba(40, 42, 39, .04);
+      transition: transform .2s ease, box-shadow .2s ease
+    }
+
+    .hl-trust-num {
+      font-family: var(--hl-font-serif);
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .05em;
+      color: var(--hl-accent-dark);
+      background: var(--hl-warm);
+      border: 1px solid rgba(184, 151, 61, .35);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .hl-trust-label {
+      font-size: .92rem;
       font-weight: 600;
-      color: var(--hl-accent-dark)
+      color: var(--hl-text);
+      line-height: 1.35
+    }
+
+    @media (min-width: 768px) {
+      .hl-trust-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 680px;
+        gap: .85rem 1.25rem
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hl-trust-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        gap: 1.75rem
+      }
+
+      .hl-trust-item {
+        background: transparent;
+        backdrop-filter: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+        position: relative
+      }
+
+      .hl-trust-item:not(:last-child)::after {
+        content: "•";
+        position: absolute;
+        right: -1rem;
+        color: rgba(184, 151, 61, .6);
+        font-size: 1.1rem;
+        pointer-events: none
+      }
+
+      .hl-trust-num {
+        background: var(--hl-surface);
+        border: 1px solid rgba(184, 151, 61, .4);
+        width: 28px;
+        height: 28px;
+        font-size: .78rem
+      }
+
+      .hl-trust-label {
+        font-size: .95rem;
+        color: var(--hl-accent-dark)
+      }
     }
 
     .hl-page-header {
@@ -1097,33 +1185,22 @@
     <!-- ===== TRUST STRIP ===== -->
     <section class="hl-trust-strip" aria-label="Keunggulan layanan">
       <div class="container">
-        <div class="row justify-content-center g-3">
-          <div class="col-auto">
-            <div class="hl-trust-item">
-              <span aria-hidden="true" style="font-size:1.1rem;">📦</span>
-              <span>Kemasan Premium &amp; Elegan</span>
-            </div>
+        <div class="hl-trust-container">
+          <div class="hl-trust-item">
+            <span class="hl-trust-num">01</span>
+            <span class="hl-trust-label">Kemasan Premium &amp; Elegan</span>
           </div>
-          <div class="col-auto d-none d-md-flex" aria-hidden="true" style="color:var(--hl-border);">•</div>
-          <div class="col-auto">
-            <div class="hl-trust-item">
-              <span aria-hidden="true" style="font-size:1.1rem;">✏️</span>
-              <span>Opsi Personalisasi Tersedia</span>
-            </div>
+          <div class="hl-trust-item">
+            <span class="hl-trust-num">02</span>
+            <span class="hl-trust-label">Opsi Personalisasi Tersedia</span>
           </div>
-          <div class="col-auto d-none d-md-flex" aria-hidden="true" style="color:var(--hl-border);">•</div>
-          <div class="col-auto">
-            <div class="hl-trust-item">
-              <span aria-hidden="true" style="font-size:1.1rem;">💼</span>
-              <span>Melayani Pesanan Korporat</span>
-            </div>
+          <div class="hl-trust-item">
+            <span class="hl-trust-num">03</span>
+            <span class="hl-trust-label">Melayani Pesanan Korporat</span>
           </div>
-          <div class="col-auto d-none d-md-flex" aria-hidden="true" style="color:var(--hl-border);">•</div>
-          <div class="col-auto">
-            <div class="hl-trust-item">
-              <span aria-hidden="true" style="font-size:1.1rem;">💬</span>
-              <span>Konsultasi via WhatsApp</span>
-            </div>
+          <div class="hl-trust-item">
+            <span class="hl-trust-num">04</span>
+            <span class="hl-trust-label">Konsultasi via WhatsApp</span>
           </div>
         </div>
       </div>

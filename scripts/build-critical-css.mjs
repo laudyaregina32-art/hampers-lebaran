@@ -462,17 +462,96 @@ h2.hl-heading { font-size: clamp(1.85rem, 3.4vw, 2.55rem); }
 .col-auto { flex: 0 0 auto; width: auto; }
 .hl-trust-strip {
   background: var(--hl-warm);
-  padding: 1.45rem 0;
-  border-top: 1px solid rgba(213, 214, 208, 0.6);
-  border-bottom: 1px solid rgba(213, 214, 208, 0.6);
+  padding: clamp(1.25rem, 3vw, 1.6rem) 0;
+  border-top: 1px solid rgba(213, 214, 208, 0.7);
+  border-bottom: 1px solid rgba(213, 214, 208, 0.7);
+}
+.hl-trust-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-width: 360px;
+  margin-inline: auto;
 }
 .hl-trust-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.96rem;
-  font-weight: 600;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(213, 214, 208, 0.9);
+  border-radius: 12px;
+  padding: 0.65rem 1.05rem;
+  box-shadow: 0 2px 8px rgba(40, 42, 39, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hl-trust-num {
+  font-family: var(--hl-font-serif);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
   color: var(--hl-accent-dark);
+  background: var(--hl-warm);
+  border: 1px solid rgba(184, 151, 61, 0.35);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.hl-trust-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--hl-text);
+  line-height: 1.35;
+}
+@media (min-width: 768px) {
+  .hl-trust-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 680px;
+    gap: 0.85rem 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .hl-trust-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    gap: 1.75rem;
+  }
+  .hl-trust-item {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    position: relative;
+  }
+  .hl-trust-item:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: -1rem;
+    color: rgba(184, 151, 61, 0.6);
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+  .hl-trust-num {
+    background: var(--hl-surface);
+    border: 1px solid rgba(184, 151, 61, 0.4);
+    width: 28px;
+    height: 28px;
+    font-size: 0.78rem;
+  }
+  .hl-trust-label {
+    font-size: 0.95rem;
+    color: var(--hl-accent-dark);
+  }
 }
 
 
