@@ -1,19 +1,43 @@
 /**
  * Hampers Lebaran — Main JavaScript
- * Ultra-fast Zero-Delay Navigation & Interactive Elements
+ * Minimal JS, hanya untuk interaksi yang diperlukan
  */
 
 'use strict';
 
+// ----- Clean URL Handler (Sembunyikan ekstensi .html dari address bar browser) -----
+(() => {
+  try {
+    if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) {
+      const path = window.location.pathname;
+      if (path.endsWith('.html')) {
+        let cleanPath = path.slice(0, -5);
+        if (cleanPath.endsWith('/index') || cleanPath === 'index' || cleanPath === '/index') {
+          cleanPath = cleanPath.replace(/\/index$/, '') || '/';
+        }
+        const cleanUrl = cleanPath + window.location.search + window.location.hash;
+        window.history.replaceState(null, document.title, cleanUrl);
+      }
+    }
+  } catch (err) {
+    // Abaikan pada environment file://
+  }
+})();
+
 // ----- WhatsApp CTA Helpers -----
 const WA_NUMBER = '6282131087971';
-const WA_BASE = 'https://wa.me/' + WA_NUMBER;
+const WA_BASE = `https://wa.me/${WA_NUMBER}`;
 
+/**
+ * Buat URL WhatsApp dengan pesan yang sudah di-encode
+ * @param {string} message
+ * @returns {string}
+ */
 function buildWAUrl(message) {
-  return WA_BASE + '?text=' + encodeURIComponent(message);
+  return `${WA_BASE}?text=${encodeURIComponent(message)}`;
 }
 
-// Inject URL ke semua tombol WA dan copyright tahun
+// Inject URL ke semua tombol WA dan copyright tahun saat idle agar tidak memblokir render / reflow awal
 const initNonCritical = () => {
   document.querySelectorAll('[data-wa-message]').forEach(el => {
     const msg = el.dataset.waMessage;
@@ -34,42 +58,43 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----- Mobile Navbar Controller & Resilience Handler -----
   const navbarCollapse = document.getElementById('navbarMain');
   const navbarToggler = document.querySelector('.navbar-toggler');
-  const isMobile = () => window.matchMedia('(max-width: 991.98px)').matches;
-
-  const openNavbar = () => {
-    if (!navbarCollapse || !navbarToggler) return;
-    navbarCollapse.classList.add('show');
-    navbarToggler.setAttribute('aria-expanded', 'true');
-    navbarToggler.classList.add('is-active');
-  };
-
-  const closeNavbar = () => {
-    if (!navbarCollapse || !navbarToggler) return;
-    navbarCollapse.classList.remove('show');
-    navbarToggler.setAttribute('aria-expanded', 'false');
-    navbarToggler.classList.remove('is-active');
-
-    navbarCollapse.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-      menu.classList.remove('show');
-    });
-    navbarCollapse.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(btn => {
-      btn.setAttribute('aria-expanded', 'false');
-      btn.classList.remove('show');
-    });
-  };
-
-  const toggleNavbar = () => {
-    if (!navbarCollapse) return;
-    const isExpanded = navbarCollapse.classList.contains('show');
-    if (isExpanded) {
-      closeNavbar();
-    } else {
-      openNavbar();
-    }
-  };
 
   if (navbarCollapse && navbarToggler) {
+    const isMobile = () => window.matchMedia('(max-width: 991.98px)').matches;
+
+    const openNavbar = () => {
+      navbarCollapse.classList.add('show');
+      navbarToggler.setAttribute('aria-expanded', 'true');
+      navbarToggler.classList.add('is-active');
+    };
+
+    const closeNavbar = () => {
+      navbarCollapse.classList.remove('show');
+      navbarToggler.setAttribute('aria-expanded', 'false');
+      navbarToggler.classList.remove('is-active');
+
+      // Tutup semua submenu dropdown di dalam navbar saat collapse ditutup
+      navbarCollapse.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+        menu.classList.remove('show');
+      });
+      navbarCollapse.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('show');
+      });
+    };
+
+    const toggleNavbar = () => {
+      const isExpanded = navbarCollapse.classList.contains('show');
+      if (isExpanded) {
+        closeNavbar();
+      } else {
+        openNavbar();
+      }
+    };
+
+    // Handler klik tombol toggler hamburger
     navbarToggler.addEventListener('click', (e) => {
+      // Jika Bootstrap Collapse aktif dan telah menangani event, sinkronkan class
       if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
         setTimeout(() => {
           const isOpen = navbarCollapse.classList.contains('show') || navbarCollapse.classList.contains('collapsing');
@@ -78,13 +103,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 60);
         return;
       }
+
+      // Fallback jika Bootstrap JS CDN lambat / tidak tersedia
       e.preventDefault();
       toggleNavbar();
     });
 
+    // Handler klik dropdown "Paket" di desktop & mobile
     const dropdownToggles = navbarCollapse.querySelectorAll('.dropdown-toggle');
 
+    /**
+     * Buka/tutup sub-menu dropdown paket secara manual (tidak bergantung Bootstrap JS)
+     * agar selalu bekerja di mobile maupun desktop.
+     */
     const openDropdown = (toggle, menu, parentDropdown) => {
+      // Bersihkan style inline Popper jika ada, lalu tambahkan class show
       menu.removeAttribute('style');
       menu.classList.add('show');
       toggle.classList.add('show');
@@ -128,7 +161,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Otomatis tutup navbar HANYA untuk anchor link di halaman yang sama (misal #portofolio)
+    // Jangan batalkan navigasi untuk link halaman (.dropdown-item & halaman lain) agar selalu bisa di-klik di mobile
+    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .hl-btn-wa');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          if (isMobile()) {
+            closeNavbar();
+            if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+              const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // Tutup saat user klik di luar area navbar atau dropdown
     document.addEventListener('click', (e) => {
+      // Tutup dropdown menu jika klik di luar semua area dropdown
       const anyDropdownContains = Array.from(dropdownToggles).some(toggle => {
         const pd = toggle.closest('.dropdown');
         return pd && pd.contains(e.target);
@@ -143,18 +198,23 @@ document.addEventListener('DOMContentLoaded', () => {
           closeNavbar();
           if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
             const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse) bsCollapse.hide();
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
           }
         }
       }
     });
 
+    // Tutup dengan tombol Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && isMobile() && navbarCollapse.classList.contains('show')) {
         closeNavbar();
         if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
           const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-          if (bsCollapse) bsCollapse.hide();
+          if (bsCollapse) {
+            bsCollapse.hide();
+          }
         }
       }
     });
@@ -181,15 +241,126 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // Back to Top Button
+  // ----- Product image thumbnails -----
+  const thumbs = document.querySelectorAll('.hl-product-thumb');
+  const mainImgWrap = document.querySelector('.hl-product-main-img');
+  if (thumbs.length && mainImgWrap) {
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        const img = thumb.querySelector('img');
+        const mainImg = mainImgWrap.querySelector('img');
+        if (img && mainImg) {
+          mainImg.src = img.src;
+        }
+      });
+      thumb.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          thumb.click();
+        }
+      });
+    });
+  }
+
+  // ----- Smooth scroll untuk anchor links (navbar offset) -----
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      try {
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const navH = navbar ? navbar.offsetHeight : 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      } catch (err) {
+        // Abaikan jika bukan query selector valid
+      }
+    });
+  });
+
+  // ----- Accordion Interactivity Fallback -----
+  // Memastikan semua tombol FAQ selalu bisa dipencet & membuka jawaban
+  document.querySelectorAll('.hl-accordion .accordion-button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // Jika Bootstrap Collapse sudah aktif dan bekerja via bootstrap bundle, delegasikan ke Bootstrap
+      if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        return;
+      }
+
+      e.preventDefault();
+      const targetSel = this.getAttribute('data-bs-target') || this.getAttribute('href');
+      if (!targetSel) return;
+
+      const targetEl = document.querySelector(targetSel);
+      if (!targetEl) return;
+
+      const isExpanded = this.getAttribute('aria-expanded') === 'true' || targetEl.classList.contains('show');
+      const parentSel = targetEl.getAttribute('data-bs-parent');
+
+      // Tutup item lain dalam accordion yang sama jika single-open (accordion parent)
+      if (parentSel && !isExpanded) {
+        const parentEl = document.querySelector(parentSel);
+        if (parentEl) {
+          parentEl.querySelectorAll('.accordion-collapse.show').forEach(openEl => {
+            if (openEl !== targetEl) {
+              openEl.classList.remove('show');
+              const otherBtn = parentEl.querySelector(`[data-bs-target="#${openEl.id}"], [href="#${openEl.id}"]`);
+              if (otherBtn) {
+                otherBtn.classList.add('collapsed');
+                otherBtn.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        }
+      }
+
+      if (isExpanded) {
+        targetEl.classList.remove('show');
+        this.classList.add('collapsed');
+        this.setAttribute('aria-expanded', 'false');
+      } else {
+        targetEl.classList.add('show');
+        this.classList.remove('collapsed');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ----- Portfolio image overlay keyboard accessibility -----
+  document.querySelectorAll('.hl-portfolio-item').forEach(item => {
+    const link = item.querySelector('a');
+    if (link) {
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('keydown', e => {
+        if (e.key === 'Enter') link.click();
+      });
+    }
+  });
+
+  // ----- Back to Top Button Controllers (Floating & Footer) -----
   const backToTopBtn = document.getElementById('hlBackToTop');
+  const allBackToTopBtns = document.querySelectorAll('.js-back-to-top, #hlBackToTop, .hl-footer-btt');
+
   const scrollToTop = (e) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
+
+  allBackToTopBtns.forEach(btn => {
+    btn.addEventListener('click', scrollToTop);
+    btn.addEventListener('touchend', scrollToTop, { passive: true });
+  });
 
   if (backToTopBtn) {
     let tickingBtt = false;
@@ -202,278 +373,48 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       tickingBtt = false;
     };
-    window.addEventListener('scroll', () => {
+
+    const handleScroll = () => {
       if (!tickingBtt) {
         requestAnimationFrame(toggleBackToTop);
         tickingBtt = true;
       }
-    }, { passive: true });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
   }
 
-  // ----- Page Feature Initializers (Run on load & after every instant navigation) -----
-  const initPageFeatures = () => {
-    initNonCritical();
-
-    // Product image thumbnails
-    const thumbs = document.querySelectorAll('.hl-product-thumb');
-    const mainImgWrap = document.querySelector('.hl-product-main-img');
-    if (thumbs.length && mainImgWrap) {
-      thumbs.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-          thumbs.forEach(t => t.classList.remove('active'));
-          thumb.classList.add('active');
-          const img = thumb.querySelector('img');
-          const mainImg = mainImgWrap.querySelector('img');
-          if (img && mainImg) mainImg.src = img.src;
-        });
-        thumb.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            thumb.click();
-          }
-        });
-      });
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const href = anchor.getAttribute('href');
-        if (!href || href === '#' || href.length < 2) return;
-        try {
-          const target = document.querySelector(href);
-          if (!target) return;
-          e.preventDefault();
-          const navH = navbar ? navbar.offsetHeight : 0;
-          const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
-          window.scrollTo({ top, behavior: 'smooth' });
-        } catch (err) {}
-      });
-    });
-
-    // Accordions
-    document.querySelectorAll('.hl-accordion .accordion-button').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) return;
-        e.preventDefault();
-        const targetSel = this.getAttribute('data-bs-target') || this.getAttribute('href');
-        if (!targetSel) return;
-        const targetEl = document.querySelector(targetSel);
-        if (!targetEl) return;
-        const isExpanded = this.getAttribute('aria-expanded') === 'true' || targetEl.classList.contains('show');
-        const parentSel = targetEl.getAttribute('data-bs-parent');
-        if (parentSel && !isExpanded) {
-          const parentEl = document.querySelector(parentSel);
-          if (parentEl) {
-            parentEl.querySelectorAll('.accordion-collapse.show').forEach(openEl => {
-              if (openEl !== targetEl) {
-                openEl.classList.remove('show');
-                const otherBtn = parentEl.querySelector('[data-bs-target="#' + openEl.id + '"], [href="#' + openEl.id + '"]');
-                if (otherBtn) {
-                  otherBtn.classList.add('collapsed');
-                  otherBtn.setAttribute('aria-expanded', 'false');
-                }
-              }
-            });
-          }
-        }
-        if (isExpanded) {
-          targetEl.classList.remove('show');
-          this.classList.add('collapsed');
-          this.setAttribute('aria-expanded', 'false');
-        } else {
-          targetEl.classList.add('show');
-          this.classList.remove('collapsed');
-          this.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-
-    // Portfolio keyboard accessibility
-    document.querySelectorAll('.hl-portfolio-item').forEach(item => {
-      const link = item.querySelector('a');
-      if (link) {
-        item.setAttribute('tabindex', '0');
-        item.addEventListener('keydown', e => {
-          if (e.key === 'Enter') link.click();
-        });
-      }
-    });
-
-    // Back to top click listeners
-    document.querySelectorAll('.js-back-to-top, #hlBackToTop, .hl-footer-btt').forEach(btn => {
-      btn.addEventListener('click', scrollToTop);
-      btn.addEventListener('touchend', scrollToTop, { passive: true });
-    });
-  };
-
-  // Initial run
-  initPageFeatures();
-
-  // ===== Instant Seamless Page Router (Zero Jeda / Zero Delay Navigation) =====
-  const pageCache = new Map();
-
-  const updateNavbarActiveState = (targetUrl) => {
-    try {
-      const parsed = new URL(targetUrl, window.location.href);
-      let filename = parsed.pathname.split('/').pop() || 'index.html';
-      if (filename === '') filename = 'index.html';
-
-      document.querySelectorAll('.hl-navbar .nav-link:not(.dropdown-toggle), .hl-navbar .dropdown-item').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href) return;
-        let linkFile = href.split('#')[0].split('?')[0].split('/').pop() || 'index.html';
-        if (linkFile === '') linkFile = 'index.html';
-
-        if (linkFile === filename) {
-          link.classList.add('active');
-          link.setAttribute('aria-current', 'page');
-        } else {
-          link.classList.remove('active');
-          link.removeAttribute('aria-current');
-        }
-      });
-
-      const paketToggle = document.getElementById('navDropdownPaket');
-      if (paketToggle) {
-        const isPaket = filename.startsWith('paket');
-        paketToggle.classList.toggle('active', isPaket);
-        if (isPaket) {
-          paketToggle.setAttribute('aria-current', 'page');
-        } else {
-          paketToggle.removeAttribute('aria-current');
-        }
-      }
-    } catch (e) {}
-  };
-
-  const prefetchUrl = async (url) => {
-    if (!url || pageCache.has(url)) return;
+  // ----- Instant Page Prefetcher (Zero-latency navigation, eliminates white blink) -----
+  const prefetchedUrls = new Set();
+  const prefetchLink = (url) => {
+    if (!url || prefetchedUrls.has(url)) return;
     try {
       const parsed = new URL(url, window.location.href);
       if (parsed.origin !== window.location.origin) return;
-      if (parsed.pathname === window.location.pathname && !parsed.hash) return;
-      const res = await fetch(parsed.href);
-      if (res.ok) {
-        const text = await res.text();
-        pageCache.set(url, text);
-        pageCache.set(parsed.pathname, text);
-        pageCache.set(parsed.href, text);
-      }
+      if (parsed.pathname === window.location.pathname) return;
+      prefetchedUrls.add(url);
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = parsed.href;
+      link.as = 'document';
+      document.head.appendChild(link);
     } catch (e) {}
   };
 
-  const attachPrefetchHandlers = () => {
+  const attachLinkPrefetch = () => {
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
-      a.addEventListener('pointerenter', () => prefetchUrl(href), { passive: true, once: true });
-      a.addEventListener('touchstart', () => prefetchUrl(href), { passive: true, once: true });
+      a.addEventListener('pointerenter', () => prefetchLink(href), { passive: true, once: true });
+      a.addEventListener('touchstart', () => prefetchLink(href), { passive: true, once: true });
     });
   };
 
-  attachPrefetchHandlers();
-
-  // Instant Page Swap Handler
-  const swapToPage = async (url, pushHistory = true) => {
-    try {
-      let htmlText = pageCache.get(url) || pageCache.get(new URL(url, window.location.href).href);
-      if (!htmlText) {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        htmlText = await res.text();
-        pageCache.set(url, htmlText);
-      }
-
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlText, 'text/html');
-
-      const newMain = doc.querySelector('main#main-content');
-      const currentMain = document.querySelector('main#main-content');
-      if (!newMain || !currentMain) {
-        window.location.href = url;
-        return;
-      }
-
-      const performSwap = () => {
-        // Update Title
-        if (doc.title) document.title = doc.title;
-
-        // Swap Main Content
-        currentMain.innerHTML = newMain.innerHTML;
-
-        // Inject any stylesheet from new page if not already loaded
-        doc.querySelectorAll('link[rel="stylesheet"], link[as="style"]').forEach(l => {
-          const href = l.getAttribute('href');
-          if (href && !document.querySelector('link[href="' + href + '"]')) {
-            const clone = l.cloneNode(true);
-            document.head.appendChild(clone);
-          }
-        });
-
-        // Update active class on navbar
-        updateNavbarActiveState(url);
-
-        // Scroll to top
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-
-        // Close mobile navbar
-        if (isMobile() && navbarCollapse && navbarCollapse.classList.contains('show')) {
-          closeNavbar();
-        }
-
-        // Re-initialize features
-        initPageFeatures();
-        attachPrefetchHandlers();
-      };
-
-      if (document.startViewTransition) {
-        document.startViewTransition(performSwap);
-      } else {
-        performSwap();
-      }
-
-      if (pushHistory) {
-        window.history.pushState({ url: url }, doc.title || '', url);
-      }
-    } catch (err) {
-      window.location.href = url;
-    }
-  };
-
-  // Intercept internal link clicks to deliver ZERO JEDA navigation
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-    if (e.defaultPrevented) return;
-    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (link.getAttribute('target') === '_blank') return;
-    if (link.classList.contains('dropdown-toggle')) return;
-
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
-
-    try {
-      const parsed = new URL(href, window.location.href);
-      if (parsed.origin !== window.location.origin) return;
-
-      // Same page anchor link
-      if (parsed.pathname === window.location.pathname) {
-        if (parsed.hash) return; // handled by anchor scroll
-        e.preventDefault();
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        return;
-      }
-
-      e.preventDefault();
-      swapToPage(href, true);
-    } catch (err) {
-      // Allow default navigation
-    }
-  });
-
-  // Handle browser back and forward button
-  window.addEventListener('popstate', (e) => {
-    swapToPage(window.location.href, false);
-  });
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(attachLinkPrefetch);
+  } else {
+    setTimeout(attachLinkPrefetch, 200);
+  }
 });
+
