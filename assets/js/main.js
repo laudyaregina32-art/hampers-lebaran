@@ -133,26 +133,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isOpen = menu.classList.contains('show') || (parentDropdown && parentDropdown.classList.contains('show'));
 
-        // Tutup semua dropdown dulu
-        closeAllDropdowns();
-
-        // Jika sebelumnya tutup → buka; jika sudah buka → biarkan tertutup
-        if (!isOpen) {
+        if (isOpen) {
+          closeDropdown(this, menu, parentDropdown);
+        } else {
+          closeAllDropdowns();
           openDropdown(this, menu, parentDropdown);
         }
       });
     });
 
-    // Otomatis tutup navbar saat link navigasi atau dropdown item di-klik
-    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .hl-btn-wa');
+    // Otomatis tutup navbar HANYA untuk anchor link di halaman yang sama (misal #portofolio)
+    // Jangan batalkan navigasi untuk link halaman (.dropdown-item & halaman lain) agar selalu bisa di-klik di mobile
+    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .hl-btn-wa');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (isMobile()) {
-          closeNavbar();
-          if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse) {
-              bsCollapse.hide();
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          if (isMobile()) {
+            closeNavbar();
+            if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+              const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              }
             }
           }
         }
