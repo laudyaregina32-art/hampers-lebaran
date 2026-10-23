@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchmove', handleScroll, { passive: true });
   }
 
-  // ----- Instant Page Prefetcher (Zero-latency navigation, eliminates white blink) -----
+  // ----- Instant Page Prefetcher & Prerender (Zero-latency navigation, eliminates white blink) -----
   const prefetchedUrls = new Set();
   const prefetchLink = (url) => {
     if (!url || prefetchedUrls.has(url)) return;
@@ -394,19 +394,41 @@ document.addEventListener('DOMContentLoaded', () => {
       if (parsed.origin !== window.location.origin) return;
       if (parsed.pathname === window.location.pathname) return;
       prefetchedUrls.add(url);
+
       const link = document.createElement('link');
       link.rel = 'prefetch';
       link.href = parsed.href;
       link.as = 'document';
       document.head.appendChild(link);
+
+      const prerender = document.createElement('link');
+      prerender.rel = 'prerender';
+      prerender.href = parsed.href;
+      document.head.appendChild(prerender);
     } catch (e) {}
   };
 
   const attachLinkPrefetch = () => {
+    // Immediately prefetch primary navigation targets for instant 0ms switching
+    const primaryNavUrls = [
+      'index.html',
+      'tentang.html',
+      'paket.html',
+      'portofolio.html',
+      'blog.html',
+      'kontak.html',
+      'paket-hampers-premium.html',
+      'paket-hampers-kue-camilan.html',
+      'paket-hampers-perlengkapan-ibadah.html',
+      'paket-hampers-custom.html'
+    ];
+    primaryNavUrls.forEach(url => prefetchLink(url));
+
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
       a.addEventListener('pointerenter', () => prefetchLink(href), { passive: true, once: true });
+      a.addEventListener('pointerdown', () => prefetchLink(href), { passive: true, once: true });
       a.addEventListener('touchstart', () => prefetchLink(href), { passive: true, once: true });
     });
   };
@@ -414,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('requestIdleCallback' in window) {
     requestIdleCallback(attachLinkPrefetch);
   } else {
-    setTimeout(attachLinkPrefetch, 200);
+    setTimeout(attachLinkPrefetch, 100);
   }
 });
 
