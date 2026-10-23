@@ -241,202 +241,347 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ----- Product image thumbnails -----
-  const thumbs = document.querySelectorAll('.hl-product-thumb');
-  const mainImgWrap = document.querySelector('.hl-product-main-img');
-  if (thumbs.length && mainImgWrap) {
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-        const img = thumb.querySelector('img');
-        const mainImg = mainImgWrap.querySelector('img');
-        if (img && mainImg) {
-          mainImg.src = img.src;
-        }
+  // ===== Page Interactivity Initializer =====
+  const initPageInteractivity = () => {
+    // 1. WhatsApp messages & current year
+    document.querySelectorAll('[data-wa-message]').forEach(el => {
+      const msg = el.dataset.waMessage;
+      if (msg) el.href = buildWAUrl(msg);
+    });
+    document.querySelectorAll('.js-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+
+    // 2. Product image thumbnails
+    const thumbs = document.querySelectorAll('.hl-product-thumb');
+    const mainImgWrap = document.querySelector('.hl-product-main-img');
+    if (thumbs.length && mainImgWrap) {
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          thumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          const img = thumb.querySelector('img');
+          const mainImg = mainImgWrap.querySelector('img');
+          if (img && mainImg) {
+            mainImg.src = img.src;
+          }
+        });
+        thumb.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            thumb.click();
+          }
+        });
       });
-      thumb.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
+    }
+
+    // 3. Smooth scroll untuk anchor links (navbar offset)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#' || href.length < 2) return;
+        try {
+          const target = document.querySelector(href);
+          if (!target) return;
           e.preventDefault();
-          thumb.click();
+          const navH = navbar ? navbar.offsetHeight : 0;
+          const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+          window.scrollTo({ top, behavior: 'smooth' });
+        } catch (err) {}
+      });
+    });
+
+    // 4. Accordion FAQ
+    document.querySelectorAll('.hl-accordion .accordion-button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) return;
+        e.preventDefault();
+        const targetSel = this.getAttribute('data-bs-target') || this.getAttribute('href');
+        if (!targetSel) return;
+        const targetEl = document.querySelector(targetSel);
+        if (!targetEl) return;
+        const isExpanded = this.getAttribute('aria-expanded') === 'true' || targetEl.classList.contains('show');
+        const parentSel = targetEl.getAttribute('data-bs-parent');
+        if (parentSel && !isExpanded) {
+          const parentEl = document.querySelector(parentSel);
+          if (parentEl) {
+            parentEl.querySelectorAll('.accordion-collapse.show').forEach(openEl => {
+              if (openEl !== targetEl) {
+                openEl.classList.remove('show');
+                const otherBtn = parentEl.querySelector(`[data-bs-target="#${openEl.id}"], [href="#${openEl.id}"]`);
+                if (otherBtn) {
+                  otherBtn.classList.add('collapsed');
+                  otherBtn.setAttribute('aria-expanded', 'false');
+                }
+              }
+            });
+          }
+        }
+        if (isExpanded) {
+          targetEl.classList.remove('show');
+          this.classList.add('collapsed');
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          targetEl.classList.add('show');
+          this.classList.remove('collapsed');
+          this.setAttribute('aria-expanded', 'true');
         }
       });
     });
-  }
 
-  // ----- Smooth scroll untuk anchor links (navbar offset) -----
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#' || href.length < 2) return;
-      try {
-        const target = document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        const navH = navbar ? navbar.offsetHeight : 0;
-        const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
-        window.scrollTo({ top, behavior: 'smooth' });
-      } catch (err) {
-        // Abaikan jika bukan query selector valid
+    // 5. Portfolio keyboard accessibility
+    document.querySelectorAll('.hl-portfolio-item').forEach(item => {
+      const link = item.querySelector('a');
+      if (link) {
+        item.setAttribute('tabindex', '0');
+        item.addEventListener('keydown', e => {
+          if (e.key === 'Enter') link.click();
+        });
       }
     });
-  });
 
-  // ----- Accordion Interactivity Fallback -----
-  // Memastikan semua tombol FAQ selalu bisa dipencet & membuka jawaban
-  document.querySelectorAll('.hl-accordion .accordion-button').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      // Jika Bootstrap Collapse sudah aktif dan bekerja via bootstrap bundle, delegasikan ke Bootstrap
-      if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+    // 6. Back to Top Buttons
+    const backToTopBtn = document.getElementById('hlBackToTop');
+    const allBackToTopBtns = document.querySelectorAll('.js-back-to-top, #hlBackToTop, .hl-footer-btt');
+    const scrollToTop = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    };
+
+    allBackToTopBtns.forEach(btn => {
+      btn.addEventListener('click', scrollToTop);
+      btn.addEventListener('touchend', scrollToTop, { passive: true });
+    });
+
+    if (backToTopBtn) {
+      let tickingBtt = false;
+      const toggleBackToTop = () => {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (scrollY > 250) {
+          backToTopBtn.classList.add('is-visible');
+        } else {
+          backToTopBtn.classList.remove('is-visible');
+        }
+        tickingBtt = false;
+      };
+
+      const handleScroll = () => {
+        if (!tickingBtt) {
+          requestAnimationFrame(toggleBackToTop);
+          tickingBtt = true;
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('touchmove', handleScroll, { passive: true });
+    }
+  };
+
+  // Run initial interactivity
+  initPageInteractivity();
+
+  // ===== Instant Zero-Delay Seamless Page Router (0ms Switching) =====
+  const pageCache = new Map();
+
+  const getPageFilename = (href) => {
+    try {
+      const u = new URL(href, window.location.href);
+      let f = u.pathname.split('/').pop() || 'index.html';
+      if (!f || f === '') f = 'index.html';
+      return f;
+    } catch (e) {
+      return 'index.html';
+    }
+  };
+
+  const updateNavbarActive = (targetHref) => {
+    const filename = getPageFilename(targetHref);
+
+    document.querySelectorAll('.hl-navbar .nav-link:not(.dropdown-toggle), .hl-navbar .dropdown-item').forEach(link => {
+      const h = link.getAttribute('href');
+      if (!h) return;
+      const linkFile = getPageFilename(h);
+
+      if (linkFile === filename) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    });
+
+    const paketToggle = document.getElementById('navDropdownPaket');
+    if (paketToggle) {
+      const isPaket = filename.startsWith('paket');
+      paketToggle.classList.toggle('active', isPaket);
+      if (isPaket) {
+        paketToggle.setAttribute('aria-current', 'page');
+      } else {
+        paketToggle.removeAttribute('aria-current');
+      }
+    }
+  };
+
+  const cachePageHtml = (url, htmlText) => {
+    pageCache.set(url, htmlText);
+    try {
+      const u = new URL(url, window.location.href);
+      pageCache.set(u.pathname, htmlText);
+      pageCache.set(u.href, htmlText);
+      const filename = u.pathname.split('/').pop();
+      if (filename) pageCache.set(filename, htmlText);
+    } catch (e) {}
+  };
+
+  // Seed current page into cache
+  cachePageHtml(window.location.href, document.documentElement.outerHTML);
+
+  const fetchAndCachePage = async (url) => {
+    if (!url || pageCache.has(url)) return;
+    try {
+      const res = await fetch(url);
+      if (res.ok) {
+        const text = await res.text();
+        cachePageHtml(url, text);
+      }
+    } catch (e) {}
+  };
+
+  // Pre-cache all core pages immediately
+  const primaryNavUrls = [
+    'index.html',
+    'tentang.html',
+    'paket.html',
+    'portofolio.html',
+    'blog.html',
+    'kontak.html',
+    'paket-hampers-premium.html',
+    'paket-hampers-kue-camilan.html',
+    'paket-hampers-perlengkapan-ibadah.html',
+    'paket-hampers-custom.html'
+  ];
+  primaryNavUrls.forEach(url => fetchAndCachePage(url));
+
+  const navigateToPage = async (url, pushHistory = true) => {
+    try {
+      // 1. INSTANT 0ms VISUAL FEEDBACK: Update navbar active line immediately!
+      updateNavbarActive(url);
+
+      // Close mobile navbar if open
+      if (typeof closeNavbar === 'function' && navbarCollapse && navbarCollapse.classList.contains('show')) {
+        closeNavbar();
+      }
+
+      // Close open dropdowns
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
+
+      // 2. Retrieve page from memory cache or fetch
+      let htmlText = pageCache.get(url) || pageCache.get(getPageFilename(url));
+      if (!htmlText) {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        htmlText = await res.text();
+        cachePageHtml(url, htmlText);
+      }
+
+      const parser = new DOMParser();
+      const newDoc = parser.parseFromString(htmlText, 'text/html');
+
+      const newMain = newDoc.querySelector('main#main-content');
+      const currentMain = document.querySelector('main#main-content');
+      if (!newMain || !currentMain) {
+        window.location.href = url;
+        return;
+      }
+
+      const performSwap = () => {
+        // Update Title
+        if (newDoc.title) document.title = newDoc.title;
+
+        // Ensure all stylesheets from target page exist
+        newDoc.head.querySelectorAll('link[rel="stylesheet"]').forEach(l => {
+          const href = l.getAttribute('href');
+          if (href && !document.head.querySelector('link[href="' + href + '"]')) {
+            document.head.appendChild(l.cloneNode(true));
+          }
+        });
+
+        // Swap main content
+        currentMain.innerHTML = newMain.innerHTML;
+
+        // Scroll immediately to top
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+        // Re-bind interactive handlers for the new page
+        initPageInteractivity();
+
+        // Update clean URL in address bar if supported
+        try {
+          if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) {
+            let p = window.location.pathname;
+            if (p.endsWith('.html')) {
+              let c = p.slice(0, -5);
+              if (c.endsWith('/index') || c === 'index' || c === '/index') {
+                c = c.replace(/\/index$/, '') || '/';
+              }
+              window.history.replaceState(null, document.title, c + window.location.search + window.location.hash);
+            }
+          }
+        } catch (e) {}
+      };
+
+      if (document.startViewTransition) {
+        document.startViewTransition(performSwap);
+      } else {
+        performSwap();
+      }
+
+      if (pushHistory) {
+        window.history.pushState({ url: url }, newDoc.title || '', url);
+      }
+    } catch (err) {
+      window.location.href = url;
+    }
+  };
+
+  // Intercept internal link clicks for 0ms Instant Navigation
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    if (e.defaultPrevented) return;
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (link.getAttribute('target') === '_blank') return;
+    if (link.classList.contains('dropdown-toggle')) return;
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
+
+    try {
+      const parsed = new URL(href, window.location.href);
+      if (parsed.origin !== window.location.origin) return;
+
+      // Same page
+      if (getPageFilename(parsed.href) === getPageFilename(window.location.href)) {
+        if (parsed.hash) return;
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
 
       e.preventDefault();
-      const targetSel = this.getAttribute('data-bs-target') || this.getAttribute('href');
-      if (!targetSel) return;
-
-      const targetEl = document.querySelector(targetSel);
-      if (!targetEl) return;
-
-      const isExpanded = this.getAttribute('aria-expanded') === 'true' || targetEl.classList.contains('show');
-      const parentSel = targetEl.getAttribute('data-bs-parent');
-
-      // Tutup item lain dalam accordion yang sama jika single-open (accordion parent)
-      if (parentSel && !isExpanded) {
-        const parentEl = document.querySelector(parentSel);
-        if (parentEl) {
-          parentEl.querySelectorAll('.accordion-collapse.show').forEach(openEl => {
-            if (openEl !== targetEl) {
-              openEl.classList.remove('show');
-              const otherBtn = parentEl.querySelector(`[data-bs-target="#${openEl.id}"], [href="#${openEl.id}"]`);
-              if (otherBtn) {
-                otherBtn.classList.add('collapsed');
-                otherBtn.setAttribute('aria-expanded', 'false');
-              }
-            }
-          });
-        }
-      }
-
-      if (isExpanded) {
-        targetEl.classList.remove('show');
-        this.classList.add('collapsed');
-        this.setAttribute('aria-expanded', 'false');
-      } else {
-        targetEl.classList.add('show');
-        this.classList.remove('collapsed');
-        this.setAttribute('aria-expanded', 'true');
-      }
-    });
+      navigateToPage(href, true);
+    } catch (err) {}
   });
 
-  // ----- Portfolio image overlay keyboard accessibility -----
-  document.querySelectorAll('.hl-portfolio-item').forEach(item => {
-    const link = item.querySelector('a');
-    if (link) {
-      item.setAttribute('tabindex', '0');
-      item.addEventListener('keydown', e => {
-        if (e.key === 'Enter') link.click();
-      });
-    }
+  // Handle browser back/forward buttons seamlessly
+  window.addEventListener('popstate', () => {
+    navigateToPage(window.location.href, false);
   });
-
-  // ----- Back to Top Button Controllers (Floating & Footer) -----
-  const backToTopBtn = document.getElementById('hlBackToTop');
-  const allBackToTopBtns = document.querySelectorAll('.js-back-to-top, #hlBackToTop, .hl-footer-btt');
-
-  const scrollToTop = (e) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  allBackToTopBtns.forEach(btn => {
-    btn.addEventListener('click', scrollToTop);
-    btn.addEventListener('touchend', scrollToTop, { passive: true });
-  });
-
-  if (backToTopBtn) {
-    let tickingBtt = false;
-    const toggleBackToTop = () => {
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
-      if (scrollY > 250) {
-        backToTopBtn.classList.add('is-visible');
-      } else {
-        backToTopBtn.classList.remove('is-visible');
-      }
-      tickingBtt = false;
-    };
-
-    const handleScroll = () => {
-      if (!tickingBtt) {
-        requestAnimationFrame(toggleBackToTop);
-        tickingBtt = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('touchmove', handleScroll, { passive: true });
-  }
-
-  // ----- Instant Page Prefetcher & Prerender (Zero-latency navigation, eliminates white blink) -----
-  const prefetchedUrls = new Set();
-  const prefetchLink = (url) => {
-    if (!url || prefetchedUrls.has(url)) return;
-    try {
-      const parsed = new URL(url, window.location.href);
-      if (parsed.origin !== window.location.origin) return;
-      if (parsed.pathname === window.location.pathname) return;
-      prefetchedUrls.add(url);
-
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = parsed.href;
-      link.as = 'document';
-      document.head.appendChild(link);
-
-      const prerender = document.createElement('link');
-      prerender.rel = 'prerender';
-      prerender.href = parsed.href;
-      document.head.appendChild(prerender);
-    } catch (e) {}
-  };
-
-  const attachLinkPrefetch = () => {
-    // Immediately prefetch primary navigation targets for instant 0ms switching
-    const primaryNavUrls = [
-      'index.html',
-      'tentang.html',
-      'paket.html',
-      'portofolio.html',
-      'blog.html',
-      'kontak.html',
-      'paket-hampers-premium.html',
-      'paket-hampers-kue-camilan.html',
-      'paket-hampers-perlengkapan-ibadah.html',
-      'paket-hampers-custom.html'
-    ];
-    primaryNavUrls.forEach(url => prefetchLink(url));
-
-    document.querySelectorAll('a[href]').forEach(a => {
-      const href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
-      a.addEventListener('pointerenter', () => prefetchLink(href), { passive: true, once: true });
-      a.addEventListener('pointerdown', () => prefetchLink(href), { passive: true, once: true });
-      a.addEventListener('touchstart', () => prefetchLink(href), { passive: true, once: true });
-    });
-  };
-
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(attachLinkPrefetch);
-  } else {
-    setTimeout(attachLinkPrefetch, 100);
-  }
 });
 

@@ -839,7 +839,10 @@
   <noscript>
     <link rel="stylesheet" href="assets/css/home.min.css">
   </noscript>
-  <link rel="prefetch" href="assets/css/main.min.css" as="style">
+  <link rel="preload" href="assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="assets/css/main.min.css">
+  </noscript>
 
 
 
