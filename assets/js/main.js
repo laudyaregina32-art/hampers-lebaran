@@ -58,29 +58,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----- Mobile Navbar Controller & Resilience Handler -----
   const navbarCollapse = document.getElementById('navbarMain');
   const navbarToggler = document.querySelector('.navbar-toggler');
+  const isMobile = () => window.matchMedia('(max-width: 991.98px)').matches;
+  let closeNavbar = () => {};
+  let closeAllDropdowns = () => {};
 
   if (navbarCollapse && navbarToggler) {
-    const isMobile = () => window.matchMedia('(max-width: 991.98px)').matches;
-
     const openNavbar = () => {
       navbarCollapse.classList.add('show');
       navbarToggler.setAttribute('aria-expanded', 'true');
       navbarToggler.classList.add('is-active');
     };
 
-    const closeNavbar = () => {
-      navbarCollapse.classList.remove('show');
-      navbarToggler.setAttribute('aria-expanded', 'false');
-      navbarToggler.classList.remove('is-active');
-
-      // Tutup semua submenu dropdown di dalam navbar saat collapse ditutup
-      navbarCollapse.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-        menu.classList.remove('show');
-      });
-      navbarCollapse.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(btn => {
-        btn.setAttribute('aria-expanded', 'false');
-        btn.classList.remove('show');
-      });
+    closeNavbar = () => {
+      if (navbarCollapse) {
+        navbarCollapse.classList.remove('show');
+        navbarCollapse.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+          menu.classList.remove('show');
+        });
+        navbarCollapse.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(btn => {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.classList.remove('show');
+        });
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse) {
+            try { bsCollapse.hide(); } catch (e) {}
+          }
+        }
+      }
+      if (navbarToggler) {
+        navbarToggler.setAttribute('aria-expanded', 'false');
+        navbarToggler.classList.remove('is-active');
+      }
+      if (document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
     };
 
     const toggleNavbar = () => {
@@ -133,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (parentDropdown) parentDropdown.classList.remove('show');
     };
 
-    const closeAllDropdowns = () => {
+    closeAllDropdowns = () => {
       dropdownToggles.forEach(t => {
         const pd = t.closest('.dropdown');
         const m = pd ? pd.querySelector('.dropdown-menu') : null;
@@ -161,22 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Otomatis tutup navbar HANYA untuk anchor link di halaman yang sama (misal #portofolio)
-    // Jangan batalkan navigasi untuk link halaman (.dropdown-item & halaman lain) agar selalu bisa di-klik di mobile
-    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .hl-btn-wa');
+    // Otomatis tutup navbar saat link menu apa pun di-klik di mobile agar tidak menutupi teks
+    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .hl-btn-wa');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          if (isMobile()) {
-            closeNavbar();
-            if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
-              const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-              if (bsCollapse) {
-                bsCollapse.hide();
-              }
-            }
-          }
+        if (isMobile()) {
+          closeNavbar();
         }
       });
     });
@@ -471,15 +473,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // 1. INSTANT 0ms VISUAL FEEDBACK: Update navbar active line immediately!
       updateNavbarActive(url);
 
-      // Close mobile navbar if open
-      if (typeof closeNavbar === 'function' && navbarCollapse && navbarCollapse.classList.contains('show')) {
-        closeNavbar();
-      }
-
-      // Close open dropdowns
-      if (typeof closeAllDropdowns === 'function') {
-        closeAllDropdowns();
-      }
+      // Close mobile navbar immediately so it never covers page text
+      closeNavbar();
+      closeAllDropdowns();
 
       // 2. Retrieve page from memory cache or fetch
       let htmlText = pageCache.get(url) || pageCache.get(getPageFilename(url));
@@ -568,6 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Same page
       if (getPageFilename(parsed.href) === getPageFilename(window.location.href)) {
+        closeNavbar();
         if (parsed.hash) return;
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
