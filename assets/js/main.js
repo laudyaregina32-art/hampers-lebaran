@@ -143,10 +143,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Otomatis tutup navbar saat link navigasi atau dropdown item di-klik
-    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .hl-btn-wa');
+    // Otomatis tutup navbar & dropdown saat link navigasi atau dropdown item di-klik
+    const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle), .hl-btn-wa');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
+        closeAllDropdowns();
+        if (isMobile()) {
+          closeNavbar();
+          if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          }
+        }
+      });
+    });
+
+    const dropdownItems = navbarCollapse.querySelectorAll('.dropdown-item');
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', () => {
+        closeAllDropdowns();
         if (isMobile()) {
           closeNavbar();
           if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
@@ -184,14 +201,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Tutup dengan tombol Escape
+    // Tutup dengan tombol Escape di desktop maupun mobile
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isMobile() && navbarCollapse.classList.contains('show')) {
-        closeNavbar();
-        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-          if (bsCollapse) {
-            bsCollapse.hide();
+      if (e.key === 'Escape') {
+        closeAllDropdowns();
+        if (isMobile() && navbarCollapse.classList.contains('show')) {
+          closeNavbar();
+          if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
           }
         }
       }
