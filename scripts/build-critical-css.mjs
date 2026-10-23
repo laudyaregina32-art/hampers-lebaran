@@ -25,8 +25,24 @@ const criticalRaw = `
   --hl-font-serif: "Playfair Display", Georgia, serif;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+@view-transition { navigation: auto; }
+html {
+  background-color: var(--hl-bg);
+  scroll-behavior: smooth;
+}
+header {
+  view-transition-name: main-header;
+}
+::view-transition-old(root) { animation: 160ms ease-out both hlFadeOut; }
+::view-transition-new(root) { animation: 200ms ease-in both hlFadeIn; }
+@keyframes hlFadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes hlFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  main#main-content { animation: hlPageFadeIn 0.2s ease-out; }
+}
+@keyframes hlPageFadeIn { from { opacity: 0.9; } to { opacity: 1; } }
 body {
+
   margin: 0;
   background: var(--hl-bg);
   color: var(--hl-text);
@@ -432,6 +448,21 @@ h2.hl-heading { font-size: clamp(1.85rem, 3.4vw, 2.55rem); }
   padding-block: clamp(2.75rem, 5vw, 4.25rem);
   margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
+.hl-page-header .hl-heading {
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--hl-text);
+}
+.hl-page-header__desc {
+  color: var(--hl-text-muted);
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  max-width: 620px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
 .hl-breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -446,6 +477,20 @@ h2.hl-heading { font-size: clamp(1.85rem, 3.4vw, 2.55rem); }
   border: 1px solid var(--hl-border);
   border-radius: 100px;
 }
+.hl-breadcrumb li { display: inline-flex; align-items: center; }
+.hl-breadcrumb li + li::before {
+  content: '›';
+  margin-right: 0.4rem;
+  margin-left: 0.2rem;
+  color: var(--hl-gray);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.hl-breadcrumb [aria-current="page"] {
+  color: var(--hl-accent-dark);
+  font-weight: 600;
+}
+
 `;
 
 const minCritical = new CleanCSS({ level: 2 }).minify(criticalRaw);
