@@ -385,39 +385,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Run initial interactivity
   initPageInteractivity();
 
-  // ===== Instant Link Prefetcher (Zero Delay, Native Paint Holding, No White Flash) =====
-  const prefetchedUrls = new Set();
-
-  const prefetchUrl = (url) => {
-    if (!url || prefetchedUrls.has(url)) return;
-    try {
-      const parsed = new URL(url, window.location.href);
-      if (parsed.origin !== window.location.origin) return;
-      if (parsed.pathname === window.location.pathname) return;
-
-      prefetchedUrls.add(url);
-      prefetchedUrls.add(parsed.href);
-
-      // Gunakan link rel=prefetch browser standar
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = parsed.href;
-      link.as = 'document';
-      document.head.appendChild(link);
-    } catch (e) {}
-  };
-
-  // Prefetch saat kursor mendekati link atau tombol disentuh (intent-based prefetching)
-  const handleLinkIntent = (e) => {
-    const a = e.target.closest('a');
-    if (!a) return;
-    const href = a.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
-    prefetchUrl(href);
-  };
-
-  document.addEventListener('mouseover', handleLinkIntent, { passive: true });
-  document.addEventListener('touchstart', handleLinkIntent, { passive: true });
-  document.addEventListener('pointerdown', handleLinkIntent, { passive: true });
 });
 
