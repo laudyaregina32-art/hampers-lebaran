@@ -753,46 +753,56 @@
 
     .hl-trust-strip {
       background: var(--hl-warm);
-      padding: clamp(1.25rem, 3vw, 1.6rem) 0;
+      padding: clamp(1.15rem, 2.5vw, 1.5rem) 0;
       border-top: 1px solid rgba(213, 214, 208, .7);
       border-bottom: 1px solid rgba(213, 214, 208, .7)
     }
 
     .hl-trust-container {
-      display: flex;
-      flex-direction: column;
-      gap: .65rem;
-      max-width: 360px;
-      margin-inline: auto
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.15rem;
+      width: 100%;
+      margin: 0
     }
 
     .hl-trust-item {
       display: flex;
       align-items: center;
-      gap: .85rem;
-      background: rgba(255, 255, 255, .75);
-      backdrop-filter: blur(4px);
+      gap: .75rem;
+      background: rgba(255, 255, 255, .82);
+      backdrop-filter: blur(6px);
       border: 1px solid rgba(213, 214, 208, .9);
       border-radius: 12px;
-      padding: .65rem 1.05rem;
+      padding: .75rem 1rem;
       box-shadow: 0 2px 8px rgba(40, 42, 39, .04);
-      transition: transform .2s ease, box-shadow .2s ease
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
     }
 
-    .hl-trust-num {
-      font-family: var(--hl-font-serif);
-      font-weight: 700;
-      font-size: .82rem;
-      letter-spacing: .05em;
-      color: var(--hl-accent-dark);
-      background: var(--hl-warm);
-      border: 1px solid rgba(184, 151, 61, .35);
-      width: 32px;
-      height: 32px;
+    .hl-trust-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(40, 42, 39, .08);
+      border-color: var(--hl-accent)
+    }
+
+    .hl-trust-icon {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
+      background: var(--hl-surface);
+      border: 1px solid rgba(184, 151, 61, .35);
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--hl-accent-dark);
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(40, 42, 39, .04)
+    }
+
+    .hl-trust-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--hl-accent-dark);
       flex-shrink: 0
     }
 
@@ -803,55 +813,40 @@
       line-height: 1.35
     }
 
-    @media (min-width: 768px) {
+    @media (max-width: 991.98px) {
       .hl-trust-container {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        max-width: 680px;
-        gap: .85rem 1.25rem
-      }
-    }
-
-    @media (min-width: 992px) {
-      .hl-trust-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        max-width: 100%;
-        gap: 1.75rem
+        gap: .85rem
       }
 
       .hl-trust-item {
-        background: transparent;
-        backdrop-filter: none;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        box-shadow: none;
-        position: relative
+        padding: .7rem .85rem
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hl-trust-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .6rem
       }
 
-      .hl-trust-item:not(:last-child)::after {
-        content: "•";
-        position: absolute;
-        right: -1rem;
-        color: rgba(184, 151, 61, .6);
-        font-size: 1.1rem;
-        pointer-events: none
+      .hl-trust-item {
+        padding: .6rem .65rem;
+        gap: .55rem
       }
 
-      .hl-trust-num {
-        background: var(--hl-surface);
-        border: 1px solid rgba(184, 151, 61, .4);
-        width: 28px;
-        height: 28px;
-        font-size: .78rem
+      .hl-trust-icon {
+        width: 30px;
+        height: 30px
+      }
+
+      .hl-trust-icon svg {
+        width: 15px;
+        height: 15px
       }
 
       .hl-trust-label {
-        font-size: .95rem;
-        color: var(--hl-accent-dark)
+        font-size: .78rem
       }
     }
 
@@ -1187,19 +1182,44 @@
       <div class="container">
         <div class="hl-trust-container">
           <div class="hl-trust-item">
-            <span class="hl-trust-num">01</span>
+            <div class="hl-trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="8" width="18" height="4" rx="1"/>
+                <path d="M12 8v13"/>
+                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/>
+                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 4.8 0 0 1 12 8a4.8 4.8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>
+              </svg>
+            </div>
             <span class="hl-trust-label">Kemasan Premium &amp; Elegan</span>
           </div>
           <div class="hl-trust-item">
-            <span class="hl-trust-num">02</span>
+            <div class="hl-trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                <path d="m15 5 3 3"/>
+              </svg>
+            </div>
             <span class="hl-trust-label">Opsi Personalisasi Tersedia</span>
           </div>
           <div class="hl-trust-item">
-            <span class="hl-trust-num">03</span>
+            <div class="hl-trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
             <span class="hl-trust-label">Melayani Pesanan Korporat</span>
           </div>
           <div class="hl-trust-item">
-            <span class="hl-trust-num">04</span>
+            <div class="hl-trust-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M8 10h.01"/>
+                <path d="M12 10h.01"/>
+                <path d="M16 10h.01"/>
+              </svg>
+            </div>
             <span class="hl-trust-label">Konsultasi via WhatsApp</span>
           </div>
         </div>
