@@ -1,4 +1,14 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/paket-hampers-premium", "destination": "/paket/hampers-premium", "permanent": true },
+    { "source": "/paket-hampers-kue-camilan", "destination": "/paket/hampers-kue-camilan", "permanent": true },
+    { "source": "/paket-hampers-perlengkapan-ibadah", "destination": "/paket/hampers-perlengkapan-ibadah", "permanent": true },
+    { "source": "/paket-hampers-custom", "destination": "/paket/hampers-custom", "permanent": true },
+    { "source": "/blog-hampers-lebaran-korporat", "destination": "/blog/hampers-lebaran-korporat", "permanent": true },
+    { "source": "/blog-kue-kering-lebaran-populer", "destination": "/blog/kue-kering-lebaran-populer", "permanent": true },
+    { "source": "/blog-tips-memilih-hampers-lebaran", "destination": "/blog/tips-memilih-hampers-lebaran", "permanent": true },
+    { "source": "/blog-tren-kemasan-hampers", "destination": "/blog/tren-kemasan-hampers", "permanent": true }
+  ]
 }

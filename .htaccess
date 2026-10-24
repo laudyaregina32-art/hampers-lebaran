@@ -6,15 +6,26 @@
   RewriteEngine On
   RewriteBase /
 
-  # 1. Redirect URL yang mengandung .html ke URL bersih tanpa .html (301 Permanent)
-  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
+  # 1. 301 Redirects: Old flat URLs to new subfolder URLs
+  RewriteRule ^paket-hampers-premium(\.html)?$ /paket/hampers-premium [R=301,L]
+  RewriteRule ^paket-hampers-kue-camilan(\.html)?$ /paket/hampers-kue-camilan [R=301,L]
+  RewriteRule ^paket-hampers-perlengkapan-ibadah(\.html)?$ /paket/hampers-perlengkapan-ibadah [R=301,L]
+  RewriteRule ^paket-hampers-custom(\.html)?$ /paket/hampers-custom [R=301,L]
+
+  RewriteRule ^blog-hampers-lebaran-korporat(\.html)?$ /blog/hampers-lebaran-korporat [R=301,L]
+  RewriteRule ^blog-kue-kering-lebaran-populer(\.html)?$ /blog/kue-kering-lebaran-populer [R=301,L]
+  RewriteRule ^blog-tips-memilih-hampers-lebaran(\.html)?$ /blog/tips-memilih-hampers-lebaran [R=301,L]
+  RewriteRule ^blog-tren-kemasan-hampers(\.html)?$ /blog/tren-kemasan-hampers [R=301,L]
+
+  # 2. Redirect URL yang mengandung .html ke URL bersih tanpa .html (301 Permanent)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/(.+)\.html [NC]
   RewriteRule ^ %1 [R=301,L]
 
-  # 2. Redirect /index ke root /
+  # 3. Redirect /index ke root /
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index [NC]
   RewriteRule ^ / [R=301,L]
 
-  # 3. Serve file .html jika URL diakses tanpa ekstensi
+  # 4. Serve file .html jika URL diakses tanpa ekstensi
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}\.html -f
   RewriteRule ^(.*)$ $1.html [L]

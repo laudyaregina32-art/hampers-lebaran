@@ -1,6 +1,6 @@
 # 📊 Laporan Audit Structured Data & JSON-LD
 **Proyek:** Hampers Lebaran (*hamperslebaran.biz.id*)  
-**Tanggal Audit:** 2026-10-24 02:25:26 WIB  
+**Tanggal Audit:** 2026-10-24 12:23:54 WIB  
 **Engine Validasi:** `@adobe/structured-data-validator` v1.7.0, `@marbec/web-auto-extractor` v2.2.1, & Schema.org Specification  
 
 ---
@@ -72,37 +72,37 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ## 3. Hasil Audit Rinci per Halaman
 
-### 📄 [blog-hampers-lebaran-korporat.html](file:///C:/hamperslebaran/blog-hampers-lebaran-korporat.html)
+### 📄 [blog/hampers-lebaran-korporat.html](file:///C:/hamperslebaran/blog/hampers-lebaran-korporat.html)
 
 - **Status**: 🟢 **VALID**
-- **Canonical Link**: `https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html`
 - **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
 ---
 
-### 📄 [blog-kue-kering-lebaran-populer.html](file:///C:/hamperslebaran/blog-kue-kering-lebaran-populer.html)
+### 📄 [blog/kue-kering-lebaran-populer.html](file:///C:/hamperslebaran/blog/kue-kering-lebaran-populer.html)
 
 - **Status**: 🟢 **VALID**
-- **Canonical Link**: `https://hamperslebaran.biz.id/blog-kue-kering-lebaran-populer.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/kue-kering-lebaran-populer.html`
 - **Tipe Schema**: `BlogPosting`, `Person`, `Organization`, `ImageObject`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
 ---
 
-### 📄 [blog-tips-memilih-hampers-lebaran.html](file:///C:/hamperslebaran/blog-tips-memilih-hampers-lebaran.html)
+### 📄 [blog/tips-memilih-hampers-lebaran.html](file:///C:/hamperslebaran/blog/tips-memilih-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
-- **Canonical Link**: `https://hamperslebaran.biz.id/blog-tips-memilih-hampers-lebaran.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/tips-memilih-hampers-lebaran.html`
 - **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
 ---
 
-### 📄 [blog-tren-kemasan-hampers.html](file:///C:/hamperslebaran/blog-tren-kemasan-hampers.html)
+### 📄 [blog/tren-kemasan-hampers.html](file:///C:/hamperslebaran/blog/tren-kemasan-hampers.html)
 
 - **Status**: 🟢 **VALID**
-- **Canonical Link**: `https://hamperslebaran.biz.id/blog-tren-kemasan-hampers.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/tren-kemasan-hampers.html`
 - **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
@@ -187,19 +187,19 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket-hampers-custom.html](file:///C:/hamperslebaran/paket-hampers-custom.html)
+### 📄 [paket/hampers-custom.html](file:///C:/hamperslebaran/paket/hampers-custom.html)
 
 - **Status**: 🟢 **VALID**
-- **Canonical Link**: `https://hamperslebaran.biz.id/paket-hampers-custom.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-custom.html`
 - **Tipe Schema**: `Service`, `ImageObject`, `Organization`, `Country`, `BusinessAudience`, `AggregateOffer`, `BreadcrumbList`, `ListItem`
 - **Jumlah Blok JSON-LD**: 1
 
 ---
 
-### 📄 [paket-hampers-kue-camilan.html](file:///C:/hamperslebaran/paket-hampers-kue-camilan.html)
+### 📄 [paket/hampers-kue-camilan.html](file:///C:/hamperslebaran/paket/hampers-kue-camilan.html)
 
 - **Status**: 🟡 **WARNING**
-- **Canonical Link**: `https://hamperslebaran.biz.id/paket-hampers-kue-camilan.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-kue-camilan.html`
 - **Tipe Schema**: `Product`, `Brand`, `AggregateRating`, `Review`, `Person`, `Rating`, `Offer`, `Organization`, `MerchantReturnPolicy`, `MonetaryAmount`, `OfferShippingDetails`, `DefinedRegion`, `ShippingDeliveryTime`, `QuantitativeValue`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
@@ -224,10 +224,10 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket-hampers-perlengkapan-ibadah.html](file:///C:/hamperslebaran/paket-hampers-perlengkapan-ibadah.html)
+### 📄 [paket/hampers-perlengkapan-ibadah.html](file:///C:/hamperslebaran/paket/hampers-perlengkapan-ibadah.html)
 
 - **Status**: 🟡 **WARNING**
-- **Canonical Link**: `https://hamperslebaran.biz.id/paket-hampers-perlengkapan-ibadah.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-perlengkapan-ibadah.html`
 - **Tipe Schema**: `Product`, `Brand`, `AggregateRating`, `Review`, `Person`, `Rating`, `Offer`, `Organization`, `MerchantReturnPolicy`, `MonetaryAmount`, `OfferShippingDetails`, `DefinedRegion`, `ShippingDeliveryTime`, `QuantitativeValue`, `BreadcrumbList`, `ListItem`
 - **Jumlah Blok JSON-LD**: 1
 
@@ -252,10 +252,10 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket-hampers-premium.html](file:///C:/hamperslebaran/paket-hampers-premium.html)
+### 📄 [paket/hampers-premium.html](file:///C:/hamperslebaran/paket/hampers-premium.html)
 
 - **Status**: 🟡 **WARNING**
-- **Canonical Link**: `https://hamperslebaran.biz.id/paket-hampers-premium.html`
+- **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-premium.html`
 - **Tipe Schema**: `Organization`, `ImageObject`, `ContactPoint`, `WebSite`, `WebPage`, `BreadcrumbList`, `ListItem`, `Product`, `Brand`, `Offer`, `OfferShippingDetails`, `MonetaryAmount`, `DefinedRegion`, `ShippingDeliveryTime`, `QuantitativeValue`, `MerchantReturnPolicy`, `AggregateRating`, `Review`, `Person`, `Rating`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 

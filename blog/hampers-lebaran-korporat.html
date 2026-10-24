@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Clean URL Script (Sembunyikan ekstensi .html dari address bar) -->
   <script>
-    (function () { try { if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) { var p = window.location.pathname; if (p.endsWith('.html')) { var c = p.slice(0, -5); if (c.endsWith('/index') || c === 'index' || c === '/index') { c = c.replace(/\/index$/, '') || '/'; } window.history.replaceState(null, document.title, c + window.location.search + window.location.hash); } } } catch (e) { } })();
+    (function () { try { if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) { var p = window.location.pathname; if (p.endsWith('.html')) { var c = p.slice(0, -5); if (c.endsWith('/index')) { c = c.slice(0, -6) || '/'; } else if (c === '/index' || c === 'index') { c = '/'; } window.history.replaceState(null, document.title, c + window.location.search + window.location.hash); } } } catch (e) { } })();
   </script>
   <title>Hampers Lebaran Korporat: Panduan HR &amp; Procurement — Tips Pengadaan</title>
   <meta name="description"
     content="Panduan strategis pengadaan hampers Lebaran korporat untuk tim HR dan Procurement: manajemen anggaran, approval sampel, kustomisasi logo, invoice & pajak.">
-  <link rel="canonical" href="https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html">
+  <link rel="canonical" href="https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Laudya Regina Julia">
   <meta name="theme-color" content="#777873">
@@ -30,8 +30,8 @@
   <meta property="og:title" content="Hampers Lebaran Korporat: Panduan HR &amp; Procurement — Tips Pengadaan">
   <meta property="og:description"
     content="Panduan strategis pengadaan hampers Lebaran korporat untuk tim HR dan Procurement: manajemen anggaran, approval sampel, kustomisasi logo, invoice & pajak.">
-  <meta property="og:url" content="https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html">
-  <meta property="og:image" content="https://hamperslebaran.biz.id/assets/images/og-hampers-lebaran.webp">
+  <meta property="og:url" content="https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html">
+  <meta property="og:image" content="https://hamperslebaran.biz.id/../assets/images/og-hampers-lebaran.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampers Lebaran Korporat: Panduan HR &amp; Procurement — Tips Pengadaan">
@@ -42,12 +42,12 @@
   <meta name="twitter:title" content="Hampers Lebaran Korporat: Panduan HR &amp; Procurement — Tips Pengadaan">
   <meta name="twitter:description"
     content="Panduan strategis pengadaan hampers Lebaran korporat untuk tim HR dan Procurement: manajemen anggaran, approval sampel, kustomisasi logo, invoice & pajak.">
-  <meta name="twitter:image" content="https://hamperslebaran.biz.id/assets/images/og-hampers-lebaran.webp">
+  <meta name="twitter:image" content="https://hamperslebaran.biz.id/../assets/images/og-hampers-lebaran.webp">
 
   <!-- Favicon & Web App Icons -->
-  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
-  <link rel="shortcut icon" type="image/webp" href="assets/images/logo.webp">
-  <link rel="apple-touch-icon" href="assets/images/logo.webp">
+  <link rel="icon" type="image/webp" href="../assets/images/logo.webp">
+  <link rel="shortcut icon" type="image/webp" href="../assets/images/logo.webp">
+  <link rel="apple-touch-icon" href="../assets/images/logo.webp">
 
   <!-- Stylesheets -->
   <!-- Critical CSS Inlined for 0ms Render-Blocking -->
@@ -1118,9 +1118,9 @@
       min-height: calc(100vh - 76px)
     }
   </style>
-  <link rel="preload" href="assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="../assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="../assets/css/main.min.css">
   </noscript>
 
   <!-- Schema.org JSON-LD (Rich Graph Standard 2026-2027) -->
@@ -1130,15 +1130,15 @@
   "@graph": [
     {
       "@type": "BlogPosting",
-      "@id": "https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html#article",
+      "@id": "https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html#article",
       "headline": "Hampers Lebaran Korporat: Panduan Lengkap untuk HR dan Procurement",
       "description": "Panduan strategis pengadaan hampers Lebaran korporat: budgeting tier penerima, approval sampel, kustomisasi logo, term of payment, dan logistik.",
-      "url": "https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html",
+      "url": "https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html",
       "datePublished": "2026-10-15T08:00:00+07:00",
       "dateModified": "2026-10-20T08:00:00+07:00",
       "image": {
         "@type": "ImageObject",
-        "url": "https://hamperslebaran.biz.id/assets/images/og-hampers-lebaran.webp",
+        "url": "https://hamperslebaran.biz.id/../assets/images/og-hampers-lebaran.webp",
         "width": 1200,
         "height": 630
       },
@@ -1148,7 +1148,7 @@
         "@type": "Person",
         "name": "Laudya Regina Julia",
         "jobTitle": "Content Writer & Konsultan Hampers Lebaran",
-        "image": "https://hamperslebaran.biz.id/assets/images/foto-regina.webp",
+        "image": "https://hamperslebaran.biz.id/../assets/images/foto-regina.webp",
         "url": "https://hamperslebaran.biz.id/tentang.html"
       },
       "publisher": {
@@ -1156,17 +1156,17 @@
         "name": "Hampers Lebaran",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hamperslebaran.biz.id/assets/images/logo.webp"
+          "url": "https://hamperslebaran.biz.id/../assets/images/logo.webp"
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html"
+        "@id": "https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html"
       }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html#breadcrumb",
+      "@id": "https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -1184,13 +1184,13 @@
           "@type": "ListItem",
           "position": 3,
           "name": "Hampers Lebaran Korporat",
-          "item": "https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html"
+          "item": "https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html"
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://hamperslebaran.biz.id/blog-hampers-lebaran-korporat.html#faq",
+      "@id": "https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat.html#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -1252,16 +1252,16 @@
       {
         "source": "list",
         "urls": [
-          "index.html",
-          "tentang.html",
-          "paket.html",
-          "portofolio.html",
-          "blog.html",
-          "kontak.html",
-          "paket-hampers-premium.html",
-          "paket-hampers-kue-camilan.html",
-          "paket-hampers-perlengkapan-ibadah.html",
-          "paket-hampers-custom.html"
+          "../index.html",
+          "../tentang.html",
+          "../paket.html",
+          "../portofolio.html",
+          "../blog.html",
+          "../kontak.html",
+          "../paket/hampers-premium.html",
+          "../paket/hampers-kue-camilan.html",
+          "../paket/hampers-perlengkapan-ibadah.html",
+          "../paket/hampers-custom.html"
         ],
         "eagerness": "immediate"
       }
@@ -1270,13 +1270,13 @@
       {
         "source": "list",
         "urls": [
-          "blog-hampers-lebaran-korporat.html",
-          "blog-kue-kering-lebaran-populer.html",
-          "blog-tips-memilih-hampers-lebaran.html",
-          "blog-tren-kemasan-hampers.html",
-          "faq.html",
-          "kebijakan-privasi.html",
-          "syarat-ketentuan.html"
+          "../blog/hampers-lebaran-korporat.html",
+          "../blog/kue-kering-lebaran-populer.html",
+          "../blog/tips-memilih-hampers-lebaran.html",
+          "../blog/tren-kemasan-hampers.html",
+          "../faq.html",
+          "../kebijakan-privasi.html",
+          "../syarat-ketentuan.html"
         ],
         "eagerness": "moderate"
       }
@@ -1290,8 +1290,8 @@
   <header>
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
-        <a class="navbar-brand hl-navbar-brand" href="index.html" aria-label="Hampers Lebaran — Beranda">
-          <img src="assets/images/logo.webp" alt="Hampers Lebaran" class="hl-navbar-logo" width="44" height="44">
+        <a class="navbar-brand hl-navbar-brand" href="../index.html" aria-label="Hampers Lebaran — Beranda">
+          <img src="../assets/images/logo.webp" alt="Hampers Lebaran" class="hl-navbar-logo" width="44" height="44">
           <span class="hl-navbar-brand-text">Hampers<span class="hl-brand-accent">Lebaran</span></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
@@ -1300,28 +1300,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
           <ul class="navbar-nav mx-auto gap-1">
-            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="../tentang.html">Tentang</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="paket.html" role="button" aria-expanded="false"
+              <a class="nav-link dropdown-toggle" href="../paket.html" role="button" aria-expanded="false"
                 id="navDropdownPaket">Paket</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="paket.html">Semua Paket</a></li>
+                <li><a class="dropdown-item" href="../paket.html">Semua Paket</a></li>
                 <li>
                   <hr class="dropdown-divider my-1 mx-3">
                 </li>
-                <li><a class="dropdown-item" href="paket-hampers-premium.html">Hampers Premium</a></li>
-                <li><a class="dropdown-item" href="paket-hampers-kue-camilan.html">Hampers Kue &amp;
+                <li><a class="dropdown-item" href="../paket/hampers-premium.html">Hampers Premium</a></li>
+                <li><a class="dropdown-item" href="../paket/hampers-kue-camilan.html">Hampers Kue &amp;
                     Camilan</a></li>
-                <li><a class="dropdown-item" href="paket-hampers-perlengkapan-ibadah.html">Hampers
+                <li><a class="dropdown-item" href="../paket/hampers-perlengkapan-ibadah.html">Hampers
                     Perlengkapan Ibadah</a></li>
-                <li><a class="dropdown-item" href="paket-hampers-custom.html">Hampers Custom / Corporate</a>
+                <li><a class="dropdown-item" href="../paket/hampers-custom.html">Hampers Custom / Corporate</a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="portofolio.html">Portofolio</a></li>
-            <li class="nav-item"><a class="nav-link active" href="blog.html" aria-current="page">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+            <li class="nav-item"><a class="nav-link" href="../portofolio.html">Portofolio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="../blog.html" aria-current="page">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="../kontak.html">Kontak</a></li>
           </ul>
           <a class="hl-btn-wa d-none d-lg-inline-flex"
             href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20tentang%20hampers%20Lebaran%20korporat."
@@ -1347,8 +1347,8 @@
       <div class="container">
         <nav aria-label="Breadcrumb">
           <ol class="hl-breadcrumb">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="../blog.html">Blog</a></li>
             <li><span aria-current="page">Hampers Lebaran Korporat</span></li>
           </ol>
         </nav>
@@ -1371,7 +1371,7 @@
             <!-- Author Byline -->
             <div class="hl-author-byline">
               <div class="hl-author-byline__avatar">
-                <img src="assets/images/foto-regina.webp" alt="Foto Laudya Regina Julia" width="44" height="44"
+                <img src="../assets/images/foto-regina.webp" alt="Foto Laudya Regina Julia" width="44" height="44"
                   loading="lazy">
               </div>
               <div>
@@ -1383,7 +1383,7 @@
 
             <!-- Hero image artikel -->
             <figure style="border-radius:var(--hl-radius-md);overflow:hidden;margin-bottom:2.5rem;">
-              <img src="assets/images/hampers-artikel.webp" alt="Panduan Hampers Lebaran Korporat" width="800"
+              <img src="../assets/images/hampers-artikel.webp" alt="Panduan Hampers Lebaran Korporat" width="800"
                 height="450" style="width:100%;height:auto;object-fit:cover;border-radius:var(--hl-radius-md);"
                 loading="eager">
               <figcaption style="font-size:0.8rem;color:var(--hl-text-muted);padding:0.5rem 0;">Perencanaan hampers
@@ -1414,7 +1414,7 @@
               <p>Pengadaan hampers dalam skala puluhan hingga ribuan paket memerlukan ketelitian tinggi. Kesalahan dalam
                 perencanaan dapat berdampak pada keterlambatan pengiriman, pembengkakan biaya, atau rusaknya barang
                 dalam perjalanan. Berikut adalah panduan komprehensif bagi Anda yang bertanggung jawab atas pengadaan
-                hampers korporat melalui <a href="paket-hampers-custom.html">layanan Hampers Custom
+                hampers korporat melalui <a href="../paket/hampers-custom.html">layanan Hampers Custom
                   kami</a>.</p>
 
               <h2 id="segmentasi">1. Segmentasi Penerima: Jangan Gunakan Satu Paket untuk Semua</h2>
@@ -1424,21 +1424,21 @@
               <ul>
                 <li><strong>Tier VVIP / Dewan Direksi &amp; Klien Strategis:</strong> Butuh kemasan eksklusif (hardbox
                   magnetik, akrilik, atau keranjang rotan premium), produk berkualitas artisan dari <a
-                    href="paket-hampers-premium.html">paket Hampers Premium</a> dengan personalisasi kartu
+                    href="../paket/hampers-premium.html">paket Hampers Premium</a> dengan personalisasi kartu
                   ucapan tertanda tangan direksi.</li>
                 <li><strong>Tier Mitra Bisnis &amp; Rekanan Reguler:</strong> Paket makanan ringan premium, <a
-                    href="paket-hampers-kue-camilan.html">kue kering kaleng khusus</a>, atau tumbler berlogo
+                    href="../paket/hampers-kue-camilan.html">kue kering kaleng khusus</a>, atau tumbler berlogo
                   elegan yang merepresentasikan kredibilitas perusahaan.</li>
                 <li><strong>Tier Internal Karyawan:</strong> Fokus pada isi yang bermanfaat langsung bagi perayaan
                   keluarga (kue kering klasik, kurma sukari, sembako premium) atau <a
-                    href="paket-hampers-perlengkapan-ibadah.html">set perlengkapan ibadah</a> dengan kemasan
+                    href="../paket/hampers-perlengkapan-ibadah.html">set perlengkapan ibadah</a> dengan kemasan
                   rapi dan seragam.</li>
               </ul>
 
               <!-- Baca Juga -->
               <div class="hl-read-also">
                 <p class="hl-read-also__label">&#128214; Baca Juga</p>
-                <a href="blog-tips-memilih-hampers-lebaran.html">Cara Memilih Hampers Lebaran yang Tepat untuk
+                <a href="tips-memilih-hampers-lebaran.html">Cara Memilih Hampers Lebaran yang Tepat untuk
                   Berbagai Penerima &rarr;</a>
               </div>
 
@@ -1466,11 +1466,11 @@
                   sajadah travel.</li>
               </ul>
               <p>Pastikan logo ditampilkan secara elegan dan tidak berlebihan, sehingga hadiah tetap terkesan tulus.
-                Lihat inspirasi kemasan di artikel <a href="blog-tren-kemasan-hampers.html">Tren Kemasan Hampers
+                Lihat inspirasi kemasan di artikel <a href="tren-kemasan-hampers.html">Tren Kemasan Hampers
                   2026</a>.</p>
 
               <figure class="my-4" style="border-radius:var(--hl-radius-md);overflow:hidden;">
-                <img src="assets/images/hampers-together.webp"
+                <img src="../assets/images/hampers-together.webp"
                   alt="Tim Korporat Menyiapkan Hampers Lebaran Eksklusif dengan Branding Perusahaan" width="800"
                   height="450" style="width:100%;height:auto;object-fit:cover;border-radius:var(--hl-radius-md);"
                   loading="lazy">
@@ -1492,13 +1492,13 @@
               <p>Di era kerja fleksibel (hybrid/remote), banyak hampers dikirim langsung ke alamat domisili
                 masing-masing karyawan. Pastikan penyedia hampers memiliki fasilitas pengemasan tahan benturan serta
                 kerjasama dengan ekspedisi tepercaya yang menyediakan pelacakan resi real-time. Kunjungi <a
-                  href="faq.html">halaman FAQ</a> untuk informasi lebih lanjut tentang prosedur pengiriman.
+                  href="../faq.html">halaman FAQ</a> untuk informasi lebih lanjut tentang prosedur pengiriman.
               </p>
 
               <!-- Baca Juga -->
               <div class="hl-read-also">
                 <p class="hl-read-also__label">&#128214; Baca Juga</p>
-                <a href="blog-kue-kering-lebaran-populer.html">Kue Kering Lebaran yang Paling Digemari dan Cara
+                <a href="kue-kering-lebaran-populer.html">Kue Kering Lebaran yang Paling Digemari dan Cara
                   Mengemasnya &rarr;</a>
               </div>
 
@@ -1522,25 +1522,25 @@
                     <tr>
                       <td>VVIP / Direksi / Klien</td>
                       <td>Rp 750.000 &ndash; 2.000.000</td>
-                      <td><a href="paket-hampers-premium.html">Hampers Premium</a></td>
+                      <td><a href="../paket/hampers-premium.html">Hampers Premium</a></td>
                       <td>10 &ndash; 50</td>
                     </tr>
                     <tr>
                       <td>Mitra Bisnis Reguler</td>
                       <td>Rp 450.000 &ndash; 750.000</td>
-                      <td><a href="paket-hampers-kue-camilan.html">Kue &amp; Camilan</a></td>
+                      <td><a href="../paket/hampers-kue-camilan.html">Kue &amp; Camilan</a></td>
                       <td>50 &ndash; 200</td>
                     </tr>
                     <tr>
                       <td>Internal Karyawan</td>
                       <td>Rp 300.000 &ndash; 550.000</td>
-                      <td><a href="paket-hampers-perlengkapan-ibadah.html">Perlengkapan Ibadah</a></td>
+                      <td><a href="../paket/hampers-perlengkapan-ibadah.html">Perlengkapan Ibadah</a></td>
                       <td>100 &ndash; 1.000+</td>
                     </tr>
                     <tr>
                       <td>Custom / Branding Penuh</td>
                       <td>Konsultasi</td>
-                      <td><a href="paket-hampers-custom.html">Hampers Custom</a></td>
+                      <td><a href="../paket/hampers-custom.html">Hampers Custom</a></td>
                       <td>Fleksibel</td>
                     </tr>
                   </tbody>
@@ -1551,7 +1551,7 @@
               <p>Pengadaan hampers korporat yang sukses berakar pada kemitraan dengan vendor yang berpengalaman dan
                 responsif. Dengan persiapan matang sejak awal, perusahaan Anda dapat memberikan apresiasi yang
                 membanggakan tanpa mengorbankan anggaran dan ketenangan tim pengadaan.</p>
-              <p>Silakan kunjungi halaman <a href="tentang.html">Tentang Kami</a> untuk mengenal lebih dekat
+              <p>Silakan kunjungi halaman <a href="../tentang.html">Tentang Kami</a> untuk mengenal lebih dekat
                 dedikasi Hampers Lebaran dalam melayani kebutuhan pengadaan korporat Anda.</p>
 
               <!-- FAQ Section -->
@@ -1642,9 +1642,9 @@
             <h2 style="font-size:1.15rem;font-weight:700;margin-bottom:1.5rem;">&#128218; Artikel Terkait Lainnya</h2>
             <div class="row g-3">
               <div class="col-sm-6">
-                <a href="blog-tips-memilih-hampers-lebaran.html" class="hl-related-card">
+                <a href="tips-memilih-hampers-lebaran.html" class="hl-related-card">
                   <div class="hl-related-card__thumb">
-                    <img src="assets/images/hampers-paket.webp" alt="Panduan Memilih Hampers"
+                    <img src="../assets/images/hampers-paket.webp" alt="Panduan Memilih Hampers"
                       style="width:100%;height:100%;object-fit:cover;">
                   </div>
                   <div class="hl-related-card__body">
@@ -1658,9 +1658,9 @@
                 </a>
               </div>
               <div class="col-sm-6">
-                <a href="blog-kue-kering-lebaran-populer.html" class="hl-related-card">
+                <a href="kue-kering-lebaran-populer.html" class="hl-related-card">
                   <div class="hl-related-card__thumb">
-                    <img src="assets/images/hampers-nastar.webp" alt="Kue Kering Lebaran"
+                    <img src="../assets/images/hampers-nastar.webp" alt="Kue Kering Lebaran"
                       style="width:100%;height:100%;object-fit:cover;">
                   </div>
                   <div class="hl-related-card__body">
@@ -1673,9 +1673,9 @@
                 </a>
               </div>
               <div class="col-sm-6">
-                <a href="blog-tren-kemasan-hampers.html" class="hl-related-card">
+                <a href="tren-kemasan-hampers.html" class="hl-related-card">
                   <div class="hl-related-card__thumb">
-                    <img src="assets/images/hampers-mlg.webp" alt="Tren Kemasan 2026"
+                    <img src="../assets/images/hampers-mlg.webp" alt="Tren Kemasan 2026"
                       style="width:100%;height:100%;object-fit:cover;">
                   </div>
                   <div class="hl-related-card__body">
@@ -1693,7 +1693,7 @@
           <!-- Identitas Penulis -->
           <div class="hl-author-bio">
             <div class="hl-author-bio__avatar">
-              <img src="assets/images/foto-regina.webp" alt="Foto Laudya Regina Julia" width="72" height="72"
+              <img src="../assets/images/foto-regina.webp" alt="Foto Laudya Regina Julia" width="72" height="72"
                 loading="lazy">
             </div>
             <div>
@@ -1717,9 +1717,9 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4">
-          <a href="index.html"
+          <a href="../index.html"
             style="display:inline-flex;align-items:center;gap:0.65rem;text-decoration:none;margin-bottom:0.75rem;"><img
-              src="assets/images/logo.webp" alt="Logo Hampers Lebaran"
+              src="../assets/images/logo.webp" alt="Logo Hampers Lebaran"
               style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"><span
               style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--hl-footer-text);line-height:1;">Hampers<span
                 style="color:var(--hl-warm);">Lebaran</span></span></a>
@@ -1729,20 +1729,20 @@
         <div class="col-sm-6 col-lg-2">
           <p class="hl-footer__heading">Navigasi</p>
           <ul class="hl-footer__links">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="tentang.html">Tentang</a></li>
-            <li><a href="paket.html">Paket</a></li>
-            <li><a href="portofolio.html">Portofolio</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../paket.html">Paket</a></li>
+            <li><a href="../portofolio.html">Portofolio</a></li>
+            <li><a href="../blog.html">Blog</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3">
           <p class="hl-footer__heading">Paket</p>
           <ul class="hl-footer__links">
-            <li><a href="paket-hampers-premium.html">Hampers Premium</a></li>
-            <li><a href="paket-hampers-kue-camilan.html">Hampers Kue &amp; Camilan</a></li>
-            <li><a href="paket-hampers-perlengkapan-ibadah.html">Perlengkapan Ibadah</a></li>
-            <li><a href="paket-hampers-custom.html">Custom / Corporate</a></li>
+            <li><a href="../paket/hampers-premium.html">Hampers Premium</a></li>
+            <li><a href="../paket/hampers-kue-camilan.html">Hampers Kue &amp; Camilan</a></li>
+            <li><a href="../paket/hampers-perlengkapan-ibadah.html">Perlengkapan Ibadah</a></li>
+            <li><a href="../paket/hampers-custom.html">Custom / Corporate</a></li>
           </ul>
         </div>
         <div class="col-lg-3">
@@ -1778,8 +1778,8 @@
       <div class="hl-footer__bottom">
         <p class="hl-footer__copy">© <span class="js-year"></span> Hampers Lebaran.</p>
         <nav class="hl-footer__legal-links" aria-label="Tautan legal">
-          <a href="kebijakan-privasi.html">Kebijakan Privasi</a>
-          <a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a>
+          <a href="../kebijakan-privasi.html">Kebijakan Privasi</a>
+          <a href="../syarat-ketentuan.html">Syarat &amp; Ketentuan</a>
         </nav>
       </div>
     </div>
@@ -1800,7 +1800,7 @@
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
-  <script src="assets/js/main.min.js" defer></script>
+  <script src="../assets/js/main.min.js" defer></script>
 </body>
 
 </html>

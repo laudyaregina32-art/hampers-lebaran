@@ -562,13 +562,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const parsed = new URL(href, window.location.href);
       if (parsed.origin !== window.location.origin) return;
 
-      // Same page
-      if (getPageFilename(parsed.href) === getPageFilename(window.location.href)) {
-        closeNavbar();
-        if (parsed.hash) return;
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
+      // Different directory depth (e.g. root vs paket/ or blog/)
+      const currentDir = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+      const targetDir = parsed.pathname.substring(0, parsed.pathname.lastIndexOf('/'));
+      if (currentDir !== targetDir) {
+        return; // Allow native navigation so relative asset paths and links resolve 100% cleanly
       }
 
       e.preventDefault();
