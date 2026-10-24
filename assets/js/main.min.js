@@ -385,198 +385,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Run initial interactivity
   initPageInteractivity();
 
-  // ===== Instant Zero-Delay Seamless Page Router (0ms Switching) =====
-  const pageCache = new Map();
+  // ===== Instant Link Prefetcher (Zero Delay, Native Paint Holding, No White Flash) =====
+  const prefetchedUrls = new Set();
 
-  const getPageFilename = (href) => {
+  const prefetchUrl = (url) => {
+    if (!url || prefetchedUrls.has(url)) return;
     try {
-      const u = new URL(href, window.location.href);
-      let f = u.pathname.split('/').pop() || 'index.html';
-      if (!f || f === '') f = 'index.html';
-      return f;
-    } catch (e) {
-      return 'index.html';
-    }
-  };
-
-  const updateNavbarActive = (targetHref) => {
-    const filename = getPageFilename(targetHref);
-
-    document.querySelectorAll('.hl-navbar .nav-link:not(.dropdown-toggle), .hl-navbar .dropdown-item').forEach(link => {
-      const h = link.getAttribute('href');
-      if (!h) return;
-      const linkFile = getPageFilename(h);
-
-      if (linkFile === filename) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    });
-
-    const paketToggle = document.getElementById('navDropdownPaket');
-    if (paketToggle) {
-      const isPaket = filename.startsWith('paket');
-      paketToggle.classList.toggle('active', isPaket);
-      if (isPaket) {
-        paketToggle.setAttribute('aria-current', 'page');
-      } else {
-        paketToggle.removeAttribute('aria-current');
-      }
-    }
-  };
-
-  const cachePageHtml = (url, htmlText) => {
-    pageCache.set(url, htmlText);
-    try {
-      const u = new URL(url, window.location.href);
-      pageCache.set(u.pathname, htmlText);
-      pageCache.set(u.href, htmlText);
-      const filename = u.pathname.split('/').pop();
-      if (filename) pageCache.set(filename, htmlText);
-    } catch (e) {}
-  };
-
-  // Seed current page into cache
-  cachePageHtml(window.location.href, document.documentElement.outerHTML);
-
-  const fetchAndCachePage = async (url) => {
-    if (!url || pageCache.has(url)) return;
-    try {
-      const res = await fetch(url);
-      if (res.ok) {
-        const text = await res.text();
-        cachePageHtml(url, text);
-      }
-    } catch (e) {}
-  };
-
-  // Pre-cache all core pages immediately
-  const primaryNavUrls = [
-    'index.html',
-    'tentang.html',
-    'paket.html',
-    'portofolio.html',
-    'blog.html',
-    'kontak.html',
-    'paket-hampers-premium.html',
-    'paket-hampers-kue-camilan.html',
-    'paket-hampers-perlengkapan-ibadah.html',
-    'paket-hampers-custom.html'
-  ];
-  primaryNavUrls.forEach(url => fetchAndCachePage(url));
-
-  const navigateToPage = async (url, pushHistory = true) => {
-    try {
-      // 1. INSTANT 0ms VISUAL FEEDBACK: Update navbar active line immediately!
-      updateNavbarActive(url);
-
-      // Close mobile navbar immediately so it never covers page text
-      closeNavbar();
-      closeAllDropdowns();
-
-      // 2. Retrieve page from memory cache or fetch
-      let htmlText = pageCache.get(url) || pageCache.get(getPageFilename(url));
-      if (!htmlText) {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        htmlText = await res.text();
-        cachePageHtml(url, htmlText);
-      }
-
-      const parser = new DOMParser();
-      const newDoc = parser.parseFromString(htmlText, 'text/html');
-
-      const newMain = newDoc.querySelector('main#main-content');
-      const currentMain = document.querySelector('main#main-content');
-      if (!newMain || !currentMain) {
-        window.location.href = url;
-        return;
-      }
-
-      const performSwap = () => {
-        // Update Title
-        if (newDoc.title) document.title = newDoc.title;
-
-        // Ensure all stylesheets from target page exist
-        newDoc.head.querySelectorAll('link[rel="stylesheet"]').forEach(l => {
-          const href = l.getAttribute('href');
-          if (href && !document.head.querySelector('link[href="' + href + '"]')) {
-            document.head.appendChild(l.cloneNode(true));
-          }
-        });
-
-        // Swap main content
-        currentMain.innerHTML = newMain.innerHTML;
-
-        // Scroll immediately to top
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-
-        // Re-bind interactive handlers for the new page
-        initPageInteractivity();
-
-        // Update clean URL in address bar if supported
-        try {
-          if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) {
-            let p = window.location.pathname;
-            if (p.endsWith('.html')) {
-              let c = p.slice(0, -5);
-              if (c.endsWith('/index') || c === 'index' || c === '/index') {
-                c = c.replace(/\/index$/, '') || '/';
-              }
-              window.history.replaceState(null, document.title, c + window.location.search + window.location.hash);
-            }
-          }
-        } catch (e) {}
-      };
-
-      if (document.startViewTransition) {
-        document.startViewTransition(performSwap);
-      } else {
-        performSwap();
-      }
-
-      if (pushHistory) {
-        window.history.pushState({ url: url }, newDoc.title || '', url);
-      }
-    } catch (err) {
-      window.location.href = url;
-    }
-  };
-
-  // Intercept internal link clicks for 0ms Instant Navigation
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-    if (e.defaultPrevented) return;
-    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (link.getAttribute('target') === '_blank') return;
-    if (link.classList.contains('dropdown-toggle')) return;
-
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
-
-    try {
-      const parsed = new URL(href, window.location.href);
+      const parsed = new URL(url, window.location.href);
       if (parsed.origin !== window.location.origin) return;
+      if (parsed.pathname === window.location.pathname) return;
 
-      // Different directory depth (e.g. root vs paket/ or blog/)
-      const currentDir = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-      const targetDir = parsed.pathname.substring(0, parsed.pathname.lastIndexOf('/'));
-      if (currentDir !== targetDir) {
-        return; // Allow native navigation so relative asset paths and links resolve 100% cleanly
-      }
+      prefetchedUrls.add(url);
+      prefetchedUrls.add(parsed.href);
 
-      e.preventDefault();
-      navigateToPage(href, true);
-    } catch (err) {}
-  });
+      // Gunakan link rel=prefetch browser standar
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = parsed.href;
+      link.as = 'document';
+      document.head.appendChild(link);
+    } catch (e) {}
+  };
 
-  // Handle browser back/forward buttons seamlessly
-  window.addEventListener('popstate', () => {
-    navigateToPage(window.location.href, false);
-  });
+  // Prefetch saat kursor mendekati link atau tombol disentuh (intent-based prefetching)
+  const handleLinkIntent = (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('javascript:')) return;
+    prefetchUrl(href);
+  };
+
+  document.addEventListener('mouseover', handleLinkIntent, { passive: true });
+  document.addEventListener('touchstart', handleLinkIntent, { passive: true });
+  document.addEventListener('pointerdown', handleLinkIntent, { passive: true });
 });
 
