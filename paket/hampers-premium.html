@@ -17,13 +17,13 @@
   <meta name="theme-color" content="#777873">
   <meta name="format-detection" content="telephone=no">
 
-  <!-- GEO & Local Engine Optimization (GEO/AEO 2026-2027) -->
+  <!-- GEO & Local Engine Optimization (GEO/AEO 2028-2028) -->
   <meta name="geo.region" content="ID">
   <meta name="geo.placename" content="Indonesia">
   <meta name="geo.position" content="-7.9907933;112.6804731">
   <meta name="ICBM" content="-7.9907933, 112.6804731">
 
-  <!-- Open Graph / WhatsApp / Facebook (OG 2026-2027) -->
+  <!-- Open Graph / WhatsApp / Facebook (OG 2028-2028) -->
   <meta property="og:locale" content="id_ID">
   <meta property="og:type" content="product">
   <meta property="og:site_name" content="Hampers Lebaran">
@@ -90,9 +90,9 @@
       scroll-behavior: smooth
     }
 
-    
 
-    
+
+
 
     body {
       margin: 0;
@@ -274,7 +274,15 @@
       }
     }
 
-    @media (min-width:992px) { .d-lg-inline-flex { display: inline-flex !important; } .d-lg-none { display: none !important; } }
+    @media (min-width:992px) {
+      .d-lg-inline-flex {
+        display: inline-flex !important;
+      }
+
+      .d-lg-none {
+        display: none !important;
+      }
+    }
 
     .justify-content-center {
       justify-content: center !important
@@ -332,7 +340,119 @@
       margin-bottom: .95rem
     }
 
-    .hl-navbar{box-shadow:none!important;background:rgba(243,243,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--hl-border);position:sticky;top:0;z-index:1030;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.hl-navbar .nav-link{color:var(--hl-text-muted);font-weight:500!important;font-size:.92rem;padding:.5rem .75rem!important;text-decoration:none;position:relative;white-space:nowrap;transition:color var(--hl-transition)}.hl-navbar .nav-link:hover,.hl-navbar .nav-link:focus,.hl-navbar .nav-link.active,.hl-navbar .dropdown-toggle.active{color:var(--hl-accent-dark)!important;font-weight:500!important;background:transparent;outline:none}.hl-navbar .dropdown-toggle{display:inline-flex!important;align-items:center;gap:.35rem;cursor:pointer}.hl-navbar .dropdown-toggle::after{display:inline-block!important;content:""!important;width:7px!important;height:7px!important;border-right:2px solid currentColor!important;border-bottom:2px solid currentColor!important;border-top:0!important;border-left:0!important;transform:rotate(45deg);transition:transform .25s;vertical-align:middle!important;margin-left:.25rem!important;margin-top:-3px!important;position:static!important;background:0 0!important;opacity:.75!important}.hl-navbar .dropdown-toggle.show::after,.hl-navbar .dropdown-toggle[aria-expanded=true]::after,.hl-navbar .dropdown.show>.dropdown-toggle::after,.hl-navbar .dropdown:hover>.dropdown-toggle::after{transform:rotate(-135deg)!important;opacity:1!important}.hl-navbar-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between}@media (max-width:991.98px){.hl-navbar-inner{min-height:64px;padding-top:.4rem;padding-bottom:.4rem}}@media (min-width:992px){.hl-navbar-inner{min-height:76px;height:76px;align-items:stretch;flex-wrap:nowrap}.hl-navbar .hl-btn-wa,.hl-navbar .navbar-brand{align-self:center}.hl-navbar .navbar-collapse{height:100%;display:flex!important}.hl-navbar .navbar-nav{height:100%;align-items:stretch;display:flex!important;flex-direction:row}.hl-navbar .nav-item{display:flex;align-items:center}}.hl-navbar .navbar-brand,
+    .hl-navbar {
+      box-shadow: none !important;
+      background: rgba(243, 243, 240, .96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--hl-border);
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    .hl-navbar .nav-link {
+      color: var(--hl-text-muted);
+      font-weight: 500 !important;
+      font-size: .92rem;
+      padding: .5rem .75rem !important;
+      text-decoration: none;
+      position: relative;
+      white-space: nowrap;
+      transition: color var(--hl-transition)
+    }
+
+    .hl-navbar .nav-link:hover,
+    .hl-navbar .nav-link:focus,
+    .hl-navbar .nav-link.active,
+    .hl-navbar .dropdown-toggle.active {
+      color: var(--hl-accent-dark) !important;
+      font-weight: 500 !important;
+      background: transparent;
+      outline: none
+    }
+
+    .hl-navbar .dropdown-toggle {
+      display: inline-flex !important;
+      align-items: center;
+      gap: .35rem;
+      cursor: pointer
+    }
+
+    .hl-navbar .dropdown-toggle::after {
+      display: inline-block !important;
+      content: "" !important;
+      width: 7px !important;
+      height: 7px !important;
+      border-right: 2px solid currentColor !important;
+      border-bottom: 2px solid currentColor !important;
+      border-top: 0 !important;
+      border-left: 0 !important;
+      transform: rotate(45deg);
+      transition: transform .25s;
+      vertical-align: middle !important;
+      margin-left: .25rem !important;
+      margin-top: -3px !important;
+      position: static !important;
+      background: 0 0 !important;
+      opacity: .75 !important
+    }
+
+    .hl-navbar .dropdown-toggle.show::after,
+    .hl-navbar .dropdown-toggle[aria-expanded=true]::after,
+    .hl-navbar .dropdown.show>.dropdown-toggle::after,
+    .hl-navbar .dropdown:hover>.dropdown-toggle::after {
+      transform: rotate(-135deg) !important;
+      opacity: 1 !important
+    }
+
+    .hl-navbar-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    @media (max-width:991.98px) {
+      .hl-navbar-inner {
+        min-height: 64px;
+        padding-top: .4rem;
+        padding-bottom: .4rem
+      }
+    }
+
+    @media (min-width:992px) {
+      .hl-navbar-inner {
+        min-height: 76px;
+        height: 76px;
+        align-items: stretch;
+        flex-wrap: nowrap
+      }
+
+      .hl-navbar .hl-btn-wa,
+      .hl-navbar .navbar-brand {
+        align-self: center
+      }
+
+      .hl-navbar .navbar-collapse {
+        height: 100%;
+        display: flex !important
+      }
+
+      .hl-navbar .navbar-nav {
+        height: 100%;
+        align-items: stretch;
+        display: flex !important;
+        flex-direction: row
+      }
+
+      .hl-navbar .nav-item {
+        display: flex;
+        align-items: center
+      }
+    }
+
+    .hl-navbar .navbar-brand,
     .hl-navbar-brand {
       font-family: var(--hl-font-serif);
       font-size: 1.45rem;
@@ -814,10 +934,184 @@
       font-size: .92rem;
       line-height: 1.45
     }
-  .col-lg-6{flex:0 0 auto;width:100%}@media (min-width:992px){.col-lg-6{width:50%}} .hl-product-gallery{display:flex;flex-direction:column;width:100%}@media (min-width:992px){.hl-product-gallery{position:sticky;top:calc(76px + 1.5rem);height:auto}} .hl-product-main-img{border-radius:var(--hl-radius-md);overflow:hidden;aspect-ratio:1/1;background:var(--hl-surface-muted);margin-bottom:.85rem;width:100%} .hl-product-main-img img{width:100%;height:100%;object-fit:cover;display:block} .hl-product-thumbnails{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:0} .hl-product-thumb{border-radius:var(--hl-radius-md);overflow:hidden;aspect-ratio:1/1;background:var(--hl-surface-muted);border:2px solid transparent;cursor:pointer;transition:all var(--hl-transition)} .hl-product-thumb.active,.hl-product-thumb:hover{border-color:var(--hl-accent-dark);box-shadow:0 4px 12px rgba(40,42,39,.12)} .hl-product-thumb img{width:100%;height:100%;object-fit:cover;display:block} .hl-card__img-wrap{overflow:hidden;aspect-ratio:4/5;background:var(--hl-surface-muted)} .hl-card__img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 350ms} @media (min-width:992px){ .hl-navbar .nav-link{position:relative} .hl-navbar .nav-link:not(.dropdown-toggle).active::after{content:''!important;display:block!important;position:absolute!important;bottom:2px!important;left:.75rem!important;right:.75rem!important;height:2.5px!important;background:var(--hl-accent-dark)!important;border-radius:2px!important} .hl-navbar .nav-link:not(.dropdown-toggle):hover::after{content:'';display:block;position:absolute;bottom:2px;left:.75rem;right:.75rem;height:2.5px;background:var(--hl-accent);border-radius:2px;opacity:.65} .hl-navbar .dropdown-toggle.active::before{content:''!important;display:block!important;position:absolute!important;bottom:2px!important;left:.75rem!important;right:1.6rem!important;height:2.5px!important;background:var(--hl-accent-dark)!important;border-radius:2px!important} .hl-navbar .dropdown-toggle:hover::before{content:'';display:block;position:absolute;bottom:2px;left:.75rem;right:1.6rem;height:2.5px;background:var(--hl-accent);border-radius:2px;opacity:.65} } @media (max-width:991.98px){.hl-navbar .nav-link,.hl-navbar .nav-link:focus,.hl-navbar .nav-link:hover,.hl-navbar .nav-link.active,.hl-navbar .dropdown-item,.hl-navbar .dropdown-item:focus,.hl-navbar .dropdown-item:hover,.hl-navbar .dropdown-item.active{background:transparent!important;box-shadow:none!important;outline:none!important}.hl-navbar .nav-link.active{color:var(--hl-accent-dark)!important;font-weight:700!important;border-left:3.5px solid var(--hl-accent-dark)!important;padding-left:.95rem!important}.hl-navbar .dropdown-item.active{color:var(--hl-accent-dark)!important;font-weight:700!important}} html,body{background-color:var(--hl-bg)!important;min-height:100vh}</style>
+
+    .col-lg-6 {
+      flex: 0 0 auto;
+      width: 100%
+    }
+
+    @media (min-width:992px) {
+      .col-lg-6 {
+        width: 50%
+      }
+    }
+
+    .hl-product-gallery {
+      display: flex;
+      flex-direction: column;
+      width: 100%
+    }
+
+    @media (min-width:992px) {
+      .hl-product-gallery {
+        position: sticky;
+        top: calc(76px + 1.5rem);
+        height: auto
+      }
+    }
+
+    .hl-product-main-img {
+      border-radius: var(--hl-radius-md);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: var(--hl-surface-muted);
+      margin-bottom: .85rem;
+      width: 100%
+    }
+
+    .hl-product-main-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .hl-product-thumbnails {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .75rem;
+      margin-top: 0
+    }
+
+    .hl-product-thumb {
+      border-radius: var(--hl-radius-md);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: var(--hl-surface-muted);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--hl-transition)
+    }
+
+    .hl-product-thumb.active,
+    .hl-product-thumb:hover {
+      border-color: var(--hl-accent-dark);
+      box-shadow: 0 4px 12px rgba(40, 42, 39, .12)
+    }
+
+    .hl-product-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .hl-card__img-wrap {
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--hl-surface-muted)
+    }
+
+    .hl-card__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 350ms
+    }
+
+    @media (min-width:992px) {
+      .hl-navbar .nav-link {
+        position: relative
+      }
+
+      .hl-navbar .nav-link:not(.dropdown-toggle).active::after {
+        content: '' !important;
+        display: block !important;
+        position: absolute !important;
+        bottom: 2px !important;
+        left: .75rem !important;
+        right: .75rem !important;
+        height: 2.5px !important;
+        background: var(--hl-accent-dark) !important;
+        border-radius: 2px !important
+      }
+
+      .hl-navbar .nav-link:not(.dropdown-toggle):hover::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 2px;
+        left: .75rem;
+        right: .75rem;
+        height: 2.5px;
+        background: var(--hl-accent);
+        border-radius: 2px;
+        opacity: .65
+      }
+
+      .hl-navbar .dropdown-toggle.active::before {
+        content: '' !important;
+        display: block !important;
+        position: absolute !important;
+        bottom: 2px !important;
+        left: .75rem !important;
+        right: 1.6rem !important;
+        height: 2.5px !important;
+        background: var(--hl-accent-dark) !important;
+        border-radius: 2px !important
+      }
+
+      .hl-navbar .dropdown-toggle:hover::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 2px;
+        left: .75rem;
+        right: 1.6rem;
+        height: 2.5px;
+        background: var(--hl-accent);
+        border-radius: 2px;
+        opacity: .65
+      }
+    }
+
+    @media (max-width:991.98px) {
+
+      .hl-navbar .nav-link,
+      .hl-navbar .nav-link:focus,
+      .hl-navbar .nav-link:hover,
+      .hl-navbar .nav-link.active,
+      .hl-navbar .dropdown-item,
+      .hl-navbar .dropdown-item:focus,
+      .hl-navbar .dropdown-item:hover,
+      .hl-navbar .dropdown-item.active {
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important
+      }
+
+      .hl-navbar .nav-link.active {
+        color: var(--hl-accent-dark) !important;
+        font-weight: 700 !important;
+        border-left: 3.5px solid var(--hl-accent-dark) !important;
+        padding-left: .95rem !important
+      }
+
+      .hl-navbar .dropdown-item.active {
+        color: var(--hl-accent-dark) !important;
+        font-weight: 700 !important
+      }
+    }
+
+    html,
+    body {
+      background-color: var(--hl-bg) !important;
+      min-height: 100vh
+    }
+  </style>
   <link rel="stylesheet" href="../assets/css/main.min.css">
 
-  <!-- Schema.org JSON-LD (Rich Graph Standard 2026-2027 — FIXED) -->
+  <!-- Schema.org JSON-LD (Rich Graph Standard 2028-2028 — FIXED) -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -894,8 +1188,8 @@
       "@type": "Product",
       "@id": "https://hamperslebaran.biz.id/paket/hampers-premium.html#product",
       "name": "Hampers Lebaran Premium",
-      "sku": "HL-PREM-2026",
-      "mpn": "HL-PREM-2026",
+      "sku": "HL-PREM-2028",
+      "mpn": "HL-PREM-2028",
       "category": "Gift Basket > Hampers Lebaran",
       "image": [
         "https://www.hamperslebaran.id/../assets/images/og-hampers-lebaran.webp",
@@ -915,8 +1209,8 @@
         "url": "https://hamperslebaran.biz.id/paket/hampers-premium.html",
         "priceCurrency": "IDR",
         "price": "750000",
-        "priceValidUntil": "2026-12-31",
-        "validFrom": "2026-01-01",
+        "priceValidUntil": "2028-12-31",
+        "validFrom": "2028-01-01",
         "availability": "https://schema.org/InStock",
         "itemCondition": "https://schema.org/NewCondition",
         "seller": { "@id": "https://www.hamperslebaran.id/#organization" },
@@ -970,7 +1264,7 @@
             "@type": "Person",
             "name": "Rina Wijaya"
           },
-          "datePublished": "2026-03-15",
+          "datePublished": "2028-03-15",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
@@ -984,7 +1278,7 @@
             "@type": "Person",
             "name": "Andi Pratama"
           },
-          "datePublished": "2026-03-10",
+          "datePublished": "2028-03-10",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
@@ -1027,7 +1321,7 @@
   ]
 }
   </script>
-  </head>
+</head>
 
 <body>
 
@@ -1102,8 +1396,8 @@
           <div class="col-lg-6">
             <div class="hl-product-gallery">
               <div class="hl-product-main-img" id="main-img">
-                <img src="../assets/images/hampers-hijau-emas.webp" alt="Hampers Premium Lebaran dalam kemasan box mewah"
-                  width="600" height="600"
+                <img src="../assets/images/hampers-hijau-emas.webp"
+                  alt="Hampers Premium Lebaran dalam kemasan box mewah" width="600" height="600"
                   style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-md);" loading="eager">
               </div>
               <div class="hl-product-thumbnails">
@@ -1112,8 +1406,8 @@
                     height="100" style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-sm);">
                 </div>
                 <div class="hl-product-thumb" tabindex="0" role="button" aria-label="Foto kurma ajwa premium">
-                  <img src="../assets/images/detail-kurma-ajwa.webp" alt="Foto kurma ajwa premium" width="100" height="100"
-                    style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-sm);">
+                  <img src="../assets/images/detail-kurma-ajwa.webp" alt="Foto kurma ajwa premium" width="100"
+                    height="100" style="width:100%;height:100%;object-fit:cover;border-radius:var(--hl-radius-sm);">
                 </div>
                 <div class="hl-product-thumb" tabindex="0" role="button" aria-label="Foto toples kue kering eksklusif">
                   <img src="../assets/images/detail-cookies-jar.webp" alt="Foto toples kue kering eksklusif" width="100"
@@ -1265,8 +1559,8 @@
           <div class="col-sm-6 col-lg-4">
             <a href="hampers-kue-camilan.html" class="hl-card">
               <div class="hl-card__img-wrap">
-                <img src="../assets/images/kastengel.webp" alt="Hampers Kue &amp; Camilan Lebaran" width="400" height="500"
-                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="../assets/images/kastengel.webp" alt="Hampers Kue &amp; Camilan Lebaran" width="400"
+                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <h3 class="hl-card__title">Hampers Kue &amp; Camilan</h3>
@@ -1281,8 +1575,8 @@
           <div class="col-sm-6 col-lg-4">
             <a href="hampers-perlengkapan-ibadah.html" class="hl-card">
               <div class="hl-card__img-wrap">
-                <img src="../assets/images/sajadah.webp" alt="Hampers Perlengkapan Ibadah Lebaran" width="400" height="500"
-                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <img src="../assets/images/sajadah.webp" alt="Hampers Perlengkapan Ibadah Lebaran" width="400"
+                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <h3 class="hl-card__title">Hampers Perlengkapan Ibadah</h3>

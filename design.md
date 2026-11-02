@@ -1,7 +1,7 @@
 # Design System & UI Specification — Website Hampers Lebaran
 
 **Versi:** 1.0  
-**Tanggal:** 20 Oktober 2026  
+**Tanggal:** 20 Oktober 2028  
 **Arah visual:** Muted Grey · Warm Minimal · Editorial · Premium, tidak berlebihan
 
 ## 1. Arah Desain

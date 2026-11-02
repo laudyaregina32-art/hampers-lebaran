@@ -45,7 +45,7 @@ for (const p of pages) {
       `<picture>
                   <source media="(min-width: 577px)" srcset="assets/images/hampers-idul-fitri-600.webp">
                   <img src="assets/images/hampers-idul-fitri-400.webp"
-                    alt="Paket Hampers Lebaran Eksklusif 2026"
+                    alt="Paket Hampers Lebaran Eksklusif 2028"
                     class="hl-hero__img" width="400" height="500"
                     fetchpriority="high" decoding="async">
                 </picture>`

@@ -1,6 +1,6 @@
 # ==============================================================================
 # Robots.txt untuk Hampers Lebaran (https://hamperslebaran.biz.id/)
-# Dioptimalkan untuk Googlebot, Google Images, Bingbot, dan AI Search (GEO/AEO 2026-2027)
+# Dioptimalkan untuk Googlebot, Google Images, Bingbot, dan AI Search (GEO/AEO 2028-2028)
 # ==============================================================================
 
 # Aturan Global untuk Seluruh Web Crawler

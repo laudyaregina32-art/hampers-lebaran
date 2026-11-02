@@ -37,7 +37,7 @@ for (const p of pages) {
 
   // 3. Optimize Google Fonts to minimal weights
   const oldFontRegex = /<link\s+rel="preload"\s+href="https:\/\/fonts\.googleapis\.com\/css2\?family=Playfair\+Display[^"]*"\s+as="style"\s+onload="this\.onload=null;this\.rel='stylesheet'">\s*<noscript>\s*<link\s+rel="stylesheet"\s+href="https:\/\/fonts\.googleapis\.com\/css2\?family=Playfair\+Display[^"]*">\s*<\/noscript>/g;
-  
+
   const optimizedFont = `<link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -64,7 +64,7 @@ for (const p of pages) {
       `<img src="assets/images/hampers-idul-fitri-400.webp"
                   srcset="assets/images/hampers-idul-fitri-320.webp 320w, assets/images/hampers-idul-fitri-400.webp 400w, assets/images/hampers-idul-fitri-600.webp 600w"
                   sizes="(max-width: 576px) calc(100vw - 32px), (max-width: 992px) 450px, 500px"
-                  alt="Paket Hampers Lebaran Eksklusif 2026"
+                  alt="Paket Hampers Lebaran Eksklusif 2028"
                   class="hl-hero__img" width="500" height="625"
                   fetchpriority="high" decoding="async">`
     );
