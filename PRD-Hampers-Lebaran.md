@@ -1,7 +1,7 @@
 ﻿# PRD — Website Hampers Lebaran
 
 **Versi dokumen:** 1.0  
-**Tanggal:** 20 Oktober 2028  
+**Tanggal:** 20 Oktober 2027  
 **Status:** Draft siap dijadikan acuan pengembangan  
 **Nama proyek:** Website Hampers Lebaran (nama brand dapat ditentukan kemudian)
 

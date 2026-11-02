@@ -64,7 +64,7 @@ for (const p of pages) {
       `<img src="assets/images/hampers-idul-fitri-400.webp"
                   srcset="assets/images/hampers-idul-fitri-320.webp 320w, assets/images/hampers-idul-fitri-400.webp 400w, assets/images/hampers-idul-fitri-600.webp 600w"
                   sizes="(max-width: 576px) calc(100vw - 32px), (max-width: 992px) 450px, 500px"
-                  alt="Paket Hampers Lebaran Eksklusif 2028"
+                  alt="Paket Hampers Lebaran Eksklusif 2027"
                   class="hl-hero__img" width="500" height="625"
                   fetchpriority="high" decoding="async">`
     );
