@@ -16,6 +16,10 @@
   RewriteRule ^blog-kue-kering-lebaran-populer(\.html)?$ /blog/kue-kering-lebaran-populer [R=301,L]
   RewriteRule ^blog-tips-memilih-hampers-lebaran(\.html)?$ /blog/tips-memilih-hampers-lebaran [R=301,L]
   RewriteRule ^blog-tren-kemasan-hampers(\.html)?$ /blog/tren-kemasan-hampers [R=301,L]
+  RewriteRule ^blog-produsen-hampers-lebaran(\.html)?$ /blog/produsen-hampers-lebaran [R=301,L]
+  RewriteRule ^blog-hal-penting-sebelum-memesan-hampers-lebaran(\.html)?$ /blog/hal-penting-sebelum-memesan-hampers-lebaran [R=301,L]
+  RewriteRule ^blog-hampers-lebaran-custom(\.html)?$ /blog/hampers-lebaran-custom [R=301,L]
+  RewriteRule ^blog-pemesanan-hampers-lebaran-jumlah-besar(\.html)?$ /blog/pemesanan-hampers-lebaran-jumlah-besar [R=301,L]
 
   # 2. Redirect URL yang mengandung .html ke URL bersih tanpa .html (301 Permanent)
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/(.+)\.html [NC]

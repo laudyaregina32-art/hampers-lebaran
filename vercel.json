@@ -9,6 +9,10 @@
     { "source": "/blog-hampers-lebaran-korporat", "destination": "/blog/hampers-lebaran-korporat", "permanent": true },
     { "source": "/blog-kue-kering-lebaran-populer", "destination": "/blog/kue-kering-lebaran-populer", "permanent": true },
     { "source": "/blog-tips-memilih-hampers-lebaran", "destination": "/blog/tips-memilih-hampers-lebaran", "permanent": true },
-    { "source": "/blog-tren-kemasan-hampers", "destination": "/blog/tren-kemasan-hampers", "permanent": true }
+    { "source": "/blog-tren-kemasan-hampers", "destination": "/blog/tren-kemasan-hampers", "permanent": true },
+    { "source": "/blog-produsen-hampers-lebaran", "destination": "/blog/produsen-hampers-lebaran", "permanent": true },
+    { "source": "/blog-hal-penting-sebelum-memesan-hampers-lebaran", "destination": "/blog/hal-penting-sebelum-memesan-hampers-lebaran", "permanent": true },
+    { "source": "/blog-hampers-lebaran-custom", "destination": "/blog/hampers-lebaran-custom", "permanent": true },
+    { "source": "/blog-pemesanan-hampers-lebaran-jumlah-besar", "destination": "/blog/pemesanan-hampers-lebaran-jumlah-besar", "permanent": true }
   ]
 }
