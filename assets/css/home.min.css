@@ -16,3 +16,14 @@ section[aria-labelledby="kategori-heading"]{padding-top:clamp(2rem,3.5vw,2.75rem
 .hl-clients-marquee__item img{width:150px;height:52px;object-fit:contain;object-position:center;display:block;filter:none;opacity:1}
 @keyframes hlMarqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.hl-clients-marquee__track{animation-play-state:paused}}
+
+
+/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+body {
+  padding-top: 68px !important;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 80px !important;
+  }
+}

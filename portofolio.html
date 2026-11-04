@@ -1124,6 +1124,16 @@
   
     .hl-card-link .hl-card{transition:transform .2s ease,box-shadow .2s ease;cursor:pointer}
     .hl-card-link:hover .hl-card{transform:translateY(-4px);box-shadow:var(--hl-shadow-card-hover)}
+
+/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+body {
+  padding-top: 68px !important;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 80px !important;
+  }
+}
 </style>
   <link rel="stylesheet" href="assets/css/main.min.css">
 

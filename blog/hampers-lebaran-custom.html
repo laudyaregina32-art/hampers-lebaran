@@ -1112,7 +1112,17 @@
       min-height: 100vh
     }
   figure{border-radius:var(--hl-radius-md);overflow:hidden;margin-bottom:2.5rem;background:var(--hl-surface-muted)}figure img{width:100%;aspect-ratio:16/9;max-height:450px;object-fit:cover;object-position:center;border-radius:var(--hl-radius-md);display:block}
-  </style>
+  
+/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+body {
+  padding-top: 68px !important;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 80px !important;
+  }
+}
+</style>
   <link rel="stylesheet" href="../assets/css/main.min.css">
 
   <!-- Schema.org JSON-LD (Rich Graph Standard 2027-2027) -->

@@ -1233,16 +1233,7 @@
       min-height: 100vh
     }
 
-    /* Fixed navbar padding */
-    body {
-      padding-top: 64px !important;
-    }
-
-    @media (min-width: 992px) {
-      body {
-        padding-top: 76px !important;
-      }
-    }
+    
 
     /* ===== TESTIMONI ===== */
     .hl-testi-rating-wrap {
@@ -1394,12 +1385,22 @@
 
     a:has(.hl-portfolio-item) .hl-portfolio-item,.hl-portfolio-item{cursor:pointer}
     a:has(.hl-portfolio-item):hover .hl-portfolio-item__overlay{opacity:1}
+
+/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+body {
+  padding-top: 68px !important;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 80px !important;
+  }
+}
 </style>
-  <link rel="preload" href="assets/css/home.min.css?v=11" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/home.min.css?v=12" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="assets/css/home.min.css?v=11">
+    <link rel="stylesheet" href="assets/css/home.min.css?v=12">
   </noscript>
-  <link rel="stylesheet" href="assets/css/main.min.css?v=11">
+  <link rel="stylesheet" href="assets/css/main.min.css?v=12">
 
 
 

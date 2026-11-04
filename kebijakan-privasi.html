@@ -1111,7 +1111,17 @@
       background-color: var(--hl-bg) !important;
       min-height: 100vh
     }
-  </style>
+  
+/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+body {
+  padding-top: 68px !important;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 80px !important;
+  }
+}
+</style>
   <link rel="stylesheet" href="assets/css/main.min.css">
 
   <!-- Schema.org JSON-LD (Rich Graph Standard 2027-2027) -->
