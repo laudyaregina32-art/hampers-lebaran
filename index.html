@@ -1382,23 +1382,21 @@
     }
       section[aria-labelledby="kategori-heading"] { padding-top: clamp(2rem, 3.5vw, 2.75rem) !important; }
   
-/* ===== CLIENTS MARQUEE ===== */
-.hl-clients-marquee{background:var(--hl-bg);border-top:1px solid rgba(213,214,208,.8);border-bottom:1px solid rgba(213,214,208,.8);padding:clamp(1.25rem,2.5vw,1.75rem) 0;overflow:hidden}
-.hl-clients-marquee__inner{display:flex;flex-direction:column;align-items:center;gap:.9rem}
-.hl-clients-marquee__heading{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hl-text-muted,#6b7280);text-align:center;margin:0;padding:0 1rem}
-.hl-clients-marquee__track-wrapper{width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#fff 10%,#fff 90%,transparent);mask:linear-gradient(90deg,transparent,#fff 10%,#fff 90%,transparent)}
-.hl-clients-marquee__track{display:flex;align-items:center;gap:clamp(2rem,4vw,4rem);width:max-content;animation:hlMarqueeScroll 30s linear infinite}
-.hl-clients-marquee__item{flex-shrink:0;display:flex;align-items:center;opacity:.6;filter:grayscale(1);transition:opacity .25s ease,filter .25s ease}
-.hl-clients-marquee__item:hover{opacity:1;filter:grayscale(0)}
-.hl-clients-marquee__item img{height:38px;width:auto;max-width:130px;object-fit:contain;display:block}
-@keyframes hlMarqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* ===== CLIENTS MARQUEE (inside hero) ===== */
+.hl-clients-marquee{padding:clamp(1.5rem,3vw,2.25rem) 0;overflow:hidden;width:100%}
+.hl-clients-marquee__heading{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--hl-text-muted,#9ca3af);text-align:center;margin:0 0 1.1rem;padding:0 1rem}
+.hl-clients-marquee__track-wrapper{width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent 0%,#fff 8%,#fff 92%,transparent 100%);mask:linear-gradient(90deg,transparent 0%,#fff 8%,#fff 92%,transparent 100%)}
+.hl-clients-marquee__track{display:flex;align-items:center;gap:clamp(2.5rem,5vw,5rem);width:max-content;will-change:transform;animation:hlMarqueeScroll 32s linear infinite}
+.hl-clients-marquee__item{flex-shrink:0;display:flex;align-items:center;justify-content:center;height:44px}
+.hl-clients-marquee__item img{height:44px;width:auto;max-width:140px;object-fit:contain;display:block;filter:none;opacity:1}
+@keyframes hlMarqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.hl-clients-marquee__track{animation:none}}
 </style>
-  <link rel="preload" href="assets/css/home.min.css?v=8" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/home.min.css?v=9" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="assets/css/home.min.css?v=8">
+    <link rel="stylesheet" href="assets/css/home.min.css?v=9">
   </noscript>
-  <link rel="stylesheet" href="assets/css/main.min.css?v=8">
+  <link rel="stylesheet" href="assets/css/main.min.css?v=9">
 
 
 
@@ -1541,6 +1539,30 @@
         <!-- Divider Garis di Bawah Tulisan Hero -->
         <hr class="hl-hero__row-divider" style="border:none !important;border-top:1px solid rgba(213, 214, 208, .8) !important;margin-top:clamp(2rem, 3.5vw, 3rem) !important;margin-bottom:0 !important;width:100% !important;">
 
+        <!-- ===== CLIENT TRUST MARQUEE (inside hero) ===== -->
+        <div class="hl-clients-marquee" role="region" aria-label="Klien dan Mitra Perusahaan">
+          <p class="hl-clients-marquee__heading">Dipercaya Oleh Berbagai Perusahaan Terkemuka &amp; Instansi Pemerintahan</p>
+          <div class="hl-clients-marquee__track-wrapper">
+            <div class="hl-clients-marquee__track">
+              <div class="hl-clients-marquee__item"><img src="assets/images/bankjatim.webp" alt="Bank Jatim" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/bca.webp" alt="BCA" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/bpjs.webp" alt="BPJS" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/ibs-software.webp" alt="IBS Software" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/mandiri.webp" alt="Bank Mandiri" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/otoritas.webp" alt="OJK Otoritas" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/pertamina.webp" alt="Pertamina" loading="lazy" height="44" width="auto"></div>
+              <!-- Duplicate set 2 -->
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bankjatim.webp" alt="" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bca.webp" alt="" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bpjs.webp" alt="" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/ibs-software.webp" alt="" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/mandiri.webp" alt="" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/otoritas.webp" alt="" loading="lazy" height="44" width="auto"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/pertamina.webp" alt="" loading="lazy" height="44" width="auto"></div>
+            </div>
+          </div>
+        </div>
+
         <!-- Highlight Keunggulan & Garansi Layanan (Full Width 3 Kolom) -->
         <div class="hl-hero__proof-wrapper" style="margin-top:clamp(4rem, 7vw, 6.5rem) !important;margin-bottom:0 !important;padding-top:2.25rem !important;">
           <div class="hl-hero__proof-grid">
@@ -1615,32 +1637,6 @@
               <strong>Terpercaya untuk Idulfitri:</strong> Melayani pesanan personal keluarga &amp; pengadaan
               korporat dengan kemasan aman se-Indonesia.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CLIENT TRUST MARQUEE ===== -->
-    <section class="hl-clients-marquee" aria-label="Klien dan Mitra Perusahaan">
-      <div class="hl-clients-marquee__inner">
-        <p class="hl-clients-marquee__heading">Dipercaya Oleh Berbagai Perusahaan Terkemuka &amp; Instansi Pemerintahan</p>
-        <div class="hl-clients-marquee__track-wrapper">
-          <div class="hl-clients-marquee__track" aria-hidden="true">
-            <div class="hl-clients-marquee__item"><img src="assets/images/bankjatim.webp" alt="Bank Jatim" loading="lazy" width="120" height="40"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/bca.webp" alt="BCA" loading="lazy" width="120" height="40"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/bpjs.webp" alt="BPJS" loading="lazy" width="120" height="40"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/ibs-software.webp" alt="IBS Software" loading="lazy" width="120" height="40"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/mandiri.webp" alt="Bank Mandiri" loading="lazy" width="120" height="40"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/otoritas.webp" alt="OJK Otoritas" loading="lazy" width="120" height="40"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/pertamina.webp" alt="Pertamina" loading="lazy" width="120" height="40"></div>
-            <!-- Duplicate set for seamless loop -->
-            <div class="hl-clients-marquee__item"><img src="assets/images/bankjatim.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/bca.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/bpjs.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/ibs-software.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/mandiri.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/otoritas.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
-            <div class="hl-clients-marquee__item"><img src="assets/images/pertamina.webp" alt="" loading="lazy" width="120" height="40" aria-hidden="true"></div>
           </div>
         </div>
       </div>

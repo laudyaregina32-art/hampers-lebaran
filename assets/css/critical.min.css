@@ -2,14 +2,13 @@
 
 
 
-/* ===== CLIENTS MARQUEE ===== */
-.hl-clients-marquee{background:var(--hl-bg);border-top:1px solid rgba(213,214,208,.8);border-bottom:1px solid rgba(213,214,208,.8);padding:clamp(1.25rem,2.5vw,1.75rem) 0;overflow:hidden}
-.hl-clients-marquee__inner{display:flex;flex-direction:column;align-items:center;gap:.9rem}
-.hl-clients-marquee__heading{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hl-text-muted,#6b7280);text-align:center;margin:0;padding:0 1rem}
-.hl-clients-marquee__track-wrapper{width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#fff 10%,#fff 90%,transparent);mask:linear-gradient(90deg,transparent,#fff 10%,#fff 90%,transparent)}
-.hl-clients-marquee__track{display:flex;align-items:center;gap:clamp(2rem,4vw,4rem);width:max-content;animation:hlMarqueeScroll 30s linear infinite}
-.hl-clients-marquee__item{flex-shrink:0;display:flex;align-items:center;opacity:.6;filter:grayscale(1);transition:opacity .25s ease,filter .25s ease}
-.hl-clients-marquee__item:hover{opacity:1;filter:grayscale(0)}
-.hl-clients-marquee__item img{height:38px;width:auto;max-width:130px;object-fit:contain;display:block}
-@keyframes hlMarqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== CLIENTS MARQUEE (inside hero) ===== */
+.hl-clients-marquee{padding:clamp(1.5rem,3vw,2.25rem) 0;overflow:hidden;width:100%}
+.hl-clients-marquee__heading{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--hl-text-muted,#9ca3af);text-align:center;margin:0 0 1.1rem;padding:0 1rem}
+.hl-clients-marquee__track-wrapper{width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent 0%,#fff 8%,#fff 92%,transparent 100%);mask:linear-gradient(90deg,transparent 0%,#fff 8%,#fff 92%,transparent 100%)}
+.hl-clients-marquee__track{display:flex;align-items:center;gap:clamp(2.5rem,5vw,5rem);width:max-content;will-change:transform;animation:hlMarqueeScroll 32s linear infinite}
+.hl-clients-marquee__item{flex-shrink:0;display:flex;align-items:center;justify-content:center;height:44px}
+.hl-clients-marquee__item img{height:44px;width:auto;max-width:140px;object-fit:contain;display:block;filter:none;opacity:1}
+@keyframes hlMarqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.hl-clients-marquee__track{animation:none}}
