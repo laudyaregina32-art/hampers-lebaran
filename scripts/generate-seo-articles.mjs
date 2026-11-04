@@ -1291,7 +1291,7 @@ ${relatedHtml}
               <div>
                 <p class="hl-author-bio__name">Laudya Regina Julia</p>
                 <p class="hl-author-bio__role">Content Writer &amp; Konsultan Hampers Lebaran</p>
-                <p class="hl-author-bio__desc">Laudya Regina Julia adalah penulis konten spesialis di Hampers Lebaran dengan pengalaman lebih dari 5 tahun dalam industri gifting dan parcel premium. Ia memiliki keahlian mendalam di bidang kurasi produk halal, desain kemasan modern, serta strategi pengadaan hampers korporat berskala besar. Laudya rutin berbagi tips, panduan, dan tren terbaru seputar hampers Idulfitri melalui blog ini.</p>
+                <p class="hl-author-bio__desc">Laudya Regina Julia adalah penulis konten spesialis di Hampers Lebaran dengan pengalaman lebih dari 5 tahun dalam industri gifting dan parcel premium. Ia memiliki keahlian mendalam di bidang kurasi produk , desain kemasan modern, serta strategi pengadaan hampers korporat berskala besar. Laudya rutin berbagi tips, panduan, dan tren terbaru seputar hampers Idulfitri melalui blog ini.</p>
               </div>
             </div>
 
