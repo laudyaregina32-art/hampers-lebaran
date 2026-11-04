@@ -1009,15 +1009,22 @@
 
     .hl-card__img-wrap {
       overflow: hidden;
-      aspect-ratio: 4/5;
-      background: var(--hl-surface-muted)
+      aspect-ratio: 3/4;
+      background: var(--hl-surface-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hl-card__img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 350ms
+      object-fit: cover !important;
+      transition: transform 350ms;
+    }
+
+    .hl-card__img-wrap--landscape img {
+      object-fit: cover !important;
     }
 
     @media (min-width:992px) {
@@ -1520,7 +1527,7 @@
             <a href="hampers-premium.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="../assets/images/hampers-hijau-emas.webp" alt="Hampers Premium Lebaran" width="400"
-                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="500" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <h3 class="hl-card__title">Hampers Premium</h3>
@@ -1536,7 +1543,7 @@
             <a href="hampers-perlengkapan-ibadah.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="../assets/images/sajadah.webp" alt="Hampers Perlengkapan Ibadah Lebaran" width="400"
-                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="500" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <h3 class="hl-card__title">Hampers Perlengkapan Ibadah</h3>
@@ -1552,7 +1559,7 @@
             <a href="hampers-custom.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="../assets/images/hampers-sage.webp" alt="Hampers Custom Corporate Lebaran" width="400"
-                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="500" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <h3 class="hl-card__title">Hampers Custom / Corporate</h3>

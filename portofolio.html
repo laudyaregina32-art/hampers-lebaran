@@ -1012,15 +1012,22 @@
 
     .hl-card__img-wrap {
       overflow: hidden;
-      aspect-ratio: 4/5;
-      background: var(--hl-surface-muted)
+      aspect-ratio: 3/4;
+      background: var(--hl-surface-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hl-card__img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 350ms
+      object-fit: cover !important;
+      transition: transform 350ms;
+    }
+
+    .hl-card__img-wrap--landscape img {
+      object-fit: cover !important;
     }
 
     @media (min-width:992px) {
@@ -1230,7 +1237,7 @@
             <article class="hl-card" aria-label="Hampers Korporat Akhir Tahun">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-perusahaan.webp" alt="Hampers Korporat Akhir Tahun" width="400"
-                  height="300" style="width:100%;height:100%;object-fit:cover;" loading="eager" fetchpriority="high"
+                  height="300" style="width:100%;height:100%;object-fit: cover;" loading="eager" fetchpriority="high"
                   decoding="async">
               </div>
               <div class="hl-card__body">
@@ -1246,7 +1253,7 @@
             <article class="hl-card" aria-label="Hampers Kue Lebaran dalam Basket Rotan">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-rotan.webp" alt="Hampers Kue dalam Basket Rotan" width="400"
-                  height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Personal · 2026</p>
@@ -1261,7 +1268,7 @@
             <article class="hl-card" aria-label="Hampers Perlengkapan Ibadah Eksklusif">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/tasbih.webp" alt="Hampers Perlengkapan Ibadah Premium" width="400" height="300"
-                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Personal · 2026</p>
@@ -1276,7 +1283,7 @@
             <article class="hl-card" aria-label="Hampers Custom Corporate Branding">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-custom.webp" alt="Hampers Custom Branding Korporat" width="400"
-                  height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Korporat · 2026</p>
@@ -1291,7 +1298,7 @@
             <article class="hl-card" aria-label="Hampers Lebaran Keluarga">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-keluarga.webp" alt="Hampers Keluarga Edisi Lebaran" width="400"
-                  height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Personal · 2026</p>
@@ -1306,7 +1313,7 @@
             <article class="hl-card" aria-label="Hampers Paket Lebaran Instansi">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-banyak.webp" alt="Hampers Lebaran untuk Instansi" width="400"
-                  height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Korporat · 2026</p>

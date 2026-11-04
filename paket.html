@@ -1012,15 +1012,22 @@
 
     .hl-card__img-wrap {
       overflow: hidden;
-      aspect-ratio: 4/5;
-      background: var(--hl-surface-muted)
+      aspect-ratio: 3/4;
+      background: var(--hl-surface-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hl-card__img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 350ms
+      object-fit: cover !important;
+      transition: transform 350ms;
+    }
+
+    .hl-card__img-wrap--landscape img {
+      object-fit: cover !important;
     }
 
     @media (min-width:992px) {
@@ -1127,16 +1134,22 @@
 
     .hl-card__img-wrap {
       overflow: hidden;
-      aspect-ratio: 4/5;
-      max-height: 280px;
-      background: var(--hl-surface-muted)
+      aspect-ratio: 3/4;
+      background: var(--hl-surface-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hl-card__img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 350ms
+      object-fit: cover !important;
+      transition: transform 350ms;
+    }
+
+    .hl-card__img-wrap--landscape img {
+      object-fit: cover !important;
     }
   </style>
   <link rel="stylesheet" href="assets/css/main.min.css">
@@ -1268,7 +1281,7 @@
                   srcset="assets/images/hampers-hijau-emas-320.webp 320w, assets/images/hampers-hijau-emas-400.webp 400w, assets/images/hampers-hijau-emas-600.webp 600w"
                   sizes="(max-width: 576px) 170px, (max-width: 992px) calc(50vw - 24px), 280px"
                   alt="Hampers Premium Lebaran" width="400" height="500"
-                  style="width:100%;height:100%;object-fit:cover;" loading="eager" fetchpriority="high"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager" fetchpriority="high"
                   decoding="async">
               </div>
               <div class="hl-card__body">
@@ -1290,7 +1303,7 @@
             <a href="paket/hampers-kue-camilan.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/kastengel.webp" alt="Hampers Kue &amp; Camilan Lebaran" width="400" height="500"
-                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Favorit</p>
@@ -1310,7 +1323,7 @@
             <a href="paket/hampers-perlengkapan-ibadah.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/sajadah.webp" alt="Hampers Perlengkapan Ibadah Lebaran" width="400" height="500"
-                  style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Bermakna</p>
@@ -1330,7 +1343,7 @@
             <a href="paket/hampers-custom.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-sage.webp" alt="Hampers Custom Corporate Lebaran" width="400"
-                  height="500" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                  height="500" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
               </div>
               <div class="hl-card__body">
                 <p class="hl-card__category">Korporat</p>
