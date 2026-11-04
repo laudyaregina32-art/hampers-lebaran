@@ -1391,12 +1391,15 @@
 .hl-clients-marquee__item img{width:150px;height:52px;object-fit:contain;object-position:center;display:block;filter:none;opacity:1}
 @keyframes hlMarqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.hl-clients-marquee__track{animation-play-state:paused}}
+
+    a:has(.hl-portfolio-item) .hl-portfolio-item,.hl-portfolio-item{cursor:pointer}
+    a:has(.hl-portfolio-item):hover .hl-portfolio-item__overlay{opacity:1}
 </style>
-  <link rel="preload" href="assets/css/home.min.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/home.min.css?v=11" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="assets/css/home.min.css?v=10">
+    <link rel="stylesheet" href="assets/css/home.min.css?v=11">
   </noscript>
-  <link rel="stylesheet" href="assets/css/main.min.css?v=10">
+  <link rel="stylesheet" href="assets/css/main.min.css?v=11">
 
 
 
@@ -1890,6 +1893,7 @@
         </div>
         <div class="hl-portfolio-grid">
           <!-- Item 1 -->
+          <a href="portofolio/hampers-korporat-akhir-tahun.html" style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden" aria-label="Hampers Korporat Akhir Tahun">
           <div class="hl-portfolio-item">
             <img src="assets/images/hampers-perusahaan.webp" alt="Hampers premium untuk acara korporat" width="300"
               height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
@@ -1898,7 +1902,9 @@
                   style="font-weight:400;opacity:0.8">Custom branding</small></div>
             </div>
           </div>
+          </a>
           <!-- Item 2 -->
+          <a href="portofolio/hampers-kue-basket-rotan.html" style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden" aria-label="Hampers Kue dalam Basket Rotan">
           <div class="hl-portfolio-item">
             <img src="assets/images/hampers-rotan.webp" alt="Hampers kue lebaran dalam basket rotan" width="300"
               height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
@@ -1907,7 +1913,9 @@
                   style="font-weight:400;opacity:0.8">Edisi Lebaran 2027</small></div>
             </div>
           </div>
+          </a>
           <!-- Item 3 -->
+          <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden" aria-label="Hampers Perlengkapan Ibadah">
           <div class="hl-portfolio-item">
             <img src="assets/images/tasbih.webp" alt="Hampers perlengkapan ibadah dalam kotak elegant" width="300"
               height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
@@ -1916,6 +1924,7 @@
                   style="font-weight:400;opacity:0.8">Kemasan premium eksklusif</small></div>
             </div>
           </div>
+          </a>
         </div>
       </div>
     </section>
