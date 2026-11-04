@@ -71,6 +71,29 @@
       }
     }
 
+    /* ===== BACK BUTTON LINK ===== */
+    .hl-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--hl-accent-dark);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      padding: 0.38rem 0.95rem;
+      border-radius: 999px;
+      box-shadow: 0 1px 4px rgba(40,42,39,0.04);
+      transition: all var(--hl-transition);
+    }
+    .hl-back-link:hover {
+      background: var(--hl-surface-muted);
+      color: var(--hl-text);
+      border-color: var(--hl-accent);
+      transform: translateX(-3px);
+    }
+
     /* ===== HERO PANDUAN ===== */
     .hl-guide-hero {
       background: linear-gradient(180deg, rgba(233, 221, 204, 0.45) 0%, rgba(243, 243, 240, 0) 100%);
@@ -589,14 +612,23 @@
     <!-- Hero Section Panduan -->
     <section class="hl-guide-hero" aria-labelledby="hero-heading">
       <div class="container">
-        <!-- Breadcrumb Nav -->
-        <nav aria-label="Breadcrumb" class="mb-3">
-          <ol class="hl-breadcrumb">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="paket.html">Paket</a></li>
-            <li><span aria-current="page">Panduan Hampers Perusahaan</span></li>
-          </ol>
-        </nav>
+        <!-- Breadcrumb Nav & Tombol Kembali -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <nav aria-label="Breadcrumb">
+            <ol class="hl-breadcrumb mb-0">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="paket.html">Paket</a></li>
+              <li><span aria-current="page">Panduan Hampers Perusahaan</span></li>
+            </ol>
+          </nav>
+          <a href="paket.html" class="hl-back-link" onclick="if(window.history.length > 1){window.history.back();return false;}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Kembali ke Paket
+          </a>
+        </div>
 
         <span class="hl-eyebrow">PANDUAN KEPUTUSAN PENGADAAN • LEBARAN 2027</span>
         <h1 class="hl-guide-hero__title" id="hero-heading">Hampers Lebaran Perusahaan: Panduan Lengkap untuk Bisnis</h1>
@@ -1101,6 +1133,17 @@ Catatan khusus / No Gift Policy: …</code>
           </div>
         </div>
       </section>
+
+      <!-- Navigasi Kembali ke Halaman Paket -->
+      <div class="d-flex justify-content-center my-5">
+        <a href="paket.html" class="hl-back-link" onclick="if(window.history.length > 1){window.history.back();return false;}" style="font-size: 1rem; padding: 0.65rem 1.4rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Kembali ke Katalog Paket Hampers
+        </a>
+      </div>
 
     </div>
   </main>
