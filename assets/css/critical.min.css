@@ -23,3 +23,6 @@ body {
     padding-top: 80px !important;
   }
 }
+
+/* ===== GUIDE PROMO BUTTON ===== */
+.hl-btn-guide-promo{display:inline-flex;align-items:center;gap:.65rem;background:#174b3b;color:#fff!important;padding:.85rem 1.75rem;border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none;box-shadow:0 8px 20px rgba(23,75,59,.2);transition:all .25s ease}.hl-btn-guide-promo:hover{background:#103729;color:#fff!important;transform:translateY(-2px);box-shadow:0 12px 28px rgba(23,75,59,.28)}
