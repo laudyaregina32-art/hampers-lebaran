@@ -734,8 +734,16 @@
       flex-shrink: 0
     }
 
+    .hl-hero__row-divider {
+      border: none !important;
+      border-top: 1px solid rgba(213, 214, 208, .8) !important;
+      margin-top: clamp(2rem, 3.5vw, 3rem) !important;
+      margin-bottom: 0 !important;
+      width: 100% !important;
+    }
+
     .hl-hero__proof-wrapper {
-      margin-top: clamp(6.5rem, 11vw, 9.5rem) !important;
+      margin-top: clamp(4rem, 7vw, 6.5rem) !important;
       margin-bottom: 0 !important;
       padding-top: 2.25rem !important;
       border-top: 1px solid rgba(213, 214, 208, .8) !important;
@@ -1371,11 +1379,11 @@
     }
       section[aria-labelledby="kategori-heading"] { padding-top: clamp(2rem, 3.5vw, 2.75rem) !important; }
   </style>
-  <link rel="preload" href="assets/css/home.min.css?v=4" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/home.min.css?v=5" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="assets/css/home.min.css?v=4">
+    <link rel="stylesheet" href="assets/css/home.min.css?v=5">
   </noscript>
-  <link rel="stylesheet" href="assets/css/main.min.css?v=4">
+  <link rel="stylesheet" href="assets/css/main.min.css?v=5">
 
 
 
@@ -1515,8 +1523,11 @@
           </div>
         </div>
 
+        <!-- Divider Garis di Bawah Tulisan Hero -->
+        <hr class="hl-hero__row-divider" style="border:none !important;border-top:1px solid rgba(213, 214, 208, .8) !important;margin-top:clamp(2rem, 3.5vw, 3rem) !important;margin-bottom:0 !important;width:100% !important;">
+
         <!-- Highlight Keunggulan & Garansi Layanan (Full Width 3 Kolom) -->
-        <div class="hl-hero__proof-wrapper" style="margin-top:clamp(6.5rem, 11vw, 9.5rem) !important;margin-bottom:0 !important;padding-top:2.25rem !important;">
+        <div class="hl-hero__proof-wrapper" style="margin-top:clamp(4rem, 7vw, 6.5rem) !important;margin-bottom:0 !important;padding-top:2.25rem !important;">
           <div class="hl-hero__proof-grid">
             <div class="hl-hero__proof-card">
               <div class="hl-hero__proof-icon" aria-hidden="true">
