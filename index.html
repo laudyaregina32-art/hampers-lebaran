@@ -361,9 +361,12 @@
       background: rgba(243, 243, 240, .96);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--hl-border);
-      position: sticky;
-      top: 0;
-      z-index: 1030;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      z-index: 1030 !important;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
     }
 
@@ -731,18 +734,20 @@
     }
 
     .hl-hero__proof-wrapper {
-      margin-top: 2rem;
-      padding-top: 1.6rem;
+      margin-top: 2.75rem;
+      padding-top: 2rem;
       border-top: 1px solid rgba(213, 214, 208, .8);
       display: flex;
       flex-direction: column;
-      gap: 1.15rem
+      gap: 1.25rem;
+      width: 100%;
     }
 
     .hl-hero__proof-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.1rem
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 1.25rem !important;
+      width: 100% !important;
     }
 
     .hl-hero__proof-card {
@@ -753,7 +758,8 @@
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
       border-radius: var(--hl-radius-md);
-      box-shadow: 0 4px 16px rgba(40, 42, 39, .05)
+      box-shadow: 0 4px 16px rgba(40, 42, 39, .05);
+      height: 100%
     }
 
     .hl-hero__proof-icon {
@@ -826,37 +832,9 @@
       color: var(--hl-text)
     }
 
-    @media (max-width:575.98px) {
+    @media (max-width: 767.98px) {
       .hl-hero__proof-grid {
-        grid-template-columns: 1fr
-      }
-
-      .hl-hero__guarantee {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .45rem
-      }
-
-      .hl-hero__guarantee-stars {
-        padding-top: 0
-      }
-
-      .hl-hero__badge {
-        left: 0;
-        right: 0;
-        margin: 0 1rem;
-        bottom: 1rem
-      }
-
-      .hl-hero__ctas {
-        flex-direction: column;
-        align-items: stretch
-      }
-
-      .hl-hero__ctas .hl-btn-primary,
-      .hl-hero__ctas .hl-btn-wa {
-        text-align: center;
-        justify-content: center
+        grid-template-columns: 1fr !important;
       }
     }
 
@@ -1234,6 +1212,154 @@
       background-color: var(--hl-bg) !important;
       min-height: 100vh
     }
+
+    /* Fixed navbar padding */
+    body {
+      padding-top: 64px !important;
+    }
+
+    @media (min-width: 992px) {
+      body {
+        padding-top: 76px !important;
+      }
+    }
+
+    /* ===== TESTIMONI ===== */
+    .hl-testi-rating-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem
+    }
+
+    .hl-testi-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 100px;
+      padding: .65rem 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .hl-testi-stars {
+      display: flex;
+      gap: 3px
+    }
+
+    .hl-testi-rating-score {
+      font-size: .92rem;
+      color: var(--hl-text-muted)
+    }
+
+    .hl-testi-card {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-lg);
+      padding: 2rem 1.75rem 1.75rem;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--hl-transition), transform var(--hl-transition)
+    }
+
+    .hl-testi-card:hover {
+      box-shadow: var(--hl-shadow-card-hover);
+      transform: translateY(-3px)
+    }
+
+    .hl-testi-card--featured {
+      background: var(--hl-accent-dark);
+      border-color: var(--hl-accent-dark);
+      color: #fff
+    }
+
+    .hl-testi-card--featured .hl-testi-text,
+    .hl-testi-card--featured .hl-testi-name,
+    .hl-testi-card--featured .hl-testi-event {
+      color: rgba(255, 255, 255, .92)
+    }
+
+    .hl-testi-card--featured .hl-testi-quote-icon {
+      color: rgba(255, 255, 255, .18)
+    }
+
+    .hl-testi-card--featured .hl-testi-divider {
+      border-color: rgba(255, 255, 255, .2)
+    }
+
+    .hl-testi-quote-icon {
+      font-family: Georgia, serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--hl-warm);
+      position: absolute;
+      top: .75rem;
+      right: 1.5rem;
+      user-select: none
+    }
+
+    .hl-testi-text {
+      font-size: .97rem;
+      color: var(--hl-text);
+      line-height: 1.72;
+      flex: 1;
+      font-style: italic;
+      margin-bottom: 1.25rem
+    }
+
+    .hl-testi-divider {
+      border: none;
+      border-top: 1px solid var(--hl-border);
+      margin-bottom: 1.1rem
+    }
+
+    .hl-testi-author {
+      display: flex;
+      align-items: center;
+      gap: .9rem
+    }
+
+    .hl-testi-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--hl-warm);
+      color: var(--hl-accent-dark);
+      font-weight: 700;
+      font-size: .82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 2px solid rgba(184, 151, 61, .3)
+    }
+
+    .hl-testi-card--featured .hl-testi-avatar {
+      background: rgba(255, 255, 255, .2);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .3)
+    }
+
+    .hl-testi-name {
+      font-weight: 700;
+      font-size: .92rem;
+      color: var(--hl-text);
+      margin-bottom: .1rem
+    }
+
+    .hl-testi-event {
+      font-size: .8rem;
+      color: var(--hl-text-muted)
+    }
+
+    .hl-testi-stars-sm {
+      display: flex;
+      gap: 2px;
+      margin-top: .35rem
+    }
   </style>
   <link rel="preload" href="assets/css/home.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -1332,9 +1458,6 @@
               Hampers Lebaran 2027 hadir dengan berbagai pilihan bingkisan untuk keluarga, sahabat, pelanggan, dan mitra
               bisnis. Kami menyediakan hampers premium, kue dan camilan, perlengkapan ibadah, serta paket custom untuk
               kebutuhan personal maupun perusahaan.
-              Setiap paket dapat disesuaikan melalui pilihan isi produk, desain kemasan, kartu ucapan, dan logo
-              perusahaan. Temukan pilihan hampers sesuai kebutuhan dan anggaran untuk menyambut Hari Raya Idulfitri
-              2027.
             </p>
             <div class="hl-hero__ctas">
               <a href="paket.html" class="hl-btn-primary" id="hero-cta-paket">
@@ -1352,70 +1475,6 @@
                 </svg>
                 Konsultasi WhatsApp
               </a>
-            </div>
-
-            <!-- Highlight Keunggulan & Garansi Layanan -->
-            <div class="hl-hero__proof-wrapper">
-              <div class="hl-hero__proof-grid">
-                <div class="hl-hero__proof-card">
-                  <div class="hl-hero__proof-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path
-                        d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="hl-hero__proof-title">Kurasi Premium &amp; Halal</p>
-                    <p class="hl-hero__proof-desc">Tersedia pilihan kue kering, kurma, dan perlengkapan ibadah untuk
-                      melengkapi bingkisan Lebaran.</p>
-                  </div>
-                </div>
-                <div class="hl-hero__proof-card">
-                  <div class="hl-hero__proof-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 20h9" />
-                      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
-                      <path d="m15 5 3 3" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="hl-hero__proof-title">Kustomisasi Kartu &amp; Logo</p>
-                    <p class="hl-hero__proof-desc">Sesuaikan kartu ucapan, pita, desain kemasan, dan identitas
-                      perusahaan untuk kebutuhan hadiah maupun pengadaan korporat.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="hl-hero__guarantee">
-                <div class="hl-hero__guarantee-stars" aria-hidden="true">
-                  <svg width="15" height="15" viewBox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                  <svg width="15" height="15" viewBox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                  <svg width="15" height="15" viewBox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                  <svg width="15" height="15" viewBox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                  <svg width="15" height="15" viewBox="0 0 24 24">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </div>
-                <p class="hl-hero__guarantee-text">
-                  <strong>Terpercaya untuk Idulfitri:</strong> Melayani pesanan personal keluarga &amp; pengadaan
-                  korporat dengan kemasan aman se-Indonesia.
-                </p>
-              </div>
             </div>
           </div>
           <div class="col-lg-5 order-2 order-lg-2">
@@ -1445,57 +1504,81 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== TRUST STRIP ===== -->
-    <section class="hl-trust-strip" aria-label="Keunggulan layanan">
-      <div class="container">
-        <div class="hl-trust-container">
-          <div class="hl-trust-item">
-            <div class="hl-trust-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="8" width="18" height="4" rx="1" />
-                <path d="M12 8v13" />
-                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 4.8 0 0 1 12 8a4.8 4.8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-              </svg>
+        <!-- Highlight Keunggulan & Garansi Layanan (Full Width 3 Kolom) -->
+        <div class="hl-hero__proof-wrapper">
+          <div class="hl-hero__proof-grid">
+            <div class="hl-hero__proof-card">
+              <div class="hl-hero__proof-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" />
+                </svg>
+              </div>
+              <div>
+                <p class="hl-hero__proof-title">Pilihan Hampers Berkualitas</p>
+                <p class="hl-hero__proof-desc">Aneka kue kering, kurma, camilan, dan perlengkapan ibadah dengan pilihan
+                  paket sesuai kebutuhan dan anggaran Anda.</p>
+              </div>
             </div>
-            <span class="hl-trust-label">Kemasan Premium &amp; Elegan</span>
+            <div class="hl-hero__proof-card">
+              <div class="hl-hero__proof-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                  <path d="m15 5 3 3" />
+                </svg>
+              </div>
+              <div>
+                <p class="hl-hero__proof-title">Personalisasi Hadiah</p>
+                <p class="hl-hero__proof-desc">Sesuaikan kemasan, kartu ucapan, pita, dan logo perusahaan untuk
+                  menciptakan bingkisan yang lebih personal dan berkesan.</p>
+              </div>
+            </div>
+            <div class="hl-hero__proof-card">
+              <div class="hl-hero__proof-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div>
+                <p class="hl-hero__proof-title">Pengiriman Aman & Terpercaya</p>
+                <p class="hl-hero__proof-desc">Pengemasan dengan perlindungan tambahan untuk membantu menjaga kondisi
+                  hampers hingga sampai ke penerima.</p>
+              </div>
+            </div>
           </div>
-          <div class="hl-trust-item">
-            <div class="hl-trust-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 20h9" />
-                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
-                <path d="m15 5 3 3" />
+
+          <div class="hl-hero__guarantee">
+            <div class="hl-hero__guarantee-stars" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="15" height="15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="15" height="15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="15" height="15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="15" height="15" viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
             </div>
-            <span class="hl-trust-label">Opsi Personalisasi Tersedia</span>
-          </div>
-          <div class="hl-trust-item">
-            <div class="hl-trust-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
-            </div>
-            <span class="hl-trust-label">Melayani Pesanan Korporat</span>
-          </div>
-          <div class="hl-trust-item">
-            <div class="hl-trust-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                <path d="M8 10h.01" />
-                <path d="M12 10h.01" />
-                <path d="M16 10h.01" />
-              </svg>
-            </div>
-            <span class="hl-trust-label">Konsultasi via WhatsApp</span>
+            <p class="hl-hero__guarantee-text">
+              <strong>Terpercaya untuk Idulfitri:</strong> Melayani pesanan personal keluarga &amp; pengadaan
+              korporat dengan kemasan aman se-Indonesia.
+            </p>
           </div>
         </div>
       </div>
@@ -1773,6 +1856,172 @@
             <div class="hl-portfolio-item__overlay">
               <div class="hl-portfolio-item__caption">Hampers Perlengkapan Ibadah<br><small
                   style="font-weight:400;opacity:0.8">Kemasan premium eksklusif</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== TESTIMONI ===== -->
+    <section class="hl-section hl-section--muted" aria-labelledby="testimoni-heading">
+      <div class="container">
+        <div class="hl-section-heading text-center">
+          <p class="hl-eyebrow">Kepuasan Pelanggan</p>
+          <h2 class="hl-heading" id="testimoni-heading">Testimoni Pelanggan Hampers Lebaran</h2>
+          <p class="hl-subtitle mx-auto mt-3">Kisah nyata dari pelanggan yang mempercayakan bingkisan Lebaran mereka
+            kepada kami — dari pesanan personal keluarga hingga pengadaan korporat skala besar.</p>
+        </div>
+
+        <!-- Rating Badge -->
+        <div class="hl-testi-rating-wrap">
+          <div class="hl-testi-rating-badge">
+            <div class="hl-testi-stars" aria-label="Rating 4.9 dari 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <span class="hl-testi-rating-score"><strong>4.9 / 5.0</strong> &bull; Berdasarkan <strong>200+
+                Ulasan</strong> Pelanggan Terverifikasi</span>
+          </div>
+        </div>
+
+        <!-- Testimoni Cards -->
+        <div class="row g-4 mt-2">
+          <!-- Card 1 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="hl-testi-card">
+              <div class="hl-testi-quote-icon" aria-hidden="true">"</div>
+              <p class="hl-testi-text">"Pesan hampers premium untuk 80 karyawan kantor, hasilnya luar biasa! Kemasan
+                hardbox magnetik dengan pita cetak logo perusahaan sangat elegan. Semua diterima tepat waktu sebelum
+                Lebaran. Klien dan karyawan sangat senang!"</p>
+              <div class="hl-testi-divider"></div>
+              <div class="hl-testi-author">
+                <div class="hl-testi-avatar" aria-hidden="true">SR</div>
+                <div>
+                  <div class="hl-testi-name">Sari Rahmawati</div>
+                  <div class="hl-testi-event">HR Manager &bull; Jakarta Selatan</div>
+                  <div class="hl-testi-stars-sm" aria-label="Bintang 5">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 (Featured) -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="hl-testi-card hl-testi-card--featured">
+              <div class="hl-testi-quote-icon" aria-hidden="true">"</div>
+              <p class="hl-testi-text">"Hampers kue kering artisannya enak sekali — nastar keju premium, kastengel, dan
+                putri salju meleleh di mulut. Kemasan keranjang rotannya cantik banget, jadi sayang dibuka! Sudah
+                langganan setiap tahun dan selalu memuaskan."</p>
+              <div class="hl-testi-divider"></div>
+              <div class="hl-testi-author">
+                <div class="hl-testi-avatar" aria-hidden="true">DP</div>
+                <div>
+                  <div class="hl-testi-name">Dinda Puspita</div>
+                  <div class="hl-testi-event">Pelanggan Setia &bull; Surabaya</div>
+                  <div class="hl-testi-stars-sm" aria-label="Bintang 5">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="hl-testi-card">
+              <div class="hl-testi-quote-icon" aria-hidden="true">"</div>
+              <p class="hl-testi-text">"Pesan 150 hampers perlengkapan ibadah untuk instansi kami. Sajadah premium,
+                tasbih kristal, dan Al-Quran dikemas dalam hardbox eksklusif. Pengiriman ke seluruh Indonesia aman dan
+                tepat waktu. Sangat profesional!"</p>
+              <div class="hl-testi-divider"></div>
+              <div class="hl-testi-author">
+                <div class="hl-testi-avatar" aria-hidden="true">BH</div>
+                <div>
+                  <div class="hl-testi-name">Budi Hartono</div>
+                  <div class="hl-testi-event">Pengadaan BUMN &bull; Bandung</div>
+                  <div class="hl-testi-stars-sm" aria-label="Bintang 5">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--hl-gold)" stroke="none">
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
