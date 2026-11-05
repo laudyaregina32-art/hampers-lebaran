@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -1233,7 +1233,7 @@
       min-height: 100vh
     }
 
-    
+
 
     /* ===== TESTIMONI ===== */
     .hl-testi-rating-wrap {
@@ -1371,31 +1371,100 @@
       gap: 2px;
       margin-top: .35rem
     }
-      section[aria-labelledby="kategori-heading"] { padding-top: clamp(2rem, 3.5vw, 2.75rem) !important; }
-  
-/* ===== CLIENTS MARQUEE ===== */
-.hl-clients-marquee{padding:clamp(1.25rem,2.5vw,1.75rem) 0 0.5rem;overflow:hidden;width:100%}
-.hl-clients-marquee__heading{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--hl-text-muted,#9ca3af);text-align:center;margin:0 0 1.1rem;padding:0 1rem}
-.hl-clients-marquee__track-wrapper{width:100%;overflow:hidden;-webkit-mask:linear-gradient(to right,transparent 0%,#000 10%,#000 90%,transparent 100%);mask:linear-gradient(to right,transparent 0%,#000 10%,#000 90%,transparent 100%)}
-.hl-clients-marquee__track{display:flex;align-items:center;width:max-content;animation:hlMarqueeScroll 28s linear infinite;will-change:transform}
-.hl-clients-marquee__item{flex:0 0 150px;width:150px;height:52px;display:flex;align-items:center;justify-content:center;margin:0 2rem}
-.hl-clients-marquee__item img{width:150px;height:52px;object-fit:contain;object-position:center;display:block;filter:none;opacity:1}
-@keyframes hlMarqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.hl-clients-marquee__track{animation-play-state:paused}}
 
-    a:has(.hl-portfolio-item) .hl-portfolio-item,.hl-portfolio-item{cursor:pointer}
-    a:has(.hl-portfolio-item):hover .hl-portfolio-item__overlay{opacity:1}
+    section[aria-labelledby="kategori-heading"] {
+      padding-top: clamp(2rem, 3.5vw, 2.75rem) !important;
+    }
 
-/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
-body {
-  padding-top: 68px !important;
-}
-@media (min-width: 992px) {
-  body {
-    padding-top: 80px !important;
-  }
-}
-</style>
+    /* ===== CLIENTS MARQUEE ===== */
+    .hl-clients-marquee {
+      padding: clamp(1.25rem, 2.5vw, 1.75rem) 0 0.5rem;
+      overflow: hidden;
+      width: 100%
+    }
+
+    .hl-clients-marquee__heading {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--hl-text-muted, #9ca3af);
+      text-align: center;
+      margin: 0 0 1.1rem;
+      padding: 0 1rem
+    }
+
+    .hl-clients-marquee__track-wrapper {
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+      mask: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)
+    }
+
+    .hl-clients-marquee__track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: hlMarqueeScroll 28s linear infinite;
+      will-change: transform
+    }
+
+    .hl-clients-marquee__item {
+      flex: 0 0 150px;
+      width: 150px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 2rem
+    }
+
+    .hl-clients-marquee__item img {
+      width: 150px;
+      height: 52px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      filter: none;
+      opacity: 1
+    }
+
+    @keyframes hlMarqueeScroll {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .hl-clients-marquee__track {
+        animation-play-state: paused
+      }
+    }
+
+    a:has(.hl-portfolio-item) .hl-portfolio-item,
+    .hl-portfolio-item {
+      cursor: pointer
+    }
+
+    a:has(.hl-portfolio-item):hover .hl-portfolio-item__overlay {
+      opacity: 1
+    }
+
+    /* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+    body {
+      padding-top: 68px !important;
+    }
+
+    @media (min-width: 992px) {
+      body {
+        padding-top: 80px !important;
+      }
+    }
+  </style>
   <link rel="preload" href="assets/css/home.min.css?v=12" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="assets/css/home.min.css?v=12">
@@ -1490,9 +1559,8 @@ body {
               Hampers Lebaran 2027 untuk Berbagi Kebahagiaan
             </h1>
             <p class="hl-hero__desc">
-              Hampers Lebaran 2027 hadir dengan berbagai pilihan bingkisan untuk keluarga, sahabat, pelanggan, dan mitra
-              bisnis. Kami menyediakan hampers premium, kue dan camilan, perlengkapan ibadah, serta paket custom untuk
-              kebutuhan personal maupun perusahaan.
+              Hampers Lebaran 2027 menyediakan pilihan bingkisan premium, kue dan camilan, perlengkapan ibadah, serta
+              paket custom untuk keluarga, sahabat, dan mitra bisnis.
             </p>
             <div class="hl-hero__ctas">
               <a href="paket.html" class="hl-btn-primary" id="hero-cta-paket">
@@ -1541,34 +1609,51 @@ body {
         </div>
 
         <!-- Divider Garis di Bawah Tulisan Hero -->
-        <hr class="hl-hero__row-divider" style="border:none !important;border-top:1px solid rgba(213, 214, 208, .8) !important;margin-top:clamp(2rem, 3.5vw, 3rem) !important;margin-bottom:0 !important;width:100% !important;">
+        <hr class="hl-hero__row-divider"
+          style="border:none !important;border-top:1px solid rgba(213, 214, 208, .8) !important;margin-top:clamp(2rem, 3.5vw, 3rem) !important;margin-bottom:0 !important;width:100% !important;">
 
         <!-- ===== CLIENT TRUST MARQUEE (inside hero) ===== -->
         <div class="hl-clients-marquee" role="region" aria-label="Klien dan Mitra Perusahaan">
-          <p class="hl-clients-marquee__heading">Dipercaya Oleh Berbagai Perusahaan Terkemuka &amp; Instansi Pemerintahan</p>
+          <p class="hl-clients-marquee__heading">Dipercaya Oleh Berbagai Perusahaan Terkemuka &amp; Instansi
+            Pemerintahan</p>
           <div class="hl-clients-marquee__track-wrapper">
             <div class="hl-clients-marquee__track">
-              <div class="hl-clients-marquee__item"><img src="assets/images/bankjatim.webp" alt="Bank Jatim" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item"><img src="assets/images/bca.webp" alt="BCA" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item"><img src="assets/images/bpjs.webp" alt="BPJS" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item"><img src="assets/images/ibs-software.webp" alt="IBS Software" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item"><img src="assets/images/mandiri.webp" alt="Bank Mandiri" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item"><img src="assets/images/otoritas.webp" alt="OJK Otoritas" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item"><img src="assets/images/pertamina.webp" alt="Pertamina" loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/bankjatim.webp" alt="Bank Jatim"
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/bca.webp" alt="BCA" loading="lazy"
+                  height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/bpjs.webp" alt="BPJS" loading="lazy"
+                  height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/ibs-software.webp" alt="IBS Software"
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/mandiri.webp" alt="Bank Mandiri"
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/otoritas.webp" alt="OJK Otoritas"
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item"><img src="assets/images/pertamina.webp" alt="Pertamina"
+                  loading="lazy" height="52" width="150"></div>
               <!-- Duplicate set 2 -->
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bankjatim.webp" alt="" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bca.webp" alt="" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bpjs.webp" alt="" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/ibs-software.webp" alt="" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/mandiri.webp" alt="" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/otoritas.webp" alt="" loading="lazy" height="52" width="150"></div>
-              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/pertamina.webp" alt="" loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bankjatim.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bca.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/bpjs.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/ibs-software.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/mandiri.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/otoritas.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
+              <div class="hl-clients-marquee__item" aria-hidden="true"><img src="assets/images/pertamina.webp" alt=""
+                  loading="lazy" height="52" width="150"></div>
             </div>
           </div>
         </div>
 
         <!-- Highlight Keunggulan & Garansi Layanan (Full Width 3 Kolom) -->
-        <div class="hl-hero__proof-wrapper" style="margin-top:clamp(0.75rem, 1.5vw, 1.25rem) !important;margin-bottom:0 !important;padding-top:clamp(1.25rem, 2vw, 1.75rem) !important;">
+        <div class="hl-hero__proof-wrapper"
+          style="margin-top:clamp(0.75rem, 1.5vw, 1.25rem) !important;margin-bottom:0 !important;padding-top:clamp(1.25rem, 2vw, 1.75rem) !important;">
           <div class="hl-hero__proof-grid">
             <div class="hl-hero__proof-card">
               <div class="hl-hero__proof-icon" aria-hidden="true">
@@ -1647,7 +1732,8 @@ body {
     </section>
 
     <!-- ===== KATEGORI PAKET ===== -->
-    <section class="hl-section" aria-labelledby="kategori-heading" style="padding-top:clamp(2rem, 3.5vw, 2.75rem) !important;">
+    <section class="hl-section" aria-labelledby="kategori-heading"
+      style="padding-top:clamp(2rem, 3.5vw, 2.75rem) !important;">
       <div class="container">
         <div class="hl-section-heading">
           <p class="hl-eyebrow">Pilihan Paket</p>
@@ -1894,37 +1980,43 @@ body {
         </div>
         <div class="hl-portfolio-grid">
           <!-- Item 1 -->
-          <a href="portofolio/hampers-korporat-akhir-tahun.html" style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden" aria-label="Hampers Korporat Akhir Tahun">
-          <div class="hl-portfolio-item">
-            <img src="assets/images/hampers-perusahaan.webp" alt="Hampers premium untuk acara korporat" width="300"
-              height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
-            <div class="hl-portfolio-item__overlay">
-              <div class="hl-portfolio-item__caption">Hampers Korporat Akhir Tahun<br><small
-                  style="font-weight:400;opacity:0.8">Custom branding</small></div>
+          <a href="portofolio/hampers-korporat-akhir-tahun.html"
+            style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden"
+            aria-label="Hampers Korporat Akhir Tahun">
+            <div class="hl-portfolio-item">
+              <img src="assets/images/hampers-perusahaan.webp" alt="Hampers premium untuk acara korporat" width="300"
+                height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+              <div class="hl-portfolio-item__overlay">
+                <div class="hl-portfolio-item__caption">Hampers Korporat Akhir Tahun<br><small
+                    style="font-weight:400;opacity:0.8">Custom branding</small></div>
+              </div>
             </div>
-          </div>
           </a>
           <!-- Item 2 -->
-          <a href="portofolio/hampers-kue-basket-rotan.html" style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden" aria-label="Hampers Kue dalam Basket Rotan">
-          <div class="hl-portfolio-item">
-            <img src="assets/images/hampers-rotan.webp" alt="Hampers kue lebaran dalam basket rotan" width="300"
-              height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
-            <div class="hl-portfolio-item__overlay">
-              <div class="hl-portfolio-item__caption">Hampers Kue dalam Basket Rotan<br><small
-                  style="font-weight:400;opacity:0.8">Edisi Lebaran 2027</small></div>
+          <a href="portofolio/hampers-kue-basket-rotan.html"
+            style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden"
+            aria-label="Hampers Kue dalam Basket Rotan">
+            <div class="hl-portfolio-item">
+              <img src="assets/images/hampers-rotan.webp" alt="Hampers kue lebaran dalam basket rotan" width="300"
+                height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+              <div class="hl-portfolio-item__overlay">
+                <div class="hl-portfolio-item__caption">Hampers Kue dalam Basket Rotan<br><small
+                    style="font-weight:400;opacity:0.8">Edisi Lebaran 2027</small></div>
+              </div>
             </div>
-          </div>
           </a>
           <!-- Item 3 -->
-          <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden" aria-label="Hampers Perlengkapan Ibadah">
-          <div class="hl-portfolio-item">
-            <img src="assets/images/tasbih.webp" alt="Hampers perlengkapan ibadah dalam kotak elegant" width="300"
-              height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
-            <div class="hl-portfolio-item__overlay">
-              <div class="hl-portfolio-item__caption">Hampers Perlengkapan Ibadah<br><small
-                  style="font-weight:400;opacity:0.8">Kemasan premium eksklusif</small></div>
+          <a href="portofolio/hampers-perlengkapan-ibadah-premium.html"
+            style="text-decoration:none;color:inherit;display:block;border-radius:inherit;overflow:hidden"
+            aria-label="Hampers Perlengkapan Ibadah">
+            <div class="hl-portfolio-item">
+              <img src="assets/images/tasbih.webp" alt="Hampers perlengkapan ibadah dalam kotak elegant" width="300"
+                height="300" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+              <div class="hl-portfolio-item__overlay">
+                <div class="hl-portfolio-item__caption">Hampers Perlengkapan Ibadah<br><small
+                    style="font-weight:400;opacity:0.8">Kemasan premium eksklusif</small></div>
+              </div>
             </div>
-          </div>
           </a>
         </div>
       </div>
