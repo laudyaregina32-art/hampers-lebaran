@@ -51,6 +51,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://hamperslebaran.biz.id/supplier-hampers-lebaran</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://hamperslebaran.biz.id/portofolio</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
