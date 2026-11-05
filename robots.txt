@@ -37,6 +37,14 @@ Allow: /
 Disallow: /scripts/
 Disallow: /node_modules/
 
+# Optimasi Google Favicon Crawler (Icon Hasil Pencarian Google SERP)
+User-agent: Google-Favicon
+Allow: /
+Allow: /favicon.ico
+Allow: /assets/images/
+Disallow: /scripts/
+Disallow: /node_modules/
+
 # Optimasi Bingbot & Mesin Pencari Utama Lainnya
 User-agent: Bingbot
 User-agent: msnbot
