@@ -1362,11 +1362,12 @@ body {
       transform: translateY(-2px);
     }
 
-    /* Right visual column */
+    /* Kolom Visual & Foto Dokumentasi Portofolio */
     .hl-visual-column {
       display: flex;
       flex-direction: column;
       gap: 1.1rem;
+      height: 100%;
     }
     .hl-main-visual {
       position: relative;
@@ -1375,16 +1376,27 @@ body {
       background: #ece8df;
       box-shadow: 0 8px 24px rgba(40, 42, 39, 0.08);
       aspect-ratio: 4 / 3;
+      width: 100%;
+      display: flex;
     }
     .hl-main-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
       transition: transform 0.3s ease;
     }
     .hl-main-visual:hover img {
       transform: scale(1.02);
+    }
+    @media (min-width: 992px) {
+      .hl-main-visual {
+        aspect-ratio: auto;
+        height: 100%;
+        min-height: 100%;
+        flex: 1;
+      }
     }
     .hl-visual-tag {
       position: absolute;
@@ -1579,7 +1591,7 @@ body {
 
         <!-- KARTU UTAMA SHOWCASE DOKUMENTASI PORTOFOLIO -->
         <div class="hl-showcase-card">
-          <div class="row g-4 g-lg-5 align-items-center">
+          <div class="row g-4 g-lg-5 align-items-stretch">
             <!-- Kolom Kiri: Visual Utama & Detail Box -->
             <div class="col-lg-6">
               <div class="hl-visual-column">
@@ -1593,14 +1605,14 @@ body {
                     </svg>
                     Dokumentasi Hantaran Rumah
                   </div>
-                  <img src="../assets/images/hampers-keluarga.webp" alt="Dokumentasi hampers keluarga edisi Lebaran istimewa" width="600" height="450" loading="eager" fetchpriority="high" decoding="async">
+                  <img src="../assets/images/hampers-keluarga.webp" alt="Dokumentasi hampers keluarga edisi Lebaran istimewa" width="675" height="900" loading="eager" fetchpriority="high" decoding="async">
                 </div>
 
               </div>
             </div>
 
             <!-- Kolom Kanan: Narasi, Rincian Paket, & Tombol -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 d-flex flex-column justify-content-between">
               
               <!-- Badges Kategori & Status Dokumentasi -->
               <div class="hl-badge-row">
