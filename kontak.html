@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -27,19 +27,19 @@
   <meta property="og:locale" content="id_ID">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampers Lebaran">
-  <meta property="og:title" content="Kontak &amp; Konsultasi Pemesanan â€” Hampers Lebaran Indonesia">
+  <meta property="og:title" content="Kontak &amp; Konsultasi Pemesanan — Hampers Lebaran Indonesia">
   <meta property="og:description"
     content="Hubungi tim kami via WhatsApp atau telepon untuk konsultasi pemilihan paket hampers Lebaran, brief custom korporat, dan permintaan penawaran resmi.">
   <meta property="og:url" content="https://hamperslebaran.biz.id/kontak">
   <meta property="og:image" content="https://hamperslebaran.biz.id/assets/images/og-hampers-lebaran.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Kontak &amp; Konsultasi Pemesanan â€” Hampers Lebaran Indonesia">
+  <meta property="og:image:alt" content="Kontak &amp; Konsultasi Pemesanan — Hampers Lebaran Indonesia">
   <meta property="og:image:type" content="image/webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kontak &amp; Konsultasi Pemesanan â€” Hampers Lebaran Indonesia">
+  <meta name="twitter:title" content="Kontak &amp; Konsultasi Pemesanan — Hampers Lebaran Indonesia">
   <meta name="twitter:description"
     content="Hubungi tim kami via WhatsApp atau telepon untuk konsultasi pemilihan paket hampers Lebaran, brief custom korporat, dan permintaan penawaran resmi.">
   <meta name="twitter:image" content="https://hamperslebaran.biz.id/assets/images/og-hampers-lebaran.webp">
@@ -60,14 +60,14 @@
     :root {
       --hl-bg: #eaf0e9;
       --hl-surface: #ffffff;
-      --hl-surface-muted: #dbe4da;
+      --hl-surface-muted: #e9ddcc;
       --hl-border: #c8d5cb;
       --hl-text: #1b2622;
       --hl-text-muted: #4e5f58;
       --hl-gray: #6d7d76;
       --hl-accent: #37594f;
       --hl-accent-dark: #213c35;
-      --hl-warm: #dbe4da;
+      --hl-warm: #e9ddcc;
       --hl-footer: #213c35;
       --hl-footer-text: #f0f4f1;
       --hl-radius-sm: 8px;
@@ -885,7 +885,7 @@
     }
 
     .hl-breadcrumb li+li::before {
-      content: 'â€º';
+      content: '›';
       margin-right: .4rem;
       margin-left: .2rem;
       color: var(--hl-gray);
@@ -1122,6 +1122,17 @@ body {
     padding-top: 80px !important;
   }
 }
+
+  /* === NAVBAR FIXED POSITION FIX === */
+  .hl-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+  }
+  /* === END NAVBAR FIX === */
 </style>
   <link rel="stylesheet" href="assets/css/main.min.css">
 
@@ -1134,7 +1145,7 @@ body {
       "@type": "ContactPage",
       "@id": "https://hamperslebaran.biz.id/kontak#webpage",
       "url": "https://hamperslebaran.biz.id/kontak",
-      "name": "Kontak & Konsultasi Pemesanan â€” Hampers Lebaran Indonesia",
+      "name": "Kontak & Konsultasi Pemesanan — Hampers Lebaran Indonesia",
       "description": "Hubungi tim konsultan kami via WhatsApp atau telepon untuk konsultasi katalog, custom hampers, dan pengadaan instansi perusahaan.",
       "mainEntity": { "@id": "https://hamperslebaran.biz.id/#organization" }
     },
@@ -1156,7 +1167,7 @@ body {
   <header>
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
-        <a class="navbar-brand hl-navbar-brand" href="index.html" aria-label="Hampers Lebaran â€” Beranda">
+        <a class="navbar-brand hl-navbar-brand" href="index.html" aria-label="Hampers Lebaran — Beranda">
           <img src="assets/images/logo.webp" alt="Haraya Hampers Lebaran" class="hl-navbar-logo" width="44" height="44">
           <span class="hl-navbar-brand-text">Hampers<span class="hl-brand-accent">Lebaran</span></span>
         </a>
@@ -1305,7 +1316,7 @@ body {
                   <div>
                     <div style="font-weight:600;color:var(--hl-text);font-size:0.95rem;">Jam Operasional Customer Care
                     </div>
-                    <div style="color:var(--hl-text-muted);font-size:0.85rem;">Senin â€“ Sabtu: 08.00 â€“ 16.00
+                    <div style="color:var(--hl-text-muted);font-size:0.85rem;">Senin – Sabtu: 08.00 – 16.00
                       WIB<br><small>(Pesan di luar jam kerja akan dibalas pada jam kerja berikutnya)</small></div>
                   </div>
                 </div>
@@ -1436,11 +1447,11 @@ body {
 
                   var text = 'Halo Admin Hampers Lebaran,\n\n' +
                     'Saya ingin berkonsultasi mengenai pemesanan:\n' +
-                    'â€¢ Nama / Instansi: ' + name + '\n' +
-                    'â€¢ Pilihan Paket: ' + pkg + '\n' +
-                    'â€¢ Estimasi Qty: ' + qty + '\n' +
-                    'â€¢ Rencana Kirim: ' + date + '\n' +
-                    'â€¢ Keterangan Tambahan: ' + notes + '\n\n' +
+                    '• Nama / Instansi: ' + name + '\n' +
+                    '• Pilihan Paket: ' + pkg + '\n' +
+                    '• Estimasi Qty: ' + qty + '\n' +
+                    '• Rencana Kirim: ' + date + '\n' +
+                    '• Keterangan Tambahan: ' + notes + '\n\n' +
                     'Mohon info harga dan ketersediaan slot produksinya. Terima kasih!';
 
                   var encoded = encodeURIComponent(text);
@@ -1580,7 +1591,7 @@ body {
       </div>
       <hr class="hl-footer__divider">
       <div class="hl-footer__bottom">
-        <p class="hl-footer__copy">Â© <span class="js-year"></span> Hampers Lebaran.</p>
+        <p class="hl-footer__copy">© <span class="js-year"></span> Hampers Lebaran.</p>
         <nav class="hl-footer__legal-links" aria-label="Tautan legal">
           <a href="kebijakan-privasi.html">Kebijakan Privasi</a>
           <a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a>

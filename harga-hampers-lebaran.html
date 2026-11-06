@@ -62,8 +62,8 @@
       --hl-gold: #C5A25D;
       --hl-gold-dark: #A37E3A;
       --hl-line: #c8d5cb;
-      --hl-soft: #dbe4da;
-      --hl-warm: #dbe4da;
+      --hl-soft: #e9ddcc;
+      --hl-warm: #e9ddcc;
       --hl-radius: 18px;
       --hl-radius-sm: 12px;
       --hl-shadow: 0 10px 30px rgba(37, 40, 32, 0.06);
@@ -598,7 +598,18 @@
       transform: scale(1.08) translateY(-3px);
       box-shadow: 0 10px 25px rgba(37, 211, 102, 0.55);
     }
-  </style>
+  
+  /* === NAVBAR FIXED POSITION FIX === */
+  .hl-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1030 !important;
+  }
+  /* === END NAVBAR FIX === */
+</style>
 
   <!-- JSON-LD Structured Data Schema -->
   <script type="application/ld+json">
