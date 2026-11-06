@@ -3,7 +3,9 @@ import CleanCSS from 'clean-css';
 import { PurgeCSS } from 'purgecss';
 
 async function buildAllCss() {
-  const fullBootstrap = fs.readFileSync('scratch/bootstrap_full.css', 'utf8');
+  const fullBootstrap = fs.existsSync('scratch/bootstrap_full.css')
+    ? fs.readFileSync('scratch/bootstrap_full.css', 'utf8')
+    : fs.readFileSync('assets/css/bootstrap.min.css', 'utf8');
   const fullStyle = fs.readFileSync('scratch/style_backup.css', 'utf8');
   const combinedRaw = fullBootstrap + '\n' + fullStyle;
 
