@@ -9,7 +9,8 @@
     (function () { try { if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) { var p = window.location.pathname; if (p.endsWith('.html')) { var c = p.slice(0, -5); if (c.endsWith('/index')) { c = c.slice(0, -6) || '/'; } else if (c === '/index' || c === 'index') { c = '/'; } window.history.replaceState(null, document.title, c + window.location.search + window.location.hash); } } } catch (e) { } })();
   </script>
   <title>Hampers Ibadah Ramadan & Idulfitri Eksklusif — Portofolio Hampers Lebaran</title>
-  <meta name="description" content="Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkap...">
+  <meta name="description"
+    content="Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkap...">
   <link rel="canonical" href="https://hamperslebaran.biz.id/portofolio/hampers-perlengkapan-ibadah-premium">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Hampers Lebaran">
@@ -18,7 +19,7 @@
 
   <!-- GEO & Local Engine Optimization -->
   <meta name="geo.region" content="ID">
-  <meta name="geo.placename" content="Indonesia">
+  <meta name="geo.placename" content="Malang">
   <meta name="geo.position" content="-7.9907933;112.6804731">
   <meta name="ICBM" content="-7.9907933, 112.6804731">
 
@@ -27,7 +28,8 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampers Lebaran">
   <meta property="og:title" content="Hampers Ibadah Ramadan & Idulfitri Eksklusif — Portofolio Hampers Lebaran">
-  <meta property="og:description" content="Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkap...">
+  <meta property="og:description"
+    content="Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkap...">
   <meta property="og:url" content="https://hamperslebaran.biz.id/portofolio/hampers-perlengkapan-ibadah-premium">
   <meta property="og:image" content="https://hamperslebaran.biz.id/assets/images/tasbih.webp">
   <meta property="og:image:width" content="1200">
@@ -38,7 +40,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampers Ibadah Ramadan & Idulfitri Eksklusif — Portofolio Hampers Lebaran">
-  <meta name="twitter:description" content="Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkap...">
+  <meta name="twitter:description"
+    content="Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkap...">
   <meta name="twitter:image" content="https://hamperslebaran.biz.id/assets/images/tasbih.webp">
 
   <!-- Favicon & Icons -->
@@ -93,7 +96,6 @@
 
   <!-- Critical CSS Inlined -->
   <style>
-
     :root {
       --hl-bg: #eaf0e9;
       --hl-surface: #ffffff;
@@ -1156,16 +1158,17 @@
       background-color: var(--hl-bg) !important;
       min-height: 100vh
     }
-  
-/* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
-body {
-  padding-top: 68px !important;
-}
-@media (min-width: 992px) {
-  body {
-    padding-top: 80px !important;
-  }
-}
+
+    /* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
+    body {
+      padding-top: 68px !important;
+    }
+
+    @media (min-width: 992px) {
+      body {
+        padding-top: 80px !important;
+      }
+    }
 
 
     /* ===== TOP BACK LINK ===== */
@@ -1181,9 +1184,10 @@ body {
       border: 1px solid var(--hl-border, #d5d6d0);
       padding: 0.38rem 0.95rem;
       border-radius: 999px;
-      box-shadow: 0 1px 4px rgba(40,42,39,0.04);
+      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.04);
       transition: all var(--hl-transition, 200ms ease);
     }
+
     .hl-back-link:hover {
       background: var(--hl-surface-muted, #e8e8e3);
       color: var(--hl-text, #282a27);
@@ -1195,6 +1199,7 @@ body {
     .hl-showcase-section {
       padding: clamp(1.5rem, 3.5vw, 2.75rem) 0 clamp(3.5rem, 5.5vw, 5.5rem);
     }
+
     .hl-showcase-card {
       background: #ffffff;
       border: 1px solid #e7e2d6;
@@ -1203,6 +1208,7 @@ body {
       box-shadow: 0 16px 44px rgba(40, 42, 39, 0.05);
       margin-bottom: 3.5rem;
     }
+
     .hl-badge-row {
       display: flex;
       align-items: center;
@@ -1210,6 +1216,7 @@ body {
       gap: 0.65rem;
       margin-bottom: 1.15rem;
     }
+
     .hl-badge-pill {
       display: inline-flex;
       align-items: center;
@@ -1223,6 +1230,7 @@ body {
       border-radius: 50px;
       border: 1px solid rgba(184, 151, 61, 0.3);
     }
+
     .hl-badge-status {
       display: inline-flex;
       align-items: center;
@@ -1235,6 +1243,7 @@ body {
       border-radius: 50px;
       border: 1px solid #e4e2db;
     }
+
     .hl-badge-status::before {
       content: '';
       display: inline-block;
@@ -1243,6 +1252,7 @@ body {
       border-radius: 50%;
       background: #2a8352;
     }
+
     .hl-showcase-title {
       font-family: var(--hl-font-serif);
       font-size: clamp(1.65rem, 2.8vw, 2.3rem);
@@ -1251,6 +1261,7 @@ body {
       line-height: 1.25;
       margin: 0 0 1.15rem;
     }
+
     .hl-showcase-desc {
       font-size: 0.96rem;
       color: #4f524c;
@@ -1266,6 +1277,7 @@ body {
       padding: clamp(1.25rem, 2.5vw, 1.6rem);
       margin-bottom: 2rem;
     }
+
     .hl-specs-panel__header {
       display: flex;
       align-items: center;
@@ -1279,16 +1291,19 @@ body {
       padding-bottom: 0.65rem;
       border-bottom: 1px solid rgba(184, 151, 61, 0.2);
     }
+
     .hl-specs-panel__grid {
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
     }
+
     .hl-spec-row {
       display: flex;
       align-items: flex-start;
       gap: 0.85rem;
     }
+
     .hl-spec-icon-wrap {
       width: 34px;
       height: 34px;
@@ -1302,12 +1317,14 @@ body {
       color: #8c532b;
       margin-top: 0.1rem;
     }
+
     .hl-spec-text {
       flex: 1;
       font-size: 0.88rem;
       line-height: 1.58;
       color: #4d504a;
     }
+
     .hl-spec-label {
       display: block;
       font-size: 0.75rem;
@@ -1325,6 +1342,7 @@ body {
       flex-wrap: wrap;
       gap: 0.85rem;
     }
+
     .hl-btn-consult {
       display: inline-flex;
       align-items: center;
@@ -1339,11 +1357,13 @@ body {
       transition: background 0.2s ease, transform 0.2s ease;
       box-shadow: 0 4px 14px rgba(30, 112, 68, 0.2);
     }
+
     .hl-btn-consult:hover {
       background: #165633;
       transform: translateY(-2px);
       color: #ffffff !important;
     }
+
     .hl-btn-return {
       display: inline-flex;
       align-items: center;
@@ -1357,6 +1377,7 @@ body {
       font-size: 0.92rem;
       transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
+
     .hl-btn-return:hover {
       background: #faf6f0;
       border-color: #8c532b;
@@ -1370,6 +1391,7 @@ body {
       gap: 1.1rem;
       height: 100%;
     }
+
     .hl-main-visual {
       position: relative;
       border-radius: 20px;
@@ -1380,6 +1402,7 @@ body {
       width: 100%;
       display: flex;
     }
+
     .hl-main-visual img {
       width: 100%;
       height: 100%;
@@ -1388,9 +1411,11 @@ body {
       display: block;
       transition: transform 0.3s ease;
     }
+
     .hl-main-visual:hover img {
       transform: scale(1.02);
     }
+
     @media (min-width: 992px) {
       .hl-main-visual {
         aspect-ratio: auto;
@@ -1399,6 +1424,7 @@ body {
         flex: 1;
       }
     }
+
     .hl-visual-tag {
       position: absolute;
       top: 1rem;
@@ -1415,9 +1441,10 @@ body {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
       z-index: 2;
     }
+
     .hl-sub-visual-card {
       background: #faf7f2;
       border: 1px solid #ebd9c8;
@@ -1427,6 +1454,7 @@ body {
       align-items: center;
       gap: 1rem;
     }
+
     .hl-sub-thumb {
       width: 68px;
       height: 68px;
@@ -1436,15 +1464,18 @@ body {
       background: #e8e2d5;
       border: 1px solid rgba(184, 151, 61, 0.25);
     }
+
     .hl-sub-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
+
     .hl-sub-info {
       flex: 1;
     }
+
     .hl-sub-title {
       font-size: 0.72rem;
       font-weight: 700;
@@ -1453,6 +1484,7 @@ body {
       color: #8c532b;
       margin: 0 0 0.25rem;
     }
+
     .hl-sub-desc {
       font-size: 0.83rem;
       color: #555750;
@@ -1465,6 +1497,7 @@ body {
       padding-top: 2.5rem;
       border-top: 1px solid #d5d6d0;
     }
+
     .hl-other-card {
       display: block;
       background: #ffffff;
@@ -1476,19 +1509,23 @@ body {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       height: 100%;
     }
+
     .hl-other-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(40,42,39,0.1);
+      box-shadow: 0 12px 28px rgba(40, 42, 39, 0.1);
     }
+
     .hl-other-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       display: block;
     }
+
     .hl-other-card-body {
       padding: 1.15rem;
     }
+
     .hl-other-tag {
       font-size: 0.7rem;
       font-weight: 700;
@@ -1497,6 +1534,7 @@ body {
       color: #7b4f2c;
       margin-bottom: 0.35rem;
     }
+
     .hl-other-title {
       font-size: 0.95rem;
       font-weight: 700;
@@ -1504,29 +1542,26 @@ body {
       margin: 0;
       line-height: 1.4;
     }
-
-
-
-  
-</style>
+  </style>
 
   <link rel="stylesheet" href="../assets/css/main.min.css?v=12">
 </head>
 
 <body>
 
-<header>
+  <header>
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
         <a class="navbar-brand hl-navbar-brand" href="../index.html" aria-label="Hampers Lebaran — Beranda">
-          <img src="../assets/images/logo.webp" alt="Haraya Hampers Lebaran" class="hl-navbar-logo" width="44" height="44">
+          <img src="../assets/images/logo.webp" alt="Haraya Hampers Lebaran" class="hl-navbar-logo" width="44"
+            height="44">
           <span class="hl-navbar-brand-text">Hampers<span class="hl-brand-accent">Lebaran</span></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
           aria-controls="navbarMain" aria-expanded="false" aria-label="Buka menu">
           <span class="navbar-toggler-icon"></span>
         </button>
-                <div class="collapse navbar-collapse" id="navbarMain">
+        <div class="collapse navbar-collapse" id="navbarMain">
           <ul class="navbar-nav mx-auto gap-1">
             <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link" href="../tentang.html">Tentang</a></li>
@@ -1540,11 +1575,13 @@ body {
                 </li>
                 <li><a class="dropdown-item" href="../paket/hampers-premium.html">Hampers Premium</a></li>
                 <li><a class="dropdown-item" href="../paket/hampers-kue-camilan.html">Hampers Kue &amp; Camilan</a></li>
-                <li><a class="dropdown-item" href="../paket/hampers-perlengkapan-ibadah.html">Hampers Perlengkapan Ibadah</a></li>
+                <li><a class="dropdown-item" href="../paket/hampers-perlengkapan-ibadah.html">Hampers Perlengkapan
+                    Ibadah</a></li>
                 <li><a class="dropdown-item" href="../paket/hampers-custom.html">Hampers Custom / Corporate</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link active" href="../portofolio.html" aria-current="page">Portofolio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="../portofolio.html" aria-current="page">Portofolio</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="../kontak.html">Kontak</a></li>
           </ul>
@@ -1576,13 +1613,15 @@ body {
         <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
           <nav aria-label="Breadcrumb">
             <ol class="hl-breadcrumb mb-0">
-            <li><a href="../index.html">Beranda</a></li>
-            <li><a href="../portofolio.html">Portofolio</a></li>
-            <li><span aria-current="page">Hampers Ibadah Ramadan & Idulfitri Eksklusif</span></li>
-          </ol>
+              <li><a href="../index.html">Beranda</a></li>
+              <li><a href="../portofolio.html">Portofolio</a></li>
+              <li><span aria-current="page">Hampers Ibadah Ramadan & Idulfitri Eksklusif</span></li>
+            </ol>
           </nav>
-          <a href="../portofolio.html" class="hl-back-link" onclick="if(window.history.length > 1){window.history.back();return false;}">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <a href="../portofolio.html" class="hl-back-link"
+            onclick="if(window.history.length > 1){window.history.back();return false;}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
@@ -1596,17 +1635,20 @@ body {
             <!-- Kolom Kiri: Visual Utama & Detail Box -->
             <div class="col-lg-6">
               <div class="hl-visual-column">
-                
+
                 <!-- Foto Dokumentasi Utama -->
                 <div class="hl-main-visual">
                   <div class="hl-visual-tag">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                      </path>
                       <circle cx="12" cy="13" r="4"></circle>
                     </svg>
                     Dokumentasi Set Ibadah VVIP
                   </div>
-                  <img src="../assets/images/tasbih.webp" alt="Dokumentasi hampers ibadah Al-Quran dan tasbih kristal" width="675" height="900" loading="eager" fetchpriority="high" decoding="async">
+                  <img src="../assets/images/tasbih.webp" alt="Dokumentasi hampers ibadah Al-Quran dan tasbih kristal"
+                    width="675" height="900" loading="eager" fetchpriority="high" decoding="async">
                 </div>
 
               </div>
@@ -1614,7 +1656,7 @@ body {
 
             <!-- Kolom Kanan: Narasi, Rincian Paket, & Tombol -->
             <div class="col-lg-6 d-flex flex-column justify-content-between">
-              
+
               <!-- Badges Kategori & Status Dokumentasi -->
               <div class="hl-badge-row">
                 <span class="hl-badge-pill">Spiritual & Mahakarya Religi</span>
@@ -1625,12 +1667,15 @@ body {
               <h1 class="hl-showcase-title" id="porto-title">Hampers Ibadah Ramadan & Idulfitri Eksklusif</h1>
 
               <!-- Deskripsi Cerita Proyek -->
-              <p class="hl-showcase-desc">Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkapan sholat dan tadarus istimewa dalam balutan kemasan hardbox velvet bernuansa mewah.</p>
+              <p class="hl-showcase-desc">Bingkisan suci yang dihadirkan untuk menemani kekhusyukan ibadah di bulan suci
+                Ramadan hingga menyambut fajar kemenangan Idulfitri. Menghadirkan perlengkapan sholat dan tadarus
+                istimewa dalam balutan kemasan hardbox velvet bernuansa mewah.</p>
 
               <!-- Panel Spesifikasi & Rincian Paket (Desain Orisinal Haraya) -->
               <div class="hl-specs-panel">
                 <div class="hl-specs-panel__header">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                     <polyline points="14 2 14 8 20 8"></polyline>
                     <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -1641,38 +1686,82 @@ body {
                 </div>
                 <div class="hl-specs-panel__grid">
                   <div class="hl-spec-row">
-                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"></rect><path d="M12 8v13"></path><path d="M19 12H5"></path><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.5 4.5 0 0 1 12 7.5a4.5 4.5 0 0 1 4.5-4.5 2.5 2.5 0 0 1 0 5"></path></svg></div>
+                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+                        <path d="M12 8v13"></path>
+                        <path d="M19 12H5"></path>
+                        <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.5 4.5 0 0 1 12 7.5a4.5 4.5 0 0 1 4.5-4.5 2.5 2.5 0 0 1 0 5">
+                        </path>
+                      </svg></div>
                     <div class="hl-spec-text">
                       <span class="hl-spec-label">Isi Bingkisan</span>
-                      Al-Qur'an terjemahan cover beludru emas, Sajadah Tenun Jacquard Turki lembut, Tasbih Kristal 99 butir, dan Minyak Wangi Oud Kasturi murni non-alkohol.
+                      Al-Qur'an terjemahan cover beludru emas, Sajadah Tenun Jacquard Turki lembut, Tasbih Kristal 99
+                      butir, dan Minyak Wangi Oud Kasturi murni non-alkohol.
                     </div>
                   </div>
                   <div class="hl-spec-row">
-                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                      </svg></div>
                     <div class="hl-spec-text">
                       <span class="hl-spec-label">Model Kemasan</span>
-                      Box buku (book-style luxury box) berbahan velvet gelap dipadukan kuncian magnetik presisi dan ornamen kaligrafi timbul berlapis foil emas.
+                      Box buku (book-style luxury box) berbahan velvet gelap dipadukan kuncian magnetik presisi dan
+                      ornamen kaligrafi timbul berlapis foil emas.
                     </div>
                   </div>
                   <div class="hl-spec-row">
-                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path><circle cx="12" cy="12" r="4"></circle></svg></div>
+                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="m4.93 4.93 4.24 4.24"></path>
+                        <path d="m14.83 9.17 4.24-4.24"></path>
+                        <path d="m14.83 14.83 4.24 4.24"></path>
+                        <path d="m9.17 14.83-4.24 4.24"></path>
+                        <circle cx="12" cy="12" r="4"></circle>
+                      </svg></div>
                     <div class="hl-spec-text">
                       <span class="hl-spec-label">Personalisasi & Branding</span>
-                      Grafir monogram nama penerima pada pembatas Al-Qur'an atau plakat kayu, serta kartu doa keberkahan Ramadhan bertinta emas.
+                      Grafir monogram nama penerima pada pembatas Al-Qur'an atau plakat kayu, serta kartu doa keberkahan
+                      Ramadhan bertinta emas.
                     </div>
                   </div>
                   <div class="hl-spec-row">
-                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg></div>
                     <div class="hl-spec-text">
                       <span class="hl-spec-label">Peruntukan Acara</span>
-                      Bingkisan penghormatan untuk orang tua tercinta, tokoh agama/kiai, guru besar, pejabat instansi, dan sahabat spiritual.
+                      Bingkisan penghormatan untuk orang tua tercinta, tokoh agama/kiai, guru besar, pejabat instansi,
+                      dan sahabat spiritual.
                     </div>
                   </div>
                   <div class="hl-spec-row">
-                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div>
+                    <div class="hl-spec-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                      </svg></div>
                     <div class="hl-spec-text">
                       <span class="hl-spec-label">Jangkauan Pengiriman</span>
-                      Pengiriman bergaransi aman ke seluruh wilayah Indonesia dengan kemasan lapis ganda dan peredam guncangan.
+                      Pengiriman bergaransi aman ke seluruh wilayah Indonesia dengan kemasan lapis ganda dan peredam
+                      guncangan.
                     </div>
                   </div>
                 </div>
@@ -1688,26 +1777,29 @@ body {
                   </svg>
                   Konsultasi Pesanan via WhatsApp
                 </a>
-                <a href="../portofolio.html" class="hl-btn-return" onclick="if(window.history.length > 1){window.history.back();return false;}">
+                <a href="../portofolio.html" class="hl-btn-return"
+                  onclick="if(window.history.length > 1){window.history.back();return false;}">
                   Kembali ke Portofolio
                 </a>
               </div>
 
             </div>
 
-                      </div>
+          </div>
         </div>
 
         <!-- Rekomendasi Portofolio Lainnya -->
         <div class="hl-other-works-wrap">
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="hl-heading" style="font-size:1.45rem;margin:0;">Dokumentasi Karya Lainnya</h2>
-            <a href="../portofolio.html" class="hl-btn-outline" style="font-size:0.85rem;padding:0.4rem 1.1rem;border-radius:50px;">Lihat Semua</a>
+            <a href="../portofolio.html" class="hl-btn-outline"
+              style="font-size:0.85rem;padding:0.4rem 1.1rem;border-radius:50px;">Lihat Semua</a>
           </div>
           <div class="row g-4">
             <div class="col-md-4">
               <a href="hampers-korporat-akhir-tahun.html" class="hl-other-card">
-                <img src="../assets/images/hampers-perusahaan.webp" alt="Dokumentasi pesanan hampers korporat perusahaan VVIP" width="400" height="180" loading="lazy">
+                <img src="../assets/images/hampers-perusahaan.webp"
+                  alt="Dokumentasi pesanan hampers korporat perusahaan VVIP" width="400" height="180" loading="lazy">
                 <div class="hl-other-card-body">
                   <div class="hl-other-tag">Pengadaan B2B Korporat</div>
                   <h3 class="hl-other-title">Hampers Lebaran Korporat & Executive Gift Set</h3>
@@ -1716,7 +1808,9 @@ body {
             </div>
             <div class="col-md-4">
               <a href="hampers-kue-basket-rotan.html" class="hl-other-card">
-                <img src="../assets/images/hampers-rotan.webp" alt="Dokumentasi hampers kue kering dalam keranjang rotan natural" width="400" height="180" loading="lazy">
+                <img src="../assets/images/hampers-rotan.webp"
+                  alt="Dokumentasi hampers kue kering dalam keranjang rotan natural" width="400" height="180"
+                  loading="lazy">
                 <div class="hl-other-card-body">
                   <div class="hl-other-tag">Artisan & Kerajinan Alam</div>
                   <h3 class="hl-other-title">Hampers Lebaran Kue Kering Keranjang Rotan</h3>
@@ -1725,7 +1819,8 @@ body {
             </div>
             <div class="col-md-4">
               <a href="hampers-custom-branding-korporat.html" class="hl-other-card">
-                <img src="../assets/images/hampers-custom.webp" alt="Dokumentasi hampers custom corporate branding instansi" width="400" height="180" loading="lazy">
+                <img src="../assets/images/hampers-custom.webp"
+                  alt="Dokumentasi hampers custom corporate branding instansi" width="400" height="180" loading="lazy">
                 <div class="hl-other-card-body">
                   <div class="hl-other-tag">Kustomisasi Penuh & B2B</div>
                   <h3 class="hl-other-title">Hampers Custom Identitas Perusahaan & B2B Gift</h3>
@@ -1739,7 +1834,7 @@ body {
     </section>
   </main>
 
-<footer class="hl-footer" aria-label="Footer situs">
+  <footer class="hl-footer" aria-label="Footer situs">
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4">
