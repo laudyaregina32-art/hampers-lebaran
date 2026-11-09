@@ -1208,6 +1208,131 @@
 
     
     
+    
+    /* ===== ENRICHED PORTFOLIO UI ===== */
+    .hl-filter-pill-box {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--hl-border);
+      border-radius: 100px;
+      padding: .35rem;
+      box-shadow: 0 4px 16px rgba(33, 60, 53, 0.05);
+    }
+
+    .hl-filter-btn {
+      border: none;
+      background: transparent;
+      color: var(--hl-text-muted);
+      font-size: .88rem;
+      font-weight: 600;
+      padding: .45rem 1.15rem;
+      border-radius: 100px;
+      transition: all var(--hl-transition);
+      cursor: pointer;
+    }
+
+    .hl-filter-btn:hover {
+      color: var(--hl-text);
+      background: rgba(43, 84, 66, 0.08);
+    }
+
+    .hl-filter-btn.active {
+      background: var(--hl-accent-dark);
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(33, 60, 53, 0.2);
+    }
+
+    /* Floating Badge on Card Image */
+    .hl-card__badge {
+      position: absolute;
+      top: .9rem;
+      left: .9rem;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .3rem .75rem;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: var(--hl-accent-dark);
+      border: 1px solid rgba(204, 216, 203, 0.85);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      pointer-events: none;
+    }
+
+    /* Mini Feature Tags */
+    .hl-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .75rem;
+      margin-bottom: .25rem;
+    }
+
+    .hl-tag {
+      display: inline-block;
+      font-size: .74rem;
+      font-weight: 600;
+      color: var(--hl-accent-dark);
+      background: rgba(43, 84, 66, 0.08);
+      border: 1px solid rgba(43, 84, 66, 0.15);
+      padding: .2rem .55rem;
+      border-radius: 6px;
+      line-height: 1.3;
+    }
+
+    /* Portfolio Craftsmanship Strip */
+    .hl-portfolio-features {
+      margin-top: clamp(3rem, 5vw, 4.5rem);
+      padding-top: clamp(2.5rem, 4vw, 3.5rem);
+      border-top: 1px solid var(--hl-border);
+    }
+
+    .hl-feature-box {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      padding: 1.5rem 1.35rem;
+      height: 100%;
+      box-shadow: var(--hl-shadow-card);
+      transition: transform var(--hl-transition), box-shadow var(--hl-transition);
+    }
+
+    .hl-feature-box:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--hl-shadow-card-hover);
+    }
+
+    .hl-feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(43, 84, 66, 0.1);
+      color: var(--hl-accent-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .hl-feature-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: .45rem;
+      color: var(--hl-text);
+    }
+
+    .hl-feature-desc {
+      font-size: .86rem;
+      color: var(--hl-text-muted);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
     .hl-section--portofolio-grid .container {
       max-width: 1100px;
     }
@@ -1473,14 +1598,25 @@
       </div>
     </div>
 
-    <section class="hl-section hl-section--portofolio-grid" aria-labelledby="porto-grid-heading">
+        <section class="hl-section hl-section--portofolio-grid" aria-labelledby="porto-grid-heading">
       <div class="container">
         <h2 class="visually-hidden" id="porto-grid-heading">Galeri Portofolio</h2>
 
-                <!-- Grid -->
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
+        <!-- Filter Tab Kategori Portofolio -->
+        <div class="hl-portfolio-filter mb-4 text-center">
+          <div class="d-inline-flex flex-wrap justify-content-center gap-2 p-1 hl-filter-pill-box">
+            <button type="button" class="hl-filter-btn active" data-filter="all">Semua Koleksi (6)</button>
+            <button type="button" class="hl-filter-btn" data-filter="korporat">🏢 Korporat &amp; B2B (3)</button>
+            <button type="button" class="hl-filter-btn" data-filter="personal">🎁 Personal &amp; Keluarga (2)</button>
+            <button type="button" class="hl-filter-btn" data-filter="ibadah">🕌 Perlengkapan Ibadah (1)</button>
+          </div>
+        </div>
+
+        <!-- Grid Baris-Baris Card Karya -->
+        <div class="row g-4" id="portfolio-items-grid">
+          <div class="col-md-6 col-lg-4 hl-portfolio-item" data-category="korporat">
             <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Korporat Akhir Tahun" data-detail-url="portofolio/hampers-korporat-akhir-tahun.html">
+              <span class="hl-card__badge">⭐ Proyek B2B VVIP</span>
               <a href="portofolio/hampers-korporat-akhir-tahun.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Korporat Akhir Tahun">
                 <img src="assets/images/hampers-perusahaan.webp" alt="Hampers Korporat Akhir Tahun" width="400" height="300"
                   style="width:100%;height:100%;object-fit: cover;" loading="eager" fetchpriority="high"
@@ -1492,6 +1628,11 @@
                   <a href="portofolio/hampers-korporat-akhir-tahun.html">Hampers Korporat Akhir Tahun</a>
                 </h3>
                 <p class="hl-card__desc">Pesanan paket hampers premium untuk karyawan dan klien perusahaan, dengan kemasan bertema perusahaan.</p>
+                <div class="hl-card__tags">
+                  <span class="hl-tag">Exclusive Hardbox</span>
+                  <span class="hl-tag">Nastar Wijsman</span>
+                  <span class="hl-tag">Logo Foil Emas</span>
+                </div>
                 <div class="hl-card__action mt-3">
                   <a href="portofolio/hampers-korporat-akhir-tahun.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Korporat Akhir Tahun">
                     Lihat Detail
@@ -1504,8 +1645,9 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 hl-portfolio-item" data-category="personal">
             <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Kue dalam Basket Rotan" data-detail-url="portofolio/hampers-kue-basket-rotan.html">
+              <span class="hl-card__badge">🧺 Keranjang Anyaman</span>
               <a href="portofolio/hampers-kue-basket-rotan.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Kue dalam Basket Rotan">
                 <img src="assets/images/hampers-rotan.webp" alt="Hampers Kue dalam Basket Rotan" width="400" height="300"
                   style="width:100%;height:100%;object-fit: cover;" loading="eager"
@@ -1517,6 +1659,11 @@
                   <a href="portofolio/hampers-kue-basket-rotan.html">Hampers Kue dalam Basket Rotan</a>
                 </h3>
                 <p class="hl-card__desc">Pesanan hampers kue kering dalam basket rotan dengan tampilan natural dan elegan untuk hadiah personal.</p>
+                <div class="hl-card__tags">
+                  <span class="hl-tag">Anyaman Rotan Asli</span>
+                  <span class="hl-tag">Pouch Linen Premium</span>
+                  <span class="hl-tag">Kue Kering Halal</span>
+                </div>
                 <div class="hl-card__action mt-3">
                   <a href="portofolio/hampers-kue-basket-rotan.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Kue dalam Basket Rotan">
                     Lihat Detail
@@ -1529,19 +1676,25 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 hl-portfolio-item" data-category="ibadah">
             <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Perlengkapan Ibadah Premium" data-detail-url="portofolio/hampers-perlengkapan-ibadah-premium.html">
+              <span class="hl-card__badge">🕌 Eksklusif Ramadan</span>
               <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Perlengkapan Ibadah Premium">
                 <img src="assets/images/tasbih.webp" alt="Hampers Perlengkapan Ibadah Premium" width="400" height="300"
                   style="width:100%;height:100%;object-fit: cover;" loading="eager"
                   decoding="async">
               </a>
               <div class="hl-card__body">
-                <p class="hl-card__category">Personal &middot; 2026</p>
+                <p class="hl-card__category">Perlengkapan Ibadah &middot; 2026</p>
                 <h3 class="hl-card__title">
                   <a href="portofolio/hampers-perlengkapan-ibadah-premium.html">Hampers Perlengkapan Ibadah Premium</a>
                 </h3>
                 <p class="hl-card__desc">Hampers eksklusif berisi Al-Qur'an premium dan tasbih dalam kemasan box gelap mewah bertema Ramadan.</p>
+                <div class="hl-card__tags">
+                  <span class="hl-tag">Mushaf Al-Qur'an</span>
+                  <span class="hl-tag">Tasbih Kayu Kokka</span>
+                  <span class="hl-tag">Sajadah Tenun</span>
+                </div>
                 <div class="hl-card__action mt-3">
                   <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Perlengkapan Ibadah Premium">
                     Lihat Detail
@@ -1554,8 +1707,9 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 hl-portfolio-item" data-category="korporat">
             <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Custom Branding Korporat" data-detail-url="portofolio/hampers-custom-branding-korporat.html">
+              <span class="hl-card__badge">✨ Custom Identitas B2B</span>
               <a href="portofolio/hampers-custom-branding-korporat.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Custom Branding Korporat">
                 <img src="assets/images/hampers-custom.webp" alt="Hampers Custom Branding Korporat" width="400" height="300"
                   style="width:100%;height:100%;object-fit: cover;" loading="eager"
@@ -1567,6 +1721,11 @@
                   <a href="portofolio/hampers-custom-branding-korporat.html">Hampers Custom Branding Korporat</a>
                 </h3>
                 <p class="hl-card__desc">Pesanan hampers kustom dengan logo perusahaan dan pemilihan warna kemasan yang disesuaikan.</p>
+                <div class="hl-card__tags">
+                  <span class="hl-tag">Tumbler Grafir Logo</span>
+                  <span class="hl-tag">Notebook Eksekutif</span>
+                  <span class="hl-tag">Kartu Personalisasi</span>
+                </div>
                 <div class="hl-card__action mt-3">
                   <a href="portofolio/hampers-custom-branding-korporat.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Custom Branding Korporat">
                     Lihat Detail
@@ -1579,8 +1738,9 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 hl-portfolio-item" data-category="personal">
             <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Keluarga Edisi Lebaran" data-detail-url="portofolio/hampers-keluarga-edisi-lebaran.html">
+              <span class="hl-card__badge">❤️ Edisi Keluarga Besar</span>
               <a href="portofolio/hampers-keluarga-edisi-lebaran.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Keluarga Edisi Lebaran">
                 <img src="assets/images/hampers-keluarga.webp" alt="Hampers Keluarga Edisi Lebaran" width="400" height="300"
                   style="width:100%;height:100%;object-fit: cover;" loading="eager"
@@ -1592,6 +1752,11 @@
                   <a href="portofolio/hampers-keluarga-edisi-lebaran.html">Hampers Keluarga Edisi Lebaran</a>
                 </h3>
                 <p class="hl-card__desc">Serangkaian hampers personal untuk keluarga besar dengan kartu ucapan berbeda-beda untuk setiap penerima.</p>
+                <div class="hl-card__tags">
+                  <span class="hl-tag">Multi-Toples Cookies</span>
+                  <span class="hl-tag">Sparkling Juice</span>
+                  <span class="hl-tag">Pita Satin Gold</span>
+                </div>
                 <div class="hl-card__action mt-3">
                   <a href="portofolio/hampers-keluarga-edisi-lebaran.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Keluarga Edisi Lebaran">
                     Lihat Detail
@@ -1604,8 +1769,9 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4 hl-portfolio-item" data-category="korporat">
             <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Lebaran untuk Instansi" data-detail-url="portofolio/hampers-lebaran-instansi.html">
+              <span class="hl-card__badge">🏛️ Pengadaan Instansi</span>
               <a href="portofolio/hampers-lebaran-instansi.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Lebaran untuk Instansi">
                 <img src="assets/images/hampers-banyak.webp" alt="Hampers Lebaran untuk Instansi" width="400" height="300"
                   style="width:100%;height:100%;object-fit: cover;" loading="eager"
@@ -1616,7 +1782,12 @@
                 <h3 class="hl-card__title">
                   <a href="portofolio/hampers-lebaran-instansi.html">Hampers Lebaran untuk Instansi</a>
                 </h3>
-                <p class="hl-card__desc">Pesanan hampers untuk instansi pemerintah dengan pengiriman bertahap ke beberapa lokasi.</p>
+                <p class="hl-card__desc">Pesanan hampers untuk instansi pemerintah dengan pengiriman bertahap ke beberapa lokasi cabang.</p>
+                <div class="hl-card__tags">
+                  <span class="hl-tag">Pengadaan Skala Besar</span>
+                  <span class="hl-tag">Double Tier Basket</span>
+                  <span class="hl-tag">Multi-Cabang</span>
+                </div>
                 <div class="hl-card__action mt-3">
                   <a href="portofolio/hampers-lebaran-instansi.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Lebaran untuk Instansi">
                     Lihat Detail
@@ -1627,6 +1798,68 @@
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+
+        <!-- Fitur & Jaminan Pengerjaan Portofolio -->
+        <div class="hl-portfolio-features">
+          <div class="text-center mb-4">
+            <span class="hl-eyebrow">DEDIKASI KUALITAS</span>
+            <h2 class="hl-heading" style="font-size:clamp(1.5rem, 3vw, 2.1rem); margin-bottom:.5rem;">Standar Keunggulan di Setiap Bingkisan</h2>
+            <p class="hl-page-header__desc" style="max-width:640px; margin-inline:auto;">Komitmen kami dalam setiap proyek dokumentasi hampers: memadukan kemasan estetik, cita rasa kuliner halal teruji, dan ketepatan pengiriman.</p>
+          </div>
+          <div class="row g-3 g-lg-4">
+            <div class="col-sm-6 col-lg-3">
+              <div class="hl-feature-box">
+                <div class="hl-feature-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <h3 class="hl-feature-title">Kemasan Rigid &amp; Mewah</h3>
+                <p class="hl-feature-desc">Hardbox tebal bertekstur, keranjang rotan anyam pengrajin lokal, dan aksen pita satin berperekat magnetik kokoh.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="hl-feature-box">
+                <div class="hl-feature-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <h3 class="hl-feature-title">100% Halal &amp; Berizin Resmi</h3>
+                <p class="hl-feature-desc">Seluruh olahan kue kering menggunakan butter premium (Wijsman), tanpa pengawet berbahaya, dan berizin P-IRT/BPOM.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="hl-feature-box">
+                <div class="hl-feature-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                </div>
+                <h3 class="hl-feature-title">Branding Kustom Eksklusif</h3>
+                <p class="hl-feature-desc">Fasilitas penyematan logo korporat, kartu ucapan Idulfitri bertanda tangan direksi, dan stempel segel lilin wax emas.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="hl-feature-box">
+                <div class="hl-feature-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <h3 class="hl-feature-title">Proteksi Ekspedisi Aman</h3>
+                <p class="hl-feature-desc">Pengemasan bubble wrap multi-lapis dengan sekat partisi toples, serta garansi penggantian utuh jika terjadi insiden pengiriman.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1743,6 +1976,33 @@
   <script src="assets/js/main.min.js?v=2" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // 1. Interaksi Filter Kategori Portofolio
+      var filterBtns = document.querySelectorAll('.hl-filter-btn');
+      var items = document.querySelectorAll('.hl-portfolio-item');
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          var selected = this.getAttribute('data-filter');
+          items.forEach(function(item) {
+            var cat = item.getAttribute('data-category');
+            if (selected === 'all' || cat === selected) {
+              item.style.display = '';
+              item.style.opacity = '0';
+              setTimeout(function() {
+                item.style.transition = 'opacity 0.25s ease';
+                item.style.opacity = '1';
+              }, 10);
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 2. Klik pada Card Portofolio
       document.querySelectorAll('.hl-card--interactive').forEach(function(card) {
         card.addEventListener('click', function(e) {
           var link = card.querySelector('a.hl-card-btn');
