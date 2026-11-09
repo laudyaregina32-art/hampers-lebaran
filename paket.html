@@ -1249,55 +1249,77 @@
     }
 
     /* ===== FILTER PILL BAR (SESUAI GAMBAR 1) ===== */
-    @media (max-width: 576px) {
-      .hl-filter-pill-box {
-        border-radius: 20px !important;
-        padding: .45rem .5rem !important;
-      }
-      .hl-filter-btn {
-        font-size: .82rem !important;
-        padding: .4rem .85rem !important;
-      }
-    }
+
+    /* ===== SEPARATE PILL BUTTONS (SESUAI GAMBAR 1) ===== */
+    .hl-filter-pill-group,
     .hl-filter-pill-box {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid var(--hl-border);
-      border-radius: 100px;
-      padding: .35rem;
-      box-shadow: 0 4px 16px rgba(33, 60, 53, 0.05);
+      display: inline-flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 0.65rem 0.85rem !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
     }
 
     .hl-filter-btn {
-      border: none;
-      background: transparent;
-      color: var(--hl-text-muted);
-      font-size: .88rem;
-      font-weight: 600;
-      padding: .45rem 1.15rem;
-      border-radius: 100px;
-      transition: all var(--hl-transition);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-      user-select: none;
+      border: 1px solid rgba(33, 60, 53, 0.16) !important;
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      color: var(--hl-text) !important;
+      font-size: 0.9rem !important;
+      font-weight: 600 !important;
+      padding: 0.55rem 1.35rem !important;
+      border-radius: 100px !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      cursor: pointer !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.45rem !important;
+      user-select: none !important;
+      box-shadow: 0 2px 8px rgba(33, 60, 53, 0.05) !important;
+      white-space: nowrap !important;
+      text-decoration: none !important;
     }
 
     .hl-filter-btn:hover {
-      color: var(--hl-text);
-      background: rgba(43, 84, 66, 0.08);
+      background: #fbfdfc !important;
+      background-color: #fbfdfc !important;
+      border-color: #213c35 !important;
+      color: #213c35 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(33, 60, 53, 0.12) !important;
     }
 
     .hl-filter-btn.active {
       background: #213c35 !important;
+      background-color: #213c35 !important;
+      border-color: #213c35 !important;
       color: #ffffff !important;
-      box-shadow: 0 4px 12px rgba(33, 60, 53, 0.2);
+      box-shadow: 0 6px 18px rgba(33, 60, 53, 0.25) !important;
+      transform: translateY(-1px) !important;
     }
 
     .hl-filter-btn:active {
       background: #172c26 !important;
+      background-color: #172c26 !important;
+      border-color: #172c26 !important;
       color: #ffffff !important;
+      transform: translateY(0) !important;
     }
+
+    @media (max-width: 576px) {
+      .hl-filter-pill-group,
+      .hl-filter-pill-box {
+        gap: 0.5rem 0.6rem !important;
+      }
+      .hl-filter-btn {
+        font-size: 0.82rem !important;
+        padding: 0.45rem 1rem !important;
+      }
+    }
+
 
     /* Navbar Dropdown Modern Styling */
     .hl-navbar .dropdown-menu {
@@ -1457,7 +1479,7 @@
 
         <!-- Filter Pill Bar Kategori Paket (Sesuai Gambar 1) -->
         <div class="hl-package-filter mb-5 text-center">
-          <div class="d-inline-flex flex-wrap justify-content-center gap-2 p-1 hl-filter-pill-box">
+          <div class="hl-filter-pill-group">
             <button type="button" class="hl-filter-btn active" data-filter="all">Semua Paket (4)</button>
             <button type="button" class="hl-filter-btn" data-filter="premium">✨ Hampers Premium</button>
             <button type="button" class="hl-filter-btn" data-filter="kue">🍪 Kue &amp; Camilan</button>
