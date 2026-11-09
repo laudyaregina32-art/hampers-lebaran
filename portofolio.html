@@ -1206,8 +1206,28 @@
     }
 
     
+    
     .hl-section--portofolio-grid .container {
       max-width: 1100px;
+    }
+
+    .hl-card--interactive {
+      height: 100%;
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      background: var(--hl-surface);
+      box-shadow: var(--hl-shadow-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .hl-card--interactive:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--hl-shadow-card-hover);
     }
 
     .hl-section--portofolio-grid .hl-card__img-wrap {
@@ -1217,6 +1237,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      text-decoration: none;
     }
 
     .hl-section--portofolio-grid .hl-card__img-wrap img {
@@ -1226,8 +1247,15 @@
       transition: transform 350ms;
     }
 
+    .hl-card--interactive:hover .hl-card__img-wrap img {
+      transform: scale(1.03);
+    }
+
     .hl-section--portofolio-grid .hl-card__body {
       padding: 1.15rem 1.35rem 1.35rem !important;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .hl-section--portofolio-grid .hl-card__title {
@@ -1236,29 +1264,63 @@
       line-height: 1.35;
     }
 
-    
-    .hl-section--portofolio-grid .hl-card-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      padding: .5rem 1.15rem;
-      border-radius: 8px;
-      font-size: .88rem;
-      font-weight: 600;
-      color: #ffffff;
-      background: var(--hl-accent-dark);
-      border: 1.5px solid var(--hl-accent-dark);
-      transition: background 0.2s ease, border-color 0.2s ease, gap 0.2s ease, box-shadow 0.2s ease;
+    .hl-section--portofolio-grid .hl-card__title a {
+      color: var(--hl-text) !important;
       text-decoration: none;
+      transition: color var(--hl-transition);
     }
 
-    .hl-card-link:hover .hl-card-btn {
-      background: var(--hl-primary);
-      border-color: var(--hl-primary);
-      color: #ffffff !important;
-      gap: .65rem;
-      box-shadow: 0 4px 12px rgba(37, 92, 69, 0.25);
+    .hl-card--interactive:hover .hl-card__title a {
+      color: var(--hl-accent-dark) !important;
     }
+
+    .hl-section--portofolio-grid .hl-card__desc {
+      font-size: .88rem !important;
+      line-height: 1.55 !important;
+      color: var(--hl-text-muted);
+      flex-grow: 1;
+    }
+
+    
+    .stretched-link::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      content: "";
+      cursor: pointer;
+    }
+    .hl-section--portofolio-grid .hl-card-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: .45rem !important;
+      padding: .52rem 1.2rem !important;
+      border-radius: 8px !important;
+      font-size: .88rem !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
+      background: var(--hl-accent-dark) !important;
+      border: 1.5px solid var(--hl-accent-dark) !important;
+      text-decoration: none !important;
+      cursor: pointer !important;
+      transition: background 0.2s ease, border-color 0.2s ease, gap 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .hl-card--interactive:hover .hl-card-btn,
+    .hl-card--interactive:active .hl-card-btn,
+    .hl-card--interactive:focus-within .hl-card-btn,
+    .hl-card-btn:hover,
+    .hl-card-btn:active,
+    .hl-card-btn:focus {
+      background: var(--hl-primary) !important;
+      border-color: var(--hl-primary) !important;
+      color: #ffffff !important;
+      gap: .65rem !important;
+      box-shadow: 0 4px 12px rgba(37, 92, 69, 0.25) !important;
+    }
+
     .hl-section--portofolio-grid .hl-card__desc {
       font-size: .88rem !important;
       line-height: 1.55 !important;
@@ -1396,163 +1458,156 @@
       <div class="container">
         <h2 class="visually-hidden" id="porto-grid-heading">Galeri Portofolio</h2>
 
-        <!-- Grid -->
+                <!-- Grid -->
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
-            <a href="portofolio/hampers-korporat-akhir-tahun.html" class="hl-card-link"
-              style="text-decoration:none;color:inherit;display:block">
-              <article class="hl-card" aria-label="Hampers Korporat Akhir Tahun">
-                <div class="hl-card__img-wrap">
-                  <img src="assets/images/hampers-perusahaan.webp" alt="Hampers Korporat Akhir Tahun" width="400"
-                    height="300" style="width:100%;height:100%;object-fit: cover;" loading="eager" fetchpriority="high"
-                    decoding="async">
+            <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Korporat Akhir Tahun" data-detail-url="portofolio/hampers-korporat-akhir-tahun.html">
+              <a href="portofolio/hampers-korporat-akhir-tahun.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Korporat Akhir Tahun">
+                <img src="assets/images/hampers-perusahaan.webp" alt="Hampers Korporat Akhir Tahun" width="400" height="300"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager" fetchpriority="high"
+                  decoding="async">
+              </a>
+              <div class="hl-card__body">
+                <p class="hl-card__category">Korporat &middot; 2026</p>
+                <h3 class="hl-card__title">
+                  <a href="portofolio/hampers-korporat-akhir-tahun.html">Hampers Korporat Akhir Tahun</a>
+                </h3>
+                <p class="hl-card__desc">Pesanan paket hampers premium untuk karyawan dan klien perusahaan, dengan kemasan bertema perusahaan.</p>
+                <div class="hl-card__action mt-3">
+                  <a href="portofolio/hampers-korporat-akhir-tahun.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Korporat Akhir Tahun">
+                    Lihat Detail
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="hl-card__body">
-                  <p class="hl-card__category">Korporat &middot; 2026</p>
-                  <h3 class="hl-card__title">Hampers Korporat Akhir Tahun</h3>
-                  <p class="hl-card__desc">Pesanan paket hampers premium untuk karyawan dan klien perusahaan, dengan
-                    kemasan bertema perusahaan.</p>
-                  <div class="hl-card__action mt-3">
-                    <span class="hl-card-btn">
-                      Lihat Detail
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
+              </div>
+            </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <a href="portofolio/hampers-kue-basket-rotan.html" class="hl-card-link"
-              style="text-decoration:none;color:inherit;display:block">
-              <article class="hl-card" aria-label="Hampers Kue Lebaran dalam Basket Rotan">
-                <div class="hl-card__img-wrap">
-                  <img src="assets/images/hampers-rotan.webp" alt="Hampers Kue dalam Basket Rotan" width="400"
-                    height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
+            <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Kue dalam Basket Rotan" data-detail-url="portofolio/hampers-kue-basket-rotan.html">
+              <a href="portofolio/hampers-kue-basket-rotan.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Kue dalam Basket Rotan">
+                <img src="assets/images/hampers-rotan.webp" alt="Hampers Kue dalam Basket Rotan" width="400" height="300"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager"
+                  decoding="async">
+              </a>
+              <div class="hl-card__body">
+                <p class="hl-card__category">Personal &middot; 2026</p>
+                <h3 class="hl-card__title">
+                  <a href="portofolio/hampers-kue-basket-rotan.html">Hampers Kue dalam Basket Rotan</a>
+                </h3>
+                <p class="hl-card__desc">Pesanan hampers kue kering dalam basket rotan dengan tampilan natural dan elegan untuk hadiah personal.</p>
+                <div class="hl-card__action mt-3">
+                  <a href="portofolio/hampers-kue-basket-rotan.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Kue dalam Basket Rotan">
+                    Lihat Detail
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="hl-card__body">
-                  <p class="hl-card__category">Personal &middot; 2026</p>
-                  <h3 class="hl-card__title">Hampers Kue dalam Basket Rotan</h3>
-                  <p class="hl-card__desc">Pesanan hampers kue kering dalam basket rotan dengan tampilan natural dan
-                    elegan untuk hadiah personal.</p>
-                  <div class="hl-card__action mt-3">
-                    <span class="hl-card-btn">
-                      Lihat Detail
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
+              </div>
+            </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" class="hl-card-link"
-              style="text-decoration:none;color:inherit;display:block">
-              <article class="hl-card" aria-label="Hampers Perlengkapan Ibadah Eksklusif">
-                <div class="hl-card__img-wrap">
-                  <img src="assets/images/tasbih.webp" alt="Hampers Perlengkapan Ibadah Premium" width="400"
-                    height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
+            <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Perlengkapan Ibadah Premium" data-detail-url="portofolio/hampers-perlengkapan-ibadah-premium.html">
+              <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Perlengkapan Ibadah Premium">
+                <img src="assets/images/tasbih.webp" alt="Hampers Perlengkapan Ibadah Premium" width="400" height="300"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager"
+                  decoding="async">
+              </a>
+              <div class="hl-card__body">
+                <p class="hl-card__category">Personal &middot; 2026</p>
+                <h3 class="hl-card__title">
+                  <a href="portofolio/hampers-perlengkapan-ibadah-premium.html">Hampers Perlengkapan Ibadah Premium</a>
+                </h3>
+                <p class="hl-card__desc">Hampers eksklusif berisi Al-Qur'an premium dan tasbih dalam kemasan box gelap mewah bertema Ramadan.</p>
+                <div class="hl-card__action mt-3">
+                  <a href="portofolio/hampers-perlengkapan-ibadah-premium.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Perlengkapan Ibadah Premium">
+                    Lihat Detail
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="hl-card__body">
-                  <p class="hl-card__category">Personal &middot; 2026</p>
-                  <h3 class="hl-card__title">Hampers Perlengkapan Ibadah Premium</h3>
-                  <p class="hl-card__desc">Hampers eksklusif berisi Al-Qur'an premium dan tasbih dalam kemasan box gelap
-                    mewah bertema Ramadan.</p>
-                  <div class="hl-card__action mt-3">
-                    <span class="hl-card-btn">
-                      Lihat Detail
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
+              </div>
+            </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <a href="portofolio/hampers-custom-branding-korporat.html" class="hl-card-link"
-              style="text-decoration:none;color:inherit;display:block">
-              <article class="hl-card" aria-label="Hampers Custom Corporate Branding">
-                <div class="hl-card__img-wrap">
-                  <img src="assets/images/hampers-custom.webp" alt="Hampers Custom Branding Korporat" width="400"
-                    height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
+            <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Custom Branding Korporat" data-detail-url="portofolio/hampers-custom-branding-korporat.html">
+              <a href="portofolio/hampers-custom-branding-korporat.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Custom Branding Korporat">
+                <img src="assets/images/hampers-custom.webp" alt="Hampers Custom Branding Korporat" width="400" height="300"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager"
+                  decoding="async">
+              </a>
+              <div class="hl-card__body">
+                <p class="hl-card__category">Korporat &middot; 2026</p>
+                <h3 class="hl-card__title">
+                  <a href="portofolio/hampers-custom-branding-korporat.html">Hampers Custom Branding Korporat</a>
+                </h3>
+                <p class="hl-card__desc">Pesanan hampers kustom dengan logo perusahaan dan pemilihan warna kemasan yang disesuaikan.</p>
+                <div class="hl-card__action mt-3">
+                  <a href="portofolio/hampers-custom-branding-korporat.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Custom Branding Korporat">
+                    Lihat Detail
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="hl-card__body">
-                  <p class="hl-card__category">Korporat &middot; 2026</p>
-                  <h3 class="hl-card__title">Hampers Custom Branding Korporat</h3>
-                  <p class="hl-card__desc">Pesanan hampers kustom dengan logo perusahaan dan pemilihan warna
-                    kemasan yang disesuaikan.</p>
-                  <div class="hl-card__action mt-3">
-                    <span class="hl-card-btn">
-                      Lihat Detail
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
+              </div>
+            </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <a href="portofolio/hampers-keluarga-edisi-lebaran.html" class="hl-card-link"
-              style="text-decoration:none;color:inherit;display:block">
-              <article class="hl-card" aria-label="Hampers Lebaran Keluarga">
-                <div class="hl-card__img-wrap">
-                  <img src="assets/images/hampers-keluarga.webp" alt="Hampers Keluarga Edisi Lebaran" width="400"
-                    height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
+            <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Keluarga Edisi Lebaran" data-detail-url="portofolio/hampers-keluarga-edisi-lebaran.html">
+              <a href="portofolio/hampers-keluarga-edisi-lebaran.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Keluarga Edisi Lebaran">
+                <img src="assets/images/hampers-keluarga.webp" alt="Hampers Keluarga Edisi Lebaran" width="400" height="300"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager"
+                  decoding="async">
+              </a>
+              <div class="hl-card__body">
+                <p class="hl-card__category">Personal &middot; 2026</p>
+                <h3 class="hl-card__title">
+                  <a href="portofolio/hampers-keluarga-edisi-lebaran.html">Hampers Keluarga Edisi Lebaran</a>
+                </h3>
+                <p class="hl-card__desc">Serangkaian hampers personal untuk keluarga besar dengan kartu ucapan berbeda-beda untuk setiap penerima.</p>
+                <div class="hl-card__action mt-3">
+                  <a href="portofolio/hampers-keluarga-edisi-lebaran.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Keluarga Edisi Lebaran">
+                    Lihat Detail
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="hl-card__body">
-                  <p class="hl-card__category">Personal &middot; 2026</p>
-                  <h3 class="hl-card__title">Hampers Keluarga Edisi Lebaran</h3>
-                  <p class="hl-card__desc">Serangkaian hampers personal untuk keluarga besar dengan kartu ucapan
-                    berbeda-beda untuk setiap penerima.</p>
-                  <div class="hl-card__action mt-3">
-                    <span class="hl-card-btn">
-                      Lihat Detail
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
+              </div>
+            </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
-            <a href="portofolio/hampers-lebaran-instansi.html" class="hl-card-link"
-              style="text-decoration:none;color:inherit;display:block">
-              <article class="hl-card" aria-label="Hampers Paket Lebaran Instansi">
-                <div class="hl-card__img-wrap">
-                  <img src="assets/images/hampers-banyak.webp" alt="Hampers Lebaran untuk Instansi" width="400"
-                    height="300" style="width:100%;height:100%;object-fit: cover;" loading="lazy">
+            <article class="hl-card hl-card--interactive position-relative" aria-label="Hampers Lebaran untuk Instansi" data-detail-url="portofolio/hampers-lebaran-instansi.html">
+              <a href="portofolio/hampers-lebaran-instansi.html" class="hl-card__img-wrap d-block" aria-label="Lihat detail Hampers Lebaran untuk Instansi">
+                <img src="assets/images/hampers-banyak.webp" alt="Hampers Lebaran untuk Instansi" width="400" height="300"
+                  style="width:100%;height:100%;object-fit: cover;" loading="eager"
+                  decoding="async">
+              </a>
+              <div class="hl-card__body">
+                <p class="hl-card__category">Korporat &middot; 2026</p>
+                <h3 class="hl-card__title">
+                  <a href="portofolio/hampers-lebaran-instansi.html">Hampers Lebaran untuk Instansi</a>
+                </h3>
+                <p class="hl-card__desc">Pesanan hampers untuk instansi pemerintah dengan pengiriman bertahap ke beberapa lokasi.</p>
+                <div class="hl-card__action mt-3">
+                  <a href="portofolio/hampers-lebaran-instansi.html" class="hl-card-btn stretched-link" aria-label="Lihat Detail Hampers Lebaran untuk Instansi">
+                    Lihat Detail
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div class="hl-card__body">
-                  <p class="hl-card__category">Korporat &middot; 2026</p>
-                  <h3 class="hl-card__title">Hampers Lebaran untuk Instansi</h3>
-                  <p class="hl-card__desc">Pesanan hampers untuk instansi pemerintah dengan pengiriman bertahap
-                    ke beberapa lokasi.</p>
-                  <div class="hl-card__action mt-3">
-                    <span class="hl-card-btn">
-                      Lihat Detail
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -1667,6 +1722,18 @@
     </svg>
   </a>
   <script src="assets/js/main.min.js?v=2" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.hl-card--interactive').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          var link = card.querySelector('a.hl-card-btn');
+          if (link && link.href && !e.target.closest('a')) {
+            window.location.href = link.href;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
