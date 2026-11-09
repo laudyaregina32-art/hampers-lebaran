@@ -622,15 +622,28 @@
     }
 
     .hl-hero {
+      padding: 0 !important;
+      background: var(--hl-bg);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hl-hero__banner {
       padding-top: clamp(3.85rem, 6.2vw, 5.5rem);
-      padding-bottom: 0 !important;
+      padding-bottom: clamp(2rem, 3.5vw, 3rem);
       background-color: var(--hl-bg);
-      background-image: linear-gradient(135deg, rgba(234, 240, 233, 0.94) 0%, rgba(234, 240, 233, 0.82) 48%, rgba(234, 240, 233, 0.68) 100%), url('assets/images/hero-bg-hampers.webp');
+      background-image: linear-gradient(to right, rgba(234, 240, 233, .94) 0%, rgba(234, 240, 233, .85) 38%, rgba(234, 240, 233, .32) 68%, rgba(234, 240, 233, .05) 100%), url('assets/images/hero-bg-hampers.webp');
       background-size: cover;
       background-position: center right;
       background-repeat: no-repeat;
-      position: relative;
-      overflow: hidden
+      position: relative
+    }
+
+    @media (max-width: 767.98px) {
+      .hl-hero__banner {
+        background-image: linear-gradient(to bottom, rgba(234, 240, 233, .95) 0%, rgba(234, 240, 233, .78) 45%, rgba(234, 240, 233, .15) 100%), url('assets/images/hero-bg-hampers.webp');
+        background-position: center top
+      }
     }
 
     .hl-hero__content-col {
@@ -1552,8 +1565,9 @@
 
     <!-- ===== HERO ===== -->
     <section class="hl-hero" aria-labelledby="hero-heading" style="padding-bottom:0 !important;">
-      <div class="container">
-        <div class="row align-items-lg-start align-items-center g-4 g-lg-5">
+      <div class="hl-hero__banner">
+        <div class="container">
+          <div class="row align-items-lg-start align-items-center g-4 g-lg-5">
           <div class="col-lg-7 order-1 order-lg-1 hl-hero__content-col">
             <div class="hl-hero__kicker" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"
@@ -1614,9 +1628,13 @@
           </div>
         </div>
 
+        </div>
+      </div>
+
+      <div class="container">
         <!-- Divider Garis di Bawah Tulisan Hero -->
         <hr class="hl-hero__row-divider"
-          style="border:none !important;border-top:1px solid rgba(213, 214, 208, .8) !important;margin-top:clamp(2rem, 3.5vw, 3rem) !important;margin-bottom:0 !important;width:100% !important;">
+          style="border:none !important;border-top:1px solid rgba(213, 214, 208, .8) !important;margin-top:0 !important;margin-bottom:0 !important;width:100% !important;">
 
         <!-- ===== CLIENT TRUST MARQUEE (inside hero) ===== -->
         <div class="hl-clients-marquee" role="region" aria-label="Klien dan Mitra Perusahaan">
