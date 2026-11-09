@@ -1483,6 +1483,27 @@
         padding-top: 80px !important;
       }
     }
+    .hl-portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1040px;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .hl-portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hl-portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+      }
+    }
   </style>
   <link rel="preload" href="assets/css/home.min.css?v=12" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -1757,7 +1778,7 @@
 
     <!-- ===== KATEGORI PAKET ===== -->
     <section class="hl-section" aria-labelledby="kategori-heading"
-      style="padding-top:clamp(2rem, 3.5vw, 2.75rem) !important;">
+      style="padding-top:clamp(3.75rem, 6vw, 5.25rem) !important;">
       <div class="container">
         <div class="hl-section-heading text-center">
           <p class="hl-eyebrow">Katalog Pilihan</p>
