@@ -71,6 +71,7 @@
       --hl-gray: #6d7d76;
       --hl-accent: #37594f;
       --hl-accent-dark: #213c35;
+      --hl-primary: #213c35;
       --hl-warm: #dbe4da;
       --hl-footer: #213c35;
       --hl-footer-text: #f0f4f1;
@@ -872,7 +873,7 @@
     }
 
     .hl-page-header--portofolio .hl-breadcrumb a:hover {
-      color: var(--hl-primary) !important;
+      color: var(--hl-accent) !important;
     }
 
     .hl-page-header--portofolio .hl-breadcrumb li+li::before {
@@ -1301,24 +1302,42 @@
       font-size: .88rem !important;
       font-weight: 600 !important;
       color: #ffffff !important;
-      background: var(--hl-accent-dark) !important;
-      border: 1.5px solid var(--hl-accent-dark) !important;
+      background-color: #213c35 !important;
+      background: #213c35 !important;
+      border: 1.5px solid #213c35 !important;
       text-decoration: none !important;
       cursor: pointer !important;
-      transition: background 0.2s ease, border-color 0.2s ease, gap 0.2s ease, box-shadow 0.2s ease !important;
+      outline: none !important;
+      transition: background-color 0.2s ease, border-color 0.2s ease, gap 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease !important;
+    }
+
+    .hl-section--portofolio-grid .hl-card-btn svg {
+      stroke: #ffffff !important;
+      color: #ffffff !important;
     }
 
     .hl-card--interactive:hover .hl-card-btn,
-    .hl-card--interactive:active .hl-card-btn,
     .hl-card--interactive:focus-within .hl-card-btn,
     .hl-card-btn:hover,
-    .hl-card-btn:active,
-    .hl-card-btn:focus {
-      background: var(--hl-primary) !important;
-      border-color: var(--hl-primary) !important;
+    .hl-card-btn:focus,
+    .hl-card-btn:focus-visible {
+      background-color: #2e554a !important;
+      background: #2e554a !important;
+      border-color: #2e554a !important;
       color: #ffffff !important;
       gap: .65rem !important;
-      box-shadow: 0 4px 12px rgba(37, 92, 69, 0.25) !important;
+      box-shadow: 0 4px 14px rgba(33, 60, 53, 0.35) !important;
+    }
+
+    .hl-card--interactive:active .hl-card-btn,
+    .hl-card-btn:active {
+      background-color: #172c26 !important;
+      background: #172c26 !important;
+      border-color: #172c26 !important;
+      color: #ffffff !important;
+      gap: .65rem !important;
+      transform: scale(0.97) !important;
+      box-shadow: 0 2px 8px rgba(33, 60, 53, 0.4) !important;
     }
 
     .hl-section--portofolio-grid .hl-card__desc {
