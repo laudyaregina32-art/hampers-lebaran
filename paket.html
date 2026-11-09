@@ -1247,6 +1247,88 @@
         padding-top: 80px !important;
       }
     }
+
+    /* ===== FILTER PILL BAR (SESUAI GAMBAR 1) ===== */
+    @media (max-width: 576px) {
+      .hl-filter-pill-box {
+        border-radius: 20px !important;
+        padding: .45rem .5rem !important;
+      }
+      .hl-filter-btn {
+        font-size: .82rem !important;
+        padding: .4rem .85rem !important;
+      }
+    }
+    .hl-filter-pill-box {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--hl-border);
+      border-radius: 100px;
+      padding: .35rem;
+      box-shadow: 0 4px 16px rgba(33, 60, 53, 0.05);
+    }
+
+    .hl-filter-btn {
+      border: none;
+      background: transparent;
+      color: var(--hl-text-muted);
+      font-size: .88rem;
+      font-weight: 600;
+      padding: .45rem 1.15rem;
+      border-radius: 100px;
+      transition: all var(--hl-transition);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      user-select: none;
+    }
+
+    .hl-filter-btn:hover {
+      color: var(--hl-text);
+      background: rgba(43, 84, 66, 0.08);
+    }
+
+    .hl-filter-btn.active {
+      background: #213c35 !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(33, 60, 53, 0.2);
+    }
+
+    .hl-filter-btn:active {
+      background: #172c26 !important;
+      color: #ffffff !important;
+    }
+
+    /* Navbar Dropdown Modern Styling */
+    .hl-navbar .dropdown-menu {
+      border-radius: 14px;
+      border: 1px solid var(--hl-border);
+      box-shadow: 0 10px 28px rgba(33, 60, 53, 0.08);
+      padding: 0.45rem;
+    }
+
+    .hl-navbar .dropdown-item {
+      border-radius: 100px;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .hl-navbar .dropdown-item:hover {
+      background: rgba(43, 84, 66, 0.08);
+      color: #213c35;
+      transform: translateX(2px);
+    }
+
+    @media (min-width: 992px) {
+      .hl-navbar .dropdown-menu .dropdown-item.active,
+      .hl-navbar .dropdown-menu .dropdown-item:active {
+        background-color: #213c35 !important;
+        background: #213c35 !important;
+        color: #ffffff !important;
+      }
+    }
 </style>
   <link rel="stylesheet" href="assets/css/main.min.css">
 
@@ -1366,15 +1448,27 @@
     <!-- Kategori Intro -->
     <section class="hl-section" aria-labelledby="kat-heading">
       <div class="container">
-        <div class="hl-section-heading text-center" style="margin-bottom: clamp(2rem, 3.5vw, 3rem);">
+        <div class="hl-section-heading text-center" style="margin-bottom: clamp(1.5rem, 3vw, 2rem);">
           <h2 class="hl-heading" id="kat-heading" style="font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin-bottom: 0.75rem;">Kategori Paket Hampers Lebaran 2027</h2>
           <p style="max-width: 680px; margin-inline: auto; color: var(--hl-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
             Pilihan bingkisan hari raya eksklusif yang dirancang khusus untuk mempererat silaturahmi bersama keluarga, kerabat, dan mitra bisnis Anda.
           </p>
         </div>
-        <div class="row g-4">
+
+        <!-- Filter Pill Bar Kategori Paket (Sesuai Gambar 1) -->
+        <div class="hl-package-filter mb-5 text-center">
+          <div class="d-inline-flex flex-wrap justify-content-center gap-2 p-1 hl-filter-pill-box">
+            <button type="button" class="hl-filter-btn active" data-filter="all">Semua Paket (4)</button>
+            <button type="button" class="hl-filter-btn" data-filter="premium">✨ Hampers Premium</button>
+            <button type="button" class="hl-filter-btn" data-filter="kue">🍪 Kue &amp; Camilan</button>
+            <button type="button" class="hl-filter-btn" data-filter="ibadah">🕌 Perlengkapan Ibadah</button>
+            <button type="button" class="hl-filter-btn" data-filter="custom">🏢 Custom / Corporate</button>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center" id="package-items-grid">
           <!-- Hampers Premium -->
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3 hl-package-item" data-category="premium">
             <a href="paket/hampers-premium.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-hijau-emas-400.webp"
@@ -1399,7 +1493,7 @@
           </div>
 
           <!-- Hampers Kue & Camilan -->
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3 hl-package-item" data-category="kue">
             <a href="paket/hampers-kue-camilan.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/kastengel.webp" alt="Hampers Kue &amp; Camilan Lebaran" width="400" height="500"
@@ -1419,7 +1513,7 @@
           </div>
 
           <!-- Hampers Perlengkapan Ibadah -->
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3 hl-package-item" data-category="ibadah">
             <a href="paket/hampers-perlengkapan-ibadah.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/sajadah.webp" alt="Hampers Perlengkapan Ibadah Lebaran" width="400" height="500"
@@ -1439,7 +1533,7 @@
           </div>
 
           <!-- Custom / Corporate -->
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3 hl-package-item" data-category="custom">
             <a href="paket/hampers-custom.html" class="hl-card">
               <div class="hl-card__img-wrap">
                 <img src="assets/images/hampers-sage.webp" alt="Hampers Custom Corporate Lebaran" width="400"
@@ -1589,6 +1683,35 @@
     </svg>
   </a>
   <script src="assets/js/main.min.js?v=2" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var filterBtns = document.querySelectorAll('.hl-package-filter .hl-filter-btn');
+      var items = document.querySelectorAll('.hl-package-item');
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          var selected = this.getAttribute('data-filter');
+          items.forEach(function(item) {
+            var cat = item.getAttribute('data-category');
+            if (selected === 'all' || cat === selected) {
+              item.style.display = '';
+              item.style.opacity = '0';
+              setTimeout(function() {
+                item.style.transition = 'opacity 0.25s ease';
+                item.style.opacity = '1';
+              }, 10);
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
