@@ -1716,6 +1716,20 @@
       var filterBtns = document.querySelectorAll('.hl-package-filter .hl-filter-btn');
       var items = document.querySelectorAll('.hl-package-item');
 
+      function closeDropdowns() {
+        document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+          m.classList.remove('show');
+          m.removeAttribute('style');
+        });
+        document.querySelectorAll('.dropdown.show').forEach(function (d) {
+          d.classList.remove('show');
+        });
+        document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(function (t) {
+          t.classList.remove('show');
+          t.setAttribute('aria-expanded', 'false');
+        });
+      }
+
       function applyFilter(filterName, shouldScroll) {
         if (!filterName) filterName = 'all';
         var matchedBtn = null;
@@ -1725,6 +1739,18 @@
             matchedBtn = b;
           } else {
             b.classList.remove('active');
+          }
+        });
+
+        // Update active class on dropdown items too
+        document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function (di) {
+          var href = di.getAttribute('href') || '';
+          if (filterName === 'all' && (!href.includes('#') || href.endsWith('#all') || href.endsWith('#semua'))) {
+            di.classList.add('active');
+          } else if (filterName !== 'all' && href.includes('#' + filterName)) {
+            di.classList.add('active');
+          } else {
+            di.classList.remove('active');
           }
         });
 
@@ -1785,12 +1811,18 @@
         handleHash(true);
       });
 
-      document.querySelectorAll('.dropdown-menu a[href*="#"]').forEach(function (link) {
+      // When clicking any link inside dropdown menu, close the dropdown immediately!
+      document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function (link) {
         link.addEventListener('click', function () {
-          var href = this.getAttribute('href');
-          var hashPart = href.split('#')[1];
-          if (hashPart) {
-            applyFilter(hashPart, true);
+          closeDropdowns();
+          var href = this.getAttribute('href') || '';
+          if (href.includes('#')) {
+            var hashPart = href.split('#')[1];
+            if (hashPart) {
+              applyFilter(hashPart, true);
+            }
+          } else {
+            applyFilter('all', true);
           }
         });
       });
