@@ -477,7 +477,10 @@
       align-items: center
     }
 
-    .hl-brand-accent { color: #37594f !important; font-weight: 700; }
+    .hl-brand-accent {
+      color: #37594f !important;
+      font-weight: 700;
+    }
 
     .hl-navbar-logo {
       height: 48px;
@@ -1310,10 +1313,12 @@
     }
 
     @media (max-width: 576px) {
+
       .hl-filter-pill-group,
       .hl-filter-pill-box {
         gap: 0.5rem 0.6rem !important;
       }
+
       .hl-filter-btn {
         font-size: 0.82rem !important;
         padding: 0.45rem 1rem !important;
@@ -1344,6 +1349,7 @@
     }
 
     @media (min-width: 992px) {
+
       .hl-navbar .dropdown-menu .dropdown-item.active,
       .hl-navbar .dropdown-menu .dropdown-item:active {
         background-color: #213c35 !important;
@@ -1351,7 +1357,7 @@
         color: #ffffff !important;
       }
     }
-</style>
+  </style>
   <link rel="stylesheet" href="assets/css/main.min.css">
 
   <!-- Schema.org JSON-LD (Rich Graph Standard 2027-2027) -->
@@ -1471,9 +1477,13 @@
     <section class="hl-section" aria-labelledby="kat-heading">
       <div class="container">
         <div class="hl-section-heading text-center" style="margin-bottom: clamp(1.5rem, 3vw, 2rem);">
-          <h2 class="hl-heading" id="kat-heading" style="font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin-bottom: 0.75rem;">Kategori Paket Hampers Lebaran 2027</h2>
-          <p style="max-width: 680px; margin-inline: auto; color: var(--hl-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
-            Pilihan bingkisan hari raya eksklusif yang dirancang khusus untuk mempererat silaturahmi bersama keluarga, kerabat, dan mitra bisnis Anda.
+          <h2 class="hl-heading" id="kat-heading"
+            style="font-size:clamp(1.6rem, 3.2vw, 2.3rem); margin-bottom: 0.75rem;">Kategori Paket Hampers Lebaran 2027
+          </h2>
+          <p
+            style="max-width: 680px; margin-inline: auto; color: var(--hl-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
+            Pilihan bingkisan hari raya eksklusif yang dirancang khusus untuk mempererat silaturahmi bersama keluarga,
+            kerabat, dan mitra bisnis Anda.
           </p>
         </div>
 
@@ -1576,7 +1586,7 @@
       </div>
     </section>
 
-<!-- Bantuan Memilih -->
+    <!-- Bantuan Memilih -->
     <section class="hl-section hl-section--warm" aria-labelledby="bantuan-heading">
       <div class="container">
         <div class="row align-items-center g-5">
@@ -1705,22 +1715,22 @@
   <script src="assets/js/main.min.js?v=2" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var filterBtns = document.querySelectorAll('.hl-package-filter .hl-filter-btn');
       var items = document.querySelectorAll('.hl-package-item');
 
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
           this.classList.add('active');
 
           var selected = this.getAttribute('data-filter');
-          items.forEach(function(item) {
+          items.forEach(function (item) {
             var cat = item.getAttribute('data-category');
             if (selected === 'all' || cat === selected) {
               item.style.display = '';
               item.style.opacity = '0';
-              setTimeout(function() {
+              setTimeout(function () {
                 item.style.transition = 'opacity 0.25s ease';
                 item.style.opacity = '1';
               }, 10);
