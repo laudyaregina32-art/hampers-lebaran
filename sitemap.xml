@@ -160,4 +160,24 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/ide-hampers-lebaran-sederhana-untuk-keluarga</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/hampers-lebaran-budget-terjangkau</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/isi-hampers-lebaran-sederhana</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/hampers-lebaran-berdasarkan-penerima</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
