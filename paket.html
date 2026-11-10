@@ -1421,11 +1421,8 @@
                 <li>
                   <hr class="dropdown-divider my-1 mx-3">
                 </li>
-                <li><a class="dropdown-item" href="paket/hampers-premium.html">Hampers Premium</a></li>
-                <li><a class="dropdown-item" href="paket/hampers-kue-camilan.html">Hampers Kue &amp; Camilan</a></li>
-                <li><a class="dropdown-item" href="paket/hampers-perlengkapan-ibadah.html">Hampers Perlengkapan
-                    Ibadah</a></li>
-                <li><a class="dropdown-item" href="paket/hampers-custom.html">Hampers Custom / Corporate</a></li>
+                <li><a class="dropdown-item" href="paket.html#favorit">Paket Favorit</a></li>
+                <li><a class="dropdown-item" href="paket.html#pilihan">Paket Pilihan</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="portofolio.html">Portofolio</a></li>
@@ -1719,25 +1716,82 @@
       var filterBtns = document.querySelectorAll('.hl-package-filter .hl-filter-btn');
       var items = document.querySelectorAll('.hl-package-item');
 
+      function applyFilter(filterName, shouldScroll) {
+        if (!filterName) filterName = 'all';
+        var matchedBtn = null;
+        filterBtns.forEach(function (b) {
+          if (b.getAttribute('data-filter') === filterName) {
+            b.classList.add('active');
+            matchedBtn = b;
+          } else {
+            b.classList.remove('active');
+          }
+        });
+
+        if (!matchedBtn && filterName !== 'all') {
+          return applyFilter('all', false);
+        }
+
+        items.forEach(function (item) {
+          var cat = item.getAttribute('data-category');
+          if (filterName === 'all' || cat === filterName) {
+            item.style.display = '';
+            item.style.opacity = '0';
+            setTimeout(function () {
+              item.style.transition = 'opacity 0.25s ease';
+              item.style.opacity = '1';
+            }, 10);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        if (shouldScroll) {
+          var grid = document.getElementById('package-items-grid') || document.querySelector('.hl-package-filter');
+          if (grid) {
+            var rect = grid.getBoundingClientRect();
+            var offset = window.pageYOffset + rect.top - 120;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }
+        }
+      }
+
       filterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          filterBtns.forEach(function (b) { b.classList.remove('active'); });
-          this.classList.add('active');
-
           var selected = this.getAttribute('data-filter');
-          items.forEach(function (item) {
-            var cat = item.getAttribute('data-category');
-            if (selected === 'all' || cat === selected) {
-              item.style.display = '';
-              item.style.opacity = '0';
-              setTimeout(function () {
-                item.style.transition = 'opacity 0.25s ease';
-                item.style.opacity = '1';
-              }, 10);
-            } else {
-              item.style.display = 'none';
-            }
-          });
+          applyFilter(selected, false);
+          if (history.replaceState) {
+            history.replaceState(null, null, selected === 'all' ? 'paket.html' : '#' + selected);
+          }
+        });
+      });
+
+      function handleHash(shouldScroll) {
+        var hash = window.location.hash.replace('#', '').toLowerCase();
+        if (hash === 'favorit' || hash === 'pilihan' || hash === 'all') {
+          applyFilter(hash, shouldScroll);
+        } else if (hash === 'semua') {
+          applyFilter('all', shouldScroll);
+        }
+      }
+
+      if (window.location.hash) {
+        setTimeout(function () {
+          handleHash(true);
+        }, 120);
+      }
+
+      window.addEventListener('hashchange', function () {
+        handleHash(true);
+      });
+
+      document.querySelectorAll('.dropdown-menu a[href*="#"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var href = this.getAttribute('href');
+          var hashPart = href.split('#')[1];
+          if (hashPart) {
+            applyFilter(hashPart, true);
+          }
         });
       });
     });
