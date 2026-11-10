@@ -38,3 +38,4 @@ for (const file of blogFiles) {
 }
 
 console.log(JSON.stringify(nonNavbarLinks, null, 2));
+
