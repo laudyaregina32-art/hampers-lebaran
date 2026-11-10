@@ -140,4 +140,24 @@
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/hampers-lebaran-malang</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/rekomendasi-hampers-lebaran-di-malang</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/ide-hampers-lebaran-malang</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hamperslebaran.biz.id/blog/tas-hampers-lebaran</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
