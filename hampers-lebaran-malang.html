@@ -2,18 +2,18 @@
 <html lang="id">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Clean URL Script -->
   <script>
     (function () { try { if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) { var p = window.location.pathname; if (p.endsWith('.html')) { var c = p.slice(0, -5); if (c.endsWith('/index') || c === 'index' || c === '/index') { c = c.replace(/\/index$/, '') || '/'; } window.history.replaceState(null, document.title, c + window.location.search + window.location.hash); } } } catch (e) { } })();
   </script>
-  <title>Hampers Lebaran Malang: Jasa Pembuatan &amp; Pengadaan Parsel Idulfitri 2027 — Hampers Lebaran</title>
+  <title>Hampers Lebaran Malang Custom — Paket 2–6 Item, Rapi, Siap Dibagikan</title>
   <meta name="description"
-    content="Jasa pembuatan dan pengadaan hampers Lebaran Malang 2027. Melayani pesanan personal &amp; corporate B2B Malang Raya: kue kering premium, paket ibadah, custom logo, &amp; garansi aman.">
+    content="Penyedia hampers Lebaran di Malang Raya &amp; Kota Batu. Tersedia pilihan paket 2-6 item, kurasi kue kering premium, custom logo instansi/perusahaan, kartu ucapan, dan garansi pengiriman aman.">
   <link rel="canonical" href="https://hamperslebaran.biz.id/hampers-lebaran-malang">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="Hampers Lebaran">
+  <meta name="author" content="Hampers Lebaran Malang">
   <meta name="theme-color" content="#213c35">
   <meta name="format-detection" content="telephone=no">
 
@@ -25,23 +25,22 @@
 
   <!-- Open Graph -->
   <meta property="og:locale" content="id_ID">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Hampers Lebaran">
-  <meta property="og:title" content="Hampers Lebaran Malang: Jasa Pembuatan &amp; Pengadaan Parsel Idulfitri 2027">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampers Lebaran Malang">
+  <meta property="og:title" content="Hampers Lebaran Malang Custom — Paket 2–6 Item, Rapi, Siap Dibagikan">
   <meta property="og:description"
-    content="Layanan profesional pembuatan dan pengadaan hampers Lebaran di Malang. Pilihan paket kue kering, paket ibadah, dan custom corporate gift set.">
+    content="Butuh hampers Lebaran di Malang? Pilihan paket fleksibel 2-6 item: kue kering toples, sajadah, mug, custom logo instansi, kemasan rapi, siap antar Malang Raya.">
   <meta property="og:url" content="https://hamperslebaran.biz.id/hampers-lebaran-malang">
   <meta property="og:image" content="https://hamperslebaran.biz.id/assets/images/hampers-mlg.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Hampers Lebaran Malang Idulfitri">
-  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:alt" content="Hampers Lebaran Malang — Siap Kirim Malang Raya">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hampers Lebaran Malang: Jasa Pembuatan &amp; Pengadaan Parsel Idulfitri 2027">
+  <meta name="twitter:title" content="Hampers Lebaran Malang Custom — Paket 2–6 Item, Rapi, Siap Dibagikan">
   <meta name="twitter:description"
-    content="Layanan pembuatan dan pengadaan hampers Lebaran Malang. Solusi bingkisan Idulfitri elegan untuk personal dan perusahaan.">
+    content="Penyedia hampers Lebaran terpercaya di Kota Malang, Kota Batu &amp; Kab Malang. Custom logo &amp; kartu ucapan, kurasi higienis bergaransi aman.">
   <meta name="twitter:image" content="https://hamperslebaran.biz.id/assets/images/hampers-mlg.webp">
 
   <!-- Favicon & Web App Icons -->
@@ -54,276 +53,538 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=2">
   <link rel="manifest" href="/site.webmanifest">
 
+  <!-- Preload Hero Image -->
+  <link rel="preload" as="image" href="assets/images/hampers-mlg.webp" type="image/webp" fetchpriority="high">
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/main.min.css">
-
   <style>
-    /* ===== FIXED NAVBAR OFFSET (PREVENT CONTENT OVERLAP) ===== */
-    body {
-      padding-top: 68px !important;
+    :root {
+      --hl-bg: #eaf0e9;
+      --hl-surface: #ffffff;
+      --hl-surface-muted: #dbe4da;
+      --hl-border: #c8d5cb;
+      --hl-text: #1b2622;
+      --hl-text-muted: #4e5f58;
+      --hl-gray: #6d7d76;
+      --hl-accent: #37594f;
+      --hl-accent-dark: #213c35;
+      --hl-warm: #dbe4da;
+      --hl-footer: #213c35;
+      --hl-footer-text: #f0f4f1;
+      --hl-radius-sm: 8px;
+      --hl-radius-md: 14px;
+      --hl-radius-lg: 18px;
+      --hl-shadow-card: 0 8px 24px rgb(33 60 53 / 6%);
+      --hl-shadow-card-hover: 0 16px 40px rgb(33 60 53 / 12%);
+      --hl-transition: 200ms ease;
+      --hl-font-serif: "Playfair Display", Georgia, serif;
+    }
+
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+    }
+
+    html {
       background-color: var(--hl-bg);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--hl-bg);
       color: var(--hl-text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.7;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
     }
 
-    @media (min-width: 992px) {
-      body {
-        padding-top: 80px !important;
-      }
+    /* Hero Card Container */
+    .hl-malang-hero {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: clamp(1.75rem, 4vw, 3rem);
+      box-shadow: 0 10px 30px rgba(33, 60, 53, 0.05);
+      border: 1px solid var(--hl-border);
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    /* ===== BACK BUTTON LINK ===== */
-    .hl-back-link {
+    .hl-malang-hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      background: rgba(33, 60, 53, 0.06);
       color: var(--hl-accent-dark);
+      font-size: 0.82rem;
       font-weight: 600;
-      font-size: 0.88rem;
-      text-decoration: none;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      padding: 0.38rem 0.95rem;
-      border-radius: 999px;
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.04);
-      transition: all var(--hl-transition);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      border: 1px solid rgba(33, 60, 53, 0.12);
+      margin-bottom: 0.65rem;
     }
 
-    .hl-back-link:hover {
-      background: var(--hl-surface-muted);
-      color: var(--hl-text);
-      border-color: var(--hl-accent);
-      transform: translateX(-3px);
+    .hl-malang-hero-eyebrow {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--hl-accent-dark);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
     }
 
-    /* ===== HERO PANDUAN ===== */
-    .hl-guide-hero {
-      background: linear-gradient(180deg, rgba(219, 228, 218, .6) 0%, rgba(234, 240, 233, 0) 100%);
-      padding: clamp(2rem, 4.5vw, 3.5rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);
-      border-bottom: 1px solid var(--hl-border);
-    }
-
-    .hl-guide-hero__title {
+    .hl-malang-hero-title {
       font-family: var(--hl-font-serif);
-      font-size: clamp(2rem, 4.2vw, 3.25rem);
+      font-size: clamp(1.85rem, 3.2vw, 2.65rem);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.22;
+      line-height: 1.25;
       color: var(--hl-text);
-      margin: 0.75rem 0 1.25rem;
-      max-width: 940px;
+      margin-bottom: 1rem;
     }
 
-    .hl-guide-hero__lead {
-      font-size: clamp(1.05rem, 1.8vw, 1.18rem);
+    .hl-malang-hero-desc {
       color: var(--hl-text-muted);
-      line-height: 1.75;
-      max-width: 860px;
+      font-size: 1.02rem;
+      line-height: 1.65;
       margin-bottom: 1.5rem;
     }
 
-    .hl-guide-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .hl-guide-chip {
-      display: inline-block;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--hl-accent-dark);
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.03);
-    }
-
-    .hl-guide-hero__ctas {
+    .hl-malang-hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       align-items: center;
-    }
-
-    /* ===== TABLE OF CONTENTS (TOC) ===== */
-    .hl-guide-toc {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 18px;
-      padding: 1.5rem 1.75rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: -1.75rem auto 3rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hl-guide-toc__heading {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hl-guide-toc__list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.5rem 1.25rem;
-      margin: 0;
-      padding-left: 1.25rem;
-    }
-
-    .hl-guide-toc__list li a {
-      color: var(--hl-accent-dark);
-      font-weight: 500;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: color var(--hl-transition);
-    }
-
-    .hl-guide-toc__list li a:hover {
-      color: var(--hl-text);
-      text-decoration: underline;
-    }
-
-    /* ===== CONTENT SECTIONS & CARDS ===== */
-    .hl-guide-section {
-      padding: clamp(2.5rem, 5vw, 4rem) 0;
-      border-bottom: 1px solid var(--hl-border);
-      scroll-margin-top: 85px;
-    }
-
-    .hl-guide-section:last-of-type {
-      border-bottom: none;
-    }
-
-    .hl-section-title {
-      font-family: var(--hl-font-serif);
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.3;
-      margin-bottom: 0.85rem;
-    }
-
-    .hl-guide-section__intro {
-      max-width: 860px;
-      color: var(--hl-text-muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
       margin-bottom: 2rem;
     }
 
-    .hl-content-card {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      padding: clamp(1.25rem, 2.5vw, 1.75rem);
-      box-shadow: var(--hl-shadow-card);
-      height: 100%;
-      transition: transform var(--hl-transition), box-shadow var(--hl-transition);
-    }
-
-    .hl-content-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--hl-shadow-card-hover);
-    }
-
-    .hl-content-card__num {
+    .hl-btn-pill-primary {
+      background: #213c35;
+      color: #ffffff;
+      padding: 0.65rem 1.6rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--hl-warm);
+      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(33, 60, 53, 0.15);
+    }
+
+    .hl-btn-pill-primary:hover {
+      background: #172c26;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(33, 60, 53, 0.22);
+    }
+
+    .hl-btn-pill-outline {
+      background: transparent;
+      color: #213c35;
+      border: 1.5px solid #213c35;
+      padding: 0.6rem 1.4rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hl-btn-pill-outline:hover {
+      background: rgba(33, 60, 53, 0.05);
+      color: #213c35;
+      transform: translateY(-2px);
+    }
+
+    .hl-btn-pill-text {
+      background: rgba(33, 60, 53, 0.05);
+      color: var(--hl-text);
+      padding: 0.6rem 1.2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .hl-btn-pill-text:hover {
+      background: rgba(33, 60, 53, 0.1);
+      color: #213c35;
+    }
+
+    /* 3 Micro Features in Hero */
+    .hl-micro-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hl-micro-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hl-micro-card {
+      background: #fcfdfc;
+      border: 1px solid var(--hl-border);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+    }
+
+    .hl-micro-card__header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 700;
+      font-size: 0.88rem;
       color: var(--hl-accent-dark);
-      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .hl-micro-card p {
+      font-size: 0.8rem;
+      color: var(--hl-text-muted);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Hero Right Card Image */
+    .hl-hero-img-box {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(33, 60, 53, 0.08);
+      position: relative;
+    }
+
+    .hl-hero-img-caption {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 0.65rem 1rem;
+      border: 1px solid rgba(200, 213, 203, 0.8);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .hl-hero-img-caption strong {
+      display: block;
       font-size: 0.85rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .hl-content-card__tag {
-      display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #7b4f2c;
-      background: #e3ede1;
-      border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      margin-bottom: 0.85rem;
-      border: 1px solid rgba(184, 151, 61, 0.25);
-    }
-
-    .hl-content-card__price {
-      font-size: 1.15rem;
-      font-weight: 800;
       color: var(--hl-accent-dark);
-      margin: 0.85rem 0 0.25rem;
+      margin-bottom: 0.15rem;
     }
 
-    .hl-content-card__title {
+    .hl-hero-img-caption span {
+      font-size: 0.76rem;
+      color: var(--hl-text-muted);
+      line-height: 1.35;
+      display: block;
+    }
+
+    /* Sub-nav Pill Bar */
+    .hl-subnav-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .hl-subnav-pill {
+      background: #ffffff;
+      border: 1px solid var(--hl-border);
+      border-radius: 100px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--hl-text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(33, 60, 53, 0.03);
+    }
+
+    .hl-subnav-pill:hover {
+      background: #213c35;
+      color: #ffffff;
+      border-color: #213c35;
+      transform: translateY(-2px);
+    }
+
+    /* Section Titles */
+    .hl-sec-title {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 700;
+      color: var(--hl-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .hl-sec-subtitle {
+      color: var(--hl-text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 780px;
+      margin-bottom: 2rem;
+    }
+
+    /* Package Cards (5 Options) */
+    .hl-pack-card {
+      background: #ffffff;
+      border: 1px solid var(--hl-border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 4px 16px rgba(33, 60, 53, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .hl-pack-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(33, 60, 53, 0.1);
+    }
+
+    .hl-pack-card__img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #f2f5f2;
+    }
+
+    .hl-pack-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .hl-pack-card:hover .hl-pack-card__img img {
+      transform: scale(1.04);
+    }
+
+    .hl-pack-card__body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .hl-pack-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .hl-pack-card__title {
       font-family: var(--hl-font-serif);
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--hl-text);
-      line-height: 1.35;
-      margin: 0 0 0.65rem;
-    }
-
-    .hl-content-card p {
-      color: var(--hl-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
-      margin: 0 0 0.85rem;
-    }
-
-    .hl-content-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .hl-content-card ul {
       margin: 0;
-      padding-left: 1.25rem;
-      color: var(--hl-text-muted);
-      font-size: 0.94rem;
-      line-height: 1.65;
     }
 
-    /* Area Card */
-    .hl-area-card {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 14px;
-      padding: 1.25rem;
-      height: 100%;
-    }
-
-    .hl-area-card__title {
+    .hl-pack-badge {
+      font-size: 0.72rem;
       font-weight: 700;
-      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      background: rgba(33, 60, 53, 0.08);
       color: var(--hl-accent-dark);
-      margin-bottom: 0.45rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
-    .hl-area-card p {
+    .hl-pack-card__desc {
+      font-size: 0.88rem;
+      color: var(--hl-text-muted);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .hl-pack-card__bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+      font-size: 0.85rem;
+      color: var(--hl-text);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .hl-pack-card__bullets li {
+      position: relative;
+      padding-left: 1.2rem;
+      line-height: 1.45;
+    }
+
+    .hl-pack-card__bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0.25rem;
+      color: var(--hl-accent-dark);
+      font-weight: bold;
+    }
+
+    .hl-pack-card__actions {
+      margin-top: auto;
+      display: flex;
+      gap: 0.65rem;
+    }
+
+    .hl-btn-pack-primary {
+      flex: 1;
+      background: #213c35;
+      color: #ffffff;
+      padding: 0.55rem 0.85rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .hl-btn-pack-primary:hover {
+      background: #172c26;
+      color: #ffffff;
+    }
+
+    .hl-btn-pack-compare {
+      background: transparent;
+      border: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      padding: 0.55rem 0.85rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .hl-btn-pack-compare:hover {
+      background: rgba(33, 60, 53, 0.05);
+      border-color: #213c35;
+      color: #213c35;
+    }
+
+    /* Comparison Table Container */
+    .hl-table-container {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid var(--hl-border);
+      padding: clamp(1rem, 2.5vw, 1.75rem);
+      box-shadow: 0 4px 20px rgba(33, 60, 53, 0.04);
+      overflow-x: auto;
+    }
+
+    .hl-table-clean {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .hl-table-clean th {
+      background: rgba(33, 60, 53, 0.04);
+      color: var(--hl-accent-dark);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid var(--hl-border);
+      text-align: left;
+    }
+
+    .hl-table-clean td {
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid rgba(200, 213, 203, 0.5);
+      color: var(--hl-text);
+      vertical-align: middle;
+    }
+
+    .hl-table-clean tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hl-badge-branding {
+      background: rgba(33, 60, 53, 0.1);
+      color: #213c35;
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Step Cards */
+    .hl-step-card {
+      background: #ffffff;
+      border: 1px solid var(--hl-border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      height: 100%;
+      box-shadow: 0 4px 16px rgba(33, 60, 53, 0.03);
+    }
+
+    .hl-step-card__num {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(33, 60, 53, 0.08);
+      color: var(--hl-accent-dark);
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .hl-step-card__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--hl-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .hl-step-card p {
       font-size: 0.9rem;
       color: var(--hl-text-muted);
+      line-height: 1.6;
       margin: 0;
-      line-height: 1.55;
+    }
+
+    /* FAQ Cards 2x2 */
+    .hl-faq-card {
+      background: #ffffff;
+      border: 1px solid var(--hl-border);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      height: 100%;
+      box-shadow: 0 2px 10px rgba(33, 60, 53, 0.03);
+    }
+
+    .hl-faq-card__q {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.45;
+    }
+
+    .hl-faq-card__a {
+      font-size: 0.88rem;
+      color: var(--hl-text-muted);
+      line-height: 1.6;
+      margin: 0;
     }
 
     /* Article Card in Landing Page */
@@ -357,68 +618,35 @@
     .hl-article-mini-card__tag {
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--hl-accent-dark);
-      margin-bottom: 0.45rem;
+      color: var(--hl-accent);
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.35rem;
     }
 
     .hl-article-mini-card__title {
-      font-family: var(--hl-font-serif);
-      font-size: 1.12rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--hl-text);
       line-height: 1.4;
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.5rem;
     }
 
     .hl-article-mini-card__desc {
       font-size: 0.88rem;
       color: var(--hl-text-muted);
-      line-height: 1.55;
-      margin-bottom: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
       flex-grow: 1;
     }
 
     .hl-article-mini-card__link {
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--hl-accent-dark);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    /* FAQ Box */
-    .hl-faq-item {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hl-faq-item__q {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--hl-text);
-      margin-bottom: 0.5rem;
-    }
-
-    .hl-faq-item__a {
-      font-size: 0.95rem;
-      color: var(--hl-text-muted);
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 767.98px) {
-      .hl-guide-toc__list {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/main.min.css">
 
   <!-- Schema.org JSON-LD (Rich Graph Standard) -->
   <script type="application/ld+json">
@@ -459,7 +687,7 @@
       "@type": "WebPage",
       "@id": "https://hamperslebaran.biz.id/hampers-lebaran-malang#webpage",
       "url": "https://hamperslebaran.biz.id/hampers-lebaran-malang",
-      "name": "Hampers Lebaran Malang: Jasa Pembuatan & Pengadaan Parsel Idulfitri 2027",
+      "name": "Hampers Lebaran Malang Custom — Paket 2–6 Item, Rapi, Siap Dibagikan",
       "description": "Layanan profesional pembuatan dan pengadaan hampers Lebaran di wilayah Malang Raya & Kota Batu.",
       "inLanguage": "id-ID",
       "isPartOf": {
@@ -517,42 +745,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Apakah melayani pemesanan hampers Lebaran untuk area luar Kota Malang?",
+          "name": "Apakah bisa custom logo, kartu ucapan, dan warna kemasan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya, selain melayani seluruh kecamatan di Kota Malang, kami juga melayani pengiriman hampers ke Kota Batu, seluruh wilayah Kabupaten Malang (Kepanjen, Singosari, Lawang, Dau), hingga pengiriman antar-kota di Jawa Timur menggunakan armada bergaransi aman."
+            "text": "Bisa! Kami melayani cetak logo instansi/perusahaan pada kartu ucapan, hang tag, sleeve box, pita satin, hingga hotprint emas pada hardbox eksklusif."
           }
         },
         {
           "@type": "Question",
-          "name": "Berapa minimal pemesanan (MOQ) hampers Lebaran di Malang?",
+          "name": "Apakah paket hampers bebas pilih isi seperti katalog?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Untuk pesanan paket katalog standar tidak ada minimum pemesanan (bisa pesan satuan untuk keluarga atau kolega). Untuk paket custom logo korporat, minimum pemesanan mulai dari 10 paket dengan gratis desain kartu ucapan dan mockup."
+            "text": "Sangat bisa. Anda bebas mengombinasikan pilihan kue kering, suvenir ibadah, tumbler custom, atau produk UMKM Malang sesuai kebutuhan anggaran."
           }
         },
         {
           "@type": "Question",
-          "name": "Apakah toples kue dan barang pecah belah dijamin aman saat pengiriman?",
+          "name": "Area layanan pengiriman selain Kota Malang?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kami memberikan garansi aman 100%. Untuk wilayah Malang Raya, kami menggunakan kurir internal khusus hampers dengan penataan berdiri dan partisi busa tebal. Apabila ada toples atau produk yang rusak akibat pengiriman, kami ganti baru tanpa biaya tambahan."
+            "text": "Kami melayani pengiriman langsung ke seluruh Kota Malang (Klojen, Lowokwaru, Blimbing, Sukun, Kedungkandang), Kota Batu, dan seluruh kecamatan Kabupaten Malang."
           }
         },
         {
           "@type": "Question",
-          "name": "Bisa custom kemasan dengan logo perusahaan atau instansi di Malang?",
+          "name": "Kapan waktu terbaik untuk memesan hampers Lebaran?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tentu. Kami menyediakan layanan custom sleeve packaging, hotprint/sablon logo pada hardbox, hangtag akrilik, pita warna korporat, hingga kartu ucapan personal bertanda tangan direksi atau pimpinan instansi."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kapan waktu terbaik untuk memesan hampers Lebaran di Malang?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Waktu paling ideal adalah 3 hingga 4 minggu sebelum Hari Raya Idulfitri (atau di awal bulan Ramadan) guna memastikan ketersediaan slot produksi kue segar, penyelesaian cetak kemasan custom, dan jadwal pengiriman yang tepat waktu sebelum libur cuti bersama."
+            "text": "Waktu terbaik adalah H-30 hingga H-14 sebelum Idulfitri guna memastikan ketersediaan stok kue kering fresh from the oven dan slot kurir lokal."
           }
         }
       ]
@@ -563,8 +783,8 @@
 </head>
 
 <body>
-
-  <header>
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="hl-header">
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
         <a class="navbar-brand hl-navbar-brand" href="index.html" aria-label="Hampers Lebaran — Beranda">
@@ -604,389 +824,408 @@
             </svg>
             WhatsApp
           </a>
-          <div class="d-lg-none mt-3 mb-2">
-            <a class="hl-btn-wa w-100 justify-content-center"
-              href="https://wa.me/6282131087971?text=Halo%2C%20saya%20tertarik%20memesan%20hampers%20Lebaran%20untuk%20wilayah%20Malang."
-              target="_blank" rel="noopener noreferrer">Konsultasi via WhatsApp</a>
-          </div>
         </div>
       </div>
     </nav>
   </header>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <main id="main-content">
-
-    <!-- HERO SECTION -->
-    <section class="hl-guide-hero" aria-label="Hero Hampers Lebaran Malang">
-      <div class="container">
-        <a href="index.html" class="hl-back-link mb-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            aria-hidden="true">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          Kembali ke Beranda
-        </a>
-
-        <div class="hl-guide-chip-row">
-          <span class="hl-guide-chip">📍 Melayani Area Malang Raya &amp; Batu</span>
-          <span class="hl-guide-chip">✨ Ready Stock &amp; Custom B2B</span>
-          <span class="hl-guide-chip">🛡️ Garansi Aman Sampai Tujuan</span>
-        </div>
-
-        <h1 class="hl-guide-hero__title">
-          Hampers Lebaran Malang: Jasa Pembuatan &amp; Pengadaan Parsel Idulfitri Terpercaya 2027
-        </h1>
-
-        <p class="hl-guide-hero__lead">
-          Pusat pemesanan <strong>hampers Lebaran Malang</strong> untuk kebutuhan keluarga, rekan bisnis, instansi
-          pemerintah, BUMN, perbankan, dan perusahaan swasta di Malang Raya. Hadirkan bingkisan Idulfitri bermakna
-          dengan kurasi kue kering premium, perlengkapan ibadah elegan, kemasan eksklusif, serta layanan cetak logo
-          custom dengan pengiriman bergaransi aman.
-        </p>
-
-        <div class="hl-guide-hero__ctas">
-          <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20konsultasi%20paket%20hampers%20Lebaran%20di%20Malang."
-            class="hl-btn-wa" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            Konsultasi CS Malang
-          </a>
-          <a href="#pilihan-paket" class="hl-btn-outline">
-            Lihat Pilihan Paket
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TABLE OF CONTENTS -->
     <div class="container">
-      <nav class="hl-guide-toc" aria-label="Daftar Isi Halaman">
-        <div class="hl-guide-toc__heading">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            aria-hidden="true">
-            <line x1="8" y1="6" x2="21" y2="6"></line>
-            <line x1="8" y1="12" x2="21" y2="12"></line>
-            <line x1="8" y1="18" x2="21" y2="18"></line>
-            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-          </svg>
-          Navigasi Cepat Informasi
+
+      <!-- 1. HERO SECTION (Persis Card Style Gambar Referensi) -->
+      <section class="hl-malang-hero" aria-label="Hero Pengenalan Hampers Lebaran Malang">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <div class="hl-malang-hero-badge">
+              <span>📍 Kota Malang &amp; Sekitarnya</span>
+            </div>
+            <div class="hl-malang-hero-eyebrow">HAMPERS LEBARAN MALANG</div>
+            <h1 class="hl-malang-hero-title">
+              Hampers Lebaran Malang Custom &mdash; Paket 2&ndash;6 Item, Rapi, Siap Dibagikan
+            </h1>
+            <p class="hl-malang-hero-desc">
+              Butuh hampers Lebaran di Malang untuk silaturahmi keluarga, kantor dinas, instansi BUMN, kampus, atau event perusahaan? Pilih paket yang sesuai, custom kartu ucapan &amp; logo perusahaan, dengan packaging rapi dan bergaransi aman.
+            </p>
+
+            <div class="hl-malang-hero-actions">
+              <a href="#pilihan-paket" class="hl-btn-pill-primary">Lihat Paket Hampers</a>
+              <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20konsultasi%20pemesanan%20hampers%20Lebaran%20Malang."
+                class="hl-btn-pill-outline" target="_blank" rel="noopener noreferrer">
+                Konsultasi &amp; Minta Penawaran
+              </a>
+              <a href="#faq" class="hl-btn-pill-text">FAQ</a>
+            </div>
+
+            <!-- 3 Micro Feature Cards -->
+            <div class="hl-micro-features">
+              <div class="hl-micro-card">
+                <div class="hl-micro-card__header">
+                  <span style="color:#213c35;">✓</span> Custom Logo &amp; Desain
+                </div>
+                <p>Bisa pasang logo instansi, branding corporate, &amp; kartu ucapan</p>
+              </div>
+
+              <div class="hl-micro-card">
+                <div class="hl-micro-card__header">
+                  <span>📦</span> Paket Fleksibel (2&ndash;6 Item)
+                </div>
+                <p>Mulai 2 item hingga 6 item, sesuaikan dengan budget</p>
+              </div>
+
+              <div class="hl-micro-card">
+                <div class="hl-micro-card__header">
+                  <span>🚚</span> Pengiriman Area Malang
+                </div>
+                <p>Langsung diantar ke lokasi: Kota Malang, Batu &amp; Kab. Malang</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image Right Side -->
+          <div class="col-lg-5">
+            <div class="hl-hero-img-box">
+              <img src="assets/images/hampers-mlg.webp" alt="Paket Hampers Lebaran Malang Siap Bagikan"
+                width="500" height="420" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;"
+                loading="eager" fetchpriority="high">
+              <div class="hl-hero-img-caption">
+                <strong>Paket Hampers Lebaran Siap Bagikan</strong>
+                <span>Kue kering fresh, sajadah premium, packaging aman &amp; rapi siap kirim</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="hl-guide-toc__list">
-          <li><a href="#keunggulan-malang">Keunggulan Vendor Lokal Malang</a></li>
-          <li><a href="#pilihan-paket">Katalog Pilihan Paket Hampers</a></li>
-          <li><a href="#layanan-custom">Kustomisasi Logo &amp; Branding B2B</a></li>
-          <li><a href="#area-pengiriman">Area Pengiriman Malang Raya &amp; Batu</a></li>
-          <li><a href="#alur-pemesanan">Alur &amp; Prosedur Pemesanan</a></li>
-          <li><a href="#artikel-terkait">Artikel &amp; Panduan Terkait</a></li>
-          <li><a href="#faq-malang">Tanya Jawab (FAQ)</a></li>
-        </ul>
+      </section>
+
+      <!-- 2. QUICK SUB-NAV PILLS BAR -->
+      <nav class="hl-subnav-bar" aria-label="Navigasi Cepat Halaman">
+        <a href="#pilihan-paket" class="hl-subnav-pill">📦 Paket</a>
+        <a href="#perbandingan" class="hl-subnav-pill">📊 Tabel Perbandingan</a>
+        <a href="#cara-pesan" class="hl-subnav-pill">🔄 Cara Pesan</a>
+        <a href="#faq" class="hl-subnav-pill">💬 FAQ</a>
       </nav>
-    </div>
 
-    <!-- SECTION 1: KEUNGGULAN LOKAL MALANG -->
-    <section class="hl-guide-section" id="keunggulan-malang">
-      <div class="container">
-        <h2 class="hl-section-title">Mengapa Memilih Vendor Hampers Lebaran di Malang?</h2>
-        <p class="hl-guide-section__intro">
-          Sebagai salah satu pusat pendidikan, pariwisata, dan bisnis berkembang di Jawa Timur, permintaan akan bingkisan
-          Idulfitri di Malang Raya memiliki karakter tersendiri. Menggunakan jasa <strong>hampers Lebaran Malang</strong>
-          yang berbasis lokal memberikan keuntungan strategis yang nyata bagi efisiensi anggaran dan kepuasan penerima.
+      <!-- 3. SECTION: PILIHAN PAKET HAMPERS LEBARAN MALANG -->
+      <section id="pilihan-paket" class="mb-5 pb-3" aria-labelledby="pilihan-paket-heading">
+        <div class="text-left mb-4">
+          <h2 class="hl-sec-title" id="pilihan-paket-heading">Pilihan Paket Hampers Lebaran Malang</h2>
+          <p class="hl-sec-subtitle">
+            Berikut 5 opsi paket hampers Lebaran terpopuler yang siap kirim di Malang. Anda bisa tetap menyusun / custom isi, packaging, sesuai budget &amp; tema acara.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Card 1: Paket 2 Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hl-pack-card">
+              <div class="hl-pack-card__img">
+                <img src="assets/images/kastengel-400.webp" alt="Paket Hampers Lebaran 2 Item Malang" width="400" height="300" loading="lazy">
+              </div>
+              <div class="hl-pack-card__body">
+                <div class="hl-pack-card__head">
+                  <h3 class="hl-pack-card__title">Paket Hampers 2 Item</h3>
+                  <span class="hl-pack-badge">Ringkas</span>
+                </div>
+                <p class="hl-pack-card__desc">
+                  Kombinasi 2 toples kue kering lezat (Nastar &amp; Kastengel) + kartu ucapan Idulfitri custom.
+                </p>
+                <ul class="hl-pack-card__bullets">
+                  <li>Kemasan box praktis dengan pita hias</li>
+                  <li>Praktis untuk seminar/kampus/toko/tetangga</li>
+                  <li>Ekonomis untuk pemesanan massal (puluhan hingga ribuan pax)</li>
+                </ul>
+                <div class="hl-pack-card__actions">
+                  <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20tertarik%20pesan%20Paket%20Hampers%202%20Item%20di%20Malang."
+                    class="hl-btn-pack-primary" target="_blank" rel="noopener noreferrer">Pilih Paket Ini</a>
+                  <a href="#perbandingan" class="hl-btn-pack-compare">Bandingkan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Paket 3 Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hl-pack-card">
+              <div class="hl-pack-card__img">
+                <img src="assets/images/hampers-rotan.webp" alt="Paket Hampers Lebaran 3 Item Malang" width="400" height="300" loading="lazy">
+              </div>
+              <div class="hl-pack-card__body">
+                <div class="hl-pack-card__head">
+                  <h3 class="hl-pack-card__title">Paket Hampers 3 Item</h3>
+                  <span class="hl-pack-badge">Favorit</span>
+                </div>
+                <p class="hl-pack-card__desc">
+                  Kombinasi kue kering klasik + tas goni rustic + sajadah travel eksklusif.
+                </p>
+                <ul class="hl-pack-card__bullets">
+                  <li>Kemasan tas ramah lingkungan / keranjang</li>
+                  <li>Seimbang antara nilai fungsi &amp; estetika hari raya</li>
+                  <li>Pilihan paling banyak dipesan instansi di Malang</li>
+                </ul>
+                <div class="hl-pack-card__actions">
+                  <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20tertarik%20pesan%20Paket%20Hampers%203%20Item%20di%20Malang."
+                    class="hl-btn-pack-primary" target="_blank" rel="noopener noreferrer">Pilih Paket Ini</a>
+                  <a href="#perbandingan" class="hl-btn-pack-compare">Bandingkan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Paket 4 Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hl-pack-card">
+              <div class="hl-pack-card__img">
+                <img src="assets/images/sajadah-400.webp" alt="Paket Hampers Lebaran 4 Item Malang" width="400" height="300" loading="lazy">
+              </div>
+              <div class="hl-pack-card__body">
+                <div class="hl-pack-card__head">
+                  <h3 class="hl-pack-card__title">Paket Hampers 4 Item</h3>
+                  <span class="hl-pack-badge">Community</span>
+                </div>
+                <p class="hl-pack-card__desc">
+                  Kombinasi 2 kue kering + sajadah tenun + mug keramik custom / tumbler.
+                </p>
+                <ul class="hl-pack-card__bullets">
+                  <li>Hardbox elegan dengan sekat partisi busa</li>
+                  <li>Tampilan lebih prestisius untuk relasi &amp; mitra bisnis</li>
+                  <li>Bisa disematkan kartu ucapan &amp; sleeve logo</li>
+                </ul>
+                <div class="hl-pack-card__actions">
+                  <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20tertarik%20pesan%20Paket%20Hampers%204%20Item%20di%20Malang."
+                    class="hl-btn-pack-primary" target="_blank" rel="noopener noreferrer">Pilih Paket Ini</a>
+                  <a href="#perbandingan" class="hl-btn-pack-compare">Bandingkan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Paket 5 Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hl-pack-card">
+              <div class="hl-pack-card__img">
+                <img src="assets/images/hampers-sage-400.webp" alt="Paket Hampers Lebaran 5 Item Malang" width="400" height="300" loading="lazy">
+              </div>
+              <div class="hl-pack-card__body">
+                <div class="hl-pack-card__head">
+                  <h3 class="hl-pack-card__title">Paket Hampers 5 Item</h3>
+                  <span class="hl-pack-badge">Eksklusif</span>
+                </div>
+                <p class="hl-pack-card__desc">
+                  Kombinasi 3 kue kering pilihan + sajadah + tumbler stainless + box eksklusif.
+                </p>
+                <ul class="hl-pack-card__bullets">
+                  <li>Sangat cocok untuk level manajerial &amp; VIP clients</li>
+                  <li>Pilihan item bernilai spiritual &amp; fungsional</li>
+                  <li>Kustom logo emboss emas pada box eksklusif</li>
+                </ul>
+                <div class="hl-pack-card__actions">
+                  <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20tertarik%20pesan%20Paket%20Hampers%205%20Item%20di%20Malang."
+                    class="hl-btn-pack-primary" target="_blank" rel="noopener noreferrer">Pilih Paket Ini</a>
+                  <a href="#perbandingan" class="hl-btn-pack-compare">Bandingkan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Paket 6 Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hl-pack-card">
+              <div class="hl-pack-card__img">
+                <img src="assets/images/hampers-hijau-emas-400.webp" alt="Paket Hampers Lebaran 6 Item Malang" width="400" height="300" loading="lazy">
+              </div>
+              <div class="hl-pack-card__body">
+                <div class="hl-pack-card__head">
+                  <h3 class="hl-pack-card__title">Paket Hampers 6 Item</h3>
+                  <span class="hl-pack-badge">Premium</span>
+                </div>
+                <p class="hl-pack-card__desc">
+                  Koleksi hampers terlengkap: kue kering, sparkling grape / sirup artisan, sajadah, mug, tasbih, &amp; greeting card.
+                </p>
+                <ul class="hl-pack-card__bullets">
+                  <li>Cocok untuk Direksi, Relasi Korporat Utama, &amp; VVIP</li>
+                  <li>Hardbox magnetic mewah berpita sutra satin</li>
+                  <li>Free sample proofing &amp; mockup custom logo</li>
+                </ul>
+                <div class="hl-pack-card__actions">
+                  <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20tertarik%20pesan%20Paket%20Hampers%206%20Item%20di%20Malang."
+                    class="hl-btn-pack-primary" target="_blank" rel="noopener noreferrer">Pilih Paket Ini</a>
+                  <a href="#perbandingan" class="hl-btn-pack-compare">Bandingkan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SECTION: TABEL PERBANDINGAN PAKET (RINGKAS & JELAS) -->
+      <section id="perbandingan" class="mb-5 pb-3" aria-labelledby="perbandingan-heading">
+        <div class="text-left mb-4">
+          <h2 class="hl-sec-title" id="perbandingan-heading">Tabel Perbandingan Paket (Ringkas &amp; Jelas)</h2>
+          <p class="hl-sec-subtitle">
+            Gunakan tabel ini untuk memilih paket hampers Lebaran Malang sesuai kebutuhan acara, isi item, target penerima, dan kebutuhan branding.
+          </p>
+        </div>
+
+        <div class="hl-table-container">
+          <table class="hl-table-clean">
+            <thead>
+              <tr>
+                <th style="min-width:130px;">Paket</th>
+                <th style="min-width:210px;">Contoh Isi</th>
+                <th style="min-width:220px;">Rekomendasi Acara / Penerima</th>
+                <th style="min-width:140px;">Branding</th>
+                <th style="min-width:110px;">Kesan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2 Item</strong><br><small style="color:var(--hl-text-muted);">2 Toples + Box</small></td>
+                <td>Nastar, Kastengel, Pita &amp; Kartu Ucapan</td>
+                <td>Silaturahmi tetangga, guru, kerabat, acara santai</td>
+                <td><span class="hl-badge-branding">Logo &amp; Desain Bisa</span></td>
+                <td><strong>Ringkas</strong></td>
+              </tr>
+              <tr>
+                <td><strong>3 Item</strong><br><small style="color:var(--hl-text-muted);">2 Toples + Tas / Sajadah</small></td>
+                <td>2 Toples Kue + Tas Goni / Sajadah Travel</td>
+                <td>Karyawan kantor, dinas pemda, buka puasa bersama</td>
+                <td><span class="hl-badge-branding">Logo &amp; Desain Bisa</span></td>
+                <td><strong>Favorit</strong></td>
+              </tr>
+              <tr>
+                <td><strong>4 Item</strong><br><small style="color:var(--hl-text-muted);">Hardbox + Sajadah + Mug</small></td>
+                <td>2 Kue Kering + Sajadah + Mug Custom + Kartu</td>
+                <td>Mitra bisnis utama, vendor rekanan, klien prioritas</td>
+                <td><span class="hl-badge-branding">Logo &amp; Desain Bisa</span></td>
+                <td><strong>Profesional</strong></td>
+              </tr>
+              <tr>
+                <td><strong>5 Item</strong><br><small style="color:var(--hl-text-muted);">Hardbox + Sajadah + Tumbler</small></td>
+                <td>3 Kue Kering + Sajadah + Tumbler + Box Mewah</td>
+                <td>Tingkat pimpinan / manajer dinas, rekanan korporat</td>
+                <td><span class="hl-badge-branding">Logo &amp; Desain Bisa</span></td>
+                <td><strong>Eksklusif</strong></td>
+              </tr>
+              <tr>
+                <td><strong>6 Item</strong><br><small style="color:var(--hl-text-muted);">VVIP Full Gift Set</small></td>
+                <td>3 Kue Kering + Sirup / Madu + Sajadah + Mug + Tasbih</td>
+                <td>Direksi perusahaan, pimpinan institusi, stakeholder VIP</td>
+                <td><span class="hl-badge-branding">Logo &amp; Desain Bisa</span></td>
+                <td><strong>VVIP / Mewah</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 mb-0" style="font-size:0.85rem;color:var(--hl-text-muted);font-style:italic;">
+          Catatan: Isi paket bersifat fleksibel. Anda dapat memilih item pengganti agar lebih sesuai dengan tema &amp; anggaran di Malang.
         </p>
+      </section>
+
+      <!-- 5. SECTION: CARA PESAN HAMPERS LEBARAN MALANG -->
+      <section id="cara-pesan" class="mb-5 pb-3" aria-labelledby="cara-pesan-heading">
+        <div class="text-left mb-4">
+          <h2 class="hl-sec-title" id="cara-pesan-heading">Cara Pesan Hampers Lebaran Malang</h2>
+          <p class="hl-sec-subtitle">
+            Alur pemesanan dibuat sederhana agar Anda bisa fokus ke persiapan hari raya. Proses: konsultasi &rarr; approve desain &rarr; produksi &rarr; kirim.
+          </p>
+        </div>
 
         <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">01</span>
-              <h3 class="hl-content-card__title">Distribusi Lokal Aman &amp; Cepat</h3>
+          <div class="col-md-4">
+            <div class="hl-step-card">
+              <div class="hl-step-card__num">1</div>
+              <h3 class="hl-step-card__title">Konsultasi &amp; Kebutuhan</h3>
               <p>
-                Bebas dari resiko toples retak dan kue kering remuk akibat perlakuan kasar kurir ekspedisi jarak jauh. Tim
-                kurir kami mengantar langsung dengan penataan aman ke seluruh sudut Malang Raya.
+                Sampaikan jumlah pesanan, jenis hampers, preferensi item kue/suvenir, serta tanggal pengiriman yang Anda inginkan di Malang.
               </p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">02</span>
-              <h3 class="hl-content-card__title">Cita Rasa Segar &amp; Premium</h3>
+
+          <div class="col-md-4">
+            <div class="hl-step-card">
+              <div class="hl-step-card__num">2</div>
+              <h3 class="hl-step-card__title">Desain &amp; Approval</h3>
               <p>
-                Kue kering dipanggang dari bahan berkualitas (*pure butter* Wijsman, keju Edam tua) secara berkala
-                sehingga diterima dalam kondisi segar, harum, renyah, dan masa simpan maksimal.
+                Kirim logo instansi atau ucapan. Kami buatkan preview mockup digital sebelum proses produksi berjalan agar sesuai standar.
               </p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">03</span>
-              <h3 class="hl-content-card__title">Kustomisasi Logo &amp; Identitas</h3>
+
+          <div class="col-md-4">
+            <div class="hl-step-card">
+              <div class="hl-step-card__num">3</div>
+              <h3 class="hl-step-card__title">Produksi &amp; Pengiriman</h3>
               <p>
-                Sangat ideal untuk instansi pemerintah, BUMN, perbankan, dan korporasi di Malang yang memerlukan cetak logo
-                perusahaan pada pita, hardbox, maupun kartu ucapan bertanda tangan pimpinan.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">04</span>
-              <h3 class="hl-content-card__title">Fleksibilitas Anggaran &amp; MOQ</h3>
-              <p>
-                Tersedia beragam opsi mulai dari bingkisan hemat untuk keluarga dan kerabat hingga paket eksklusif VVIP
-                dengan faktur pajak dan administrasi pengadaan yang transparan.
+                Produksi higienis dengan kontrol kualitas ketat, dikemas rapi bergaransi aman, lalu diantar oleh kurir lokal langsung ke alamat Malang Raya.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SECTION 2: PILIHAN PAKET HAMPERS MALANG -->
-    <section class="hl-guide-section" id="pilihan-paket">
-      <div class="container">
-        <h2 class="hl-section-title">Koleksi Paket Hampers Lebaran Favorit di Malang</h2>
-        <p class="hl-guide-section__intro">
-          Setiap paket dikemas secara higienis dan terstruktur dengan konsep visual yang hangat dan mewah. Sebagai
-          bagian dari <a href="index.html" style="color:var(--hl-accent-dark);font-weight:600;">layanan utama hampers Lebaran</a>
-          kami, berikut paket unggulan yang paling banyak dipesan untuk area Malang:
-        </p>
+      <!-- 6. SECTION: FAQ — HAMPERS LEBARAN MALANG -->
+      <section id="faq" class="mb-5 pb-3" aria-labelledby="faq-heading">
+        <div class="text-left mb-4">
+          <h2 class="hl-sec-title" id="faq-heading">FAQ &mdash; Hampers Lebaran Malang</h2>
+          <p class="hl-sec-subtitle">
+            Pertanyaan yang paling sering diajukan calon pemesan hampers Lebaran di Malang.
+          </p>
+        </div>
 
-        <div class="row g-4">
-          <!-- Paket 1 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Paling Laris</span>
-              <h3 class="hl-content-card__title">Hampers Premium</h3>
-              <p class="hl-content-card__price">Mulai Rp 750.000</p>
-              <p>
-                Kemasan hardbox kokoh bernuansa hijau sage dan aksen emas. Berisi aneka kue kering kualitas nomor satu,
-                minuman sparkling halal, serta kurma premium pilihan.
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <div class="hl-faq-card">
+              <h3 class="hl-faq-card__q">Apakah bisa custom logo, kartu ucapan, dan warna kemasan?</h3>
+              <p class="hl-faq-card__a">
+                Bisa! Kami melayani cetak logo instansi/perusahaan pada kartu ucapan, hang tag, sleeve box, pita satin, hingga hotprint emas pada hardbox eksklusif.
               </p>
-              <ul>
-                <li>3-4 Toples Kue Kering Wijsman</li>
-                <li>Kurma Ajwa Madinah Higienis</li>
-                <li>Kartu Ucapan Hard Paper Gold Foil</li>
-                <li>Exclusive Hardbox Magnet</li>
-              </ul>
-              <div class="mt-3">
-                <a href="paket/hampers-premium.html" class="hl-back-link" style="padding:0.28rem 0.75rem;font-size:0.82rem;">Lihat Detail &rarr;</a>
-              </div>
             </div>
           </div>
 
-          <!-- Paket 2 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Favorit Keluarga</span>
-              <h3 class="hl-content-card__title">Hampers Kue &amp; Camilan</h3>
-              <p class="hl-content-card__price">Mulai Rp 450.000</p>
-              <p>
-                Pilihan tepat untuk hantaran silaturahmi ke rumah orang tua, sanak saudara, tetangga, maupun rekan kerja di
-                kawasan Malang dan sekitarnya.
+          <div class="col-md-6">
+            <div class="hl-faq-card">
+              <h3 class="hl-faq-card__q">Apakah paket hampers bebas pilih isi seperti katalog?</h3>
+              <p class="hl-faq-card__a">
+                Sangat bisa. Anda bebas mengombinasikan pilihan kue kering, suvenir ibadah, tumbler custom, atau produk UMKM Malang sesuai kebutuhan anggaran.
               </p>
-              <ul>
-                <li>Nastar Klasik Nanas Asli</li>
-                <li>Kastengel Keju Edam Gurih</li>
-                <li>Putri Salju Mede Lembut</li>
-                <li>Kotak Kemasan Cantik &amp; Pita</li>
-              </ul>
-              <div class="mt-3">
-                <a href="paket/hampers-kue-camilan.html" class="hl-back-link" style="padding:0.28rem 0.75rem;font-size:0.82rem;">Lihat Detail &rarr;</a>
-              </div>
             </div>
           </div>
 
-          <!-- Paket 3 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Bermakna</span>
-              <h3 class="hl-content-card__title">Hampers Perlengkapan Ibadah</h3>
-              <p class="hl-content-card__price">Mulai Rp 550.000</p>
-              <p>
-                Bingkisan bernuansa spiritual yang sarat pahala dan keberkahan, sangat berkesan diberikan menjelang hari
-                kemenangan Idulfitri.
+          <div class="col-md-6">
+            <div class="hl-faq-card">
+              <h3 class="hl-faq-card__q">Area layanan pengiriman selain Kota Malang?</h3>
+              <p class="hl-faq-card__a">
+                Kami melayani pengiriman langsung ke seluruh Kota Malang (Klojen, Lowokwaru, Blimbing, Sukun, Kedungkandang), Kota Batu, dan seluruh kecamatan Kabupaten Malang.
               </p>
-              <ul>
-                <li>Sajadah Tenun Turki Premium</li>
-                <li>Mushaf Al-Qur'an Terjemahan</li>
-                <li>Tasbih Kayu Gaharu / Kristal</li>
-                <li>Kotak Eksklusif Bertema Kubah</li>
-              </ul>
-              <div class="mt-3">
-                <a href="paket/hampers-perlengkapan-ibadah.html" class="hl-back-link" style="padding:0.28rem 0.75rem;font-size:0.82rem;">Lihat Detail &rarr;</a>
-              </div>
             </div>
           </div>
 
-          <!-- Paket 4 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">B2B &amp; Corporate</span>
-              <h3 class="hl-content-card__title">Hampers Custom Corporate</h3>
-              <p class="hl-content-card__price">Mulai Rp 300.000</p>
-              <p>
-                Solusi profesional untuk pengadaan bingkisan karyawan dan mitra bisnis perusahaan di Malang dengan branding
-                identitas instansi yang kuat.
+          <div class="col-md-6">
+            <div class="hl-faq-card">
+              <h3 class="hl-faq-card__q">Kapan waktu terbaik untuk memesan hampers Lebaran?</h3>
+              <p class="hl-faq-card__a">
+                Waktu terbaik adalah H-30 hingga H-14 sebelum Idulfitri guna memastikan ketersediaan stok kue kering fresh from the oven dan slot kurir lokal.
               </p>
-              <ul>
-                <li>Custom Sleeve / Box Logo</li>
-                <li>Tumbler Grafir Laser Nama</li>
-                <li>Pilihan Isi Fleksibel Sesuai Budget</li>
-                <li>Faktur &amp; Invoice Resmi Perusahaan</li>
-              </ul>
-              <div class="mt-3">
-                <a href="paket/hampers-custom.html" class="hl-back-link" style="padding:0.28rem 0.75rem;font-size:0.82rem;">Lihat Detail &rarr;</a>
-              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- SECTION 3: KUSTOMISASI LOGO & BRANDING -->
-    <section class="hl-guide-section" id="layanan-custom">
-      <div class="container">
-        <h2 class="hl-section-title">Layanan Kustomisasi Logo &amp; Identitas Perusahaan</h2>
-        <p class="hl-guide-section__intro">
-          Bagi instansi pemerintah, BUMN, perbankan, universitas, dan sektor swasta di Malang, bingkisan Idulfitri bukan
-          sekadar bingkisan musiman, melainkan representasi martabat dan sarana mempererat relasi kemitraan strategis. Kami
-          menyediakan fasilitas branding terintegrasi:
-        </p>
-
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6">
-            <div class="hl-content-card">
-              <h3 class="hl-content-card__title mb-3">Fitur Personalisasi Kemasan:</h3>
-              <ul style="padding-left:1.25rem;line-height:1.8;">
-                <li><strong>Hotprint &amp; Foil Emas/Perak:</strong> Tampilan logo instansi yang mewah dan berkilau pada permukaan tutup hardbox.</li>
-                <li><strong>Custom Greeting Card:</strong> Kartu ucapan cetak full-color dengan pesan khusus, logo korporat, serta tanda tangan digital direksi.</li>
-                <li><strong>Pita Warna Identitas (Pantone):</strong> Pemilihan warna pita satin atau grosgrain yang selaras dengan panduan brand guidelines perusahaan Anda.</li>
-                <li><strong>Merchandise Pendukung Berlogo:</strong> Penambahan item eksklusif seperti tumbler tahan panas berlabel grafir, notebook kulit, sajadah travel, atau aroma diffuser.</li>
-              </ul>
-              <p class="mt-3" style="font-size:0.92rem;color:var(--hl-accent-dark);font-weight:600;">
-                💡 Ingin melihat portofolio proyek custom kami? Kunjungi halaman <a href="portofolio.html" style="text-decoration:underline;">dokumentasi portofolio hampers</a>.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hl-content-card" style="background:linear-gradient(135deg, rgba(234, 240, 233, 0.7) 0%, rgba(219, 228, 218, 0.9) 100%);">
-              <h3 class="hl-content-card__title mb-2">Konsultasi Desain &amp; Mockup Gratis</h3>
-              <p>
-                Tim kreatif kami siap membantu membuatkan visualisasi mockup 3D hampers berlogo sebelum proses produksi massal dimulai. Cukup kirimkan file logo perusahaan Anda via WhatsApp untuk peninjauan teknis.
-              </p>
-              <div class="mt-4">
-                <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20request%20mockup%20custom%20hampers%20Lebaran%20dengan%20logo%20perusahaan%20di%20Malang."
-                  class="hl-btn-wa" target="_blank" rel="noopener noreferrer">
-                  Request Mockup Desain via WA
-                </a>
-              </div>
-            </div>
-          </div>
+        <!-- Bottom Callout Note -->
+        <div class="p-3 text-center" style="background:#ffffff; border-radius:14px; border:1px solid var(--hl-border);">
+          <p class="mb-0" style="font-size:0.88rem; color:var(--hl-text-muted);">
+            Butuh 50&ndash;500+ paket hampers Lebaran untuk dinas, kantor perbankan, universitas, atau BUMN di Malang? Hubungi kami untuk negosiasi harga, pembuatan proposal penawaran resmi, invoice B2B, dan sampel produk.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SECTION 4: AREA PENGIRIMAN MALANG RAYA -->
-    <section class="hl-guide-section" id="area-pengiriman">
-      <div class="container">
-        <h2 class="hl-section-title">Jangkauan Area Pengiriman di Malang Raya &amp; Batu</h2>
-        <p class="hl-guide-section__intro">
-          Pengantaran hampers Idulfitri kami didukung oleh armada kurir internal serta layanan logistik terjadwal. Kami
-          melayani pengiriman langsung ke kantor instansi maupun alamat rumah pribadi penerima di seluruh kawasan:
-        </p>
-
-        <div class="row g-3">
-          <div class="col-sm-6 col-lg-4">
-            <div class="hl-area-card">
-              <h3 class="hl-area-card__title">Kota Malang (Pusat &amp; Sekitarnya)</h3>
-              <p>Klojen, Lowokwaru, Blimbing, Sukun, Kedungkandang, kawasan kampus (UB, UM, UIN, Polinema), hingga perumahan elit.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="hl-area-card">
-              <h3 class="hl-area-card__title">Kota Wisata Batu</h3>
-              <p>Kecamatan Batu, Bumiaji, Junrejo, kawasan perhotelan, villa, resort, dan instansi pariwisata Kota Batu.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="hl-area-card">
-              <h3 class="hl-area-card__title">Malang Utara</h3>
-              <p>Singosari, Lawang, Karangploso, kawasan industri, pergudangan, dan perumahan koridor Malang–Surabaya.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="hl-area-card">
-              <h3 class="hl-area-card__title">Malang Selatan &amp; Pusat Pemkab</h3>
-              <p>Kepanjen (Pusat Pemerintahan Kabupaten Malang), Pakisaji, Turen, Gondanglegi, Bululawang, dan Wagir.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="hl-area-card">
-              <h3 class="hl-area-card__title">Malang Timur &amp; Bandara</h3>
-              <p>Pakis (Kawasan Bandara Abdulrachman Saleh), Jabung, Tumpang, dan koridor wisata Bromo.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4">
-            <div class="hl-area-card">
-              <h3 class="hl-area-card__title">Malang Barat</h3>
-              <p>Dau, Pujon, Ngantang, Kasembon, perbatasan Malang-Kediri dan perumahan kawasan perbukitan.</p>
-            </div>
-          </div>
+      <!-- 7. SECTION: ARTIKEL & PANDUAN TERKAIT (SEO Support Cluster) -->
+      <section class="mb-5 pb-4" id="artikel-terkait" aria-labelledby="artikel-heading">
+        <div class="text-left mb-4">
+          <h2 class="hl-sec-title" id="artikel-heading">Artikel &amp; Panduan Terkait Seputar Hampers Lebaran</h2>
+          <p class="hl-sec-subtitle">
+            Pelajari rekomendasi paket, inspirasi ide kreatif, dan panduan memilih kemasan terbaik untuk menyambut momen Idulfitri bersama keluarga dan relasi:
+          </p>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: ALUR PEMESANAN -->
-    <section class="hl-guide-section" id="alur-pemesanan">
-      <div class="container">
-        <h2 class="hl-section-title">Alur &amp; Prosedur Pemesanan yang Mudah</h2>
-        <p class="hl-guide-section__intro">
-          Kami menyederhanakan proses pemesanan bingkisan Idulfitri agar Anda dapat menghemat waktu dan tenaga, baik
-          untuk pesanan personal maupun pengadaan skala korporat:
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">1</span>
-              <h3 class="hl-content-card__title">Konsultasi Kebutuhan</h3>
-              <p>Sampaikan jumlah paket, pilihan isi, alokasi anggaran, serta kebutuhan tanggal pengiriman kepada tim admin kami.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">2</span>
-              <h3 class="hl-content-card__title">Penawaran &amp; Mockup</h3>
-              <p>Kami kirimkan katalog rincian harga (quotation resmi untuk instansi) serta preview visual desain kartu ucapan berlogo.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">3</span>
-              <h3 class="hl-content-card__title">Produksi &amp; Quality Control</h3>
-              <p>Pesanan kue dipanggang secara higienis, ditata ke dalam kotak kemasan berstandar mutu ketat, dan disegel rapi.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__num">4</span>
-              <h3 class="hl-content-card__title">Pengiriman Tepat Waktu</h3>
-              <p>Paket diantar langsung ke titik lokasi sesuai jadwal yang disepakati lengkap dengan bukti serah terima foto di lokasi.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: ARTIKEL & PANDUAN TERKAIT -->
-    <section class="hl-guide-section" id="artikel-terkait">
-      <div class="container">
-        <h2 class="hl-section-title">Artikel &amp; Panduan Terkait Seputar Hampers Lebaran</h2>
-        <p class="hl-guide-section__intro">
-          Pelajari rekomendasi paket, inspirasi ide kreatif, dan panduan memilih kemasan terbaik untuk menyambut momen
-          Idulfitri bersama keluarga dan relasi:
-        </p>
 
         <div class="row g-4">
           <!-- Artikel 1 -->
@@ -1034,87 +1273,15 @@
 
         <div class="mt-4 text-center">
           <p style="font-size:0.95rem;color:var(--hl-text-muted);">
-            Ingin melihat informasi profil usaha dan testimoni pelanggan kami secara menyeluruh? Kunjungi <a href="index.html" style="color:var(--hl-accent-dark);font-weight:600;text-decoration:underline;">halaman beranda Hampers Lebaran</a>.
+            Ingin melihat informasi profil usaha dan katalog lengkap kami? Kunjungi <a href="index.html" style="color:var(--hl-accent-dark);font-weight:600;text-decoration:underline;">halaman beranda Hampers Lebaran</a> atau jelajahi <a href="paket.html" style="color:var(--hl-accent-dark);font-weight:600;text-decoration:underline;">katalog paket</a> kami.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SECTION 7: FAQ -->
-    <section class="hl-guide-section" id="faq-malang">
-      <div class="container">
-        <h2 class="hl-section-title">Tanya Jawab Seputar Hampers Lebaran Malang (FAQ)</h2>
-        <p class="hl-guide-section__intro">
-          Beberapa pertanyaan yang sering diajukan oleh calon pemesan personal maupun bagian pengadaan kantor di Malang:
-        </p>
-
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <div class="hl-faq-item">
-              <h3 class="hl-faq-item__q">Apakah melayani pemesanan hampers Lebaran untuk area luar Kota Malang?</h3>
-              <p class="hl-faq-item__a">
-                Ya, selain melayani seluruh kecamatan di Kota Malang, kami juga melayani pengiriman hampers ke Kota Batu, seluruh wilayah Kabupaten Malang (Kepanjen, Singosari, Lawang, Dau), hingga pengiriman antar-kota di Jawa Timur menggunakan armada bergaransi aman.
-              </p>
-            </div>
-
-            <div class="hl-faq-item">
-              <h3 class="hl-faq-item__q">Berapa minimal pemesanan (MOQ) hampers Lebaran di Malang?</h3>
-              <p class="hl-faq-item__a">
-                Untuk pesanan paket katalog standar tidak ada minimum pemesanan (bisa pesan satuan untuk keluarga atau kolega). Untuk paket custom logo korporat, minimum pemesanan mulai dari 10 paket dengan gratis desain kartu ucapan dan mockup visual.
-              </p>
-            </div>
-
-            <div class="hl-faq-item">
-              <h3 class="hl-faq-item__q">Apakah toples kue dan barang pecah belah dijamin aman saat pengiriman?</h3>
-              <p class="hl-faq-item__a">
-                Kami memberikan garansi aman 100%. Untuk wilayah Malang Raya, kami menggunakan armada kurir internal khusus hampers dengan penataan berdiri dan partisi busa tebal. Apabila terjadi kerusakan produk saat pengiriman, kami ganti baru tanpa biaya tambahan.
-              </p>
-            </div>
-
-            <div class="hl-faq-item">
-              <h3 class="hl-faq-item__q">Bisa custom kemasan dengan logo perusahaan atau instansi di Malang?</h3>
-              <p class="hl-faq-item__a">
-                Tentu. Kami menyediakan layanan custom sleeve packaging, hotprint/sablon logo pada hardbox, hangtag akrilik, pita warna korporat, hingga kartu ucapan personal bertanda tangan direksi atau pimpinan instansi.
-              </p>
-            </div>
-
-            <div class="hl-faq-item">
-              <h3 class="hl-faq-item__q">Kapan waktu terbaik untuk memesan hampers Lebaran di Malang?</h3>
-              <p class="hl-faq-item__a">
-                Waktu paling ideal adalah 3 hingga 4 minggu sebelum Hari Raya Idulfitri (atau di awal bulan Ramadan) guna memastikan ketersediaan slot produksi kue segar, penyelesaian cetak kemasan custom, dan jadwal pengiriman yang tepat waktu sebelum libur cuti bersama.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: BOTTOM CTA -->
-    <section class="hl-section hl-section--warm text-center" aria-label="CTA Konsultasi">
-      <div class="container">
-        <h2 class="hl-heading mb-3">Siap Menyiapkan Hampers Lebaran di Malang?</h2>
-        <p class="hl-subtitle mx-auto mb-4" style="max-width:680px;">
-          Konsultasikan kebutuhan bingkisan Idulfitri Anda bersama kami sekarang. Dapatkan penawaran harga terbaik, kurasi isi berkualitas, dan layanan pengiriman terpercaya di Malang Raya.
-        </p>
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20memesan%20hampers%20Lebaran%20Malang."
-            class="hl-btn-wa" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            Konsultasi Sekarang
-          </a>
-          <a href="paket.html" class="hl-btn-outline">
-            Lihat Seluruh Paket
-          </a>
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="hl-footer" aria-label="Footer situs">
     <div class="container">
       <div class="row g-5">
@@ -1122,54 +1289,52 @@
           <a href="index.html"
             style="display:inline-flex;align-items:center;gap:0.65rem;text-decoration:none;margin-bottom:0.75rem;"><img
               src="assets/images/logo.webp" alt="Logo Haraya Hampers Lebaran"
-              style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(184,151,61,.4);"><span
-              style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--hl-footer-text);line-height:1;">Hampers<span
-                style="color:var(--hl-warm);">Lebaran</span></span></a>
-          <p class="hl-footer__desc">
-            Pusat layanan pembuatan dan pengadaan hampers Lebaran berkualitas di Malang Raya dan seluruh Indonesia.
-          </p>
+              style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(184,151,61,.4);"
+              loading="lazy">
+            <span
+              style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--hl-footer-text);letter-spacing:-.02em;">Hampers<span
+                style="color:var(--hl-border);font-style:italic;">Lebaran</span></span></a>
+          <p class="hl-footer-desc">Penyedia hampers Lebaran terpercaya di Kota Malang, Kota Batu, dan Kabupaten Malang. Menghadirkan paket bingkisan Idulfitri berkualitas dengan kurasi terbaik untuk keluarga, sahabat, dan mitra bisnis.</p>
         </div>
-        <div class="col-sm-6 col-lg-2">
-          <p class="hl-footer__heading">Navigasi</p>
-          <ul class="hl-footer__links">
+        <div class="col-6 col-lg-2">
+          <p class="hl-footer-heading">Navigasi</p>
+          <ul class="hl-footer-links">
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="tentang.html">Tentang</a></li>
-            <li><a href="paket.html">Paket</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+            <li><a href="paket.html">Pilihan Paket</a></li>
             <li><a href="portofolio.html">Portofolio</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html">Artikel &amp; Tips</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
           </ul>
         </div>
-        <div class="col-sm-6 col-lg-3">
-          <p class="hl-footer__heading">Paket</p>
-          <ul class="hl-footer__links">
+        <div class="col-6 col-lg-3">
+          <p class="hl-footer-heading">Paket Populer</p>
+          <ul class="hl-footer-links">
             <li><a href="paket/hampers-premium.html">Hampers Premium</a></li>
-            <li><a href="paket/hampers-kue-camilan.html">Hampers Kue &amp; Camilan</a></li>
+            <li><a href="paket/hampers-kue-camilan.html">Kue &amp; Camilan</a></li>
             <li><a href="paket/hampers-perlengkapan-ibadah.html">Perlengkapan Ibadah</a></li>
-            <li><a href="paket/hampers-custom.html">Custom Corporate</a></li>
+            <li><a href="paket/hampers-custom.html">Custom &amp; Korporat</a></li>
+            <li><a href="hampers-lebaran-malang.html">Hampers Lebaran Malang</a></li>
           </ul>
         </div>
-        <div class="col-sm-6 col-lg-3">
-          <p class="hl-footer__heading">Kontak &amp; Area</p>
-          <ul class="hl-footer__links">
-            <li><span style="color:var(--hl-footer-text);">Malang Raya &amp; Batu, Jatim</span></li>
-            <li><a href="https://wa.me/6282131087971" target="_blank" rel="noopener noreferrer">WhatsApp: 0821-3108-7971</a></li>
-            <li><a href="kontak.html">Halaman Kontak</a></li>
+        <div class="col-lg-3">
+          <p class="hl-footer-heading">Kontak Kami</p>
+          <ul class="hl-footer-links">
+            <li><span style="color:var(--hl-footer-text);font-weight:500;">Alamat:</span> Jl. Sigura - Gura No.36, Karangbesuki, Kec. Sukun, Kota Malang, Jawa Timur 65149</li>
+            <li><span style="color:var(--hl-footer-text);font-weight:500;">WhatsApp:</span> <a href="https://wa.me/6282131087971" target="_blank" rel="noopener noreferrer">+62 821-3108-7971</a></li>
+            <li><span style="color:var(--hl-footer-text);font-weight:500;">Jam Operasional:</span> Senin - Minggu: 08.00 - 21.00 WIB</li>
           </ul>
         </div>
       </div>
-      <div class="hl-footer__bottom">
-        <p>&copy; 2027 Hampers Lebaran Malang. Seluruh hak cipta dilindungi.</p>
-        <ul class="hl-footer__legal-links">
-          <li><a href="kebijakan-privasi.html">Kebijakan Privasi</a></li>
-          <li><a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a></li>
-        </ul>
+      <div class="hl-footer-bottom">
+        <p class="mb-0">&copy; 2027 Hampers Lebaran Malang. Seluruh hak cipta dilindungi undang-undang.</p>
+        <p class="mb-0"><a href="kebijakan-privasi.html" style="color:var(--hl-footer-text);text-decoration:none;">Kebijakan Privasi</a> &bull; <a href="syarat-ketentuan.html" style="color:var(--hl-footer-text);text-decoration:none;">Syarat &amp; Ketentuan</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="assets/js/main.min.js" defer></script>
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 
 </html>
-
