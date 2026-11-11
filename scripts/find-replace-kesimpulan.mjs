@@ -23,3 +23,4 @@ function searchFiles(dir) {
 
 const found = searchFiles('c:/hamperslebaran');
 console.log('Files with "Kesimpulan Praktis":', found);
+

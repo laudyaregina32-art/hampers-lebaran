@@ -40,3 +40,4 @@ for (const filePath of found) {
   fs.writeFileSync(filePath, content, 'utf8');
   console.log(`Updated: ${filePath} (len diff: ${content.length - beforeLen})`);
 }
+
