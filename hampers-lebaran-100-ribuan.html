@@ -568,6 +568,12 @@
 
   <!-- Header & Navbar Resmi Haraya HampersLebaran -->
   <header>
+    <div class="hl-topbar d-none d-md-block">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span>Pusat Hampers Lebaran Eksklusif &amp; Terpercaya Malang &amp; Jawa Timur</span>
+        <span>Bisa Custom Isi &amp; Branding Perusahaan • Layanan Kurir Berpengalaman</span>
+      </div>
+    </div>
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
         <a class="navbar-brand hl-navbar-brand" href="index.html" aria-label="Hampers Lebaran — Beranda">
@@ -617,28 +623,54 @@
     </nav>
   </header>
 
-  <main id="main-content">
-
-    <!-- Hero Section Panduan -->
-    <section class="hl-guide-hero" aria-labelledby="hero-title">
-      <div class="container">
-        <a href="harga-hampers-lebaran.html" class="hl-back-link mb-3">
+  <section class="hl-guide-hero" id="top" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <a href="harga-hampers-lebaran.html" class="hl-back-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           Kembali ke Panduan Harga
         </a>
-        <div class="hl-eyebrow">Panduan Anggaran &amp; Inspirasi Paket</div>
-        <h1 class="hl-guide-hero__title" id="hero-title">Hampers Lebaran 100 Ribuan Pilihan Ide Isi, Katalog, dan Cara Menentukan Budget</h1>
-        <p class="hl-guide-hero__lead">
-          Ingin menyiapkan hampers Lebaran yang bermanfaat, rapi, dan tetap sesuai anggaran? Mulailah dari fungsi paket dan kebutuhan penerima. Panduan ini membahas pilihan di bawah Rp100 ribu, perencanaan Rp100–250 ribu, contoh paket sembako, kemasan estetik, serta hal yang perlu disiapkan sebelum meminta penawaran.
-        </p>
-        <div class="hl-guide-hero__ctas">
-          <a class="hl-btn-primary" href="#katalog">Lihat Ide Hampers</a>
-          <a class="hl-btn-outline" href="#brief">Siapkan Kebutuhan Pemesanan</a>
+        <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-semibold" style="font-size:0.82rem;letter-spacing:0.04em;">
+          BUDGET TERJANGKAU · EDISI 2027
+        </span>
+      </div>
+
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <div class="hl-eyebrow">Panduan Anggaran &amp; Inspirasi Paket</div>
+          <h1 class="hl-guide-hero__title" id="hero-title">Hampers Lebaran 100 Ribuan Pilihan Ide Isi, Katalog, dan Cara Menentukan Budget</h1>
+          <p class="hl-guide-hero__lead">
+            Ingin menyiapkan hampers Lebaran yang bermanfaat, rapi, dan tetap sesuai anggaran? Mulailah dari fungsi paket dan kebutuhan penerima. Panduan ini membahas pilihan di bawah Rp100 ribu, perencanaan Rp100–250 ribu, contoh paket sembako, kemasan estetik, serta hal yang perlu disiapkan sebelum meminta penawaran.
+          </p>
+          <div class="hl-guide-hero__ctas">
+            <a class="hl-btn-primary" href="#katalog">Lihat Ide Hampers</a>
+            <a class="hl-btn-outline" href="#brief">Siapkan Kebutuhan Pemesanan</a>
+          </div>
+          <div class="text-muted small mt-3">
+            Topik: Hampers Hemat 100 Ribuan · Paket Sembako, Kue Kering &amp; Mug · Kemasan Besek / Box
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div style="background:linear-gradient(145deg, #e4ebdf, #f5f0e4);border:1px solid rgba(0,0,0,0.08);border-radius:24px;padding:2rem;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+            <div style="font-size:3.5rem;margin-bottom:0.75rem;">🏷️</div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.18rem;margin:0 0 0.5rem;color:var(--hl-green, #1e3321);">Paket Ekonomis 100 Ribuan</h2>
+            <p style="font-size:0.86rem;color:#555;margin:0 0 1.25rem;">Solusi cermat untuk bingkisan massal, staf operasional, maupun komunitas tanpa mengorbankan kerapian dan makna silaturahmi.</p>
+            <div style="font-size:0.82rem;font-weight:700;color:var(--hl-green-2, #2d5a27);background:#fff;padding:0.45rem 1rem;border-radius:999px;display:inline-block;border:1px solid var(--hl-line, #ddd);">
+              Mulai Rp50.000 – Rp100.000
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <main id="main-content" class="container">
+    
+
+    <!-- Hero Section Panduan -->
+    
 
     <!-- Main Content & Sidebar Layout -->
     <div class="container">
@@ -817,7 +849,7 @@
               <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
             </div>
             <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel simulasi anggaran paket sembako 100 ribu">
-              <table>
+              <table class="table hl-custom-table">
                 <thead>
                   <tr>
                     <th>Komponen</th>
@@ -982,8 +1014,6 @@
         </aside>
 
       </div>
-    </div>
-
   </main>
 
   <!-- ===== FOOTER STANDAR RESMI HARAYA ===== -->

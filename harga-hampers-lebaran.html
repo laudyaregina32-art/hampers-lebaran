@@ -8,7 +8,7 @@
   <script>
     (function () { try { if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) { var p = window.location.pathname; if (p.endsWith('.html')) { var c = p.slice(0, -5); if (c.endsWith('/index') || c === 'index' || c === '/index') { c = c.replace(/\/index$/, '') || '/'; } window.history.replaceState(null, '', c + window.location.search + window.location.hash); } } } catch (e) { } })();
   </script>
-  <title>Harga Hampers Lebaran 2027: Panduan Budget &amp; Pilihan Paket — Hampers Lebaran</title>
+  <title>Harga Hampers Lebaran 2027 Panduan Budget &amp; Pilihan Paket — Hampers Lebaran</title>
   <meta name="description"
     content="Cari tahu harga hampers Lebaran 2027, komponen biaya, ide paket di bawah 100 ribu hingga premium, simulasi HPP, dan tips membandingkan penawaran.">
   <meta name="keywords"
@@ -598,7 +598,54 @@
       transform: scale(1.08) translateY(-3px);
       box-shadow: 0 10px 25px rgba(37, 211, 102, 0.55);
     }
-</style>
+
+    /* Standardized 2-Column Guide Page Layout */
+    .hl-page-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: clamp(2rem, 4vw, 3.25rem);
+      align-items: start;
+      padding: 2.5rem 0 4.5rem;
+    }
+    @media (max-width: 991px) {
+      .hl-page-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2rem 0 3.5rem;
+      }
+    }
+    .hl-guide-content {
+      min-width: 0;
+    }
+    .hl-sidebar {
+      position: sticky;
+      top: 96px;
+      align-self: start;
+    }
+    .hl-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--hl-line);
+      border-radius: var(--hl-radius-sm);
+      background: var(--hl-surface);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .hl-table-wrapper table {
+      margin-bottom: 0 !important;
+      min-width: 600px;
+    }
+    .hl-table-hint {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--hl-muted);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+  </style>
 
   <!-- JSON-LD Structured Data Schema -->
   <script type="application/ld+json">
@@ -767,6 +814,12 @@
 
   <!-- Header & Navbar Resmi Proyek -->
   <header class="hl-header" role="banner">
+    <div class="hl-topbar d-none d-md-block">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span>Pusat Hampers Lebaran Eksklusif &amp; Terpercaya Malang &amp; Jawa Timur</span>
+        <span>Bisa Custom Isi &amp; Branding Perusahaan • Layanan Kurir Berpengalaman</span>
+      </div>
+    </div>
     <nav class="navbar navbar-expand-lg hl-navbar" aria-label="Navigasi utama">
       <div class="container hl-navbar-inner">
         <a class="navbar-brand hl-navbar-brand" href="index.html" aria-label="Hampers Lebaran — Beranda">
@@ -865,78 +918,75 @@
   </div>
 
   <!-- Hero Header Panduan Harga -->
-  <section class="hl-guide-hero" aria-labelledby="hero-title">
+  <section class="hl-guide-hero" id="top" aria-labelledby="hero-title">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb mb-0" style="font-size:0.86rem;">
             <li class="breadcrumb-item"><a href="index.html" style="color:var(--hl-green); text-decoration:none;">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="paket.html" style="color:var(--hl-green); text-decoration:none;">Paket</a></li>
-            <li class="breadcrumb-item active" aria-current="page" style="color:var(--hl-muted);">Harga Hampers Lebaran</li>
+            <li class="breadcrumb-item"><a href="paket.html" style="color:var(--hl-green); text-decoration:none;">Katalog Paket</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color:var(--hl-muted);">Panduan Harga 2027</li>
           </ol>
         </nav>
-        <a href="paket.html" class="hl-back-link" onclick="if(window.history.length > 1){window.history.back();return false;}">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          Kembali ke Paket
-        </a>
+        <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-semibold" style="font-size:0.82rem;letter-spacing:0.04em;">
+          UPDATE EDISI IDULFITRI 2027
+        </span>
       </div>
 
-      <div class="hl-eyebrow">Panduan Harga · Budget · Pilihan Paket 2027</div>
-      <h1 id="hero-title">Harga Hampers Lebaran 2027: Panduan Budget dan Pilihan Paketnya</h1>
-      <p class="hl-lead">Berapa anggaran yang perlu disiapkan untuk hampers Lebaran? Pahami faktor pembentuk harga, bandingkan isi paket dari ekonomis hingga premium, dan hitung total biaya secara transparan sebelum memesan.</p>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <div class="hl-eyebrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            Panduan Anggaran &amp; Struktur HPP
+          </div>
+          <h1 id="hero-title" class="hl-guide-hero__title">Harga Hampers Lebaran 2027 Panduan Budget dan Pilihan Paketnya</h1>
+          <p class="hl-lead">
+            Berapa harga hampers Lebaran 2027? Temukan panduan budget terperinci mulai dari paket ekonomis Rp50.000 hingga corporate premium di atas Rp1.000.000, struktur HPP transparan, serta strategi pengadaan tepat guna.
+          </p>
 
-      <div class="hl-answer-callout">
-        <strong>Jawaban singkat:</strong> Harga hampers Lebaran tidak hanya ditentukan oleh jumlah isi. Merek dan spesifikasi produk, jenis kemasan, personalisasi, kuantitas pesanan, perakitan, serta distribusi ikut menentukan total biaya. Karena itu, bandingkan rincian yang setara, bukan hanya foto atau harga awal.
-      </div>
+          <div class="hl-answer-callout">
+            <strong>Jawaban Cepat:</strong> Kisaran harga hampers Lebaran 2027 terbagi menjadi empat tingkatan: Ekonomis (Rp50.000 – Rp150.000), Menengah Populer (Rp150.000 – Rp350.000), Premium (Rp350.000 – Rp750.000), dan Korporat Eksklusif (&gt;Rp750.000). Alokasi ideal adalah 60% isi konsumsi, 25% kemasan, dan 15% kartu serta aksesoris.
+          </div>
 
-      <div class="hl-meta-row">
-        <span class="hl-meta-pill">Harga Hampers Lebaran 2027</span>
-        <span class="hl-meta-pill">Komersial &amp; Pengadaan B2B</span>
-        <span class="hl-meta-pill">Simulasi HPP &amp; Markup</span>
-        <span class="hl-meta-pill">Pembaruan Editorial: November 2026</span>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="#tabel-harga" class="btn btn-primary" style="background:var(--hl-green); border-color:var(--hl-green); border-radius:999px; padding:0.65rem 1.5rem; font-weight:600;">
+              Lihat Perbandingan Harga
+            </a>
+            <a href="https://wa.me/6282131087971?text=Halo%20Haraya%20Hampers%2C%20saya%20ingin%20konsultasi%20mengenai%20harga%20dan%20pilihan%20paket%20hampers%20Lebaran%202027." class="btn btn-outline-secondary" style="border-radius:999px; padding:0.65rem 1.4rem; font-weight:600;" target="_blank" rel="noopener noreferrer">
+              Konsultasi Budget via WA
+            </a>
+          </div>
+
+          <div class="hl-meta-row">
+            <span class="hl-meta-pill">⏱️ Waktu Baca: ~9 Menit</span>
+            <span class="hl-meta-pill">📊 Topik: Budgeting &amp; Pengadaan</span>
+            <span class="hl-meta-pill">🏢 B2B &amp; Personal</span>
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div style="background:linear-gradient(145deg, #e4ebdf, #f5f0e4);border:1px solid rgba(0,0,0,0.08);border-radius:24px;padding:2rem;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+            <div style="font-size:3.5rem;margin-bottom:0.75rem;">💰</div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.18rem;margin:0 0 0.5rem;color:var(--hl-green);">Panduan Budget &amp; HPP</h2>
+            <p style="font-size:0.86rem;color:#555;margin:0 0 1.25rem;">Rincian biaya realistis untuk kue kering, hardbox custom, greeting card, dan logistik aman antar-kota.</p>
+            <div style="font-size:0.82rem;font-weight:700;color:var(--hl-green-2);background:#fff;padding:0.45rem 1rem;border-radius:999px;display:inline-block;border:1px solid var(--hl-line);">
+              Bisa Custom Sesuai Pagu Budget
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Layout Container: Sticky TOC + Main Content -->
-  <div class="container hl-layout">
-    <!-- Sidebar Table of Contents -->
-    <aside class="hl-sidebar" aria-label="Daftar isi panduan">
-      <div class="hl-toc-box">
-        <strong>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="8" y1="6" x2="21" y2="6"></line>
-            <line x1="8" y1="12" x2="21" y2="12"></line>
-            <line x1="8" y1="18" x2="21" y2="18"></line>
-            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-          </svg>
-          Daftar Isi Panduan
-        </strong>
-        <nav aria-label="Daftar isi halaman">
-          <a href="#ringkasan">1. Berapa harga hampers 2027?</a>
-          <a href="#sejarah">2. Sejarah parcel dan hampers</a>
-          <a href="#faktor-harga">3. Faktor pembentuk harga</a>
-          <a href="#katalog">4. Katalog berdasarkan budget</a>
-          <a href="#bandingkan">5. Cara membandingkan paket</a>
-          <a href="#simulasi">6. Simulasi HPP dan harga jual</a>
-          <a href="#bisnis">7. Strategi persiapan bisnis</a>
-          <a href="#lokasi">8. Pengiriman dan tujuan kota</a>
-          <a href="#brief-penawaran">9. Informasi brief penawaran</a>
-          <a href="#faq">10. FAQ harga hampers Lebaran</a>
-          <a href="#kesimpulan">11. Kesimpulan &amp; konsultasi</a>
-          <a href="#internal-link">12. Panduan harga lainnya</a>
-        </nav>
-      </div>
-    </aside>
-
-    <!-- Main Article Body -->
-    <main class="hl-main-content" id="konten">
-      <section id="ringkasan">
+  <!-- Main Content Layout -->
+  <main id="main-content" class="container">
+    <div class="hl-page-layout">
+      <!-- Article Content Column (Left) -->
+      <article class="hl-guide-content" id="konten">
+        <section id="ringkasan">
         <h2>Berapa harga hampers Lebaran 2027?</h2>
         <p>Anggaran hampers dapat direncanakan mulai dari puluhan ribu rupiah hingga lebih dari Rp500.000 per paket, bergantung pada isi, kualitas produk, kemasan, dan layanan tambahan. Rentang tersebut merupakan panduan menyusun anggaran, bukan penawaran harga kaku atau konfirmasi bahwa paket tertentu tersedia.</p>
         <p>Dalam materi riset yang menjadi acuan, rata-rata pengeluaran untuk satu paket hampers disebut sebesar Rp303.536. Sebanyak 42% responden memilih rentang Rp100.000–Rp250.000. Angka survei ini memberi gambaran perilaku belanja pada riset yang dirujuk, bukan patokan mutlak harga pasar untuk semua wilayah atau periode.</p>
@@ -946,7 +996,7 @@
       </section>
 
       <section id="sejarah">
-        <h2>Dari parcel menjadi hampers: sejarah singkat tradisi bingkisan</h2>
+        <h2>Dari Parcel Menjadi Hampers dan Sejarah Singkat Tradisi Bingkisan</h2>
         <p>Istilah <em>parcel</em> dan <em>hampers</em> kerap digunakan bergantian. Secara umum, <em>parcel</em> berarti kiriman atau bingkisan yang dibungkus, sering diasosiasikan dengan kemasan karton atau wadah bertingkat plastik wrapping. Sementara <em>hamper</em> dalam penggunaan bahasa Inggris merujuk pada keranjang anyaman atau wadah eksklusif berisi barang hadiah. Dalam praktik ritel Indonesia, keduanya kini sering merujuk pada paket bingkisan estetis yang ditata dan dikemas untuk diberikan kepada orang lain.</p>
         <p>Tradisi memberi bingkisan di Nusantara memiliki akar mendalam dalam praktik persembahan dan ungkapan rasa syukur masyarakat masa lampau. Dalam materi yang dirangkum, pandangan pengamat budaya Universitas Indonesia, Agus Aris Munandar, mengaitkan kebiasaan memberi dengan sikap religius masyarakat prasejarah terhadap kekuatan adikodrati. Praktik saling memberi kemudian berkembang dalam berbagai perayaan hari besar, termasuk Idulfitri.</p>
         <p>Tradisi <em>hampering</em> di Inggris pada abad ke-18 juga kerap dikaitkan dengan kebiasaan berbagi keranjang berisi makanan dan kebutuhan pokok saat momen istimewa. Di Indonesia, bingkisan Lebaran mulai populer luas pada awal 1990-an dengan isi sederhana seperti biskuit kaleng, sirup manis, dan makanan ringan toples. Kini, pilihan isi semakin beragam dan elegan, mulai dari kurasi kue kering artisan, tableware keramik, perlengkapan ibadah, hingga produk aromaterapi dan hadiah korporat premium.</p>
@@ -1061,7 +1111,12 @@
 
         <h3>Contoh pemetaan profil penerima dan konsep hadiah</h3>
         <div class="hl-table-wrap">
-          <table class="hl-table">
+          <div class="hl-table-hint">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Geser tabel ke samping untuk melihat detail lengkap</span>
+      </div>
+      <div class="hl-table-wrapper">
+        <table class="table hl-custom-table">
             <thead>
               <tr>
                 <th>Profil Penerima</th>
@@ -1092,6 +1147,7 @@
               </tr>
             </tbody>
           </table>
+      </div>
         </div>
       </section>
 
@@ -1135,7 +1191,12 @@
 
         <h3>Contoh rincian kalkulasi biaya per paket (Ilustrasi)</h3>
         <div class="hl-table-wrap">
-          <table class="hl-table">
+          <div class="hl-table-hint">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Geser tabel ke samping untuk melihat detail lengkap</span>
+      </div>
+      <div class="hl-table-wrapper">
+        <table class="table hl-custom-table">
             <thead>
               <tr>
                 <th>Komponen Biaya</th>
@@ -1165,6 +1226,7 @@
               </tr>
             </tbody>
           </table>
+      </div>
         </div>
 
         <p>Jika target profit Anda adalah 30% di atas HPP dan komisi marketplace diperhitungkan sebesar 6%, maka rumus penentuan harga jual minimumnya adalah:</p>
@@ -1229,7 +1291,7 @@ Harga Jual ≈ Rp147.979 (Dibulatkan menjadi Rp148.000 atau Rp149.000)</code>
         <p>Untuk pengiriman ke puluhan atau ratusan titik rumah karyawan dan kantor cabang, siapkan database penerima dalam format spreadsheet rapi dengan nama jelas, nomor telepon aktif penerima, dan patokan alamat yang detail guna menghindari paket retur karena alamat tidak ditemukan saat kurir bertugas.</p>
 
         <div class="hl-callout-box">
-          <h3>Checklist data pengiriman multi-kota:</h3>
+          <h3>Checklist Data Pengiriman Multi-Kota</h3>
           <ul class="hl-checklist">
             <li>Nama lengkap penerima dan departemen kerja (jika dikirim ke alamat kantor).</li>
             <li>Nomor WhatsApp aktif yang dapat dihubungi driver pengantar.</li>
@@ -1293,7 +1355,7 @@ Harga Jual ≈ Rp147.979 (Dibulatkan menjadi Rp148.000 atau Rp149.000)</code>
       </section>
 
       <section id="kesimpulan">
-        <h2>Kesimpulan: pilih berdasarkan nilai, bukan harga awal</h2>
+        <h2>Kesimpulan Pilihan Berdasarkan Nilai Bukan Sekadar Harga Awal</h2>
         <p>Harga hampers Lebaran 2027 dipengaruhi oleh isi, kemasan, personalisasi, kuantitas pesanan, proses perakitan, dan distribusi. Paket ekonomis tetap dapat berkesan hangat jika disusun dengan cermat dan rapi, sedangkan paket premium dinilai dari keunggulan mutu material serta kecocokan dengan profil penerima. Untuk keputusan yang tepat, bandingkan spesifikasi secara setara dan hitung total biaya sampai ke tangan penerima.</p>
 
         <div class="hl-cta-box">
@@ -1327,8 +1389,40 @@ Harga Jual ≈ Rp147.979 (Dibulatkan menjadi Rp148.000 atau Rp149.000)</code>
       <p class="hl-small-note">
         Catatan editorial: Rentang anggaran dan kalkulasi HPP dalam panduan ini bersifat ilustrasi edukatif. Konfirmasikan spesifikasi teknis, harga kuotasi resmi, ketersediaan slot produksi, dan ongkos kirim aktual kepada tim penjualan kami sebelum melakukan pemesanan.
       </p>
-    </main>
-  </div>
+      </article>
+
+      <!-- Sidebar Column (Right) -->
+      <aside class="hl-sidebar" aria-label="Daftar isi panduan">
+      <div class="hl-toc-box">
+        <strong>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Daftar Isi Panduan
+        </strong>
+        <nav aria-label="Daftar isi halaman">
+          <a href="#ringkasan">1. Berapa harga hampers 2027?</a>
+          <a href="#sejarah">2. Sejarah parcel dan hampers</a>
+          <a href="#faktor-harga">3. Faktor pembentuk harga</a>
+          <a href="#katalog">4. Katalog berdasarkan budget</a>
+          <a href="#bandingkan">5. Cara membandingkan paket</a>
+          <a href="#simulasi">6. Simulasi HPP dan harga jual</a>
+          <a href="#bisnis">7. Strategi persiapan bisnis</a>
+          <a href="#lokasi">8. Pengiriman dan tujuan kota</a>
+          <a href="#brief-penawaran">9. Informasi brief penawaran</a>
+          <a href="#faq">10. FAQ harga hampers Lebaran</a>
+          <a href="#kesimpulan">11. Kesimpulan &amp; konsultasi</a>
+          <a href="#internal-link">12. Panduan harga lainnya</a>
+        </nav>
+      </div>
+    </aside>
+    </div>
+  </main>
 
   <!-- Footer Resmi Proyek -->
   <footer class="hl-footer" aria-label="Footer situs">
@@ -1416,6 +1510,29 @@ Harga Jual ≈ Rp147.979 (Dibulatkan menjadi Rp148.000 atau Rp149.000)</code>
 
   <!-- JavaScript Scripts -->
   <script src="assets/js/main.min.js" defer></script>
+
+  <!-- Back to Top Button -->
+  <button id="hl-back-to-top" class="hl-back-to-top" aria-label="Kembali ke atas">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+  
+  <script>
+    const bttBtn = document.getElementById('hl-back-to-top');
+    if (bttBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          bttBtn.classList.add('hl-back-to-top--visible');
+        } else {
+          bttBtn.classList.remove('hl-back-to-top--visible');
+        }
+      });
+      bttBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
 </body>
 
 </html>
