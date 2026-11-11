@@ -1,6 +1,6 @@
 # 📊 Laporan Audit Structured Data & JSON-LD
 **Proyek:** Hampers Lebaran (*hamperslebaran.biz.id*)  
-**Tanggal Audit:** 2026-11-11 09:11:41 WIB  
+**Tanggal Audit:** 2026-11-11 09:20:30 WIB  
 **Engine Validasi:** `@adobe/structured-data-validator` v1.7.0, `@marbec/web-auto-extractor` v2.2.1, & Schema.org Specification  
 
 ---
@@ -16,8 +16,8 @@
 
 | Metrik Audit | Nilai | Status |
 | :--- | :---: | :--- |
-| **Total File HTML Di-scan** | **66** | Tercover seluruhnya secara rekursif |
-| **Halaman dengan JSON-LD** | **65** | Halaman utama, produk, blog, & info |
+| **Total File HTML Di-scan** | **69** | Tercover seluruhnya secara rekursif |
+| **Halaman dengan JSON-LD** | **68** | Halaman utama, produk, blog, & info |
 | **Total Error Kritis (Errors)** | **0** | ✅ 0 Error (Sintaks valid & bersih) |
 | **Total Warnings / Saran Optimasi** | **99** | ⚠️ Properti rekomendasi Google & penempatan skema |
 | **Status Kesiapan SERP Lokal** | **Sangat Baik (Siap Optimasi)** | Struktur data valid & siap tahap penyempurnaan |
@@ -30,18 +30,18 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 | Tipe Schema (@type) | Jumlah Halaman Terkait | Peruntukan Halaman |
 | :--- | :---: | :--- |
-| `ListItem` | 65 | Navigasi & Hierarki Breadcrumb |
-| `BreadcrumbList` | 64 | Navigasi & Hierarki Breadcrumb |
-| `WebPage` | 55 | Struktur Halaman Web |
-| `FAQPage` | 52 | Halaman Tanya Jawab Interaktif |
-| `Question` | 52 | Halaman Tanya Jawab Interaktif |
-| `Answer` | 52 | Halaman Tanya Jawab Interaktif |
-| `Organization` | 38 | Identitas Bisnis & Brand |
+| `ListItem` | 68 | Navigasi & Hierarki Breadcrumb |
+| `BreadcrumbList` | 67 | Navigasi & Hierarki Breadcrumb |
+| `WebPage` | 58 | Struktur Halaman Web |
+| `FAQPage` | 55 | Halaman Tanya Jawab Interaktif |
+| `Question` | 55 | Halaman Tanya Jawab Interaktif |
+| `Answer` | 55 | Halaman Tanya Jawab Interaktif |
+| `Organization` | 41 | Identitas Bisnis & Brand |
 | `WebSite` | 32 | Struktur Halaman Web |
-| `ImageObject` | 26 | Entitas Pendukung |
-| `Person` | 24 | Entitas Pendukung |
+| `ImageObject` | 29 | Entitas Pendukung |
+| `Person` | 27 | Entitas Pendukung |
+| `BlogPosting` | 23 | Artikel Blog & Edukasi |
 | `Thing` | 22 | Entitas Pendukung |
-| `BlogPosting` | 20 | Artikel Blog & Edukasi |
 | `Article` | 16 | Artikel Blog & Edukasi |
 | `MerchantReturnPolicy` | 4 | Entitas Pendukung |
 | `OfferShippingDetails` | 4 | Entitas Pendukung |
@@ -166,6 +166,24 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
+### 📄 [blog/isi-hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/isi-hampers-lebaran-sederhana.html)
+
+- **Status**: 🟢 **VALID**
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/isi-hampers-lebaran-sederhana`
+- **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
+- **Jumlah Blok JSON-LD**: 1
+
+---
+
+### 📄 [blog/kemasan-hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/kemasan-hampers-lebaran-sederhana.html)
+
+- **Status**: 🟢 **VALID**
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/kemasan-hampers-lebaran-sederhana`
+- **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
+- **Jumlah Blok JSON-LD**: 1
+
+---
+
 ### 📄 [blog/kue-kering-lebaran-populer.html](file:///C:/hamperslebaran/blog/kue-kering-lebaran-populer.html)
 
 - **Status**: 🟢 **VALID**
@@ -233,6 +251,15 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/tas-hampers-lebaran`
+- **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
+- **Jumlah Blok JSON-LD**: 1
+
+---
+
+### 📄 [blog/tips-memilih-hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/tips-memilih-hampers-lebaran-sederhana.html)
+
+- **Status**: 🟢 **VALID**
+- **Canonical Link**: `https://hamperslebaran.biz.id/blog/tips-memilih-hampers-lebaran-sederhana`
 - **Tipe Schema**: `BlogPosting`, `ImageObject`, `Person`, `Organization`, `WebPage`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
