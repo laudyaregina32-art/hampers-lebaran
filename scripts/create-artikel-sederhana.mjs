@@ -485,3 +485,4 @@ ${navPart}${mainContent}${footerPart}`;
 
 fs.writeFileSync('c:/hamperslebaran/blog/hampers-lebaran-sederhana.html', fullHtml, 'utf8');
 console.log('Successfully created blog/hampers-lebaran-sederhana.html');
+
