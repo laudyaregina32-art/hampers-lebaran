@@ -68,56 +68,57 @@
 
     @media (min-width: 992px) {
       body {
-        padding-top: 80px !important;
+        padding-top: 104px !important;
       }
     }
 
-    /* Back Link & Breadcrumb */
-    .hl-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
-      font-size: 0.88rem;
-      text-decoration: none;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      padding: 0.38rem 0.95rem;
-      border-radius: 999px;
-      box-shadow: 0 1px 4px rgba(40,42,39,0.04);
-      transition: all var(--hl-transition);
-    }
-    .hl-back-link:hover {
-      background: var(--hl-surface-muted);
-      color: var(--hl-text);
-      border-color: var(--hl-accent);
-      transform: translateX(-3px);
+    /* ===== HERO SECTION ===== */
+    .hl-guide-hero {
+      background: linear-gradient(180deg, rgba(219, 228, 218, .5) 0%, rgba(244, 246, 243, .9) 100%);
+      padding: clamp(2.5rem, 5vw, 4.5rem) 0 2.5rem;
+      border-bottom: 1px solid var(--hl-border);
+      position: relative;
     }
 
-    /* Hero Section */
-    .hl-guide-hero {
-      background: linear-gradient(180deg, rgba(219, 228, 218, .6) 0%, rgba(234, 240, 233, 0) 100%);
-      padding: clamp(2rem, 4.5vw, 3.5rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);
-      border-bottom: 1px solid var(--hl-border);
-    }
     .hl-guide-hero__title {
       font-family: var(--hl-font-serif);
-      font-size: clamp(2rem, 4.2vw, 3.15rem);
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.24;
       color: var(--hl-text);
+      line-height: 1.25;
       margin: 0.75rem 0 1.25rem;
-      max-width: 920px;
+      letter-spacing: -0.01em;
     }
+
     .hl-guide-hero__lead {
-      font-size: clamp(1.05rem, 1.8vw, 1.16rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: var(--hl-text-muted);
+      max-width: 860px;
       line-height: 1.75;
-      max-width: 840px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
+
+    .hl-guide-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .hl-guide-chip {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--hl-accent-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.03);
+    }
+
     .hl-guide-hero__ctas {
       display: flex;
       flex-wrap: wrap;
@@ -125,357 +126,490 @@
       align-items: center;
     }
 
-    /* Layout 2-Column with Sidebar */
-    .hl-page-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
-      gap: clamp(2rem, 4vw, 3.25rem);
-      align-items: start;
-      padding: 2.5rem 0 4.5rem;
-    }
-    @media (max-width: 991px) {
-      .hl-page-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 1.75rem 0 3.5rem;
-      }
-    }
-
-    /* Sticky Sidebar TOC */
-    .hl-sidebar {
-      position: sticky;
-      top: 96px;
+    /* ===== TABLE OF CONTENTS (TOC) ===== */
+    .hl-guide-toc {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      padding: 1.5rem;
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
       box-shadow: var(--hl-shadow-card);
+      margin: -1.75rem auto 3rem;
+      position: relative;
+      z-index: 2;
     }
-    @media (max-width: 991px) {
-      .hl-sidebar {
-        position: static;
-        order: -1;
-      }
-    }
-    .hl-sidebar strong {
+
+    .hl-guide-toc__heading {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--hl-text);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.85rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: var(--hl-font-serif);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--hl-accent-dark);
-      padding-bottom: 0.65rem;
-      margin-bottom: 0.85rem;
-      border-bottom: 1px solid var(--hl-border);
-    }
-    .hl-sidebar ol {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      counter-reset: toc-item;
-    }
-    .hl-sidebar li {
-      counter-increment: toc-item;
-      padding: 0.35rem 0;
-      font-size: 0.92rem;
-    }
-    .hl-sidebar a {
-      color: var(--hl-text);
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      transition: color var(--hl-transition), transform var(--hl-transition);
-    }
-    .hl-sidebar a::before {
-      content: counter(toc-item) ".";
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--hl-accent);
-      min-width: 1.25rem;
-    }
-    .hl-sidebar a:hover {
-      color: var(--hl-accent-dark);
-      transform: translateX(3px);
     }
 
-    /* Content Sections */
-    .hl-guide-content section {
-      margin-bottom: 3.5rem;
-      scroll-margin-top: 95px;
+    .hl-guide-toc__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.5rem 1.25rem;
+      margin: 0;
+      padding-left: 1.25rem;
     }
-    .hl-guide-content h2 {
+
+    .hl-guide-toc__list li a {
+      color: var(--hl-accent-dark);
+      font-weight: 500;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: color var(--hl-transition);
+    }
+
+    .hl-guide-toc__list li a:hover {
+      color: var(--hl-text);
+      text-decoration: underline;
+    }
+
+    /* ===== CONTENT SECTIONS & CARDS ===== */
+    .hl-guide-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      border-bottom: 1px solid var(--hl-border);
+      scroll-margin-top: 85px;
+    }
+
+    .hl-guide-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .hl-section-title {
       font-family: var(--hl-font-serif);
-      font-size: clamp(1.6rem, 2.8vw, 2.15rem);
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
       font-weight: 700;
       color: var(--hl-text);
       line-height: 1.3;
-      margin: 0 0 1.15rem;
+      margin-bottom: 0.85rem;
     }
-    .hl-guide-content h3 {
+
+    .hl-guide-section__intro {
+      max-width: 860px;
+      color: var(--hl-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    /* Card styling */
+    .hl-content-card,
+    .hl-tile {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 16px;
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      box-shadow: var(--hl-shadow-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--hl-transition), box-shadow var(--hl-transition);
+    }
+
+    .hl-content-card:hover,
+    .hl-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--hl-shadow-card-hover);
+    }
+
+    .hl-content-card__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--hl-warm);
+      color: var(--hl-accent-dark);
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .hl-content-card__tag,
+    .hl-tile-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #7b4f2c;
+      background: #e3ede1;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 0.85rem;
+      border: 1px solid rgba(184, 151, 61, 0.25);
+      align-self: flex-start;
+    }
+
+    .hl-content-card__price,
+    .hl-tile-price {
       font-family: var(--hl-font-serif);
-      font-size: 1.25rem;
+      font-size: 1.28rem;
       font-weight: 700;
       color: var(--hl-accent-dark);
-      margin: 1.75rem 0 0.85rem;
+      margin-bottom: 0.75rem;
     }
-    .hl-guide-content p {
-      margin-bottom: 1.1rem;
+
+    .hl-content-card__title,
+    .hl-tile h3 {
+      font-family: var(--hl-font-serif);
+      font-size: 1.22rem;
+      font-weight: 700;
       color: var(--hl-text);
-      font-size: 1.02rem;
-      line-height: 1.75;
+      line-height: 1.35;
+      margin: 0 0 0.65rem;
     }
 
-    /* Callout & Answer Boxes */
-    .hl-answer-box {
-      background: var(--hl-surface-muted);
-      border-left: 4px solid var(--hl-accent-dark);
-      border-top: 1px solid var(--hl-border);
-      border-right: 1px solid var(--hl-border);
-      border-bottom: 1px solid var(--hl-border);
-      padding: 1.25rem 1.45rem;
-      border-radius: 0 var(--hl-radius-md) var(--hl-radius-md) 0;
-      margin: 1.25rem 0 1.75rem;
-      box-shadow: 0 2px 8px rgba(33, 60, 53, 0.04);
-      font-size: 1.02rem;
-      line-height: 1.75;
-    }
-    .hl-answer-box strong {
-      color: var(--hl-accent-dark);
-    }
-
-    .hl-note {
-      border-left: 4px solid var(--hl-accent-dark);
-      background: var(--hl-surface);
-      border-top: 1px solid var(--hl-border);
-      border-right: 1px solid var(--hl-border);
-      border-bottom: 1px solid var(--hl-border);
-      border-radius: 0 var(--hl-radius-md) var(--hl-radius-md) 0;
-      padding: 1.2rem 1.4rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 14px rgba(33, 60, 53, 0.04);
+    .hl-content-card p,
+    .hl-tile p {
+      color: var(--hl-text-muted);
       font-size: 0.95rem;
       line-height: 1.65;
+      margin: 0 0 0.85rem;
     }
+
+    .hl-content-card p:last-child,
+    .hl-tile p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hl-tile ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.2rem;
+      color: var(--hl-text-muted);
+      font-size: 0.92rem;
+    }
+
+    .hl-tile ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Grid layout for tiles */
+    .hl-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Callout & Answer Box */
+    .hl-guide-callout,
+    .hl-answer-box,
+    .hl-note {
+      background: rgba(219, 228, 218, .6);
+      border-left: 4px solid var(--hl-accent-dark);
+      border-radius: 0 14px 14px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      color: var(--hl-text);
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .hl-guide-callout strong,
+    .hl-answer-box strong,
     .hl-note strong {
       color: var(--hl-accent-dark);
     }
 
-    /* Grid Tiles */
-    .hl-tile-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.15rem;
-      margin: 1.75rem 0;
-    }
-    @media (max-width: 640px) {
-      .hl-tile-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .hl-tile {
+    /* Step Sequence */
+    .hl-step-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.35rem 1.5rem;
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
-      border-radius: var(--hl-radius-md);
-      padding: 1.35rem 1.45rem;
+      border-radius: 16px;
+      margin-bottom: 1rem;
       box-shadow: var(--hl-shadow-card);
       transition: transform var(--hl-transition);
     }
-    .hl-tile:hover {
+
+    .hl-step-item:hover {
       transform: translateY(-2px);
     }
-    .hl-tile .hl-tile-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--hl-accent-dark);
-      background: var(--hl-warm);
-      border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      margin-bottom: 0.65rem;
-      border: 1px solid rgba(184, 151, 61, 0.25);
-    }
-    .hl-tile h3 {
-      font-family: var(--hl-font-serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      margin: 0 0 0.5rem;
-    }
-    .hl-tile p {
-      font-size: 0.92rem;
-      color: var(--hl-text-muted);
-      margin: 0 0 0.5rem;
-      line-height: 1.6;
-    }
-    .hl-tile ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.25rem;
-      font-size: 0.92rem;
-      color: var(--hl-text-muted);
-    }
-    .hl-tile li {
-      padding: 0.2rem 0;
-    }
 
-    /* Step List */
-    .hl-steps {
-      counter-reset: step-counter;
-      list-style: none;
-      padding: 0;
-      margin: 1.75rem 0;
-    }
-    .hl-steps li {
-      counter-increment: step-counter;
-      position: relative;
-      padding: 0 0 1.75rem 3.5rem;
-    }
-    .hl-steps li::before {
-      content: counter(step-counter);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+    .hl-step-num {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
       background: var(--hl-accent-dark);
       color: #ffffff;
       font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .hl-step-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      color: var(--hl-text);
+    }
+
+    .hl-step-body p {
+      margin: 0;
+      color: var(--hl-text-muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .hl-steps {
+      padding-left: 1.4rem;
+      color: var(--hl-text);
+    }
+
+    .hl-steps li {
+      margin-bottom: 1rem;
+      line-height: 1.65;
+    }
+
+    /* Table Container */
+    .hl-table-container,
+    .hl-table-wrapper {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 16px;
+      overflow-x: auto;
+      box-shadow: var(--hl-shadow-card);
+      margin: 1.5rem 0;
+    }
+
+    .hl-table-container table,
+    .hl-table-wrapper table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    .hl-table-container th,
+    .hl-table-container td,
+    .hl-table-wrapper th,
+    .hl-table-wrapper td {
+      padding: 1.1rem 1.25rem;
+      border-bottom: 1px solid var(--hl-border);
+      vertical-align: top;
       font-size: 0.95rem;
     }
 
-    /* Checklist & Box Panels */
-    .hl-checklist-box {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: var(--hl-radius-md);
-      padding: 1.6rem 1.85rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: 1.75rem 0;
+    .hl-table-container th,
+    .hl-table-wrapper th {
+      background: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
+
+    .hl-table-container tr:last-child td,
+    .hl-table-wrapper tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hl-table-hint {
+      font-size: 0.84rem;
+      color: var(--hl-text-muted);
+      margin-bottom: 0.5rem;
+      text-align: right;
+    }
+
+    /* Checklist */
+    .hl-guide-checklist,
     .hl-checklist-box ul {
       list-style: none;
       padding: 0;
-      margin: 1rem 0 0;
+      margin: 0;
     }
+
+    .hl-checklist-box {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 16px;
+      padding: 1.35rem 1.5rem;
+      box-shadow: var(--hl-shadow-card);
+      margin: 1.5rem 0;
+    }
+
+    .hl-guide-checklist li,
     .hl-checklist-box li {
       padding: 0.55rem 0 0.55rem 1.85rem;
       position: relative;
-      font-size: 0.96rem;
-      color: var(--hl-text);
-      line-height: 1.65;
+      color: var(--hl-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
       border-bottom: 1px dashed var(--hl-border);
     }
+
+    .hl-guide-checklist li:last-child,
     .hl-checklist-box li:last-child {
       border-bottom: none;
     }
+
+    .hl-guide-checklist li::before,
     .hl-checklist-box li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      top: 0.55rem;
+      top: 0.5rem;
       color: var(--hl-accent-dark);
       font-weight: 800;
     }
 
     /* FAQ Details */
+    .hl-guide-faq details,
     .hl-faq-list details {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
       border-radius: 12px;
-      padding: 1.1rem 1.35rem;
+      padding: 1.15rem 1.35rem;
       margin-bottom: 0.85rem;
-      transition: all var(--hl-transition);
+      transition: background var(--hl-transition), border-color var(--hl-transition);
     }
+
+    .hl-guide-faq details[open],
     .hl-faq-list details[open] {
       border-color: var(--hl-accent);
-      box-shadow: 0 4px 14px rgba(33, 60, 53, 0.05);
+      box-shadow: 0 4px 16px rgba(40, 42, 39, 0.04);
     }
+
+    .hl-guide-faq summary,
     .hl-faq-list summary {
       font-family: var(--hl-font-serif);
       font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--hl-text);
+      font-size: 1.08rem;
       cursor: pointer;
+      color: var(--hl-text);
       list-style: none;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
+
+    .hl-guide-faq summary::-webkit-details-marker,
     .hl-faq-list summary::-webkit-details-marker {
       display: none;
     }
+
+    .hl-guide-faq summary::after,
     .hl-faq-list summary::after {
       content: "+";
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-family: Inter, sans-serif;
+      font-size: 1.4rem;
+      font-weight: 400;
       color: var(--hl-accent-dark);
-      transition: transform 0.2s ease;
+      line-height: 1;
     }
+
+    .hl-guide-faq details[open] summary::after,
     .hl-faq-list details[open] summary::after {
       content: "−";
     }
+
+    .hl-guide-faq details p,
     .hl-faq-list details p {
-      margin: 0.85rem 0 0;
+      padding: 0.85rem 0 0;
+      margin: 0;
       color: var(--hl-text-muted);
       font-size: 0.96rem;
       line-height: 1.7;
+      border-top: 1px dashed var(--hl-border);
+      margin-top: 0.75rem;
     }
 
-    /* Related Links */
-    .hl-related-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin: 1.5rem 0;
-    }
-    .hl-related-links a {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      color: var(--hl-text);
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 500;
-      transition: all var(--hl-transition);
-      box-shadow: 0 1px 3px rgba(40,42,39,0.03);
-    }
-    .hl-related-links a:hover {
-      background: var(--hl-surface-muted);
-      color: var(--hl-accent-dark);
-      border-color: var(--hl-accent);
-      transform: translateY(-1px);
-    }
-
-    /* CTA Section Banner */
+    /* CTA Section & Related Pills */
+    .hl-guide-cta-card,
     .hl-cta-card {
-      background: linear-gradient(135deg, var(--hl-accent-dark) 0%, #17322b 100%);
+      background: linear-gradient(135deg, #3d4334 0%, var(--hl-accent-dark) 100%);
       color: #ffffff;
-      border-radius: var(--hl-radius-lg);
-      padding: clamp(2rem, 4vw, 3rem);
-      box-shadow: 0 12px 36px rgba(33, 60, 53, 0.18);
+      border-radius: 20px;
+      padding: clamp(2rem, 4vw, 3.25rem);
       margin: 2.5rem 0 1.5rem;
+      box-shadow: 0 16px 44px rgba(40, 42, 39, 0.12);
     }
+
+    .hl-guide-cta-card h2,
     .hl-cta-card h2 {
       font-family: var(--hl-font-serif);
       color: #ffffff;
-      font-size: clamp(1.6rem, 2.6vw, 2.15rem);
-      margin: 0 0 1rem;
+      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+      font-weight: 700;
+      margin: 0.5rem 0 1rem;
     }
+
+    .hl-guide-cta-card p,
     .hl-cta-card p {
       color: rgba(255, 255, 255, 0.88);
       font-size: 1.05rem;
       line-height: 1.75;
-      max-width: 760px;
-      margin-bottom: 1.75rem;
+      max-width: 780px;
+      margin-bottom: 1.5rem;
     }
+
+    .hl-related-pill-row,
+    .hl-related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .hl-related-pill,
+    .hl-related-links a {
+      display: inline-block;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 999px;
+      padding: 0.45rem 1.05rem;
+      font-size: 0.88rem;
+      color: var(--hl-accent-dark);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--hl-transition);
+      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.04);
+    }
+
+    .hl-related-pill:hover,
+    .hl-related-links a:hover {
+      background: var(--hl-surface-muted);
+      color: var(--hl-accent);
+      border-color: var(--hl-accent);
+      transform: translateY(-1px);
+    }
+
+    .hl-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      color: var(--hl-accent-dark);
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--hl-border);
+      border-radius: 999px;
+      padding: 0.35rem 0.95rem;
+      background: var(--hl-surface);
+      transition: all var(--hl-transition);
+    }
+
+    .hl-back-link:hover {
+      background: var(--hl-surface-muted);
+      border-color: var(--hl-accent);
+      transform: translateY(-1px);
+    }
+
   </style>
 
   <!-- Schema.org JSON-LD Structured Data -->
@@ -683,7 +817,7 @@
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="hl-guide-hero" id="main-content">
+  <section class="hl-guide-hero" aria-labelledby="hero-heading">
     <div class="container">
       <nav aria-label="Breadcrumb" class="mb-3">
         <a href="paket.html" class="hl-back-link">
@@ -692,11 +826,19 @@
         </a>
       </nav>
       <div class="hl-eyebrow">Panduan Keluarga · Lebaran 2027</div>
-      <h1 class="hl-guide-hero__title">Hampers Lebaran untuk Keluarga Inspirasi Isi, Tips Memilih, dan Panduan Lengkap</h1>
+      <h1>Hampers Lebaran untuk Keluarga Inspirasi Isi, Tips Memilih, dan Panduan Lengkap</h1>
       <p class="hl-guide-hero__lead">
         Temukan ide hampers Lebaran untuk keluarga dan orang tua yang lebih personal. Mulai dari kue kering lumer dan kurma pilihan hingga perlengkapan rumah, hadiah pengalaman, serta kemasan yang praktis dan bermakna.
       </p>
-      <div class="hl-guide-hero__ctas">
+      
+        <div class="hl-guide-chip-row">
+          <span class="hl-guide-chip">Inspirasi Isi Bingkisan</span>
+          <span class="hl-guide-chip">Hampers Orang Tua</span>
+          <span class="hl-guide-chip">Kemasan Ramah Lingkungan</span>
+          <span class="hl-guide-chip">Matriks Kategori Produk</span>
+          <span class="hl-guide-chip">Tips Memilih Praktis</span>
+        </div>
+        <div class="hl-guide-hero__ctas">
         <a href="#ide-isi" class="hl-btn-wa">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Eksplorasi Ide Isi
@@ -709,23 +851,57 @@
   </section>
 
   <!-- ===== MAIN CONTENT LAYOUT ===== -->
-  <main class="container">
-    <div class="hl-page-layout">
-      <!-- Article Column -->
-      <article class="hl-guide-content">
+  <main id="main-content">
+
+    <!-- ===== FLOATING TABLE OF CONTENTS ===== -->
+    <div class="container">
+      <nav class="hl-guide-toc" aria-label="Daftar isi panduan">
+        <div class="hl-guide-toc__heading">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Navigasi Cepat Panduan
+        </div>
+        <ol class="hl-guide-toc__list">
+          <li><a href="#pengantar">Pengantar Panduan</a></li>
+          <li><a href="#mengapa">Makna Hampers</a></li>
+          <li><a href="#cara-memilih">Cara Memilih</a></li>
+          <li><a href="#segmentasi">Segmentasi Penerima</a></li>
+          <li><a href="#ide-isi">Ragam Ide Isi</a></li>
+          <li><a href="#matriks">Matriks Kategori</a></li>
+          <li><a href="#orang-tua">Hampers Orang Tua</a></li>
+          <li><a href="#kemasan">Kemasan Ramah Lingkungan</a></li>
+          <li><a href="#bisnis">Strategi Bisnis Pemula</a></li>
+          <li><a href="#persiapan">Checklist Pemesanan</a></li>
+          <li><a href="#faq">FAQ Tanya Jawab</a></li>
+          <li><a href="#rangkuman">Rangkuman</a></li>
+        </ol>
+      </nav>
+    </div>
+
+<!-- Article Column -->
+      
         <!-- 01 Pengantar & Jawaban Singkat -->
-        <section id="pengantar">
-          <p>
+        <section id="pengantar" class="hl-guide-section">
+<div class="container">
+<p>
             Hampers Lebaran untuk keluarga sebaiknya dipilih berdasarkan kebiasaan rumah tangga, kemudahan penggunaan, preferensi penerima, dan anggaran. Bingkisan yang bermakna tidak harus berisi banyak barang atau selalu berupa makanan. Paket sederhana yang relevan, mudah dibuka, dan dilengkapi pesan personal dapat terasa jauh lebih dekat bagi penerimanya.
           </p>
           <div class="hl-answer-box">
             <strong>Jawaban singkat</strong> — Cara memilih hampers Lebaran untuk keluarga adalah mengenali siapa penerimanya, memahami kebiasaan dan preferensinya, memilih isi yang benar-benar mungkin digunakan, lalu memastikan kemasan mudah ditangani. Untuk orang tua, hampers tidak wajib berisi makanan; barang pakai dan perlengkapan ibadah juga dapat menjadi pilihan yang sangat mulia.
           </div>
-        </section>
+</div>
+</section>
 
         <!-- 02 Mengapa Bermakna -->
-        <section id="mengapa">
-          <div class="hl-eyebrow">Nilai Silaturahmi</div>
+        <section id="mengapa" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Nilai Silaturahmi</div>
           <h2>Mengapa hampers Lebaran lebih dari sekadar bingkisan?</h2>
           <p>
             Tradisi berbagi hampers Lebaran telah berkembang dari sekadar mengirim kotak kue kering menjadi salah satu cara menyampaikan perhatian dan menjaga silaturahmi. Isi bingkisan dapat mencerminkan pemahaman pengirim terhadap kebiasaan penerima, sementara kartu ucapan memberi sentuhan personal yang mendalam.
@@ -733,43 +909,47 @@
           <p>
             Karena itu, memilih hampers bukan hanya soal tampilan atau harga. Pertimbangkan apakah isi paket sesuai dengan kebutuhan, dapat dinikmati bersama seluruh anggota keluarga, dan mudah disimpan di rumah penerima.
           </p>
-        </section>
+</div>
+</section>
 
         <!-- 03 Cara Memilih -->
-        <section id="cara-memilih">
-          <div class="hl-eyebrow">Langkah Praktis</div>
+        <section id="cara-memilih" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Langkah Praktis</div>
           <h2>Cara memilih hampers Lebaran untuk keluarga</h2>
           <ol class="hl-steps">
             <li>
-              <strong>Kenali kebiasaan keluarga:</strong><br>
+              <strong>Kenali kebiasaan keluarga</strong><br>
               Apakah mereka gemar menikmati seduhan teh bersama di sore hari, menyajikan kue kering aneka rasa untuk tamu, atau lebih membutuhkan barang pakai fungsional?
             </li>
             <li>
-              <strong>Perhatikan preferensi pangan:</strong><br>
+              <strong>Perhatikan preferensi pangan</strong><br>
               Jika ada pantangan atau pembatasan konsumsi gula dan garam pada anggota keluarga senior, pilihlah varian camilan sehat, madu murni, atau kurma organik.
             </li>
             <li>
-              <strong>Pilih isi yang fungsional:</strong><br>
+              <strong>Pilih isi yang fungsional</strong><br>
               Utamakan barang yang berpeluang besar digunakan berulang kali, bukan sekadar memenuhi volume ruang box kemasan.
             </li>
             <li>
-              <strong>Periksa ukuran dan bobot:</strong><br>
+              <strong>Periksa ukuran dan bobot</strong><br>
               Pastikan kemasan tidak terlalu berat dan mudah diangkat serta disimpan oleh orang tua atau keluarga di rumah.
             </li>
             <li>
-              <strong>Sesuaikan kemasan dengan rute kirim:</strong><br>
+              <strong>Sesuaikan kemasan dengan rute kirim</strong><br>
               Gunakan kardus luar dengan proteksi bubble wrap berlapis, terutama bila paket berisi toples kaca atau peralatan makan keramik.
             </li>
             <li>
-              <strong>Tambahkan kartu ucapan personal:</strong><br>
+              <strong>Tambahkan kartu ucapan personal</strong><br>
               Cantumkan nama penerima atau nama keluarga besar dengan susunan kalimat doa yang tulus dan menghangatkan hati.
             </li>
           </ol>
-        </section>
+</div>
+</section>
 
         <!-- 04 Segmentasi Penerima -->
-        <section id="segmentasi">
-          <div class="hl-eyebrow">Segmentasi Tepat Sasaran</div>
+        <section id="segmentasi" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Segmentasi Tepat Sasaran</div>
           <h2>Segmentasi penerima untuk memilih hampers yang tepat sasaran</h2>
           <p>
             Pendekatan seragam tidak selalu cocok untuk semua kalangan. Sebatang cokelat atau toples nastar mungkin disukai sebagian orang, tetapi belum tentu sesuai dengan kebiasaan penerima lain. Gunakan segmentasi berikut sebagai panduan kurasi Anda:
@@ -818,13 +998,13 @@
                 <li>Makanan olahan siap santap dengan petunjuk penyimpanan jelas.</li>
                 <li>Pesan kartu ucapan yang ditujukan bagi seluruh anggota keluarga besar.</li>
               </ul>
-            </article>
-          </div>
-        </section>
+</div>
+</section>
 
         <!-- 05 Ragam Ide Isi -->
-        <section id="ide-isi">
-          <div class="hl-eyebrow">Kurasi Bingkisan</div>
+        <section id="ide-isi" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Kurasi Bingkisan</div>
           <h2>Ragam ide isi hampers Lebaran dari konsumsi hingga pengalaman</h2>
           <p>
             Isi bingkisan tidak harus terbatas pada makanan saja. Anda dapat memadukan produk konsumsi lezat, barang pakai fungsional, perlengkapan ibadah, hingga voucher hadiah pengalaman:
@@ -859,13 +1039,13 @@
               <span class="hl-tile-tag">Kategori Aset</span>
               <h3>Hadiah bernilai simpan</h3>
               <p>Emas batangan kepingan mini edisi khusus Idulfitri atau kartu voucher belanja serbaguna yang memberi kebebasan memilih.</p>
-            </article>
-          </div>
-        </section>
+</div>
+</section>
 
         <!-- 06 Matriks Kategori -->
-        <section id="matriks">
-          <div class="hl-eyebrow">Perbandingan Matriks</div>
+        <section id="matriks" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Perbandingan Matriks</div>
           <h2>Matriks memilih kategori isi hampers</h2>
           <p>
             Gunakan tabel komparasi berikut untuk menimbang daya tahan barang, fungsi pemakaian, dan estimasi anggaran yang dibutuhkan:
@@ -930,11 +1110,13 @@
               </tbody>
             </table>
           </div>
-        </section>
+</div>
+</section>
 
         <!-- 07 Khusus Orang Tua -->
-        <section id="orang-tua">
-          <div class="hl-eyebrow">Bakti &amp; Perhatian</div>
+        <section id="orang-tua" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Bakti &amp; Perhatian</div>
           <h2>Inspirasi hampers Lebaran untuk orang tua dan mertua</h2>
           <p>
             Memberikan bingkisan kepada orang tua bukan sekadar tradisi seremonial, melainkan wujud bakti dan ungkapan rasa syukur yang mendalam. Paket bingkisan tidak harus selalu berisi makanan manis:
@@ -955,21 +1137,22 @@
             <article class="hl-tile">
               <h3>4. Bingkisan Personal Sederhana</h3>
               <p>Kombinasi satu atau dua barang favorit yang benar-benar disukai beliau, dilengkapi surat ucapan bertuliskan tangan penuh doa kebaikan.</p>
-            </article>
-          </div>
+            
           <div class="hl-checklist-box">
-            <p class="mb-2"><strong>Tiga hal yang wajib diperiksa sebelum mengirim hampers kepada orang tua:</strong></p>
+            <p class="mb-2"><strong>Tiga hal yang wajib diperiksa sebelum mengirim hampers kepada orang tua</strong></p>
             <ul>
               <li>Kondisi kesehatan dan riwayat pembatasan konsumsi gula/lemak telah dipertimbangkan secara matang.</li>
               <li>Tutup toples, kancing box, dan segel kemasan didesain ergonomis serta mudah dibuka tanpa pisau rumit.</li>
               <li>Kartu ucapan ditulis dengan font berukuran cukup besar dan mudah dibaca oleh mata orang tua.</li>
             </ul>
           </div>
-        </section>
+</div>
+</section>
 
         <!-- 08 Kemasan Estetis & Eco-Friendly -->
-        <section id="kemasan">
-          <div class="hl-eyebrow">Kemasan Ramah Lingkungan</div>
+        <section id="kemasan" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Kemasan Ramah Lingkungan</div>
           <h2>Seni kemasan estetis dan ramah lingkungan</h2>
           <p>
             Kemasan membentuk impresi visual pertama yang memesona sekaligus melindungi isi produk selama di perjalanan ekspedisi:
@@ -982,8 +1165,7 @@
             <article class="hl-tile">
               <h3>Rigid Hardbox Eksklusif</h3>
               <p>Karton tebal berlapis kertas linen bertekstur mewah dengan kuncian magnetik. Memberikan perlindungan kokoh bagi toples kaca dan memberi kesan resmi.</p>
-            </article>
-          </div>
+            
           <h3>Urutan penataan isi hampers agar tampak rapi</h3>
           <ol class="hl-steps">
             <li>Pilihlah dimensi wadah yang pas, tidak terlalu sempit dan tidak meninggalkan ruang kosong berlebih.</li>
@@ -992,11 +1174,13 @@
             <li>Pastikan antar-toples tidak saling membentur dengan menyelipkan sekat pembatas karton.</li>
             <li>Ikat pita satin dengan simpul rapi dan selipkan kartu ucapan di sisi luar yang mudah dijangkau.</li>
           </ol>
-        </section>
+</div>
+</section>
 
         <!-- 09 Strategi Bisnis -->
-        <section id="bisnis">
-          <div class="hl-eyebrow">Peluang Usaha</div>
+        <section id="bisnis" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Peluang Usaha</div>
           <h2>Strategi memulai bisnis hampers Lebaran bagi pemula</h2>
           <p>
             Bagi Anda yang ingin menangkap momentum bisnis musiman, mulailah dengan langkah operasional yang terukur untuk menjaga kesehatan kas modal:
@@ -1021,8 +1205,7 @@
               <span class="hl-tile-tag">Langkah 04</span>
               <h3>Terapkan Sistem Pre-Order (PO)</h3>
               <p>Sistem PO dengan uang muka (DP) 50% menjaga arus kas modal Anda dan menghindarkan risiko penumpukan stok barang tak terjual pasca-Lebaran.</p>
-            </article>
-          </div>
+            
 
           <h3>Komponen perhitungan harga pokok penjualan (HPP)</h3>
           <div class="hl-table-hint">
@@ -1063,11 +1246,13 @@
           <p class="hl-note">
             <strong>Rumus dasar</strong> — HPP per paket = Total seluruh biaya pengadaan dan produksi ÷ Jumlah paket yang dihasilkan. Tetapkan harga jual akhir dengan margin keuntungan realistis antara 25%–40%.
           </p>
-        </section>
+</div>
+</section>
 
         <!-- 10 Checklist Pemesanan -->
-        <section id="persiapan">
-          <div class="hl-eyebrow">Daftar Verifikasi</div>
+        <section id="persiapan" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Daftar Verifikasi</div>
           <h2>Checklist sebelum memesan hampers Lebaran</h2>
           <div class="hl-checklist-box">
             <ul>
@@ -1080,11 +1265,13 @@
               <li>Konfirmasikan tanggal pengiriman agar paket tiba sebelum keluarga berangkat mudik.</li>
             </ul>
           </div>
-        </section>
+</div>
+</section>
 
         <!-- 11 FAQ -->
-        <section id="faq">
-          <div class="hl-eyebrow">Tanya Jawab Populer</div>
+        <section id="faq" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Tanya Jawab Populer</div>
           <h2>FAQ Seputar Hampers Lebaran untuk Keluarga</h2>
           <div class="hl-faq-list">
             <details open>
@@ -1112,11 +1299,13 @@
               <p>Waktu paling ideal adalah 3–4 minggu sebelum Idulfitri. Hal ini memberi Anda keleluasaan memilih varian favorit, menghindari kehabisan stok bahan, serta mengantisipasi keterlambatan kurir pada masa puncak mudik.</p>
             </details>
           </div>
-        </section>
+</div>
+</section>
 
         <!-- 12 Rangkuman & Navigasi -->
-        <section id="rangkuman">
-          <div class="hl-eyebrow">Kesimpulan Panduan</div>
+        <section id="rangkuman" class="hl-guide-section">
+<div class="container">
+<div class="hl-eyebrow">Kesimpulan Panduan</div>
           <h2>Rangkuman hampers yang tepat dimulai dari penerima</h2>
           <p>
             Hampers Lebaran yang berkesan tidak ditentukan oleh seberapa mewahnya kotak atau banyaknya item di dalamnya. Kesesuaian isi dengan kebiasaan hidup keluarga, kemudahan membuka toples, kualitas rasa kue, serta ketulusan pesan doa di kartu ucapan adalah kunci utama hadiah yang menghangatkan jiwa.
@@ -1158,32 +1347,14 @@
               </a>
             </div>
           </div>
-        </section>
+</div>
+</section>
       </article>
 
       <!-- Sticky Table of Contents Sidebar -->
-      <aside class="hl-sidebar" aria-label="Daftar isi panduan">
-        <strong>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-          Navigasi Panduan
-        </strong>
-        <ol>
-          <li><a href="#pengantar">Pengantar Panduan</a></li>
-          <li><a href="#mengapa">Makna Hampers</a></li>
-          <li><a href="#cara-memilih">Cara Memilih</a></li>
-          <li><a href="#segmentasi">Segmentasi Penerima</a></li>
-          <li><a href="#ide-isi">Ragam Ide Isi</a></li>
-          <li><a href="#matriks">Matriks Kategori</a></li>
-          <li><a href="#orang-tua">Hampers Orang Tua</a></li>
-          <li><a href="#kemasan">Kemasan Ramah Lingkungan</a></li>
-          <li><a href="#bisnis">Strategi Bisnis Pemula</a></li>
-          <li><a href="#persiapan">Checklist Pemesanan</a></li>
-          <li><a href="#faq">FAQ Tanya Jawab</a></li>
-          <li><a href="#rangkuman">Rangkuman</a></li>
-        </ol>
-      </aside>
+      
     </div>
-  </main>
+</main>
 
   <!-- ===== FOOTER STANDAR HARAYA ===== -->
   <footer class="hl-footer" aria-label="Footer situs">
