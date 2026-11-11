@@ -476,6 +476,59 @@
       max-width: 760px;
       margin-bottom: 1.75rem;
     }
+  
+    /* Custom Responsive Table Wrapper */
+    .hl-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      background: var(--hl-surface);
+      box-shadow: 0 1px 4px rgba(40,42,39,0.03);
+    }
+    .hl-table-hint {
+      font-size: 0.82rem;
+      color: var(--hl-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .hl-custom-table,
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 600px;
+    }
+    .hl-custom-table th,
+    table th {
+      background-color: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      font-family: var(--hl-font-serif);
+      font-weight: 700;
+      padding: 0.95rem 1.15rem;
+      border-bottom: 2px solid var(--hl-border);
+      text-align: left;
+    }
+    .hl-custom-table td,
+    table td {
+      padding: 0.9rem 1.15rem;
+      border-bottom: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .hl-custom-table tr:last-child td,
+    table tr:last-child td {
+      border-bottom: none;
+    }
+    .hl-custom-table tr:hover td,
+    table tr:hover td {
+      background-color: rgba(234, 240, 233, 0.4);
+    }
+
   </style>
 
   <!-- Schema.org JSON-LD Structured Data -->
@@ -820,7 +873,50 @@
               </ul>
             </article>
           </div>
-        </section>
+
+          <div class="hl-table-hint">
+            <span>↔ Geser tabel ke samping untuk melihat panduan segmentasi</span>
+          </div>
+          <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel segmentasi penerima hampers keluarga">
+            <table class="hl-custom-table">
+              <thead>
+                <tr>
+                  <th style="min-width:160px;">Segmen Penerima</th>
+                  <th style="min-width:180px;">Karakter Kebutuhan</th>
+                  <th style="min-width:240px;">Rekomendasi Produk Isi</th>
+                  <th style="min-width:200px;">Prioritas Kemasan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Keluarga Muda &amp; Balita</strong></td>
+                  <td>Aktivitas anak, higienitas, dan keceriaan rumah tangga</td>
+                  <td>Perawatan mandi anak lembut, puzzle edukatif islami, sajadah anak karakter, pouch botol minum.</td>
+                  <td>Wadah serbaguna yang aman dan tidak mudah pecah.</td>
+                </tr>
+                <tr>
+                  <td><strong>Orang Tua &amp; Mertua</strong></td>
+                  <td>Kenyamanan, gizi sehat, dan kemudahan penggunaan</td>
+                  <td>Beras organik, madu hutan murni, kurma Sukari lembut, sajadah busa empuk, mukena katun jepang adem.</td>
+                  <td>Tutup toples ergonomis, mudah dibuka tanpa tenaga ekstra.</td>
+                </tr>
+                <tr>
+                  <td><strong>Klien &amp; Rekanan Korporat</strong></td>
+                  <td>Prestise profesional, formalitas, dan kemitraan resmi</td>
+                  <td>Kue kering wisman premium, artisan coffee single-origin, tumbler termos eksklusif, jurnal kulit.</td>
+                  <td>Rigid hardbox magnetik kokoh dengan hotprint foil emas.</td>
+                </tr>
+                <tr>
+                  <td><strong>Keluarga Besar (Jamuan)</strong></td>
+                  <td>Porsi bersama saat kumpul hari raya Idulfitri</td>
+                  <td>Kombinasi komplit nastar, kastengel keju, toples kurma medjool, dan sirup buah segar.</td>
+                  <td>Toples kaca estetik yang siap dihidangkan langsung di meja tamu.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+</section>
 
         <!-- 05 Ragam Ide Isi -->
         <section id="ide-isi">
@@ -874,7 +970,7 @@
             <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
           </div>
           <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel matriks kategori isi hampers">
-            <table>
+            <table class="hl-custom-table">
               <thead>
                 <tr>
                   <th>Kategori Isi</th>
@@ -1029,7 +1125,7 @@
             <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
           </div>
           <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel komponen perhitungan HPP hampers">
-            <table>
+            <table class="hl-custom-table">
               <thead>
                 <tr>
                   <th>Pos Komponen Biaya</th>

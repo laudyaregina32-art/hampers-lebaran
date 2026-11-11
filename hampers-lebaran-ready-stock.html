@@ -444,6 +444,59 @@
       max-width: 760px;
       margin-bottom: 1.75rem;
     }
+  
+    /* Custom Responsive Table Wrapper */
+    .hl-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      background: var(--hl-surface);
+      box-shadow: 0 1px 4px rgba(40,42,39,0.03);
+    }
+    .hl-table-hint {
+      font-size: 0.82rem;
+      color: var(--hl-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .hl-custom-table,
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 600px;
+    }
+    .hl-custom-table th,
+    table th {
+      background-color: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      font-family: var(--hl-font-serif);
+      font-weight: 700;
+      padding: 0.95rem 1.15rem;
+      border-bottom: 2px solid var(--hl-border);
+      text-align: left;
+    }
+    .hl-custom-table td,
+    table td {
+      padding: 0.9rem 1.15rem;
+      border-bottom: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .hl-custom-table tr:last-child td,
+    table tr:last-child td {
+      border-bottom: none;
+    }
+    .hl-custom-table tr:hover td,
+    table tr:hover td {
+      background-color: rgba(234, 240, 233, 0.4);
+    }
+
   </style>
 
   <!-- Schema.org JSON-LD Structured Data -->
@@ -742,7 +795,7 @@
             <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
           </div>
           <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel perbandingan hampers ready stock dan custom">
-            <table>
+            <table class="hl-custom-table">
               <thead>
                 <tr>
                   <th>Faktor Pertimbangan</th>
@@ -991,6 +1044,48 @@
                 Lihat Semua Paket
               </a>
             </div>
+          </div>
+
+          <div class="hl-table-hint">
+            <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
+          </div>
+          <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel pemetaan anggaran hampers Lebaran">
+            <table class="hl-custom-table">
+              <thead>
+                <tr>
+                  <th style="min-width:140px;">Kategori Anggaran</th>
+                  <th style="min-width:160px;">Estimasi Rentang Harga</th>
+                  <th style="min-width:220px;">Target Profil Penerima</th>
+                  <th style="min-width:240px;">Karakter Kemasan &amp; Komposisi Isi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ekonomis Massal</strong></td>
+                  <td>Rp79.000 – Rp250.000</td>
+                  <td>Karyawan staf lapangan, komunitas, tetangga, mitra logistik</td>
+                  <td>Kue kering klasik mini, toples kurma, atau sembako kemasan besek bambu rapi.</td>
+                </tr>
+                <tr>
+                  <td><strong>Menengah Favorit</strong></td>
+                  <td>Rp250.000 – Rp500.000</td>
+                  <td>Rekan kerja profesional, keluarga dekat, sahabat relasi</td>
+                  <td>3–4 toples kue wisman premium, teh artisan, sajadah travel, atau cangkir keramik.</td>
+                </tr>
+                <tr>
+                  <td><strong>Premium VIP</strong></td>
+                  <td>Rp500.000 – Rp1.000.000+</td>
+                  <td>Jajaran direksi, mitra bisnis strategis, tokoh senior</td>
+                  <td>Rigid hardbox magnetik foil emas, lapis legit, madu murni, mukena sutra, atau porselen mewah.</td>
+                </tr>
+                <tr>
+                  <td><strong>All-In Landed Cost</strong></td>
+                  <td>Total kalkulasi menyeluruh</td>
+                  <td>Tim HR / GA, Procurement, Panitia Pengadaan</td>
+                  <td>Produk isi, kemasan box luar, bubble wrap, kartu ucapan, perakitan, dan ongkir kurir.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
       </article>

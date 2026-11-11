@@ -467,6 +467,59 @@
       max-width: 760px;
       margin-bottom: 1.75rem;
     }
+  
+    /* Custom Responsive Table Wrapper */
+    .hl-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      background: var(--hl-surface);
+      box-shadow: 0 1px 4px rgba(40,42,39,0.03);
+    }
+    .hl-table-hint {
+      font-size: 0.82rem;
+      color: var(--hl-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .hl-custom-table,
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 600px;
+    }
+    .hl-custom-table th,
+    table th {
+      background-color: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      font-family: var(--hl-font-serif);
+      font-weight: 700;
+      padding: 0.95rem 1.15rem;
+      border-bottom: 2px solid var(--hl-border);
+      text-align: left;
+    }
+    .hl-custom-table td,
+    table td {
+      padding: 0.9rem 1.15rem;
+      border-bottom: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .hl-custom-table tr:last-child td,
+    table tr:last-child td {
+      border-bottom: none;
+    }
+    .hl-custom-table tr:hover td,
+    table tr:hover td {
+      background-color: rgba(234, 240, 233, 0.4);
+    }
+
   </style>
 
   <!-- Schema.org JSON-LD Structured Data -->
@@ -712,7 +765,7 @@
             Langkah pertama yang paling krusial adalah menentukan kapan hampers harus sudah berada di tangan penerima. Tanggal tersebut bisa berbeda-beda: paket untuk keluarga mungkin perlu tiba sebelum perjalanan mudik dimulai, sedangkan bingkisan untuk klien atau rekan kerja kantor dapat mengikuti jadwal cuti bersama instansi.
           </p>
           <div class="hl-answer-box">
-            <strong>Jawaban singkat:</strong>
+            <strong>Jawaban singkat</strong>
             Tidak ada satu tanggal pemesanan baku yang aman untuk semua vendor. Tentukan tanggal penerimaan yang diharapkan, minta estimasi durasi setiap tahap dari vendor, lalu hitung mundur dengan menyediakan cadangan waktu (buffer) untuk revisi dan kendala logistik.
           </div>
           <p>
@@ -729,23 +782,23 @@
           </p>
           <ol class="hl-steps">
             <li>
-              <strong>Tentukan tanggal penerimaan (T):</strong><br>
+              <strong>Tentukan tanggal penerimaan (T)</strong><br>
               Catat tanggal dan jam paket harus sudah tiba di lokasi penerima atau di meja resepsionis kantor tujuan.
             </li>
             <li>
-              <strong>Kurangi waktu transit pengiriman:</strong><br>
+              <strong>Kurangi waktu transit pengiriman</strong><br>
               Gunakan estimasi rute dan layanan ekspedisi resmi yang dikonfirmasi. Tambahkan cadangan 2–3 hari ekstra untuk mengantisipasi potensi keterlambatan kurir di musim puncak mudik.
             </li>
             <li>
-              <strong>Tetapkan batas pemeriksaan dan pengemasan:</strong><br>
+              <strong>Tetapkan batas pemeriksaan dan pengemasan</strong><br>
               Pastikan jumlah fisik, kondisi kue, kartu ucapan berpenamaan, alamat pengiriman, dan label fragile telah diperiksa tuntas sebelum paket diserahkan ke kurir logistik.
             </li>
             <li>
-              <strong>Hitung mundur waktu produksi dan pengadaan:</strong><br>
+              <strong>Hitung mundur waktu produksi dan pengadaan</strong><br>
               Masukkan waktu pengerjaan box kemasan, proses cetak hotprint logo, pengadaan bahan makanan segar, serta proses perakitan bingkisan.
             </li>
             <li>
-              <strong>Tentukan batas akhir persetujuan (approval):</strong><br>
+              <strong>Tentukan batas akhir persetujuan (approval)</strong><br>
               Desain visual box, logo perusahaan, daftar database penerima, teks kartu ucapan, dan rincian biaya harus disepakati sebelum pengerjaan pabrikasi dimulai.
             </li>
           </ol>
@@ -755,7 +808,7 @@
             <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
           </div>
           <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel kerangka jadwal pemesanan hampers">
-            <table>
+            <table class="hl-custom-table">
               <thead>
                 <tr>
                   <th>Tahap Pengerjaan</th>
@@ -820,7 +873,7 @@
             </article>
           </div>
           <div class="hl-note">
-            <strong>Kecepatan Persetujuan PIC:</strong> Keterlambatan sering kali terjadi karena lamanya proses persetujuan internal (approval) di pihak pemesan. Tunjuk satu PIC yang memiliki otoritas penuh untuk menyetujui desain dan biaya secara cepat.
+            <strong>Kecepatan Persetujuan PIC</strong> Keterlambatan sering kali terjadi karena lamanya proses persetujuan internal (approval) di pihak pemesan. Tunjuk satu PIC yang memiliki otoritas penuh untuk menyetujui desain dan biaya secara cepat.
           </div>
         </section>
 
@@ -835,7 +888,7 @@
             <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
           </div>
           <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel alokasi anggaran THR">
-            <table>
+            <table class="hl-custom-table">
               <thead>
                 <tr>
                   <th>Pos Alokasi Dana</th>
@@ -869,10 +922,10 @@
           </div>
           <h3>Langkah praktis menetapkan budget hampers</h3>
           <ol>
-            <li><strong>Filter dan segmentasi daftar penerima:</strong> Kelompokkan menjadi keluarga inti, sahabat dekat, rekan kerja, dan mitra bisnis penting.</li>
-            <li><strong>Tetapkan batas harga per paket:</strong> Sesuaikan dengan tingkat kedekatan hubungan tanpa memaksakan kapasitas finansial.</li>
-            <li><strong>Hitung landed cost total:</strong> Masukkan biaya kue, kemasan hardbox, kartu ucapan, bubble wrap pelindung, serta ongkos kirim.</li>
-            <li><strong>Sediakan cadangan biaya (buffer 10%–15%):</strong> Mengantisipasi fluktuasi harga bahan musiman atau kenaikan tarif kurir kilat.</li>
+            <li><strong>Filter dan segmentasi daftar penerima</strong> Kelompokkan menjadi keluarga inti, sahabat dekat, rekan kerja, dan mitra bisnis penting.</li>
+            <li><strong>Tetapkan batas harga per paket</strong> Sesuaikan dengan tingkat kedekatan hubungan tanpa memaksakan kapasitas finansial.</li>
+            <li><strong>Hitung landed cost total</strong> Masukkan biaya kue, kemasan hardbox, kartu ucapan, bubble wrap pelindung, serta ongkos kirim.</li>
+            <li><strong>Sediakan cadangan biaya (buffer 10%–15%)</strong> Mengantisipasi fluktuasi harga bahan musiman atau kenaikan tarif kurir kilat.</li>
           </ol>
         </section>
 
@@ -921,7 +974,7 @@
             <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
           </div>
           <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel perbandingan material kemasan hampers">
-            <table>
+            <table class="hl-custom-table">
               <thead>
                 <tr>
                   <th>Material Kemasan</th>
@@ -1001,19 +1054,19 @@
           <h2>Checklist sebelum memesan hampers Lebaran</h2>
           <div class="hl-checklist-box">
             <ul>
-              <li><strong>Target Tanggal Tiba (T):</strong> Tanggal dan jam paket harus sampai di tangan penerima telah dipastikan.</li>
-              <li><strong>Data Penerima Lengkap:</strong> Jumlah paket, nama penerima, alamat detail RT/RW, dan nomor telepon aktif telah tervalidasi.</li>
-              <li><strong>Plafon Anggaran Total:</strong> Anggaran per unit telah mencakup harga box, produk, kartu ucapan, dan biaya logistik kurir.</li>
-              <li><strong>Spesifikasi Produk Terinci:</strong> Komposisi isi, ukuran gramasi, varian rasa, dan masa kedaluwarsa telah dicatat tertulis.</li>
-              <li><strong>Material &amp; Finishing Box:</strong> Jenis wadah, dimensi sekat, warna pita, dan hotprint logo telah disepakati.</li>
-              <li><strong>Approval Desain Kartu:</strong> Ejaan teks ucapan dan desain visual telah bebas dari kesalahan ketik.</li>
-              <li><strong>Penetapan PIC Berwenang:</strong> Satu penanggung jawab telah ditunjuk untuk mempermudah koordinasi persetujuan.</li>
-              <li><strong>Konfirmasi Durasi Pengerjaan:</strong> Estimasi waktu pengadaan, produksi box, perakitan, dan pengiriman telah dikonfirmasi vendor.</li>
-              <li><strong>SOP Mitigasi Ekspedisi:</strong> Prosedur pengamanan paket fragile dan garansi penggantian barang rusak telah disepakati tertulis.</li>
+              <li><strong>Target Tanggal Tiba (T)</strong> Tanggal dan jam paket harus sampai di tangan penerima telah dipastikan.</li>
+              <li><strong>Data Penerima Lengkap</strong> Jumlah paket, nama penerima, alamat detail RT/RW, dan nomor telepon aktif telah tervalidasi.</li>
+              <li><strong>Plafon Anggaran Total</strong> Anggaran per unit telah mencakup harga box, produk, kartu ucapan, dan biaya logistik kurir.</li>
+              <li><strong>Spesifikasi Produk Terinci</strong> Komposisi isi, ukuran gramasi, varian rasa, dan masa kedaluwarsa telah dicatat tertulis.</li>
+              <li><strong>Material &amp; Finishing Box</strong> Jenis wadah, dimensi sekat, warna pita, dan hotprint logo telah disepakati.</li>
+              <li><strong>Approval Desain Kartu</strong> Ejaan teks ucapan dan desain visual telah bebas dari kesalahan ketik.</li>
+              <li><strong>Penetapan PIC Berwenang</strong> Satu penanggung jawab telah ditunjuk untuk mempermudah koordinasi persetujuan.</li>
+              <li><strong>Konfirmasi Durasi Pengerjaan</strong> Estimasi waktu pengadaan, produksi box, perakitan, dan pengiriman telah dikonfirmasi vendor.</li>
+              <li><strong>SOP Mitigasi Ekspedisi</strong> Prosedur pengamanan paket fragile dan garansi penggantian barang rusak telah disepakati tertulis.</li>
             </ul>
           </div>
           <div class="hl-note">
-            <strong>Tiga data minimum yang pantang terlewat:</strong>
+            <strong>Tiga data minimum yang pantang terlewat</strong>
             1. Tanggal paket harus diterima &bull; 2. Durasi tiap tahap pengerjaan yang terkonfirmasi vendor &bull; 3. Batas akhir persetujuan (approval) desain.
           </div>
         </section>
@@ -1100,11 +1153,11 @@
           </p>
           <div class="hl-checklist-box">
             <ul>
-              <li><strong>Atur Jadwal Mundur:</strong> Tanggal diterima menjadi garis akhir, setiap tahapan memiliki durasi dan penanggung jawab yang terukur.</li>
-              <li><strong>Kelola Anggaran Finansial:</strong> Terapkan alokasi THR secara bijak dan perhitungkan seluruh landed cost paket.</li>
-              <li><strong>Sesuaikan Karakter Produk:</strong> Pastikan jenis kemasan box dan proteksi isi telah disesuaikan dengan jarak pengantaran.</li>
-              <li><strong>Personalisasi Kartu Ucapan:</strong> Sertakan pesan doa yang hangat, ringkas, dan bebas dari kesalahan ketik nama penerima.</li>
-              <li><strong>Konfirmasi Tertulis:</strong> Pastikan seluruh spesifikasi barang, biaya penawaran, dan jaminan penanganan kendala terdokumentasi rapi.</li>
+              <li><strong>Atur Jadwal Mundur</strong> Tanggal diterima menjadi garis akhir, setiap tahapan memiliki durasi dan penanggung jawab yang terukur.</li>
+              <li><strong>Kelola Anggaran Finansial</strong> Terapkan alokasi THR secara bijak dan perhitungkan seluruh landed cost paket.</li>
+              <li><strong>Sesuaikan Karakter Produk</strong> Pastikan jenis kemasan box dan proteksi isi telah disesuaikan dengan jarak pengantaran.</li>
+              <li><strong>Personalisasi Kartu Ucapan</strong> Sertakan pesan doa yang hangat, ringkas, dan bebas dari kesalahan ketik nama penerima.</li>
+              <li><strong>Konfirmasi Tertulis</strong> Pastikan seluruh spesifikasi barang, biaya penawaran, dan jaminan penanganan kendala terdokumentasi rapi.</li>
             </ul>
           </div>
         </section>
