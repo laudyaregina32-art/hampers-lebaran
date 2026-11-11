@@ -225,3 +225,4 @@ ${navPart}${mainHtml}${footerPart}`;
 }
 
 export { buildArticleHtml };
+

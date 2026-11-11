@@ -642,3 +642,4 @@ for (const art of articles) {
   fs.writeFileSync(`c:/hamperslebaran/blog/${art.slug}.html`, html, 'utf8');
   console.log(`Generated: blog/${art.slug}.html`);
 }
+
