@@ -68,57 +68,56 @@
 
     @media (min-width: 992px) {
       body {
-        padding-top: 104px !important;
+        padding-top: 80px !important;
       }
     }
 
-    /* ===== HERO SECTION ===== */
-    .hl-guide-hero {
-      background: linear-gradient(180deg, rgba(219, 228, 218, .5) 0%, rgba(244, 246, 243, .9) 100%);
-      padding: clamp(2.5rem, 5vw, 4.5rem) 0 2.5rem;
-      border-bottom: 1px solid var(--hl-border);
-      position: relative;
-    }
-
-    .hl-guide-hero__title {
-      font-family: var(--hl-font-serif);
-      font-size: clamp(2rem, 4.5vw, 3.1rem);
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.25;
-      margin: 0.75rem 0 1.25rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hl-guide-hero__lead {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-      color: var(--hl-text-muted);
-      max-width: 860px;
-      line-height: 1.75;
-      margin-bottom: 1.75rem;
-    }
-
-    .hl-guide-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-
-    .hl-guide-chip {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--hl-accent-dark);
+    /* Back Link & Breadcrumb */
+    .hl-back-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.03);
+      gap: 0.5rem;
+      color: var(--hl-accent-dark);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      padding: 0.38rem 0.95rem;
+      border-radius: 999px;
+      box-shadow: 0 1px 4px rgba(40,42,39,0.04);
+      transition: all var(--hl-transition);
+    }
+    .hl-back-link:hover {
+      background: var(--hl-surface-muted);
+      color: var(--hl-text);
+      border-color: var(--hl-accent);
+      transform: translateX(-3px);
     }
 
+    /* Hero Section */
+    .hl-guide-hero {
+      background: linear-gradient(180deg, rgba(219, 228, 218, .6) 0%, rgba(234, 240, 233, 0) 100%);
+      padding: clamp(2rem, 4.5vw, 3.5rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);
+      border-bottom: 1px solid var(--hl-border);
+    }
+    .hl-guide-hero__title {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(2rem, 4.2vw, 3.15rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.24;
+      color: var(--hl-text);
+      margin: 0.75rem 0 1.25rem;
+      max-width: 920px;
+    }
+    .hl-guide-hero__lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.16rem);
+      color: var(--hl-text-muted);
+      line-height: 1.75;
+      max-width: 840px;
+      margin-bottom: 1.5rem;
+    }
     .hl-guide-hero__ctas {
       display: flex;
       flex-wrap: wrap;
@@ -126,490 +125,375 @@
       align-items: center;
     }
 
-    /* ===== TABLE OF CONTENTS (TOC) ===== */
-    .hl-guide-toc {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 18px;
-      padding: 1.5rem 1.75rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: -1.75rem auto 3rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hl-guide-toc__heading {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hl-guide-toc__list {
+    /* Layout 2-Column with Sidebar */
+    .hl-page-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.5rem 1.25rem;
-      margin: 0;
-      padding-left: 1.25rem;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: clamp(2rem, 4vw, 3.25rem);
+      align-items: start;
+      padding: 2.5rem 0 4.5rem;
+    }
+    @media (max-width: 991px) {
+      .hl-page-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.75rem 0 3.5rem;
+      }
     }
 
-    .hl-guide-toc__list li a {
-      color: var(--hl-accent-dark);
-      font-weight: 500;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: color var(--hl-transition);
-    }
-
-    .hl-guide-toc__list li a:hover {
-      color: var(--hl-text);
-      text-decoration: underline;
-    }
-
-    /* ===== CONTENT SECTIONS & CARDS ===== */
-    .hl-guide-section {
-      padding: clamp(2.5rem, 5vw, 4rem) 0;
-      border-bottom: 1px solid var(--hl-border);
-      scroll-margin-top: 85px;
-    }
-
-    .hl-guide-section:last-of-type {
-      border-bottom: none;
-    }
-
-    .hl-section-title {
-      font-family: var(--hl-font-serif);
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.3;
-      margin-bottom: 0.85rem;
-    }
-
-    .hl-guide-section__intro {
-      max-width: 860px;
-      color: var(--hl-text-muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-
-    /* Card styling */
-    .hl-content-card,
-    .hl-tile {
+    /* Sticky Sidebar TOC */
+    .hl-sidebar {
+      position: sticky;
+      top: 96px;
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
       border-radius: 16px;
-      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      padding: 1.5rem;
       box-shadow: var(--hl-shadow-card);
-      height: 100%;
+    }
+    @media (max-width: 991px) {
+      .hl-sidebar {
+        position: static;
+        order: -1;
+      }
+    }
+    .hl-sidebar strong {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--hl-font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 1px solid var(--hl-border);
+    }
+    .hl-sidebar ol {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      counter-reset: toc-item;
+    }
+    .hl-sidebar li {
+      counter-increment: toc-item;
+      padding: 0.35rem 0;
+      font-size: 0.92rem;
+    }
+    .hl-sidebar a {
+      color: var(--hl-text);
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      transition: color var(--hl-transition), transform var(--hl-transition);
+    }
+    .hl-sidebar a::before {
+      content: counter(toc-item) ".";
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--hl-accent);
+      min-width: 1.25rem;
+    }
+    .hl-sidebar a:hover {
+      color: var(--hl-accent-dark);
+      transform: translateX(3px);
+    }
+
+    /* Content Sections */
+    .hl-guide-content section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 95px;
+    }
+    .hl-guide-content h2 {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.15rem);
+      font-weight: 700;
+      color: var(--hl-text);
+      line-height: 1.3;
+      margin: 0 0 1.15rem;
+    }
+    .hl-guide-content h3 {
+      font-family: var(--hl-font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
+      margin: 1.75rem 0 0.85rem;
+    }
+    .hl-guide-content p {
+      margin-bottom: 1.1rem;
+      color: var(--hl-text);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    /* Callout & Answer Boxes */
+    .hl-answer-box {
+      background: var(--hl-surface-muted);
+      border-left: 4px solid var(--hl-accent-dark);
+      border-top: 1px solid var(--hl-border);
+      border-right: 1px solid var(--hl-border);
+      border-bottom: 1px solid var(--hl-border);
+      padding: 1.25rem 1.45rem;
+      border-radius: 0 var(--hl-radius-md) var(--hl-radius-md) 0;
+      margin: 1.25rem 0 1.75rem;
+      box-shadow: 0 2px 8px rgba(33, 60, 53, 0.04);
+    }
+    .hl-answer-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Grid & Cards */
+    .hl-card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 767px) {
+      .hl-card-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hl-card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 991px) {
+      .hl-card-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 575px) {
+      .hl-card-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hl-feature-card {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      padding: 1.35rem;
+      box-shadow: 0 2px 6px rgba(40,42,39,0.03);
       display: flex;
       flex-direction: column;
       transition: transform var(--hl-transition), box-shadow var(--hl-transition);
     }
-
-    .hl-content-card:hover,
-    .hl-tile:hover {
+    .hl-feature-card:hover {
       transform: translateY(-3px);
-      box-shadow: var(--hl-shadow-card-hover);
+      box-shadow: var(--hl-shadow-card);
+      border-color: var(--hl-accent-light);
+    }
+    .hl-feature-card h3 {
+      font-size: 1.15rem;
+      margin: 0 0 0.5rem;
+      color: var(--hl-text);
+    }
+    .hl-feature-card p {
+      font-size: 0.94rem;
+      margin-bottom: 0.65rem;
+      color: var(--hl-text-muted);
+      line-height: 1.6;
     }
 
-    .hl-content-card__num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--hl-warm);
-      color: var(--hl-accent-dark);
-      font-weight: 800;
-      font-size: 0.85rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .hl-content-card__tag,
-    .hl-tile-tag {
+    /* Tag & Badges */
+    .hl-tag {
       display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #7b4f2c;
-      background: #e3ede1;
+      background: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      border: 1px solid var(--hl-border);
       border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      margin-bottom: 0.85rem;
-      border: 1px solid rgba(184, 151, 61, 0.25);
+      padding: 0.2rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
       align-self: flex-start;
     }
 
-    .hl-content-card__price,
-    .hl-tile-price {
-      font-family: var(--hl-font-serif);
-      font-size: 1.28rem;
-      font-weight: 700;
-      color: var(--hl-accent-dark);
-      margin-bottom: 0.75rem;
-    }
-
-    .hl-content-card__title,
-    .hl-tile h3 {
-      font-family: var(--hl-font-serif);
-      font-size: 1.22rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.35;
-      margin: 0 0 0.65rem;
-    }
-
-    .hl-content-card p,
-    .hl-tile p {
-      color: var(--hl-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
-      margin: 0 0 0.85rem;
-    }
-
-    .hl-content-card p:last-child,
-    .hl-tile p:last-child {
-      margin-bottom: 0;
-    }
-
-    .hl-tile ul {
-      margin: 0.5rem 0 0 0;
-      padding-left: 1.2rem;
-      color: var(--hl-text-muted);
-      font-size: 0.92rem;
-    }
-
-    .hl-tile ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* Grid layout for tiles */
-    .hl-tile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin: 1.5rem 0;
-    }
-
-    /* Callout & Answer Box */
-    .hl-guide-callout,
-    .hl-answer-box,
-    .hl-note {
-      background: rgba(219, 228, 218, .6);
-      border-left: 4px solid var(--hl-accent-dark);
-      border-radius: 0 14px 14px 0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      color: var(--hl-text);
-      font-size: 0.96rem;
-      line-height: 1.7;
-    }
-
-    .hl-guide-callout strong,
-    .hl-answer-box strong,
-    .hl-note strong {
-      color: var(--hl-accent-dark);
-    }
-
     /* Step Sequence */
-    .hl-step-item {
-      display: flex;
-      gap: 1.25rem;
-      padding: 1.35rem 1.5rem;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      margin-bottom: 1rem;
-      box-shadow: var(--hl-shadow-card);
-      transition: transform var(--hl-transition);
+    .hl-step-sequence {
+      counter-reset: step-counter;
+      list-style: none;
+      padding-left: 0;
+      margin: 1.5rem 0;
     }
-
-    .hl-step-item:hover {
-      transform: translateY(-2px);
+    .hl-step-sequence li {
+      counter-increment: step-counter;
+      position: relative;
+      padding: 0 0 1.5rem 3.25rem;
+      border-left: 2px dashed var(--hl-border);
+      margin-left: 1rem;
     }
-
-    .hl-step-num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
+    .hl-step-sequence li:last-child {
+      border-left: 2px solid transparent;
+      padding-bottom: 0;
+    }
+    .hl-step-sequence li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: var(--hl-accent-dark);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .hl-step-body h3 {
-      font-size: 1.1rem;
+      color: #fff;
+      display: grid;
+      place-items: center;
       font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .hl-step-sequence h3 {
       margin: 0 0 0.35rem;
-      color: var(--hl-text);
-    }
-
-    .hl-step-body p {
-      margin: 0;
-      color: var(--hl-text-muted);
-      font-size: 0.94rem;
-      line-height: 1.6;
-    }
-
-    .hl-steps {
-      padding-left: 1.4rem;
-      color: var(--hl-text);
-    }
-
-    .hl-steps li {
-      margin-bottom: 1rem;
-      line-height: 1.65;
-    }
-
-    /* Table Container */
-    .hl-table-container,
-    .hl-table-wrapper {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      overflow-x: auto;
-      box-shadow: var(--hl-shadow-card);
-      margin: 1.5rem 0;
-    }
-
-    .hl-table-container table,
-    .hl-table-wrapper table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 620px;
-    }
-
-    .hl-table-container th,
-    .hl-table-container td,
-    .hl-table-wrapper th,
-    .hl-table-wrapper td {
-      padding: 1.1rem 1.25rem;
-      border-bottom: 1px solid var(--hl-border);
-      vertical-align: top;
-      font-size: 0.95rem;
-    }
-
-    .hl-table-container th,
-    .hl-table-wrapper th {
-      background: var(--hl-surface-muted);
-      color: var(--hl-accent-dark);
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .hl-table-container tr:last-child td,
-    .hl-table-wrapper tr:last-child td {
-      border-bottom: none;
-    }
-
-    .hl-table-hint {
-      font-size: 0.84rem;
-      color: var(--hl-text-muted);
-      margin-bottom: 0.5rem;
-      text-align: right;
+      font-size: 1.08rem;
     }
 
     /* Checklist */
-    .hl-guide-checklist,
-    .hl-checklist-box ul {
+    .hl-check-list {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      padding-left: 0;
+      margin: 1.25rem 0;
     }
-
-    .hl-checklist-box {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      padding: 1.35rem 1.5rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: 1.5rem 0;
-    }
-
-    .hl-guide-checklist li,
-    .hl-checklist-box li {
-      padding: 0.55rem 0 0.55rem 1.85rem;
+    .hl-check-list li {
       position: relative;
-      color: var(--hl-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      border-bottom: 1px dashed var(--hl-border);
+      padding-left: 1.85rem;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: var(--hl-text);
+      line-height: 1.65;
     }
-
-    .hl-guide-checklist li:last-child,
-    .hl-checklist-box li:last-child {
-      border-bottom: none;
-    }
-
-    .hl-guide-checklist li::before,
-    .hl-checklist-box li::before {
+    .hl-check-list li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      top: 0.5rem;
-      color: var(--hl-accent-dark);
-      font-weight: 800;
+      top: 0;
+      color: var(--hl-accent);
+      font-weight: 900;
+      font-size: 1.1rem;
     }
 
-    /* FAQ Details */
-    .hl-guide-faq details,
+    /* Custom Responsive Table Wrapper */
+    .hl-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      background: var(--hl-surface);
+      box-shadow: 0 1px 4px rgba(40,42,39,0.03);
+    }
+    .hl-table-hint {
+      font-size: 0.82rem;
+      color: var(--hl-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .hl-custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 620px;
+    }
+    .hl-custom-table th {
+      background-color: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      font-family: var(--hl-font-serif);
+      font-weight: 700;
+      padding: 0.95rem 1.15rem;
+      border-bottom: 2px solid var(--hl-border);
+      text-align: left;
+    }
+    .hl-custom-table td {
+      padding: 0.9rem 1.15rem;
+      border-bottom: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .hl-custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .hl-custom-table tr:hover td {
+      background-color: rgba(234, 240, 233, 0.4);
+    }
+
+    /* FAQ Details & Summary */
     .hl-faq-list details {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
-      border-radius: 12px;
-      padding: 1.15rem 1.35rem;
+      border-radius: var(--hl-radius-md);
+      padding: 1.1rem 1.35rem;
       margin-bottom: 0.85rem;
-      transition: background var(--hl-transition), border-color var(--hl-transition);
+      transition: border-color var(--hl-transition);
     }
-
-    .hl-guide-faq details[open],
     .hl-faq-list details[open] {
-      border-color: var(--hl-accent);
-      box-shadow: 0 4px 16px rgba(40, 42, 39, 0.04);
+      border-color: var(--hl-accent-light);
+      box-shadow: 0 2px 8px rgba(33,60,53,0.05);
     }
-
-    .hl-guide-faq summary,
     .hl-faq-list summary {
       font-family: var(--hl-font-serif);
-      font-weight: 700;
       font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
       cursor: pointer;
-      color: var(--hl-text);
       list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      position: relative;
+      padding-right: 1.85rem;
     }
-
-    .hl-guide-faq summary::-webkit-details-marker,
     .hl-faq-list summary::-webkit-details-marker {
       display: none;
     }
-
-    .hl-guide-faq summary::after,
     .hl-faq-list summary::after {
       content: "+";
-      font-family: Inter, sans-serif;
-      font-size: 1.4rem;
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 1.35rem;
       font-weight: 400;
-      color: var(--hl-accent-dark);
-      line-height: 1;
+      color: var(--hl-accent);
+      transition: transform var(--hl-transition);
     }
-
-    .hl-guide-faq details[open] summary::after,
     .hl-faq-list details[open] summary::after {
       content: "−";
+      color: var(--hl-accent-dark);
     }
-
-    .hl-guide-faq details p,
     .hl-faq-list details p {
-      padding: 0.85rem 0 0;
-      margin: 0;
-      color: var(--hl-text-muted);
-      font-size: 0.96rem;
+      margin-top: 0.85rem;
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: var(--hl-text);
       line-height: 1.7;
-      border-top: 1px dashed var(--hl-border);
-      margin-top: 0.75rem;
     }
 
-    /* CTA Section & Related Pills */
-    .hl-guide-cta-card,
+    /* CTA Section */
     .hl-cta-card {
-      background: linear-gradient(135deg, #3d4334 0%, var(--hl-accent-dark) 100%);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--hl-accent-dark) 0%, #2b493f 100%);
+      color: #fff;
       border-radius: 20px;
-      padding: clamp(2rem, 4vw, 3.25rem);
-      margin: 2.5rem 0 1.5rem;
-      box-shadow: 0 16px 44px rgba(40, 42, 39, 0.12);
+      padding: clamp(2rem, 4vw, 3rem);
+      margin: 2.5rem 0;
+      box-shadow: var(--hl-shadow-card);
     }
-
-    .hl-guide-cta-card h2,
     .hl-cta-card h2 {
+      color: #fff;
       font-family: var(--hl-font-serif);
-      color: #ffffff;
-      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
-      font-weight: 700;
-      margin: 0.5rem 0 1rem;
+      font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+      margin-bottom: 0.85rem;
     }
-
-    .hl-guide-cta-card p,
     .hl-cta-card p {
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255,255,255,0.88);
       font-size: 1.05rem;
-      line-height: 1.75;
-      max-width: 780px;
+      max-width: 680px;
       margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
-
-    .hl-related-pill-row,
-    .hl-related-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-top: 1rem;
-    }
-
-    .hl-related-pill,
-    .hl-related-links a {
-      display: inline-block;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.45rem 1.05rem;
-      font-size: 0.88rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
-      text-decoration: none;
-      transition: all var(--hl-transition);
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.04);
-    }
-
-    .hl-related-pill:hover,
-    .hl-related-links a:hover {
-      background: var(--hl-surface-muted);
-      color: var(--hl-accent);
-      border-color: var(--hl-accent);
-      transform: translateY(-1px);
-    }
-
-    .hl-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.88rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.35rem 0.95rem;
-      background: var(--hl-surface);
-      transition: all var(--hl-transition);
-    }
-
-    .hl-back-link:hover {
-      background: var(--hl-surface-muted);
-      border-color: var(--hl-accent);
-      transform: translateY(-1px);
-    }
-
   </style>
 
   <script type="application/ld+json">
@@ -806,7 +690,7 @@
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="hl-guide-hero" aria-labelledby="hero-heading">
+  <section class="hl-guide-hero" id="top">
     <div class="container">
       <div class="mb-3">
         <a href="hampers-lebaran.html" class="hl-back-link">
@@ -819,21 +703,13 @@
           <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-semibold mb-2" style="font-size:0.82rem;letter-spacing:0.04em;">
             PANDUAN PERENCANAAN · LEBARAN 2027
           </span>
-          <h1>
+          <h1 class="hl-guide-hero__title">
             Inspirasi Hampers Lebaran untuk Pelanggan dan Klien
           </h1>
           <p class="hl-guide-hero__lead">
             Rancang hampers Lebaran untuk pelanggan dan klien melalui segmentasi penerima, pilihan isi yang relevan, anggaran yang terukur, serta persiapan pengiriman yang memperhatikan etika dan kepatuhan.
           </p>
-          
-        <div class="hl-guide-chip-row">
-          <span class="hl-guide-chip">Strategi Retensi Pelanggan</span>
-          <span class="hl-guide-chip">Budget per Segmen</span>
-          <span class="hl-guide-chip">Personalisasi Merek</span>
-          <span class="hl-guide-chip">Jadwal Distribusi</span>
-          <span class="hl-guide-chip">Panduan Pengiriman Massal</span>
-        </div>
-        <div class="hl-guide-hero__ctas">
+          <div class="hl-guide-hero__ctas">
             <a href="#cta" class="btn btn-primary" style="background:var(--hl-accent-dark);border-color:var(--hl-accent-dark);border-radius:999px;padding:0.7rem 1.6rem;font-weight:600;">
               Siapkan Kebutuhan Pengadaan
             </a>
@@ -848,7 +724,7 @@
         <div class="col-lg-4 d-none d-lg-block">
           <div style="background:linear-gradient(145deg, #e4ebdf, #f5f0e4);border:1px solid var(--hl-border);border-radius:24px;padding:2rem;text-align:center;box-shadow:var(--hl-shadow-card);">
             <div style="font-size:3.5rem;margin-bottom:0.75rem;">🤝</div>
-            <h2>Hubungan &amp; Kepercayaan</h2>
+            <h2 style="font-family:var(--hl-font-serif);font-size:1.15rem;margin:0 0 0.5rem;color:var(--hl-accent-dark);">Hubungan &amp; Kepercayaan</h2>
             <p style="font-size:0.86rem;color:var(--hl-text-muted);margin:0;">Kurasi hampers apresiasi pelanggan yang terukur, tepat sasaran, dan patuh regulasi.</p>
           </div>
         </div>
@@ -857,48 +733,14 @@
   </section>
 
   <!-- ===== MAIN CONTENT AREA ===== -->
-  <main id="main-content">
-
-    <!-- ===== FLOATING TABLE OF CONTENTS ===== -->
-    <div class="container">
-      <nav class="hl-guide-toc" aria-label="Daftar isi panduan">
-        <div class="hl-guide-toc__heading">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="8" y1="6" x2="21" y2="6"></line>
-            <line x1="8" y1="12" x2="21" y2="12"></line>
-            <line x1="8" y1="18" x2="21" y2="18"></line>
-            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-          </svg>
-          Navigasi Cepat Panduan
-        </div>
-        <ol class="hl-guide-toc__list">
-          <li><a href="#pendahuluan">Pendahuluan</a></li>
-          <li><a href="#segmentasi">Segmentasi Penerima</a></li>
-          <li><a href="#tiering">Anggaran dan Tiering</a></li>
-          <li><a href="#katalog">Katalog Ide Hampers</a></li>
-          <li><a href="#kartu-ucapan">Kartu Ucapan &amp; Branding</a></li>
-          <li><a href="#regulasi">Pajak &amp; Gratifikasi</a></li>
-          <li><a href="#waktu">Jadwal Pengiriman</a></li>
-          <li><a href="#checklist">Checklist Pengadaan</a></li>
-          <li><a href="#logistik">Pengemasan Anti-Rusak</a></li>
-          <li><a href="#evaluasi">Evaluasi Program</a></li>
-          <li><a href="#faq">FAQ Tanya Jawab</a></li>
-          <li><a href="#tautan">Panduan Terkait</a></li>
-          <li><a href="#rangkuman">Rangkuman</a></li>
-          <li><a href="#cta">Konsultasi Pemesanan</a></li>
-        </ol>
-      </nav>
-    </div>
-
-<!-- Left Content Column -->
-      
+  <main id="main-content" class="container">
+    <div class="hl-page-layout">
+      <!-- Left Content Column -->
+      <article class="hl-guide-content">
 
         <!-- PENDAHULUAN -->
-        <section id="pendahuluan" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Pengantar Program</div>
+        <section id="pendahuluan">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Pengantar Program</div>
           <h2>Pendahuluan Hampers Sebagai Bentuk Apresiasi yang Direncanakan</h2>
           <p>
             Hampers Lebaran untuk pelanggan bukan sekadar rutinitas tahunan membagikan kue kering. Bingkisan dapat menjadi bagian dari komunikasi hubungan, identitas brand, dan pengalaman pelanggan. Namun, program yang baik tidak ditentukan oleh mahalnya isi atau besarnya logo. Hal yang lebih penting adalah alasan pemberian, kecocokan penerima, manfaat paket, kepatuhan terhadap kebijakan penerimaan hadiah, serta ketepatan distribusi.
@@ -909,13 +751,11 @@
           <div class="hl-answer-box">
             <strong>Prinsip Utama</strong> — Rancang program berdasarkan tujuan hubungan dan kebutuhan penerima. Jangan menganggap satu paket cocok untuk semua orang, dan jangan menjanjikan bahwa pemberian hampers otomatis meningkatkan penjualan atau loyalitas secara instan.
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 1. SEGMENTASI -->
-        <section id="segmentasi" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 1</div>
+        <section id="segmentasi">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 1</div>
           <h2>1. Tentukan Segmentasi Penerima Sebelum Memilih Isi</h2>
           <p>
             Kesalahan yang sering terjadi adalah menggunakan pendekatan <em>one-size-fits-all</em>. Padahal, pelanggan, klien strategis, mitra proyek, dan karyawan memiliki kebutuhan serta ekspektasi berbeda. Buat kriteria pembagian yang jelas agar keputusan tidak bergantung pada perkiraan pribadi.
@@ -975,13 +815,11 @@
           <p>
             Untuk pelanggan, segmentasi dapat didasarkan pada hubungan yang relevan, misalnya pelanggan aktif, pelanggan baru, pelanggan loyal, mitra proyek, atau tim kontak pada akun perusahaan. Gunakan data yang sah dan benar-benar diperlukan. Hindari membuat kategori berdasarkan dugaan kemampuan ekonomi atau informasi pribadi yang tidak relevan.
           </p>
-</div>
-</section>
+        </section>
 
         <!-- 2. ANGGARAN & TIERING -->
-        <section id="tiering" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 2</div>
+        <section id="tiering">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 2</div>
           <h2>2. Susun Anggaran dan Tingkatan Paket (Tiering)</h2>
           <p>
             Tiering membantu perusahaan mengelola variasi paket tanpa membuat proses pengadaan terlalu rumit. Tetapkan kriteria penerima secara objektif, dokumentasikan persetujuannya, dan pastikan perbedaan nilai paket memiliki alasan bisnis yang dapat dijelaskan.
@@ -1011,13 +849,11 @@
           <div class="hl-answer-box">
             <strong>Hitung Anggaran All-In</strong> — Masukkan biaya produk, wadah, kartu ucapan, personalisasi, perakitan, pajak transaksi bila relevan, ongkos kirim, asuransi pelindung, serta cadangan untuk paket pengganti jika terjadi kendala pengiriman.
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 3. KATALOG IDE -->
-        <section id="katalog" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 3</div>
+        <section id="katalog">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 3</div>
           <h2>3. Katalog Ide Hampers Lebaran untuk Pelanggan</h2>
           <p>
             Gunakan kategori berikut sebagai titik awal kurasi. Isi akhir sebaiknya disesuaikan dengan preferensi penerima, ketahanan produk, aturan pengiriman, dan karakter brand. Daftar ini merupakan inspirasi kurasi.
@@ -1087,13 +923,11 @@
               </tbody>
             </table>
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 4. KARTU UCAPAN & BRANDING -->
-        <section id="kartu-ucapan" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 4</div>
+        <section id="kartu-ucapan">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 4</div>
           <h2>4. Kartu Ucapan dan Branding Personal Bukan Promosi Agresif</h2>
           <p>
             Kartu ucapan membantu menjelaskan maksud pemberian dan memberi sentuhan personal. Jaga pesan tetap singkat, tulus, dan tidak disertai tuntutan pembelian, unggahan media sosial, rekomendasi, atau balasan tertentu kecuali hal tersebut merupakan bagian dari kesepakatan terpisah yang jelas.
@@ -1108,13 +942,11 @@
           <p>
             Untuk referensi lebih lengkap, simak <a href="hampers-lebaran-kartu-ucapan.html">panduan hampers Lebaran dengan kartu ucapan</a>.
           </p>
-</div>
-</section>
+        </section>
 
         <!-- 5. REGULASI & PAJAK -->
-        <section id="regulasi" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 5</div>
+        <section id="regulasi">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 5</div>
           <h2>5. Aspek Regulasi Pajak Natura dan Etika Gratifikasi</h2>
           
           <h3>Pajak Natura Berdasarkan PMK 66 Tahun 2023</h3>
@@ -1139,13 +971,11 @@
             <li><strong>Hormati penolakan</strong> — Jika penerima menyatakan tidak dapat menerima bingkisan karena regulasi, jangan mencari cara lain untuk tetap memaksakannya.</li>
             <li><strong>Jangan menyamarkan pemberian</strong> — Hindari menggunakan perantara atau mengubah label hadiah semata untuk menghindari pantauan sistem kepatuhan.</li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- 6. JADWAL PENGADAAN -->
-        <section id="waktu" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 6</div>
+        <section id="waktu">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 6</div>
           <h2>6. Tentukan Jadwal Pengadaan dan Waktu Pengiriman</h2>
           <p>
             Jadwal pengiriman perlu dihitung mundur dari tanggal paket harus diterima, bukan sekadar tanggal paket keluar dari gudang workshop. Waktu H-14 hingga H-7 dapat dijadikan target awal pengiriman domestik, namun tetap harus disesuaikan dengan jarak kota tujuan, kepadatan ekspedisi, dan masa cuti bersama kantor penerima.
@@ -1172,13 +1002,11 @@
               <p>Catat paket yang telah sukses diterima, atasi paket gagal antar, dan arsipkan bukti serah terima untuk laporan pertanggungjawaban program.</p>
             </li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- 7. CHECKLIST PENGADAAN -->
-        <section id="checklist" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 7</div>
+        <section id="checklist">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 7</div>
           <h2>7. Checklist Pengadaan Hampers Perusahaan</h2>
           <ul class="hl-step-sequence">
             <li>
@@ -1206,13 +1034,11 @@
               <p>Periksa kelengkapan item per boks, kerapian pita kartu, kebenaran nama sapaan pada kartu ucapan, dan segel kemasan anti-bocor.</p>
             </li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- 8. LOGISTIK ANTI-RUSAK -->
-        <section id="logistik" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 8</div>
+        <section id="logistik">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 8</div>
           <h2>8. Pengemasan Anti-Rusak untuk Pengiriman Ekspedisi</h2>
           <p>
             Produk yang tersusun indah belum tentu tahan menghadapi guncangan di perjalanan. Saat lonjakan musiman Lebaran, paket mengalami penumpukan berulang. Prioritaskan integritas kemasan sebelum mempercantik elemen dekoratif.
@@ -1238,13 +1064,11 @@
           <p>
             Untuk paket makanan, perhatikan kelembapan dan masa simpan. Hindari mengirim kudapan basah berdaya tahan singkat melalui layanan kurir reguler tanpa rantai dingin yang memadai.
           </p>
-</div>
-</section>
+        </section>
 
         <!-- 9. EVALUASI PROGRAM -->
-        <section id="evaluasi" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 9</div>
+        <section id="evaluasi">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Langkah 9</div>
           <h2>9. Evaluasi Program Secara Wajar</h2>
           <p>
             Evaluasi tidak berhenti pada nominal biaya yang dihabiskan. Catat jumlah paket yang terkirim sukses, waktu tempuh rata-rata, paket retur, dan komplain pelanggan. Kelompokkan kendala berdasarkan rute wilayah atau tipe kemasan untuk perbaikan tahun berikutnya.
@@ -1255,13 +1079,11 @@
           <div class="hl-answer-box">
             <strong>Tiga Dokumen Evaluasi Minimum</strong> — Dokumen dasar segmentasi penerima, daftar resi dan bukti serah terima paket, serta rekap hasil evaluasi kendala vendor untuk pengadaan mendatang.
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 10. FAQ -->
-        <section id="faq" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Pertanyaan yang Sering Diajukan</div>
+        <section id="faq">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Pertanyaan yang Sering Diajukan</div>
           <h2>10. FAQ Seputar Hampers Lebaran untuk Pelanggan</h2>
           <div class="hl-faq-list">
             <details open>
@@ -1297,13 +1119,11 @@
               <p>Pastikan untuk memeriksa kebijakan penerimaan hadiah kantor penerima, potensi konflik kepentingan, dan regulasi gratifikasi KPK. Jangan mengirim bingkisan jika instansi menerapkan kebijakan No Gift Policy.</p>
             </details>
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 11. PANDUAN TERKAIT -->
-        <section id="tautan" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Eksplorasi Lanjutan</div>
+        <section id="tautan">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">Eksplorasi Lanjutan</div>
           <h2>11. Panduan Terkait dan Tautan Internal</h2>
           <ul class="hl-check-list">
             <li><a href="hampers-lebaran.html"><strong>Panduan Utama Hampers Lebaran 2027</strong></a> — Kaitan menyeluruh antara konsep isi, anggaran, dan alur pemesanan.</li>
@@ -1312,13 +1132,11 @@
             <li><a href="ide-hampers-lebaran.html"><strong>Ide Hampers Lebaran Unik</strong></a> — Eksplorasi konsep isi anti-mainstream dan produk artisan.</li>
             <li><a href="hampers-lebaran-untuk-kantor-malang.html"><strong>Hampers Lebaran untuk Kantor Malang</strong></a> — Solusi pengadaan bingkisan korporat untuk wilayah Malang Raya.</li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- RANGKUMAN -->
-        <section id="rangkuman" class="hl-guide-section">
-<div class="container">
-<h2>Rangkuman Program Hampers yang Tepat Sasaran</h2>
+        <section id="rangkuman">
+          <h2>Rangkuman Program Hampers yang Tepat Sasaran</h2>
           <ul class="hl-check-list">
             <li><strong>Segmentasi Spesifik</strong> — Bedakan kebutuhan dan perlakuan antara karyawan, pelanggan setia, klien strategis, dan mitra.</li>
             <li><strong>Isi yang Relevan</strong> — Utamakan manfaat nyata, mutu rasa, keamanan pangan, dan keselarasan dengan karakter brand perusahaan.</li>
@@ -1327,8 +1145,7 @@
             <li><strong>Operasional Rapi</strong> — Mulai persiapan 30-45 hari sebelum hari raya, uji sampel fisik, jalankan QC ketat, dan gunakan kemasan anti-rusak.</li>
             <li><strong>Evaluasi Terukur</strong> — Evaluasi tingkat keberhasilan distribusi dan himpun umpan balik secara objektif.</li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- CTA SECTION -->
         <section class="hl-cta-card" id="cta">
@@ -1350,9 +1167,8 @@
         </section>
 
         <!-- REFERENSI REGULASI -->
-        <section id="referensi" class="hl-guide-section" class="p-4 bg-light rounded-3 border">
-<div class="container">
-<h3>Referensi Regulasi dan Panduan Resmi</h3>
+        <section id="referensi" class="p-4 bg-light rounded-3 border">
+          <h3 style="margin-top:0;font-size:1.15rem;">Referensi Regulasi dan Panduan Resmi</h3>
           <ul class="mb-3" style="padding-left:1.25rem;">
             <li><a href="https://jdih.kemenkeu.go.id/dok/pmk-66-tahun-2023/view" target="_blank" rel="noopener noreferrer">PMK 66 Tahun 2023 — JDIH Kementerian Keuangan RI</a>.</li>
             <li><a href="https://www.pajak.go.id/id/artikel/hamper-idulfitri-tidak-dipajaki-cermati-syaratnya" target="_blank" rel="noopener noreferrer">Direktorat Jenderal Pajak: Hamper Idulfitri Tidak Dipajaki, Cermati Syaratnya</a>.</li>
@@ -1362,14 +1178,34 @@
           <p class="small text-muted mb-0">
             <strong>Catatan Editorial</strong> — Ringkasan informasi perpajakan dan etika gratifikasi ini disajikan untuk tujuan edukasi operasional bisnis, bukan sebagai nasihat hukum atau opini audit perpajakan resmi.
           </p>
-</div>
-</section>
+        </section>
       </article>
 
       <!-- Sticky Table of Contents Sidebar -->
-      
+      <aside class="hl-sidebar" aria-label="Daftar isi panduan">
+        <strong>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Navigasi Panduan
+        </strong>
+        <ol>
+          <li><a href="#pendahuluan">Pendahuluan</a></li>
+          <li><a href="#segmentasi">Segmentasi Penerima</a></li>
+          <li><a href="#tiering">Anggaran dan Tiering</a></li>
+          <li><a href="#katalog">Katalog Ide Hampers</a></li>
+          <li><a href="#kartu-ucapan">Kartu Ucapan &amp; Branding</a></li>
+          <li><a href="#regulasi">Pajak &amp; Gratifikasi</a></li>
+          <li><a href="#waktu">Jadwal Pengiriman</a></li>
+          <li><a href="#checklist">Checklist Pengadaan</a></li>
+          <li><a href="#logistik">Pengemasan Anti-Rusak</a></li>
+          <li><a href="#evaluasi">Evaluasi Program</a></li>
+          <li><a href="#faq">FAQ Tanya Jawab</a></li>
+          <li><a href="#tautan">Panduan Terkait</a></li>
+          <li><a href="#rangkuman">Rangkuman</a></li>
+          <li><a href="#cta">Konsultasi Pemesanan</a></li>
+        </ol>
+      </aside>
     </div>
-</main>
+  </main>
 
   <!-- ===== FOOTER STANDAR HARAYA ===== -->
   <footer class="hl-footer" aria-label="Footer situs">

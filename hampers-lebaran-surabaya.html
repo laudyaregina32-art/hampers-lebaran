@@ -68,57 +68,56 @@
 
     @media (min-width: 992px) {
       body {
-        padding-top: 104px !important;
+        padding-top: 80px !important;
       }
     }
 
-    /* ===== HERO SECTION ===== */
-    .hl-guide-hero {
-      background: linear-gradient(180deg, rgba(219, 228, 218, .5) 0%, rgba(244, 246, 243, .9) 100%);
-      padding: clamp(2.5rem, 5vw, 4.5rem) 0 2.5rem;
-      border-bottom: 1px solid var(--hl-border);
-      position: relative;
-    }
-
-    .hl-guide-hero__title {
-      font-family: var(--hl-font-serif);
-      font-size: clamp(2rem, 4.5vw, 3.1rem);
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.25;
-      margin: 0.75rem 0 1.25rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hl-guide-hero__lead {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-      color: var(--hl-text-muted);
-      max-width: 860px;
-      line-height: 1.75;
-      margin-bottom: 1.75rem;
-    }
-
-    .hl-guide-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-
-    .hl-guide-chip {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--hl-accent-dark);
+    /* Back Link & Breadcrumb */
+    .hl-back-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.03);
+      gap: 0.5rem;
+      color: var(--hl-accent-dark);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      padding: 0.38rem 0.95rem;
+      border-radius: 999px;
+      box-shadow: 0 1px 4px rgba(40,42,39,0.04);
+      transition: all var(--hl-transition);
+    }
+    .hl-back-link:hover {
+      background: var(--hl-surface-muted);
+      color: var(--hl-text);
+      border-color: var(--hl-accent);
+      transform: translateX(-3px);
     }
 
+    /* Hero Section */
+    .hl-guide-hero {
+      background: linear-gradient(180deg, rgba(219, 228, 218, .6) 0%, rgba(234, 240, 233, 0) 100%);
+      padding: clamp(2rem, 4.5vw, 3.5rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);
+      border-bottom: 1px solid var(--hl-border);
+    }
+    .hl-guide-hero__title {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(2rem, 4.2vw, 3.15rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.24;
+      color: var(--hl-text);
+      margin: 0.75rem 0 1.25rem;
+      max-width: 920px;
+    }
+    .hl-guide-hero__lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.16rem);
+      color: var(--hl-text-muted);
+      line-height: 1.75;
+      max-width: 840px;
+      margin-bottom: 1.5rem;
+    }
     .hl-guide-hero__ctas {
       display: flex;
       flex-wrap: wrap;
@@ -126,490 +125,367 @@
       align-items: center;
     }
 
-    /* ===== TABLE OF CONTENTS (TOC) ===== */
-    .hl-guide-toc {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 18px;
-      padding: 1.5rem 1.75rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: -1.75rem auto 3rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hl-guide-toc__heading {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hl-guide-toc__list {
+    /* Layout 2-Column with Sidebar */
+    .hl-page-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.5rem 1.25rem;
-      margin: 0;
-      padding-left: 1.25rem;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: clamp(2rem, 4vw, 3.25rem);
+      align-items: start;
+      padding: 2.5rem 0 4.5rem;
+    }
+    @media (max-width: 991px) {
+      .hl-page-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.75rem 0 3.5rem;
+      }
     }
 
-    .hl-guide-toc__list li a {
-      color: var(--hl-accent-dark);
-      font-weight: 500;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: color var(--hl-transition);
-    }
-
-    .hl-guide-toc__list li a:hover {
-      color: var(--hl-text);
-      text-decoration: underline;
-    }
-
-    /* ===== CONTENT SECTIONS & CARDS ===== */
-    .hl-guide-section {
-      padding: clamp(2.5rem, 5vw, 4rem) 0;
-      border-bottom: 1px solid var(--hl-border);
-      scroll-margin-top: 85px;
-    }
-
-    .hl-guide-section:last-of-type {
-      border-bottom: none;
-    }
-
-    .hl-section-title {
-      font-family: var(--hl-font-serif);
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.3;
-      margin-bottom: 0.85rem;
-    }
-
-    .hl-guide-section__intro {
-      max-width: 860px;
-      color: var(--hl-text-muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-
-    /* Card styling */
-    .hl-content-card,
-    .hl-tile {
+    /* Sticky Sidebar TOC */
+    .hl-sidebar {
+      position: sticky;
+      top: 96px;
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
       border-radius: 16px;
-      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      padding: 1.5rem;
       box-shadow: var(--hl-shadow-card);
-      height: 100%;
+    }
+    @media (max-width: 991px) {
+      .hl-sidebar {
+        position: static;
+        order: -1;
+      }
+    }
+    .hl-sidebar strong {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--hl-font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 1px solid var(--hl-border);
+    }
+    .hl-sidebar ol {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      counter-reset: toc-item;
+    }
+    .hl-sidebar li {
+      counter-increment: toc-item;
+      padding: 0.35rem 0;
+      font-size: 0.92rem;
+    }
+    .hl-sidebar a {
+      color: var(--hl-text);
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      transition: color var(--hl-transition), transform var(--hl-transition);
+    }
+    .hl-sidebar a::before {
+      content: counter(toc-item) ".";
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--hl-accent);
+      min-width: 1.25rem;
+    }
+    .hl-sidebar a:hover {
+      color: var(--hl-accent-dark);
+      transform: translateX(3px);
+    }
+
+    /* Content Sections */
+    .hl-guide-content section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 95px;
+    }
+    .hl-guide-content h2 {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.15rem);
+      font-weight: 700;
+      color: var(--hl-text);
+      line-height: 1.3;
+      margin: 0 0 1.15rem;
+    }
+    .hl-guide-content h3 {
+      font-family: var(--hl-font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
+      margin: 1.75rem 0 0.85rem;
+    }
+    .hl-guide-content p {
+      margin-bottom: 1.1rem;
+      color: var(--hl-text);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    /* Callout & Answer Boxes */
+    .hl-answer-box {
+      background: var(--hl-surface-muted);
+      border-left: 4px solid var(--hl-accent-dark);
+      border-top: 1px solid var(--hl-border);
+      border-right: 1px solid var(--hl-border);
+      border-bottom: 1px solid var(--hl-border);
+      padding: 1.25rem 1.45rem;
+      border-radius: 0 var(--hl-radius-md) var(--hl-radius-md) 0;
+      margin: 1.25rem 0 1.75rem;
+      box-shadow: 0 2px 8px rgba(33, 60, 53, 0.04);
+    }
+    .hl-answer-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Grid & Cards */
+    .hl-card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 767px) {
+      .hl-card-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hl-feature-card {
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      padding: 1.35rem;
+      box-shadow: 0 2px 6px rgba(40,42,39,0.03);
       display: flex;
       flex-direction: column;
       transition: transform var(--hl-transition), box-shadow var(--hl-transition);
     }
-
-    .hl-content-card:hover,
-    .hl-tile:hover {
+    .hl-feature-card:hover {
       transform: translateY(-3px);
-      box-shadow: var(--hl-shadow-card-hover);
+      box-shadow: var(--hl-shadow-card);
+      border-color: var(--hl-accent-light);
+    }
+    .hl-feature-card h3 {
+      font-size: 1.15rem;
+      margin: 0 0 0.5rem;
+      color: var(--hl-text);
+    }
+    .hl-feature-card p {
+      font-size: 0.94rem;
+      margin-bottom: 0.65rem;
+      color: var(--hl-text-muted);
+      line-height: 1.6;
     }
 
-    .hl-content-card__num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--hl-warm);
+    /* Price Tag */
+    .hl-price-tag {
+      font-family: var(--hl-font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
       color: var(--hl-accent-dark);
-      font-weight: 800;
-      font-size: 0.85rem;
-      margin-bottom: 0.85rem;
+      margin: 0.25rem 0 0.75rem;
     }
 
-    .hl-content-card__tag,
-    .hl-tile-tag {
+    /* Tag & Badges */
+    .hl-tag {
       display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #7b4f2c;
-      background: #e3ede1;
+      background: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      border: 1px solid var(--hl-border);
       border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      margin-bottom: 0.85rem;
-      border: 1px solid rgba(184, 151, 61, 0.25);
+      padding: 0.2rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
       align-self: flex-start;
     }
 
-    .hl-content-card__price,
-    .hl-tile-price {
-      font-family: var(--hl-font-serif);
-      font-size: 1.28rem;
-      font-weight: 700;
-      color: var(--hl-accent-dark);
-      margin-bottom: 0.75rem;
-    }
-
-    .hl-content-card__title,
-    .hl-tile h3 {
-      font-family: var(--hl-font-serif);
-      font-size: 1.22rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.35;
-      margin: 0 0 0.65rem;
-    }
-
-    .hl-content-card p,
-    .hl-tile p {
-      color: var(--hl-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
-      margin: 0 0 0.85rem;
-    }
-
-    .hl-content-card p:last-child,
-    .hl-tile p:last-child {
-      margin-bottom: 0;
-    }
-
-    .hl-tile ul {
-      margin: 0.5rem 0 0 0;
-      padding-left: 1.2rem;
-      color: var(--hl-text-muted);
-      font-size: 0.92rem;
-    }
-
-    .hl-tile ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* Grid layout for tiles */
-    .hl-tile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin: 1.5rem 0;
-    }
-
-    /* Callout & Answer Box */
-    .hl-guide-callout,
-    .hl-answer-box,
-    .hl-note {
-      background: rgba(219, 228, 218, .6);
-      border-left: 4px solid var(--hl-accent-dark);
-      border-radius: 0 14px 14px 0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      color: var(--hl-text);
-      font-size: 0.96rem;
-      line-height: 1.7;
-    }
-
-    .hl-guide-callout strong,
-    .hl-answer-box strong,
-    .hl-note strong {
-      color: var(--hl-accent-dark);
-    }
-
     /* Step Sequence */
-    .hl-step-item {
-      display: flex;
-      gap: 1.25rem;
-      padding: 1.35rem 1.5rem;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      margin-bottom: 1rem;
-      box-shadow: var(--hl-shadow-card);
-      transition: transform var(--hl-transition);
+    .hl-step-sequence {
+      counter-reset: step-counter;
+      list-style: none;
+      padding-left: 0;
+      margin: 1.5rem 0;
     }
-
-    .hl-step-item:hover {
-      transform: translateY(-2px);
+    .hl-step-sequence li {
+      counter-increment: step-counter;
+      position: relative;
+      padding: 0 0 1.5rem 3.25rem;
+      border-left: 2px dashed var(--hl-border);
+      margin-left: 1rem;
     }
-
-    .hl-step-num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
+    .hl-step-sequence li:last-child {
+      border-left: 2px solid transparent;
+      padding-bottom: 0;
+    }
+    .hl-step-sequence li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: var(--hl-accent-dark);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .hl-step-body h3 {
-      font-size: 1.1rem;
+      color: #fff;
+      display: grid;
+      place-items: center;
       font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .hl-step-sequence h3 {
       margin: 0 0 0.35rem;
-      color: var(--hl-text);
-    }
-
-    .hl-step-body p {
-      margin: 0;
-      color: var(--hl-text-muted);
-      font-size: 0.94rem;
-      line-height: 1.6;
-    }
-
-    .hl-steps {
-      padding-left: 1.4rem;
-      color: var(--hl-text);
-    }
-
-    .hl-steps li {
-      margin-bottom: 1rem;
-      line-height: 1.65;
-    }
-
-    /* Table Container */
-    .hl-table-container,
-    .hl-table-wrapper {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      overflow-x: auto;
-      box-shadow: var(--hl-shadow-card);
-      margin: 1.5rem 0;
-    }
-
-    .hl-table-container table,
-    .hl-table-wrapper table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 620px;
-    }
-
-    .hl-table-container th,
-    .hl-table-container td,
-    .hl-table-wrapper th,
-    .hl-table-wrapper td {
-      padding: 1.1rem 1.25rem;
-      border-bottom: 1px solid var(--hl-border);
-      vertical-align: top;
-      font-size: 0.95rem;
-    }
-
-    .hl-table-container th,
-    .hl-table-wrapper th {
-      background: var(--hl-surface-muted);
-      color: var(--hl-accent-dark);
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .hl-table-container tr:last-child td,
-    .hl-table-wrapper tr:last-child td {
-      border-bottom: none;
-    }
-
-    .hl-table-hint {
-      font-size: 0.84rem;
-      color: var(--hl-text-muted);
-      margin-bottom: 0.5rem;
-      text-align: right;
+      font-size: 1.08rem;
     }
 
     /* Checklist */
-    .hl-guide-checklist,
-    .hl-checklist-box ul {
+    .hl-check-list {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      padding-left: 0;
+      margin: 1.25rem 0;
     }
-
-    .hl-checklist-box {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      padding: 1.35rem 1.5rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: 1.5rem 0;
-    }
-
-    .hl-guide-checklist li,
-    .hl-checklist-box li {
-      padding: 0.55rem 0 0.55rem 1.85rem;
+    .hl-check-list li {
       position: relative;
-      color: var(--hl-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      border-bottom: 1px dashed var(--hl-border);
+      padding-left: 1.85rem;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: var(--hl-text);
+      line-height: 1.65;
     }
-
-    .hl-guide-checklist li:last-child,
-    .hl-checklist-box li:last-child {
-      border-bottom: none;
-    }
-
-    .hl-guide-checklist li::before,
-    .hl-checklist-box li::before {
+    .hl-check-list li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      top: 0.5rem;
-      color: var(--hl-accent-dark);
-      font-weight: 800;
+      top: 0;
+      color: var(--hl-accent);
+      font-weight: 900;
+      font-size: 1.1rem;
     }
 
-    /* FAQ Details */
-    .hl-guide-faq details,
+    /* Custom Responsive Table Wrapper */
+    .hl-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--hl-border);
+      border-radius: var(--hl-radius-md);
+      background: var(--hl-surface);
+      box-shadow: 0 1px 4px rgba(40,42,39,0.03);
+    }
+    .hl-table-hint {
+      font-size: 0.82rem;
+      color: var(--hl-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .hl-custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 600px;
+    }
+    .hl-custom-table th {
+      background-color: var(--hl-surface-muted);
+      color: var(--hl-accent-dark);
+      font-family: var(--hl-font-serif);
+      font-weight: 700;
+      padding: 0.95rem 1.15rem;
+      border-bottom: 2px solid var(--hl-border);
+      text-align: left;
+    }
+    .hl-custom-table td {
+      padding: 0.9rem 1.15rem;
+      border-bottom: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .hl-custom-table tr:last-child td {
+      border-bottom: none;
+    }
+    .hl-custom-table tr:hover td {
+      background-color: rgba(234, 240, 233, 0.4);
+    }
+
+    /* FAQ Details & Summary */
     .hl-faq-list details {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
-      border-radius: 12px;
-      padding: 1.15rem 1.35rem;
+      border-radius: var(--hl-radius-md);
+      padding: 1.1rem 1.35rem;
       margin-bottom: 0.85rem;
-      transition: background var(--hl-transition), border-color var(--hl-transition);
+      transition: border-color var(--hl-transition);
     }
-
-    .hl-guide-faq details[open],
     .hl-faq-list details[open] {
-      border-color: var(--hl-accent);
-      box-shadow: 0 4px 16px rgba(40, 42, 39, 0.04);
+      border-color: var(--hl-accent-light);
+      box-shadow: 0 2px 8px rgba(33,60,53,0.05);
     }
-
-    .hl-guide-faq summary,
     .hl-faq-list summary {
       font-family: var(--hl-font-serif);
-      font-weight: 700;
       font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
       cursor: pointer;
-      color: var(--hl-text);
       list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      position: relative;
+      padding-right: 1.85rem;
     }
-
-    .hl-guide-faq summary::-webkit-details-marker,
     .hl-faq-list summary::-webkit-details-marker {
       display: none;
     }
-
-    .hl-guide-faq summary::after,
     .hl-faq-list summary::after {
       content: "+";
-      font-family: Inter, sans-serif;
-      font-size: 1.4rem;
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 1.35rem;
       font-weight: 400;
-      color: var(--hl-accent-dark);
-      line-height: 1;
+      color: var(--hl-accent);
+      transition: transform var(--hl-transition);
     }
-
-    .hl-guide-faq details[open] summary::after,
     .hl-faq-list details[open] summary::after {
       content: "−";
+      color: var(--hl-accent-dark);
     }
-
-    .hl-guide-faq details p,
     .hl-faq-list details p {
-      padding: 0.85rem 0 0;
-      margin: 0;
-      color: var(--hl-text-muted);
-      font-size: 0.96rem;
+      margin-top: 0.85rem;
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: var(--hl-text);
       line-height: 1.7;
-      border-top: 1px dashed var(--hl-border);
-      margin-top: 0.75rem;
     }
 
-    /* CTA Section & Related Pills */
-    .hl-guide-cta-card,
+    /* CTA Section */
     .hl-cta-card {
-      background: linear-gradient(135deg, #3d4334 0%, var(--hl-accent-dark) 100%);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--hl-accent-dark) 0%, #2b493f 100%);
+      color: #fff;
       border-radius: 20px;
-      padding: clamp(2rem, 4vw, 3.25rem);
-      margin: 2.5rem 0 1.5rem;
-      box-shadow: 0 16px 44px rgba(40, 42, 39, 0.12);
+      padding: clamp(2rem, 4vw, 3rem);
+      margin: 2.5rem 0;
+      box-shadow: var(--hl-shadow-card);
     }
-
-    .hl-guide-cta-card h2,
     .hl-cta-card h2 {
+      color: #fff;
       font-family: var(--hl-font-serif);
-      color: #ffffff;
-      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
-      font-weight: 700;
-      margin: 0.5rem 0 1rem;
+      font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+      margin-bottom: 0.85rem;
     }
-
-    .hl-guide-cta-card p,
     .hl-cta-card p {
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255,255,255,0.88);
       font-size: 1.05rem;
-      line-height: 1.75;
-      max-width: 780px;
+      max-width: 680px;
       margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
-
-    .hl-related-pill-row,
-    .hl-related-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-top: 1rem;
-    }
-
-    .hl-related-pill,
-    .hl-related-links a {
-      display: inline-block;
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.45rem 1.05rem;
-      font-size: 0.88rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
-      text-decoration: none;
-      transition: all var(--hl-transition);
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.04);
-    }
-
-    .hl-related-pill:hover,
-    .hl-related-links a:hover {
-      background: var(--hl-surface-muted);
-      color: var(--hl-accent);
-      border-color: var(--hl-accent);
-      transform: translateY(-1px);
-    }
-
-    .hl-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.88rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.35rem 0.95rem;
-      background: var(--hl-surface);
-      transition: all var(--hl-transition);
-    }
-
-    .hl-back-link:hover {
-      background: var(--hl-surface-muted);
-      border-color: var(--hl-accent);
-      transform: translateY(-1px);
-    }
-
   </style>
 
   <script type="application/ld+json">
@@ -799,7 +675,7 @@
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="hl-guide-hero" aria-labelledby="hero-heading">
+  <section class="hl-guide-hero" id="top">
     <div class="container">
       <div class="mb-3">
         <a href="hampers-lebaran.html" class="hl-back-link">
@@ -812,21 +688,13 @@
           <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-semibold mb-2" style="font-size:0.82rem;letter-spacing:0.04em;">
             PANDUAN LOKAL · EDISI 2027
           </span>
-          <h1>
+          <h1 class="hl-guide-hero__title">
             Hampers Lebaran Surabaya Pilihan Produk dan Informasi Pemesanan
           </h1>
           <p class="hl-guide-hero__lead">
             Temukan inspirasi isi hampers berdasarkan anggaran, pahami tren bingkisan yang fungsional, dan siapkan detail penerimaan agar paket Lebaran untuk keluarga, kolega, maupun kantor di Surabaya lebih mudah direncanakan.
           </p>
-          
-        <div class="hl-guide-chip-row">
-          <span class="hl-guide-chip">Produk Lokal Surabaya</span>
-          <span class="hl-guide-chip">Panduan Pengiriman Luar Kota</span>
-          <span class="hl-guide-chip">Peta Distribusi Jawa Timur</span>
-          <span class="hl-guide-chip">Rekomendasi Vendor Surabaya</span>
-          <span class="hl-guide-chip">Strategi Pemesanan Massal</span>
-        </div>
-        <div class="hl-guide-hero__ctas">
+          <div class="hl-guide-hero__ctas">
             <a href="#persiapan-pengiriman" class="btn btn-primary" style="background:var(--hl-accent-dark);border-color:var(--hl-accent-dark);border-radius:999px;padding:0.7rem 1.6rem;font-weight:600;">
               Checklist Pengiriman Surabaya
             </a>
@@ -841,7 +709,7 @@
         <div class="col-lg-4 d-none d-lg-block">
           <div style="background:linear-gradient(145deg, #e4ebdf, #f5f0e4);border:1px solid var(--hl-border);border-radius:24px;padding:2rem;text-align:center;box-shadow:var(--hl-shadow-card);">
             <div style="font-size:3.5rem;margin-bottom:0.75rem;">🏢</div>
-            <h2>Pengiriman Surabaya</h2>
+            <h2 style="font-family:var(--hl-font-serif);font-size:1.15rem;margin:0 0 0.5rem;color:var(--hl-accent-dark);">Pengiriman Surabaya</h2>
             <p style="font-size:0.86rem;color:var(--hl-text-muted);margin:0;">Panduan logistik kantor, akses lobi gedung, multi-alamat, dan kurasi paket bermutu.</p>
           </div>
         </div>
@@ -850,44 +718,14 @@
   </section>
 
   <!-- ===== MAIN CONTENT AREA ===== -->
-  <main id="main-content">
-
-    <!-- ===== FLOATING TABLE OF CONTENTS ===== -->
-    <div class="container">
-      <nav class="hl-guide-toc" aria-label="Daftar isi panduan">
-        <div class="hl-guide-toc__heading">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="8" y1="6" x2="21" y2="6"></line>
-            <line x1="8" y1="12" x2="21" y2="12"></line>
-            <line x1="8" y1="18" x2="21" y2="18"></line>
-            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-          </svg>
-          Navigasi Cepat Panduan
-        </div>
-        <ol class="hl-guide-toc__list">
-          <li><a href="#pendahuluan">Pengantar Surabaya</a></li>
-          <li><a href="#parcel-vs-hampers">Parcel vs Hampers</a></li>
-          <li><a href="#katalog-inspirasi">Katalog Budget</a></li>
-          <li><a href="#tren-hampers">Tren 2026–2027</a></li>
-          <li><a href="#pilihan-surabaya">Referensi Lokal</a></li>
-          <li><a href="#diy">Hampers DIY</a></li>
-          <li><a href="#persiapan-pengiriman">Checklist Gedung Kantor</a></li>
-          <li><a href="#faq">FAQ Tanya Jawab</a></li>
-          <li><a href="#rangkuman">Rangkuman</a></li>
-          <li><a href="#cta">Konsultasi Pemesanan</a></li>
-        </ol>
-      </nav>
-    </div>
-
-<!-- Left Content Column -->
-      
+  <main id="main-content" class="container">
+    <div class="hl-page-layout">
+      <!-- Left Content Column -->
+      <article class="hl-guide-content">
 
         <!-- 1. PENDAHULUAN -->
-        <section id="pendahuluan" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">01 · Pengantar</div>
+        <section id="pendahuluan">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">01 · Pengantar</div>
           <h2>Memilih Hampers Lebaran untuk Penerima di Surabaya</h2>
           <p>
             Berbagi bingkisan Lebaran di Indonesia telah berkembang dari kebiasaan memberikan makanan sederhana menjadi bentuk apresiasi yang memperhatikan pilihan produk, tampilan, dan pengalaman penerima. Hampers Lebaran bukan sekadar formalitas tahunan. Bingkisan dapat menjadi jembatan emosional untuk mempererat silaturahmi, menyampaikan rasa terima kasih, dan membagikan kebahagiaan.
@@ -901,13 +739,11 @@
           <p>
             Dalam panduan ini, Anda akan mempelajari perbedaan mendasar parcel dan hampers, inspirasi produk pada beberapa rentang anggaran, tren fungsional dan ramah lingkungan, ide DIY, serta langkah mempersiapkan penerimaan paket di Surabaya.
           </p>
-</div>
-</section>
+        </section>
 
         <!-- 2. PARCEL VS HAMPERS -->
-        <section id="parcel-vs-hampers" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">02 · Konsep dan Sejarah</div>
+        <section id="parcel-vs-hampers">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">02 · Konsep dan Sejarah</div>
           <h2>Parcel vs Hampers Apa Perbedaannya?</h2>
           <p>
             Istilah parcel dan hampers sering digunakan bergantian dalam percakapan sehari-hari. Dalam penggunaan umum, parcel cenderung merujuk pada bingkisan yang dibungkus sehingga susunan isinya dapat terlihat langsung, misalnya dengan plastik mika transparan atau kertas pembungkus. Hampers lebih sering diasosiasikan dengan wadah seperti keranjang rotan, besek bambu, atau hardbox eksklusif yang menghadirkan pengalaman membuka hadiah.
@@ -953,13 +789,11 @@
           <p>
             Secara historis, istilah <em>hampering</em> dikenal dalam tradisi Inggris abad ke-18 sebagai kegiatan mengirim keranjang anyaman berisi makanan atau kebutuhan. Di Indonesia, budaya berbagi bingkisan berkembang melalui nilai kedermawanan dan silaturahmi hari raya. Sejak era 1990-an, isinya berkembang dari sirup dan biskuit kaleng menjadi sajian kue kering artisan, perlengkapan ibadah, body care, hingga perlengkapan rumah tangga estetik.
           </p>
-</div>
-</section>
+        </section>
 
         <!-- 3. KATALOG BERDASARKAN BUDGET -->
-        <section id="katalog-inspirasi" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">03 · Katalog Inspirasi</div>
+        <section id="katalog-inspirasi">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">03 · Katalog Inspirasi</div>
           <h2>Inspirasi Isi Hampers Lebaran Berdasarkan Budget</h2>
           <p>
             Rentang berikut merupakan panduan kurasi ide produk. Harga aktual dapat berubah menurut merek, dimensi produk, jumlah pesanan, dan tingkat kustomisasi boks. Tetapkan anggaran total termasuk wadah, kartu ucapan, pelindung bubble wrap, dan biaya logistik.
@@ -1057,13 +891,11 @@
               </tbody>
             </table>
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 4. TREN HAMPERS -->
-        <section id="tren-hampers" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">04 · Tren dan Ide Produk</div>
+        <section id="tren-hampers">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">04 · Tren dan Ide Produk</div>
           <h2>Tren Hampers Lebaran Fungsional, Personal, dan Eco-Friendly</h2>
           <p>
             Tren masa kini mengarah pada bingkisan yang tidak hanya elok saat diterima, tetapi juga berguna setelah hari raya berlalu. Konsep ramah lingkungan dapat diwujudkan melalui pemilihan barang pakai ulang serta wadah kemasan yang dapat difungsikan kembali di rumah penerima.
@@ -1093,13 +925,11 @@
           <div class="hl-answer-box">
             <strong>Tips Memilih Tren</strong> — Jangan memilih produk hanya karena sedang viral di media sosial. Cocokkan dengan kebiasaan penerima, aspek daya guna, keamanan pangan, dan kemudahan logistik pengiriman.
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 5. REFERENSI SURABAYA -->
-        <section id="pilihan-surabaya" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">05 · Referensi Lokal</div>
+        <section id="pilihan-surabaya">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">05 · Referensi Lokal</div>
           <h2>Referensi Produk dan Toko Kuliner di Surabaya</h2>
           <p>
             Surabaya memiliki kekayaan ragam kuliner legendaris dan modern yang sering dijadikan isi bingkisan istimewa, mulai dari lapis Surabaya, kue kering bakery ternama, hingga gift arrangement profesional. Hubungi penyedia terkait secara langsung untuk memeriksa katalog musiman, tanggal pemesanan, dan opsi kurir.
@@ -1116,13 +946,11 @@
             <li>Bagaimana ketentuan pembayaran uang muka (DP), pelunasan, serta kebijakan penggantian produk cacat?</li>
             <li>Apakah pengantaran langsung ke gedung perkantoran di Surabaya dapat difasilitasi?</li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- 6. PANDUAN DIY -->
-        <section id="diy" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">06 · Panduan Praktis</div>
+        <section id="diy">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">06 · Panduan Praktis</div>
           <h2>Cara Membuat Hampers DIY yang Hemat tetapi Terlihat Premium</h2>
           <p>
             Hampers buatan sendiri (DIY) memberi keleluasaan penuh untuk menyesuaikan isi dengan selera penerima. Kesan mewah dan elegan tidak selalu ditentukan oleh harga barang, melainkan oleh keharmonisan tema, kerapian penataan, dan perhatian pada detail kecil.
@@ -1153,13 +981,11 @@
               <p>Periksa segel toples, tanggal kedaluwarsa produk pangan, kekuatan perekat, serta kestabilan isi saat wadah diangkat.</p>
             </li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- 7. CHECKLIST PENGIRIMAN SURABAYA -->
-        <section id="persiapan-pengiriman" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">07 · Informasi Pemesanan Surabaya</div>
+        <section id="persiapan-pengiriman">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">07 · Informasi Pemesanan Surabaya</div>
           <h2>Checklist Pengiriman Hampers ke Kantor dan Gedung di Surabaya</h2>
           <p>
             Pengiriman hampers ke rumah tinggal berbeda dengan distribusi ke gedung perkantoran bertingkat di Surabaya. Paket untuk area bisnis sering kali memerlukan rincian akses lobi, verifikasi keamanan gedung, dan koordinasi dengan penerima tugas.
@@ -1181,7 +1007,7 @@
           </p>
 
           <div class="hl-feature-card my-3">
-            <h3>Data Minimum Sebelum Meminta Penawaran</h3>
+            <h3 style="margin-top:0;">Data Minimum Sebelum Meminta Penawaran</h3>
             <ul class="hl-check-list" style="margin:0.5rem 0 0;">
               <li>Alamat lengkap tujuan beserta kode pos yang valid.</li>
               <li>Nama gedung perkantoran, nomor lantai, dan nomor unit penerima.</li>
@@ -1197,13 +1023,11 @@
           <div class="hl-answer-box">
             <em>"Halo Tim Haraya Hampers, saya ingin menanyakan ketersediaan hampers Lebaran untuk pengiriman tujuan Surabaya. Estimasi jumlah pesanan: [jumlah paket]. Alokasi anggaran per paket: [rentang budget]. Target tanggal tiba: [tanggal]. Detail tujuan: [nama gedung/unit kantor]. PIC penerima: [nama/kontak]. Pola pengantaran: [satu drop alamat / multi-alamat]. Mohon info katalog, spesifikasi kurasi, dan estimasi biaya logistiknya. Terima kasih."</em>
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 8. FAQ -->
-        <section id="faq" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">08 · Pertanyaan Umum</div>
+        <section id="faq">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">08 · Pertanyaan Umum</div>
           <h2>FAQ Seputar Hampers Lebaran Surabaya</h2>
           <div class="hl-faq-list">
             <details open>
@@ -1235,13 +1059,11 @@
               <p>Parcel umumnya merujuk pada susunan bingkisan berbalut plastik bening yang isinya tampak dari luar, sedangkan hampers menggunakan kotak boks atau keranjang tertutup yang menghadirkan pengalaman unboxing istimewa.</p>
             </details>
           </div>
-</div>
-</section>
+        </section>
 
         <!-- 9. RANGKUMAN -->
-        <section id="rangkuman" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">09 · Kesimpulan</div>
+        <section id="rangkuman">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">09 · Kesimpulan</div>
           <h2>Rencanakan Bingkisan yang Tepat, Bukan Sekadar Mewah</h2>
           <p>
             Hampers Lebaran yang berkesan berangkat dari ketulusan dan pemahaman terhadap kebutuhan penerima. Tentukan anggaran yang realistis, pilih isi yang memiliki nilai guna nyata, dan gunakan kemasan yang aman di perjalanan.
@@ -1252,13 +1074,11 @@
             <li>Pengemasan DIY yang rapi bertumpu pada keselarasan tema, wadah yang pas, dan pesan personal yang tulus.</li>
             <li>Pengantaran ke gedung perkantoran di Surabaya memerlukan koordinasi data alamat, akses gedung, dan kontak PIC yang jelas.</li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- 10. BACAAN LANJUTAN -->
-        <section id="internal-link" class="hl-guide-section">
-<div class="container">
-<div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">10 · Bacaan Lanjutan</div>
+        <section id="internal-link">
+          <div class="text-uppercase fw-bold small text-muted mb-1" style="letter-spacing:0.06em;">10 · Bacaan Lanjutan</div>
           <h2>Jelajahi Panduan Hampers Lebaran Lainnya</h2>
           <ul class="hl-check-list">
             <li><a href="hampers-lebaran.html"><strong>Panduan Utama Hampers Lebaran 2027</strong></a> — Pilar utama memahami kurasi isi, anggaran, dan alur pemesanan.</li>
@@ -1267,8 +1087,7 @@
             <li><a href="hampers-lebaran-untuk-kantor-malang.html"><strong>Hampers Lebaran untuk Kantor</strong></a> — Solusi pengadaan bingkisan bagi instansi dan korporasi.</li>
             <li><a href="hampers-lebaran-luar-kota.html"><strong>Hampers Lebaran Luar Kota</strong></a> — Prosedur ekspedisi aman untuk pengiriman lintas wilayah Jawa Timur.</li>
           </ul>
-</div>
-</section>
+        </section>
 
         <!-- CTA SECTION -->
         <section class="hl-cta-card" id="cta">
@@ -1291,9 +1110,26 @@
       </article>
 
       <!-- Sticky Table of Contents Sidebar -->
-      
+      <aside class="hl-sidebar" aria-label="Daftar isi panduan">
+        <strong>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Navigasi Panduan
+        </strong>
+        <ol>
+          <li><a href="#pendahuluan">Pengantar Surabaya</a></li>
+          <li><a href="#parcel-vs-hampers">Parcel vs Hampers</a></li>
+          <li><a href="#katalog-inspirasi">Katalog Budget</a></li>
+          <li><a href="#tren-hampers">Tren 2026–2027</a></li>
+          <li><a href="#pilihan-surabaya">Referensi Lokal</a></li>
+          <li><a href="#diy">Hampers DIY</a></li>
+          <li><a href="#persiapan-pengiriman">Checklist Gedung Kantor</a></li>
+          <li><a href="#faq">FAQ Tanya Jawab</a></li>
+          <li><a href="#rangkuman">Rangkuman</a></li>
+          <li><a href="#cta">Konsultasi Pemesanan</a></li>
+        </ol>
+      </aside>
     </div>
-</main>
+  </main>
 
   <!-- ===== FOOTER STANDAR HARAYA ===== -->
   <footer class="hl-footer" aria-label="Footer situs">

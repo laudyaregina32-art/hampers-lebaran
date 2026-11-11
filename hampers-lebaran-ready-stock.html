@@ -68,57 +68,56 @@
 
     @media (min-width: 992px) {
       body {
-        padding-top: 104px !important;
+        padding-top: 80px !important;
       }
     }
 
-    /* ===== HERO SECTION ===== */
-    .hl-guide-hero {
-      background: linear-gradient(180deg, rgba(219, 228, 218, .5) 0%, rgba(244, 246, 243, .9) 100%);
-      padding: clamp(2.5rem, 5vw, 4.5rem) 0 2.5rem;
-      border-bottom: 1px solid var(--hl-border);
-      position: relative;
-    }
-
-    .hl-guide-hero__title {
-      font-family: var(--hl-font-serif);
-      font-size: clamp(2rem, 4.5vw, 3.1rem);
-      font-weight: 700;
-      color: var(--hl-text);
-      line-height: 1.25;
-      margin: 0.75rem 0 1.25rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hl-guide-hero__lead {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-      color: var(--hl-text-muted);
-      max-width: 860px;
-      line-height: 1.75;
-      margin-bottom: 1.75rem;
-    }
-
-    .hl-guide-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-
-    .hl-guide-chip {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--hl-accent-dark);
+    /* Back Link & Breadcrumb */
+    .hl-back-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.03);
+      gap: 0.5rem;
+      color: var(--hl-accent-dark);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      padding: 0.38rem 0.95rem;
+      border-radius: 999px;
+      box-shadow: 0 1px 4px rgba(40,42,39,0.04);
+      transition: all var(--hl-transition);
+    }
+    .hl-back-link:hover {
+      background: var(--hl-surface-muted);
+      color: var(--hl-text);
+      border-color: var(--hl-accent);
+      transform: translateX(-3px);
     }
 
+    /* Hero Section */
+    .hl-guide-hero {
+      background: linear-gradient(180deg, rgba(219, 228, 218, .6) 0%, rgba(234, 240, 233, 0) 100%);
+      padding: clamp(2rem, 4.5vw, 3.5rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);
+      border-bottom: 1px solid var(--hl-border);
+    }
+    .hl-guide-hero__title {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(2rem, 4.2vw, 3.15rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.24;
+      color: var(--hl-text);
+      margin: 0.75rem 0 1.25rem;
+      max-width: 920px;
+    }
+    .hl-guide-hero__lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.16rem);
+      color: var(--hl-text-muted);
+      line-height: 1.75;
+      max-width: 840px;
+      margin-bottom: 1.5rem;
+    }
     .hl-guide-hero__ctas {
       display: flex;
       flex-wrap: wrap;
@@ -126,408 +125,324 @@
       align-items: center;
     }
 
-    /* ===== TABLE OF CONTENTS (TOC) ===== */
-    .hl-guide-toc {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 18px;
-      padding: 1.5rem 1.75rem;
-      box-shadow: var(--hl-shadow-card);
-      margin: -1.75rem auto 3rem;
-      position: relative;
-      z-index: 2;
+    /* Layout 2-Column with Sidebar */
+    .hl-page-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: clamp(2rem, 4vw, 3.25rem);
+      align-items: start;
+      padding: 2.5rem 0 4.5rem;
+    }
+    @media (max-width: 991px) {
+      .hl-page-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.75rem 0 3.5rem;
+      }
     }
 
-    .hl-guide-toc__heading {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--hl-text);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.85rem;
+    /* Sticky Sidebar TOC */
+    .hl-sidebar {
+      position: sticky;
+      top: 96px;
+      background: var(--hl-surface);
+      border: 1px solid var(--hl-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--hl-shadow-card);
+    }
+    @media (max-width: 991px) {
+      .hl-sidebar {
+        position: static;
+        order: -1;
+      }
+    }
+    .hl-sidebar strong {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .hl-guide-toc__list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.5rem 1.25rem;
-      margin: 0;
-      padding-left: 1.25rem;
-    }
-
-    .hl-guide-toc__list li a {
-      color: var(--hl-accent-dark);
-      font-weight: 500;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: color var(--hl-transition);
-    }
-
-    .hl-guide-toc__list li a:hover {
-      color: var(--hl-text);
-      text-decoration: underline;
-    }
-
-    /* ===== CONTENT SECTIONS & CARDS ===== */
-    .hl-guide-section {
-      padding: clamp(2.5rem, 5vw, 4rem) 0;
-      border-bottom: 1px solid var(--hl-border);
-      scroll-margin-top: 85px;
-    }
-
-    .hl-guide-section:last-of-type {
-      border-bottom: none;
-    }
-
-    .hl-section-title {
       font-family: var(--hl-font-serif);
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--hl-accent-dark);
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 1px solid var(--hl-border);
+    }
+    .hl-sidebar ol {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      counter-reset: toc-item;
+    }
+    .hl-sidebar li {
+      counter-increment: toc-item;
+      padding: 0.35rem 0;
+      font-size: 0.92rem;
+    }
+    .hl-sidebar a {
+      color: var(--hl-text);
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      transition: color var(--hl-transition), transform var(--hl-transition);
+    }
+    .hl-sidebar a::before {
+      content: counter(toc-item) ".";
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--hl-accent);
+      min-width: 1.25rem;
+    }
+    .hl-sidebar a:hover {
+      color: var(--hl-accent-dark);
+      transform: translateX(3px);
+    }
+
+    /* Content Sections */
+    .hl-guide-content section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 95px;
+    }
+    .hl-guide-content h2 {
+      font-family: var(--hl-font-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.15rem);
       font-weight: 700;
       color: var(--hl-text);
       line-height: 1.3;
-      margin-bottom: 0.85rem;
+      margin: 0 0 1.15rem;
     }
-
-    .hl-guide-section__intro {
-      max-width: 860px;
-      color: var(--hl-text-muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-
-    .hl-content-card {
-      background: var(--hl-surface);
-      border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      padding: clamp(1.25rem, 2.5vw, 1.75rem);
-      box-shadow: var(--hl-shadow-card);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      transition: transform var(--hl-transition), box-shadow var(--hl-transition);
-    }
-
-    .hl-content-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--hl-shadow-card-hover);
-    }
-
-    .hl-content-card__num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--hl-warm);
-      color: var(--hl-accent-dark);
-      font-weight: 800;
-      font-size: 0.85rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .hl-content-card__tag {
-      display: inline-block;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #7b4f2c;
-      background: #e3ede1;
-      border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      margin-bottom: 0.85rem;
-      border: 1px solid rgba(184, 151, 61, 0.25);
-      align-self: flex-start;
-    }
-
-    .hl-content-card__price {
+    .hl-guide-content h3 {
       font-family: var(--hl-font-serif);
-      font-size: 1.28rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--hl-accent-dark);
-      margin-bottom: 0.75rem;
+      margin: 1.75rem 0 0.85rem;
     }
-
-    .hl-content-card__title {
-      font-family: var(--hl-font-serif);
-      font-size: 1.22rem;
-      font-weight: 700;
+    .hl-guide-content p {
+      margin-bottom: 1.1rem;
       color: var(--hl-text);
-      line-height: 1.35;
-      margin: 0 0 0.65rem;
+      font-size: 1.02rem;
+      line-height: 1.75;
     }
 
-    .hl-content-card p {
-      color: var(--hl-text-muted);
+    /* Callout & Answer Boxes */
+    .hl-answer-box {
+      background: var(--hl-surface-muted);
+      border-left: 4px solid var(--hl-accent-dark);
+      border-top: 1px solid var(--hl-border);
+      border-right: 1px solid var(--hl-border);
+      border-bottom: 1px solid var(--hl-border);
+      padding: 1.25rem 1.45rem;
+      border-radius: 0 var(--hl-radius-md) var(--hl-radius-md) 0;
+      margin: 1.25rem 0 1.75rem;
+      box-shadow: 0 2px 8px rgba(33, 60, 53, 0.04);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+    .hl-answer-box strong {
+      color: var(--hl-accent-dark);
+    }
+
+    .hl-note {
+      border-left: 4px solid var(--hl-accent-dark);
+      background: var(--hl-surface);
+      border-top: 1px solid var(--hl-border);
+      border-right: 1px solid var(--hl-border);
+      border-bottom: 1px solid var(--hl-border);
+      border-radius: 0 var(--hl-radius-md) var(--hl-radius-md) 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 14px rgba(33, 60, 53, 0.04);
       font-size: 0.95rem;
       line-height: 1.65;
-      margin: 0 0 0.85rem;
     }
-
-    .hl-content-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Callout Box */
-    .hl-guide-callout {
-      background: rgba(219, 228, 218, .6);
-      border-left: 4px solid var(--hl-accent-dark);
-      border-radius: 0 14px 14px 0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      color: var(--hl-text);
-      font-size: 0.96rem;
-      line-height: 1.7;
-    }
-
-    .hl-guide-callout strong {
+    .hl-note strong {
       color: var(--hl-accent-dark);
     }
 
-    /* Step Sequence */
-    .hl-step-item {
-      display: flex;
-      gap: 1.25rem;
-      padding: 1.35rem 1.5rem;
+    /* Grid Tiles */
+    .hl-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+      margin: 1.75rem 0;
+    }
+    @media (max-width: 640px) {
+      .hl-tile-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .hl-tile {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      margin-bottom: 1rem;
+      border-radius: var(--hl-radius-md);
+      padding: 1.35rem 1.45rem;
       box-shadow: var(--hl-shadow-card);
       transition: transform var(--hl-transition);
     }
-
-    .hl-step-item:hover {
+    .hl-tile:hover {
       transform: translateY(-2px);
     }
-
-    .hl-step-num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--hl-accent-dark);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .hl-step-body h3 {
-      font-size: 1.1rem;
+    .hl-tile .hl-tile-tag {
+      display: inline-block;
+      font-size: 0.75rem;
       font-weight: 700;
-      margin: 0 0 0.35rem;
-      color: var(--hl-text);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--hl-accent-dark);
+      background: var(--hl-warm);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 0.65rem;
+      border: 1px solid rgba(184, 151, 61, 0.25);
     }
-
-    .hl-step-body p {
-      margin: 0;
+    .hl-tile h3 {
+      font-family: var(--hl-font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--hl-text);
+      margin: 0 0 0.5rem;
+    }
+    .hl-tile .hl-tile-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--hl-accent-dark);
+      margin-bottom: 0.5rem;
+    }
+    .hl-tile p {
+      font-size: 0.92rem;
       color: var(--hl-text-muted);
-      font-size: 0.94rem;
+      margin: 0;
       line-height: 1.6;
     }
 
-    /* Table Container */
-    .hl-table-container {
+    /* Checklist & Box Panels */
+    .hl-checklist-box {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
-      border-radius: 16px;
-      overflow-x: auto;
+      border-radius: var(--hl-radius-md);
+      padding: 1.6rem 1.85rem;
       box-shadow: var(--hl-shadow-card);
-      margin: 1.5rem 0;
+      margin: 1.75rem 0;
     }
-
-    .hl-table-container table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 620px;
-    }
-
-    .hl-table-container th,
-    .hl-table-container td {
-      padding: 1.1rem 1.25rem;
-      border-bottom: 1px solid var(--hl-border);
-      vertical-align: top;
-      font-size: 0.95rem;
-    }
-
-    .hl-table-container th {
-      background: var(--hl-surface-muted);
-      color: var(--hl-accent-dark);
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .hl-table-container tr:last-child td {
-      border-bottom: none;
-    }
-
-    /* Checklist */
-    .hl-guide-checklist {
+    .hl-checklist-box ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 1rem 0 0;
     }
-
-    .hl-guide-checklist li {
+    .hl-checklist-box li {
       padding: 0.55rem 0 0.55rem 1.85rem;
       position: relative;
-      color: var(--hl-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.96rem;
+      color: var(--hl-text);
+      line-height: 1.65;
       border-bottom: 1px dashed var(--hl-border);
     }
-
-    .hl-guide-checklist li:last-child {
+    .hl-checklist-box li:last-child {
       border-bottom: none;
     }
-
-    .hl-guide-checklist li::before {
+    .hl-checklist-box li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      top: 0.5rem;
+      top: 0.55rem;
       color: var(--hl-accent-dark);
       font-weight: 800;
     }
 
     /* FAQ Details */
-    .hl-guide-faq details {
+    .hl-faq-list details {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
       border-radius: 12px;
-      padding: 1.15rem 1.35rem;
+      padding: 1.1rem 1.35rem;
       margin-bottom: 0.85rem;
-      transition: background var(--hl-transition), border-color var(--hl-transition);
+      transition: all var(--hl-transition);
     }
-
-    .hl-guide-faq details[open] {
+    .hl-faq-list details[open] {
       border-color: var(--hl-accent);
-      box-shadow: 0 4px 16px rgba(40, 42, 39, 0.04);
+      box-shadow: 0 4px 14px rgba(33, 60, 53, 0.05);
     }
-
-    .hl-guide-faq summary {
+    .hl-faq-list summary {
       font-family: var(--hl-font-serif);
       font-weight: 700;
-      font-size: 1.08rem;
-      cursor: pointer;
+      font-size: 1.05rem;
       color: var(--hl-text);
+      cursor: pointer;
       list-style: none;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      align-items: center;
     }
-
-    .hl-guide-faq summary::-webkit-details-marker {
+    .hl-faq-list summary::-webkit-details-marker {
       display: none;
     }
-
-    .hl-guide-faq summary::after {
+    .hl-faq-list summary::after {
       content: "+";
-      font-family: Inter, sans-serif;
-      font-size: 1.4rem;
-      font-weight: 400;
+      font-size: 1.35rem;
+      font-weight: 700;
       color: var(--hl-accent-dark);
-      line-height: 1;
+      transition: transform 0.2s ease;
     }
-
-    .hl-guide-faq details[open] summary::after {
+    .hl-faq-list details[open] summary::after {
       content: "−";
     }
-
-    .hl-guide-faq details p {
-      padding: 0.85rem 0 0;
-      margin: 0;
+    .hl-faq-list details p {
+      margin: 0.85rem 0 0;
       color: var(--hl-text-muted);
       font-size: 0.96rem;
       line-height: 1.7;
-      border-top: 1px dashed var(--hl-border);
-      margin-top: 0.75rem;
     }
 
-    /* CTA Section & Related Pills */
-    .hl-guide-cta-card {
-      background: linear-gradient(135deg, #3d4334 0%, var(--hl-accent-dark) 100%);
-      color: #ffffff;
-      border-radius: 20px;
-      padding: clamp(2rem, 4vw, 3.25rem);
-      margin-top: 2rem;
-      box-shadow: 0 16px 44px rgba(40, 42, 39, 0.12);
-    }
-
-    .hl-guide-cta-card h2 {
-      font-family: var(--hl-font-serif);
-      color: #ffffff;
-      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
-      font-weight: 700;
-      margin: 0.5rem 0 1rem;
-    }
-
-    .hl-guide-cta-card p {
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      max-width: 780px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hl-related-pill-row {
+    /* Related Links */
+    .hl-related-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
-      margin-top: 1rem;
+      margin: 1.5rem 0;
     }
-
-    .hl-related-pill {
-      display: inline-block;
+    .hl-related-links a {
       background: var(--hl-surface);
       border: 1px solid var(--hl-border);
+      color: var(--hl-text);
+      padding: 0.5rem 1rem;
       border-radius: 999px;
-      padding: 0.45rem 1.05rem;
-      font-size: 0.88rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
       text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
       transition: all var(--hl-transition);
-      box-shadow: 0 1px 4px rgba(40, 42, 39, 0.04);
+      box-shadow: 0 1px 3px rgba(40,42,39,0.03);
     }
-
-    .hl-related-pill:hover {
+    .hl-related-links a:hover {
       background: var(--hl-surface-muted);
-      color: var(--hl-accent);
+      color: var(--hl-accent-dark);
       border-color: var(--hl-accent);
       transform: translateY(-1px);
     }
 
-    .hl-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.88rem;
-      color: var(--hl-accent-dark);
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--hl-border);
-      border-radius: 999px;
-      padding: 0.35rem 0.95rem;
-      background: var(--hl-surface);
-      transition: all var(--hl-transition);
+    /* CTA Section Banner */
+    .hl-cta-card {
+      background: linear-gradient(135deg, var(--hl-accent-dark) 0%, #17322b 100%);
+      color: #ffffff;
+      border-radius: var(--hl-radius-lg);
+      padding: clamp(2rem, 4vw, 3rem);
+      box-shadow: 0 12px 36px rgba(33, 60, 53, 0.18);
+      margin: 2.5rem 0 1.5rem;
     }
-
-    .hl-back-link:hover {
-      background: var(--hl-surface-muted);
-      border-color: var(--hl-accent);
-      transform: translateY(-1px);
+    .hl-cta-card h2 {
+      font-family: var(--hl-font-serif);
+      color: #ffffff;
+      font-size: clamp(1.6rem, 2.6vw, 2.15rem);
+      margin: 0 0 1rem;
+    }
+    .hl-cta-card p {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 760px;
+      margin-bottom: 1.75rem;
     }
   </style>
 
@@ -623,15 +538,15 @@
           },
           {
             "@type": "Question",
-            "name": "Apa perbedaan utama hampers ready stock dan hampers custom?",
+            "name": "Apa perbedaan hampers ready stock dan custom?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Perbedaan utamanya terletak pada fleksibilitas isi, tingkat personalisasi, waktu persiapan, proses persetujuan, dan kepastian biaya per unit."
+              "text": "Ready stock umumnya menggunakan konfigurasi yang sudah disiapkan sehingga ruang ubahnya lebih terbatas. Hampers custom memberi ruang penyesuaian isi, ukuran, atau identitas visual, tetapi memerlukan finalisasi desain dan proses persetujuan."
             }
           },
           {
             "@type": "Question",
-            "name": "Kapan sebaiknya memilih hampers custom daripada ready stock?",
+            "name": "Kapan sebaiknya memilih hampers custom?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Pilih custom ketika kebutuhan desain, ukuran, identitas brand, atau komposisi tidak terpenuhi oleh paket standar dan jadwal masih memungkinkan proses persetujuan serta pengerjaan produksi."
@@ -661,7 +576,7 @@
 </head>
 
 <body>
-  <!-- ===== HEADER STANDAR ===== -->
+  <!-- ===== HEADER STANDAR HARAYA ===== -->
   <header>
     <a href="#main-content" class="hl-skip-link">Loncat ke konten utama</a>
     <div class="hl-topbar d-none d-md-block">
@@ -687,7 +602,7 @@
             <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="paket.html" role="button" id="navDropdownPaket"
+              <a class="nav-link dropdown-toggle" href="paket.html" role="button" id="navDropdownPaket"
                 aria-expanded="false">Paket</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="paket.html">Semua Paket</a></li>
@@ -703,7 +618,7 @@
             <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
           </ul>
           <a class="hl-btn-wa d-none d-lg-inline-flex"
-            href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
+            href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20tentang%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
             target="_blank" rel="noopener noreferrer">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
@@ -713,7 +628,7 @@
           </a>
           <div class="d-lg-none mt-3 mb-2">
             <a class="hl-btn-wa w-100 justify-content-center"
-              href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
+              href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20tentang%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
               target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -727,765 +642,472 @@
     </nav>
   </header>
 
-  <main id="main-content">
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hl-guide-hero" aria-labelledby="hero-heading">
-      <div class="container">
-        <!-- Breadcrumb Nav & Tombol Kembali -->
-        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
-          <nav aria-label="Breadcrumb">
-            <ol class="hl-breadcrumb mb-0" style="display:flex;gap:0.5rem;list-style:none;padding:0;font-size:0.88rem;color:var(--hl-text-muted);">
-              <li><a href="index.html" style="color:var(--hl-accent-dark);text-decoration:none;">Beranda</a></li>
-              <li>/</li>
-              <li><a href="paket.html" style="color:var(--hl-accent-dark);text-decoration:none;">Paket</a></li>
-              <li>/</li>
-              <li><span aria-current="page" style="color:var(--hl-text);">Ready Stock vs Custom</span></li>
-            </ol>
-          </nav>
-          <a href="paket.html" class="hl-back-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            Kembali ke Paket
-          </a>
-        </div>
-
-        <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-semibold mb-2" style="font-size:0.82rem;letter-spacing:0.04em;">
-          PANDUAN MEMILIH HAMPERS • LEBARAN 2027
-        </span>
-        <h1 class="hl-guide-hero__title" id="hero-heading">
-          Hampers Lebaran Ready Stock vs Custom Mana yang Lebih Baik?
-        </h1>
-        <p class="hl-guide-hero__lead">
-          Pilihan terbaik bukan semata-mata yang paling cepat atau paling mewah. Sesuaikan jalur pemesanan dengan ketersediaan stok fisik yang nyata, kebutuhan identitas brand perusahaan, jumlah penerima, anggaran, dan tenggat distribusi pengiriman.
-        </p>
-
-        <div class="hl-guide-chip-row">
-          <span class="hl-guide-chip">Perbandingan Komparatif</span>
-          <span class="hl-guide-chip">Peta Anggaran Unit</span>
-          <span class="hl-guide-chip">Solusi Hibrida Semi-Custom</span>
-          <span class="hl-guide-chip">Kurasi Isi &amp; Packaging</span>
-          <span class="hl-guide-chip">SOP Pengadaan Vendor</span>
-        </div>
-
-        <div class="hl-guide-hero__ctas">
-          <a href="#perbandingan" class="hl-btn-wa">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            </svg>
-            Lihat Tabel Perbandingan
-          </a>
-          <a href="#anggaran" class="btn btn-outline-secondary" style="border-radius:999px;font-size:0.92rem;padding:0.65rem 1.4rem;font-weight:600;">
-            Petakan Anggaran
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FLOATING TABLE OF CONTENTS ===== -->
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hl-guide-hero" id="main-content">
     <div class="container">
-      <nav class="hl-guide-toc" aria-label="Daftar isi panduan">
-        <div class="hl-guide-toc__heading">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="8" y1="6" x2="21" y2="6"></line>
-            <line x1="8" y1="12" x2="21" y2="12"></line>
-            <line x1="8" y1="18" x2="21" y2="18"></line>
-            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-          </svg>
-          Navigasi Cepat Panduan
-        </div>
-        <ol class="hl-guide-toc__list">
-          <li><a href="#jawaban-singkat">Jawaban Singkat &amp; Ringkasan</a></li>
-          <li><a href="#arti-ready-stock">Memahami Ready Stock</a></li>
-          <li><a href="#custom">Komitmen Hampers Custom</a></li>
-          <li><a href="#perbandingan">Tabel Perbandingan Kebutuhan</a></li>
-          <li><a href="#gabungan">Pendekatan Semi-Custom Hibrida</a></li>
-          <li><a href="#anggaran">Pemetaan Anggaran &amp; Kategori</a></li>
-          <li><a href="#isi">Kurasi Produk &amp; Varian Isi</a></li>
-          <li><a href="#vendor">Strategi Seleksi Vendor Korporat</a></li>
-          <li><a href="#packing">SOP Pengemasan &amp; Proteksi Kurir</a></li>
-          <li><a href="#checklist">Checklist 10 Poin Sebelum Membeli</a></li>
-          <li><a href="#faq">FAQ Pertanyaan Umum</a></li>
-          <li><a href="#kesimpulan">Rangkuman Akhir &amp; Konsultasi</a></li>
-        </ol>
+      <nav aria-label="Breadcrumb" class="mb-3">
+        <a href="paket.html" class="hl-back-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Kembali ke Katalog Paket
+        </a>
       </nav>
+      <div class="hl-eyebrow">Panduan Memilih Hampers · Lebaran 2027</div>
+      <h1 class="hl-guide-hero__title">Hampers Lebaran Ready Stock vs Custom Mana yang Lebih Baik?</h1>
+      <p class="hl-guide-hero__lead">
+        Pilihan terbaik bukan semata-mata yang paling cepat atau paling mewah. Sesuaikan jalur pemesanan dengan ketersediaan stok fisik yang nyata, kebutuhan identitas brand perusahaan, jumlah penerima, anggaran, dan tenggat distribusi pengiriman.
+      </p>
+      <div class="hl-guide-hero__ctas">
+        <a href="#perbandingan" class="hl-btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Lihat Tabel Perbandingan
+        </a>
+        <a href="#anggaran" class="btn btn-outline-secondary" style="border-radius:999px;font-size:0.9rem;padding:0.6rem 1.25rem;">
+          Petakan Anggaran
+        </a>
+      </div>
     </div>
+  </section>
 
-    <!-- ===== SECTION 1: JAWABAN SINGKAT ===== -->
-    <section class="hl-guide-section pt-0" id="jawaban-singkat">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          01 • RINGKASAN EKSEKUTIF
-        </span>
-        <h2 class="hl-section-title">Jawaban Singkat Memilih Jalur Pemesanan</h2>
-        <p class="hl-guide-section__intro">
-          Temukan rekomendasi cepat untuk menentukan apakah paket ready stock langsung jalan atau pesanan custom khusus yang paling sesuai dengan kebutuhan instansi Anda.
-        </p>
+  <!-- ===== MAIN CONTENT LAYOUT ===== -->
+  <main class="container">
+    <div class="hl-page-layout">
+      <!-- Article Column -->
+      <article class="hl-guide-content">
+        <!-- 01 Pengantar & Jawaban Singkat -->
+        <section id="jawaban-singkat">
+          <div class="hl-answer-box">
+            <strong>Jawaban singkat</strong> — hampers Lebaran ready stock sangat cocok ketika paket standar telah memenuhi kebutuhan dan ketersediaan stok fisiknya dapat dikonfirmasi segera. Sementara itu, hampers custom lebih tepat ketika isi, ukuran kemasan, atau identitas visual brand perlu disesuaikan secara khusus. Terdapat pula pendekatan gabungan, yaitu memadukan komponen standar dengan kartu ucapan atau sleeve custom berlogo perusahaan.
+          </div>
+          <div class="hl-note">
+            <strong>Hal terpenting sebelum memesan</strong> — istilah <em>ready stock</em> tidak otomatis berarti seluruh kuantiti paket sudah selesai dirakit atau dapat dikirim pada hari yang sama. Selalu mintakan konfirmasi tertulis mengenai jumlah slot stok yang dialokasikan, varian produk, status perakitan, dan estimasi waktu kurir pengiriman.
+          </div>
+        </section>
 
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="hl-content-card" style="border-top:4px solid var(--hl-accent-dark);">
-              <span class="hl-content-card__tag">Ready Stock Direkomendasikan Jika</span>
-              <h3 class="hl-content-card__title">Kebutuhan Cepat &amp; Komposisi Telah Sesuai</h3>
-              <p>
-                Hampers ready stock sangat ideal saat katalog standar vendor telah memenuhi selera penerima, jumlah kebutuhan fleksibel, dan ketersediaan stok fisik dapat segera dialokasikan di gudang tanpa masa tunggu pabrikasi box.
-              </p>
-              <div class="hl-guide-callout mt-auto mb-0">
-                <strong>Tips Kunci</strong> Pastikan status paket apakah sudah selesai dirakit atau baru komponennya yang tersedia agar estimasi pengiriman akurat.
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hl-content-card" style="border-top:4px solid #7b4f2c;">
-              <span class="hl-content-card__tag">Custom Direkomendasikan Jika</span>
-              <h3 class="hl-content-card__title">Identitas Brand Kuat &amp; Kurasi Khusus</h3>
-              <p>
-                Hampers custom menjadi pilihan terbaik ketika dimensi box, pilihan rasa kue, palet warna pita, logo hotprint emas perusahaan, dan kartu ucapan direksi harus dirancang khusus untuk merefleksikan prestise korporat.
-              </p>
-              <div class="hl-guide-callout mt-auto mb-0" style="border-left-color:#7b4f2c;background:rgba(238,230,220,.6);">
-                <strong>Tips Kunci</strong> Siapkan file logo vektor resolusi tinggi dan kunci batas persetujuan sampel fisik minimal 3 minggu sebelum cuti bersama.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 2: MEMAHAMI READY STOCK ===== -->
-    <section class="hl-guide-section" id="arti-ready-stock">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          02 • KONSEP READY STOCK
-        </span>
-        <h2 class="hl-section-title">Pahami Arti Hampers Lebaran Ready Stock</h2>
-        <p class="hl-guide-section__intro">
-          Ready stock merujuk pada paket atau komponen bingkisan yang telah diproduksi sebelumnya. Namun foto katalog atau label ready stock di media sosial belum menjadi jaminan barang langsung siap kirim dalam ratusan unit.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-lg-7">
-            <div class="hl-content-card">
-              <h3 class="hl-content-card__title">Klarifikasi Kesiapan Stok Fisik</h3>
-              <p>
-                Sebelum melakukan pembayaran uang muka, pastikan Anda menanyakan tiga hal mendasar mengenai berapa jumlah fisik yang benar-benar siap dialokasikan, apakah bingkisan sudah selesai dikemas rapi atau baru bahan mentahnya yang ada di gudang, serta berapa lama durasi tambahan yang dibutuhkan bila Anda menyertakan kartu ucapan berpenamaan khusus.
-              </p>
-              <p>
-                Banyak pembeli mengira label ready stock berarti paket dapat dikirim instan dalam 1 jam. Nyatanya, proses penulisan kartu nama penerima, penataan pita satin, dan jadwal antrean kurir tetap memerlukan alokasi waktu tersendiri.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Daftar Verifikasi Stok</span>
-              <h3 class="hl-content-card__title">Hal yang Wajib Diverifikasi</h3>
-              <ul class="hl-guide-checklist mt-2">
-                <li>Jumlah stok aktual per varian kue, bukan sekadar sampel etalase.</li>
-                <li>Rincian komposisi isi, gramasi toples, dan potensi substitusi produk.</li>
-                <li>Status fisik paket, apakah siap kirim atau masih proses perakitan.</li>
-                <li>Tambahan biaya serta durasi kerja bila memerlukan kartu custom nama.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 3: MEMAHAMI CUSTOM ===== -->
-    <section class="hl-guide-section" id="custom">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          03 • KONSEP CUSTOM
-        </span>
-        <h2 class="hl-section-title">Pahami Komitmen Hampers Custom</h2>
-        <p class="hl-guide-section__intro">
-          Hampers custom sangat layak dipilih ketika katalog standar belum mampu merepresentasikan citra eksklusif yang diinginkan. Namun fleksibilitas ini menuntut komitmen koordinasi yang lebih terstruktur.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">1</div>
-              <h3 class="hl-content-card__title">Aset Identitas Brand</h3>
-              <p>File logo format vektor AI, PDF, atau PNG transparan beresolusi tinggi beserta panduan palet warna resmi perusahaan agar hasil cetak presisi.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">2</div>
-              <h3 class="hl-content-card__title">Spesifikasi Kemasan</h3>
-              <p>Preferensi material box rigid hardbox, besek bambu, atau akrilik, dimensi centimeter, serta pemilihan warna pita satin penutup.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">3</div>
-              <h3 class="hl-content-card__title">Database Penerima</h3>
-              <p>Jumlah kuantiti paket, segmentasi penerima jajaran direksi, staf internal, atau mitra luar kota, serta alamat lengkap pengiriman.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">4</div>
-              <h3 class="hl-content-card__title">PIC Pengambil Keputusan</h3>
-              <p>Satu penanggung jawab internal yang memiliki wewenang menyetujui sampel fisik dan termin pembayaran tanpa birokrasi berlarut.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 4: TABEL PERBANDINGAN ===== -->
-    <section class="hl-guide-section" id="perbandingan">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          04 • ANALISIS KOMPARATIF
-        </span>
-        <h2 class="hl-section-title">Perbandingan Ready Stock dan Custom Berdasarkan Kebutuhan</h2>
-        <p class="hl-guide-section__intro">
-          Pelajari tabel perbandingan menyeluruh di bawah ini untuk melihat kelebihan dan batasan dari masing-masing opsi pemesanan.
-        </p>
-
-        <div class="hl-table-container">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:25%;">Faktor Pertimbangan</th>
-                <th style="width:37%;">Hampers Ready Stock</th>
-                <th style="width:38%;">Hampers Custom Eksklusif</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Konfigurasi Isi</strong></td>
-                <td>Mengikuti komposisi paket baku yang telah disiapkan vendor.</td>
-                <td>Sepenuhnya fleksibel dikurasi sesuai preferensi pemesan.</td>
-              </tr>
-              <tr>
-                <td><strong>Identitas Brand</strong></td>
-                <td>Umumnya terbatas pada penambahan kartu ucapan atau sleeve luar.</td>
-                <td>Menyatu dalam desain box, hotprint logo emas, dan pita khusus.</td>
-              </tr>
-              <tr>
-                <td><strong>Proses Persetujuan</strong></td>
-                <td>Cepat, cukup memilih varian paket dan konfirmasi ketersediaan stok.</td>
-                <td>Memerlukan pembuatan mockup digital dan persetujuan sampel fisik.</td>
-              </tr>
-              <tr>
-                <td><strong>Garis Waktu (Lead Time)</strong></td>
-                <td>Singkat, hanya membutuhkan waktu perakitan dan jadwal kurir.</td>
-                <td>Memerlukan waktu 2–4 minggu untuk pabrikasi box dan pengadaan isi.</td>
-              </tr>
-              <tr>
-                <td><strong>Struktur Biaya</strong></td>
-                <td>Harga paket pasti per unit sesuai katalog yang tercantum.</td>
-                <td>Tergantung pada volume minimum order (MOQ) dan tingkat kerumitan bahan.</td>
-              </tr>
-              <tr>
-                <td><strong>Kondisi Paling Tepat</strong></td>
-                <td>Kebutuhan mendesak, waktu mepet, atau jumlah pesanan fleksibel.</td>
-                <td>Pengadaan korporat resmi, bingkisan mitra VIP, dan branding instansi.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="hl-guide-callout mt-3">
-          <strong>Catatan Penting</strong> Ready stock tidak selalu berarti lebih murah dan custom tidak otomatis mahal. Bandingkan penawaran akhir berdasarkan rincian gramasi isi, kualitas kemasan, biaya personalisasi, serta garansi pengiriman yang setara.
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 5: PENDEKATAN GABUNGAN ===== -->
-    <section class="hl-guide-section" id="gabungan">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          05 • SOLUSI HIBRIDA
-        </span>
-        <h2 class="hl-section-title">Pertimbangkan Pendekatan Gabungan Semi-Custom</h2>
-        <p class="hl-guide-section__intro">
-          Bila paket ready stock vendor sudah memiliki cita rasa kue yang lezat namun instansi Anda tetap membutuhkan sentuhan logo resmi perusahaan, skema semi-custom adalah jalan tengah yang sangat efisien.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Kecepatan &amp; Efisiensi</span>
-              <h3 class="hl-content-card__title">Pemanfaatan Box Siap Pakai</h3>
-              <p>
-                Memanfaatkan box standar yang telah selesai diproduksi tanpa perlu menunggu antrean pabrikasi karton dari nol. Waktu persiapan dipangkas drastis sehingga aman meski dipesan mendekati pertengahan Ramadhan.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Sentuhan Personal</span>
-              <h3 class="hl-content-card__title">Sleeve Luar &amp; Kartu Berlogo</h3>
-              <p>
-                Bingkisan dipercantik dengan sleeve selongsong kemasan luar berlogo, pita satin warna brand perusahaan, atau kartu ucapan khusus berbahan art carton tebal bertanda tangan jajaran pimpinan.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 6: PETA ANGGARAN ===== -->
-    <section class="hl-guide-section" id="anggaran">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          06 • SEGMENTASI BIAYA
-        </span>
-        <h2 class="hl-section-title">Petakan Anggaran Hampers Lebaran</h2>
-        <p class="hl-guide-section__intro">
-          Merencanakan anggaran pengadaan dimulai dengan mengelompokkan profil penerima ke dalam beberapa tingkatan prioritas agar alokasi dana proporsional dan tidak terjadi pembengkakan tak terduga.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Ekonomis Massal</span>
-              <div class="hl-content-card__price">Rp79.000 – Rp250.000</div>
-              <h3 class="hl-content-card__title">Paket Ramah Anggaran</h3>
-              <p>Sangat ideal untuk pembagian massal karyawan staf lapangan, apresiasi komunitas, tetangga perumahan, atau mitra logistik. Mengutamakan kue kering klasik mini atau sembako praktis dalam kemasan besek bambu rapi.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Kategori Menengah</span>
-              <div class="hl-content-card__price">Rp250.000 – Rp500.000</div>
-              <h3 class="hl-content-card__title">Paket Favorit Elegan</h3>
-              <p>Pilihan paling populer untuk rekan kerja profesional, keluarga dekat, dan sahabat. Mengombinasikan 3–4 toples kue kering wisman premium, artisan tea bunga, sajadah travel eksklusif, atau set cangkir keramik.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Premium VIP</span>
-              <div class="hl-content-card__price">Rp500.000 – Rp1.000.000+</div>
-              <h3 class="hl-content-card__title">Paket Eksekutif Mewah</h3>
-              <p>Ditujukan khusus bagi jajaran direksi, mitra bisnis strategis, atau tokoh senior. Menggunakan rigid hardbox magnetik berbalut hotprint emas, lapis legit premium, madu murni, atau peralatan makan porselen mewah.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Kalkulasi All-In</span>
-              <div class="hl-content-card__price">Landed Cost</div>
-              <h3 class="hl-content-card__title">Total Biaya Riil</h3>
-              <p>Pastikan perhitungan Anda telah mencakup seluruh komponen biaya: harga isi produk, kemasan box luar, bubble wrap proteksi, kartu ucapan, biaya perakitan, dan tarif ekspedisi kurir hingga pintu penerima.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 7: KURASI ISI ===== -->
-    <section class="hl-guide-section" id="isi">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          07 • PILIHAN PRODUK
-        </span>
-        <h2 class="hl-section-title">Kurasi Isi Hampers dari Kue Klasik Hingga Produk Fungsional</h2>
-        <p class="hl-guide-section__intro">
-          Kombinasi isi bingkisan yang berkesan harus mempertimbangkan daya tahan produk, cara pengantaran, dan kemudahan penyimpanan di rumah penerima.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">A</div>
-              <h3 class="hl-content-card__title">Kue Kering Klasik Nusantara</h3>
-              <p>
-                Nastar wisman nanas lumer, kastengel keju edam gurih, putri salju keju, lidah kucing renyah, dan cookies almond merupakan suguhan wajib hari raya yang disukai segala usia. Pastikan toples bersegel rapat agar kerenyahannya bertahan hingga berbulan-bulan.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">B</div>
-              <h3 class="hl-content-card__title">Dessert Modern &amp; Sajian Artisan</h3>
-              <p>
-                Untuk memberikan kesan kontemporer yang unik, padukan dengan cokelat batangan artisan, kurma lapis cokelat kacang mede, brownies panggang fudgy, atau artisan tea chamomile yang memberikan ketenangan dan kesegaran setelah berpuasa sebulan penuh.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="hl-content-card">
-              <div class="hl-content-card__num">C</div>
-              <h3 class="hl-content-card__title">Perlengkapan Ibadah &amp; Fungsional</h3>
-              <p>
-                Barang non-makanan memiliki masa pakai panjang tanpa risiko kedaluwarsa. Sajadah lipat travel anti air, mukena katun jepang, sarung tenun berkualitas, tumbler insulated tahan panas, serta mangkuk keramik estetis menjadi bingkisan yang berfaedah lama.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 8: SELEKSI VENDOR KORPORAT ===== -->
-    <section class="hl-guide-section" id="vendor">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          08 • KRITERIA PENGADAAN
-        </span>
-        <h2 class="hl-section-title">Strategi Corporate Gifting dan Seleksi Vendor Pengadaan</h2>
-        <p class="hl-guide-section__intro">
-          Bagi divisi Human Resources (HR), General Affairs (GA), atau tim procurement perusahaan, seleksi vendor pengadaan hampers wajib memperhatikan aspek legalitas hukum, kapasitas workshop, dan jaminan ketepatan waktu distribusi.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="hl-step-item">
-              <div class="hl-step-num">1</div>
-              <div class="hl-step-body">
-                <h3>Legalitas Badan Usaha Terverifikasi</h3>
-                <p>Pastikan vendor memiliki izin usaha yang jelas, nomor rekening bank resmi atas nama perusahaan, serta sanggup menerbitkan faktur pajak jika dibutuhkan.</p>
-              </div>
-            </div>
-            <div class="hl-step-item">
-              <div class="hl-step-num">2</div>
-              <div class="hl-step-body">
-                <h3>SOP Garansi Kerusakan Produk</h3>
-                <p>Perjelas klausul komplain barang rusak atau toples retak di perjalanan, termasuk syarat video unboxing dan kecepatan pengiriman paket pengganti.</p>
-              </div>
-            </div>
-            <div class="hl-step-item">
-              <div class="hl-step-num">3</div>
-              <div class="hl-step-body">
-                <h3>Kualitas Finishing Cetak &amp; Hotprint</h3>
-                <p>Periksa kerapian lem sudut hardbox, ketajaman hasil cetakan foil emas logo perusahaan, dan kualitas sekat busa penahan toples.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hl-step-item">
-              <div class="hl-step-num">4</div>
-              <div class="hl-step-body">
-                <h3>Kapasitas Produksi Nyata</h3>
-                <p>Pastikan vendor memiliki tim perakit yang memadai untuk menyelesaikan pesanan ratusan paket sebelum cuti bersama hari raya dimulai.</p>
-              </div>
-            </div>
-            <div class="hl-step-item">
-              <div class="hl-step-num">5</div>
-              <div class="hl-step-body">
-                <h3>Sertifikasi Halal &amp; Higienitas</h3>
-                <p>Pastikan seluruh produk makanan telah mengantongi sertifikat halal resmi dan izin edar BPOM atau P-IRT yang masih aktif.</p>
-              </div>
-            </div>
-            <div class="hl-step-item">
-              <div class="hl-step-num">6</div>
-              <div class="hl-step-body">
-                <h3>Manajemen Logistik Terintegrasi</h3>
-                <p>Vendor yang berpengalaman menyediakan armada kurir khusus mobil tertutup untuk pengantaran lokal dan packing kayu untuk pengiriman antarkota.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 9: PACKAGING & PROTEKSI ===== -->
-    <section class="hl-guide-section" id="packing">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          09 • PROTEKSI &amp; LOGISTIK
-        </span>
-        <h2 class="hl-section-title">Pengemasan Eksklusif dan Pengiriman yang Aman</h2>
-        <p class="hl-guide-section__intro">
-          Keindahan bingkisan harus diimbangi dengan keamanan maksimal selama proses pengiriman kurir. Gunakan bahan kardus pelindung luar (corrugated master box) dengan ketebalan dobel untuk menahan benturan.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Keramik &amp; Kaca</span>
-              <h3 class="hl-content-card__title">Proteksi Pecah Belah</h3>
-              <p>Lapisi setiap toples kaca dan piring keramik menggunakan air column cushion atau bubble wrap tebal, serta berikan sekat karton pemisah agar tidak beradu di perjalanan.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Kue Kering</span>
-              <h3 class="hl-content-card__title">Segel Kedap Udara</h3>
-              <p>Rapatkan penutup toples dengan segel isolasi khusus, tata posisi toples terberat di bagian bawah box, dan tempelkan stiker peringatan Fragile pada kardus luar.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Lokal Malang Raya</span>
-              <h3 class="hl-content-card__title">Kurir Blind Van</h3>
-              <p>Gunakan armada kurir mobil blind van tertutup agar paket tidak terpapar panas matahari langsung atau guyuran air hujan selama proses pengantaran ke rumah penerima.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="hl-content-card">
-              <span class="hl-content-card__tag">Antarkota Ekspedisi</span>
-              <h3 class="hl-content-card__title">Antisipasi Overload</h3>
-              <p>Kirimkan paket melalui layanan ekspedisi kargo terpercaya minimal H-10 sebelum Lebaran guna mengantisipasi penumpukan volume paket di gudang sortir logistik.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 10: CHECKLIST PEMESANAN ===== -->
-    <section class="hl-guide-section" id="checklist">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          10 • DAFTAR PERIKSA
-        </span>
-        <h2 class="hl-section-title">Checklist Membeli Hampers Lebaran</h2>
-        <p class="hl-guide-section__intro">
-          Pastikan sepuluh parameter utama di bawah ini telah terverifikasi sebelum Anda mentransfer pembayaran uang muka kepada vendor.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="hl-content-card">
-              <ul class="hl-guide-checklist">
-                <li>Kelompokkan penerima dan tentukan jumlah pasti paket yang dibutuhkan.</li>
-                <li>Tetapkan plafon batas anggaran total per bingkisan termasuk ongkir kurir.</li>
-                <li>Tentukan apakah kebutuhan cukup dengan ready stock atau memerlukan custom box.</li>
-                <li>Verifikasi ketersediaan stok fisik riil dan varian rasa yang dapat dialokasikan.</li>
-                <li>Pastikan apakah paket sudah selesai dirakit atau masih berupa komponen lepas.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hl-content-card">
-              <ul class="hl-guide-checklist">
-                <li>Sepakati bagian kemasan yang akan diberi logo perusahaan atau kartu nama.</li>
-                <li>Lakukan approval tertulis pada mockup visual dan spesifikasi teknis barang.</li>
-                <li>Periksa legalitas vendor, invoice resmi, dan jaminan penanganan barang rusak.</li>
-                <li>Validasi tanggal kedaluwarsa kue kering serta sertifikasi halal produk.</li>
-                <li>Kumpulkan database alamat penerima lengkap beserta nomor WhatsApp aktif.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 11: FAQ ===== -->
-    <section class="hl-guide-section" id="faq">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          11 • TANYA JAWAB POPULER
-        </span>
-        <h2 class="hl-section-title">FAQ Hampers Lebaran Ready Stock dan Custom</h2>
-        <p class="hl-guide-section__intro">
-          Pertanyaan yang paling sering diajukan seputar perbedaan, personalisasi logo, dan estimasi waktu pemesanan hampers.
-        </p>
-
-        <div class="hl-guide-faq">
-          <details open>
-            <summary>Apa yang dimaksud dengan hampers Lebaran ready stock?</summary>
-            <p>Hampers ready stock adalah paket bingkisan dengan konfigurasi isi dan desain kemasan yang telah disiapkan sebelumnya oleh vendor. Ketersediaan jumlah slot stok fisik tetap perlu dikonfirmasi langsung sebelum melakukan transaksi pembayaran.</p>
-          </details>
-          <details>
-            <summary>Apakah hampers ready stock bisa ditambahkan logo perusahaan?</summary>
-            <p>Bisa, melalui opsi semi-custom. Logo perusahaan dapat disematkan pada kartu ucapan eksklusif, sleeve selongsong kemasan luar, stiker penutup toples, atau pita satin bercetak logo.</p>
-          </details>
-          <details>
-            <summary>Apa perbedaan mendasar antara hampers ready stock dan hampers custom?</summary>
-            <p>Ready stock menggunakan konfigurasi baku yang cepat diproses namun ruang perubahannya terbatas. Sedangkan custom memberikan kebebasan penuh menentukan ukuran box, varian kue, warna pita, dan ornamen mewah, namun memerlukan waktu pengerjaan lebih lama.</p>
-          </details>
-          <details>
-            <summary>Kapan waktu terbaik memilih hampers custom?</summary>
-            <p>Pilih jalur custom saat Anda membutuhkan bingkisan beridentitas brand kuat untuk klien VIP perusahaan dan waktu pemesanan masih berjarak 3–4 minggu sebelum libur Idulfitri.</p>
-          </details>
-          <details>
-            <summary>Apakah hampers ready stock selalu bisa dikirim di hari yang sama?</summary>
-            <p>Tidak selalu. Waktu pengiriman bergantung pada kesiapan perakitan isi, antrean cetak kartu ucapan nama penerima, serta jadwal kurir pengantaran pada hari tersebut.</p>
-          </details>
-          <details>
-            <summary>Apakah hampers custom selalu berharga lebih mahal daripada ready stock?</summary>
-            <p>Tidak selalu. Biaya custom sangat dipengaruhi oleh jumlah pesanan (volume MOQ), pilihan bahan box, dan gramasi kue. Untuk pemesanan dalam jumlah banyak, harga satuan custom bahkan bisa lebih hemat dibanding paket eceran ready stock.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 12: KESIMPULAN & CTA ===== -->
-    <section class="hl-guide-section border-bottom-0 pb-5" id="kesimpulan">
-      <div class="container">
-        <span class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-          12 • KESIMPULAN PANDUAN
-        </span>
-        <h2 class="hl-section-title">Kesimpulan Pilih Berdasarkan Kepastian Kebutuhan</h2>
-        <p class="hl-guide-section__intro">
-          Ready stock dan custom bukanlah dua opsi yang harus dipertentangkan secara kaku. Ready stock menjadi solusi cerdas dan praktis saat waktu persiapan mepet dan paket standar sudah sesuai selera. Sebaliknya, custom adalah pilihan tepat untuk memperkuat hubungan korporat melalui kemasan eksklusif beridentitas brand tinggi.
-        </p>
-
-        <!-- CTA Banner -->
-        <div class="hl-guide-cta-card">
-          <div class="badge bg-light text-dark border px-3 py-1 rounded-pill fw-semibold mb-2" style="font-size:0.8rem;">
-            KONSULTASI PENGADAAN BEBAS BIAYA
-          </div>
-          <h2>Siapkan Kebutuhan Hampers Lebaran Anda Sekarang</h2>
+        <!-- 02 Memahami Ready Stock -->
+        <section id="arti-ready-stock">
+          <div class="hl-eyebrow">Konsep Ready Stock</div>
+          <h2>1. Pahami arti hampers Lebaran ready stock</h2>
           <p>
-            Konsultasikan kebutuhan paket Anda kepada tim Haraya Hampers. Baik pilihan ready stock cepat kirim maupun paket custom eksklusif berlogo instansi, kami siap memberikan kurasi produk terbaik dengan jaminan ketepatan waktu pengiriman.
+            Ready stock merujuk pada paket atau komponen bingkisan yang telah disiapkan sebelumnya oleh penjual. Format ini sangat mempermudah proses kurasi karena pembeli memilih dari susunan paket yang sudah ada. Namun, foto katalog atau label ready stock di media sosial belum menjadi jaminan bahwa barang langsung tersedia dalam kuantitas ratusan paket sesuai tanggal yang Anda butuhkan.
           </p>
-          <div class="d-flex flex-wrap gap-3 align-items-center">
-            <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
-              class="hl-btn-wa" target="_blank" rel="noopener noreferrer" style="font-size:0.98rem;padding:0.75rem 1.5rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              Konsultasi via WhatsApp
-            </a>
-            <a href="paket.html" class="btn btn-outline-light" style="border-radius:999px;font-size:0.92rem;padding:0.75rem 1.4rem;font-weight:600;">
-              Lihat Semua Paket
-            </a>
+          <p>
+            Sebelum melakukan pembayaran uang muka, pastikan Anda menanyakan tiga hal mendasar mengenai berapa jumlah fisik yang benar-benar siap dialokasikan, apakah bingkisan sudah selesai dikemas rapi atau baru bahan mentahnya yang ada di gudang, serta berapa lama durasi tambahan yang dibutuhkan bila Anda menyertakan kartu ucapan berpenamaan khusus.
+          </p>
+          <div class="hl-checklist-box">
+            <p class="mb-2"><strong>Hal yang wajib diverifikasi pada hampers ready stock</strong></p>
+            <ul>
+              <li>Jumlah stok aktual untuk setiap varian rasa kue, bukan sekadar ketersediaan sampel display.</li>
+              <li>Rincian komposisi isi, ukuran gramasi toples, bahan box, dan kemungkinan penggantian (substitusi) produk.</li>
+              <li>Status fisik paket, apakah sudah siap kirim, masih dalam proses perakitan, atau masih berupa komponen terpisah.</li>
+              <li>Tambahan biaya serta estimasi hari kerja bila memerlukan kartu ucapan custom nama penerima.</li>
+            </ul>
           </div>
-        </div>
+        </section>
 
-        <!-- Related Pills -->
-        <div class="mt-4 pt-2">
-          <div class="text-muted small fw-semibold text-uppercase mb-2" style="letter-spacing:0.06em;">Panduan Terkait Lainnya</div>
-          <div class="hl-related-pill-row">
-            <a href="index.html" class="hl-related-pill">Panduan Utama Hampers Lebaran 2027</a>
-            <a href="hampers-lebaran-custom.html" class="hl-related-pill">Panduan Hampers Lebaran Custom</a>
-            <a href="hampers-lebaran-custom-box.html" class="hl-related-pill">Kustomisasi Box &amp; Logo</a>
-            <a href="checklist-membeli-hampers-lebaran.html" class="hl-related-pill">Checklist Membeli Hampers</a>
-            <a href="waktu-pemesanan-hampers-lebaran.html" class="hl-related-pill">Panduan Waktu Pemesanan</a>
-            <a href="paket.html" class="hl-related-pill">Katalog Paket Hampers</a>
+        <!-- 03 Memahami Custom -->
+        <section id="custom">
+          <div class="hl-eyebrow">Konsep Custom</div>
+          <h2>2. Pahami komitmen hampers custom</h2>
+          <p>
+            Hampers custom sangat layak dipilih ketika katalog standar belum mampu merepresentasikan citra eksklusif yang diinginkan. Penyesuaian dapat mencakup formula rasa kue kering, ukuran hardbox magnetik, palet warna kain lilitan, aplikasi hotprint logo perusahaan, hingga kartu ucapan bertanda tangan pimpinan direksi.
+          </p>
+          <p>
+            Fleksibilitas custom menuntut komitmen waktu perencanaan yang lebih awal. Anda perlu menyiapkan aset file logo beresolusi tinggi, daftar nama penerima, serta waktu untuk proses persetujuan (approval) sampel fisik. Revisi desain yang berulang-ulang di tengah jalan berisiko menggeser jadwal produksi mendekati batas cuti bersama Lebaran.
+          </p>
+          <div class="hl-tile-grid">
+            <article class="hl-tile">
+              <h3>Aset Identitas Brand</h3>
+              <p>File logo format vektor (AI/PDF/PNG transparan) dan panduan warna resmi perusahaan agar hasil cetak akurat.</p>
+            </article>
+            <article class="hl-tile">
+              <h3>Spesifikasi Kemasan</h3>
+              <p>Preferensi material box (rigid hardbox/besek bambu/akrilik), dimensi centimeter, serta warna pita satin.</p>
+            </article>
+            <article class="hl-tile">
+              <h3>Database Penerima</h3>
+              <p>Jumlah kuantiti paket, segmentasi penerima (VIP/karyawan/mitra), serta kota alamat tujuan distribusi.</p>
+            </article>
+            <article class="hl-tile">
+              <h3>PIC Pengambil Keputusan</h3>
+              <p>Satu penanggung jawab internal yang memiliki wewenang menyetujui sampel fisik dan termin pembayaran.</p>
+            </article>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+
+        <!-- 04 Perbandingan Berdasarkan Kebutuhan -->
+        <section id="perbandingan">
+          <div class="hl-eyebrow">Analisis Komparasi</div>
+          <h2>3. Perbandingan ready stock dan custom berdasarkan kebutuhan</h2>
+          <div class="hl-table-hint">
+            <span>↔ Geser tabel ke samping untuk melihat lengkap</span>
+          </div>
+          <div class="hl-table-wrapper" tabindex="0" role="region" aria-label="Tabel perbandingan hampers ready stock dan custom">
+            <table>
+              <thead>
+                <tr>
+                  <th>Faktor Pertimbangan</th>
+                  <th>Hampers Ready Stock</th>
+                  <th>Hampers Custom Eksklusif</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Konfigurasi Isi</strong></td>
+                  <td>Mengikuti komposisi paket baku yang telah disiapkan vendor.</td>
+                  <td>Sepenuhnya fleksibel dikurasi sesuai preferensi pemesan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Identitas Brand</strong></td>
+                  <td>Umumnya terbatas pada penambahan kartu ucapan atau sleeve luar.</td>
+                  <td>Menyatu dalam desain box, hotprint logo emas, dan pita khusus.</td>
+                </tr>
+                <tr>
+                  <td><strong>Proses Persetujuan</strong></td>
+                  <td>Cepat, cukup memilih varian paket dan konfirmasi ketersediaan stok.</td>
+                  <td>Memerlukan pembuatan mockup digital dan persetujuan sampel fisik.</td>
+                </tr>
+                <tr>
+                  <td><strong>Garis Waktu (Lead Time)</strong></td>
+                  <td>Singkat, hanya membutuhkan waktu perakitan dan jadwal kurir.</td>
+                  <td>Memerlukan waktu 2–4 minggu untuk pabrikasi box dan pengadaan isi.</td>
+                </tr>
+                <tr>
+                  <td><strong>Struktur Biaya</strong></td>
+                  <td>Harga paket pasti per unit sesuai katalog yang tercantum.</td>
+                  <td>Tergantung pada volume minimum order (MOQ) dan tingkat kerumitan bahan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Kondisi Paling Tepat</strong></td>
+                  <td>Kebutuhan mendesak, waktu mepet, atau jumlah pesanan fleksibel.</td>
+                  <td>Pengadaan korporat resmi, bingkisan mitra VIP, dan branding instansi.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="hl-note">
+            <strong>Catatan penting</strong> — ready stock tidak selalu berarti lebih murah dan custom tidak otomatis mahal. Bandingkan penawaran akhir berdasarkan rincian gramasi isi, kualitas kemasan, biaya personalisasi, serta garansi pengiriman yang setara.
+          </p>
+        </section>
+
+        <!-- 05 Pendekatan Gabungan -->
+        <section id="gabungan">
+          <div class="hl-eyebrow">Solusi Hibrida</div>
+          <h2>4. Pertimbangkan pendekatan gabungan (semi-custom)</h2>
+          <p>
+            Bila paket ready stock vendor sudah memiliki cita rasa kue yang lezat namun instansi Anda tetap membutuhkan branding korporat yang resmi, pertimbangkan pendekatan semi-custom. Skema ini memanfaatkan box standar yang sudah siap, lalu dipercantik dengan sleeve kemasan luar berlogo, pita satin warna brand perusahaan, atau kartu ucapan khusus berbahan art carton tebal.
+          </p>
+          <p>
+            Pendekatan ini memangkas waktu produksi pembuatan box dari nol sekaligus menekan biaya produksi, namun tetap menghadirkan kesan personal yang elegan di hadapan para relasi bisnis Anda.
+          </p>
+        </section>
+
+        <!-- 06 Peta Anggaran -->
+        <section id="anggaran">
+          <div class="hl-eyebrow">Segmentasi Harga</div>
+          <h2>5. Petakan anggaran hampers Lebaran</h2>
+          <p>
+            Merencanakan anggaran pengadaan dimulai dengan mengelompokkan profil penerima ke dalam beberapa tingkatan prioritas. Estimasi rentang berikut merupakan panduan kurasi praktis untuk membantu Anda menentukan alokasi dana secara proporsional:
+          </p>
+          <div class="hl-tile-grid">
+            <article class="hl-tile">
+              <span class="hl-tile-tag">Kategori Ekonomis</span>
+              <h3>Paket Ramah Anggaran</h3>
+              <div class="hl-tile-price">Rp79.000 – Rp250.000</div>
+              <p>Sangat ideal untuk pembagian massal karyawan staf lapangan, apresiasi komunitas, tetangga perumahan, atau mitra logistik. Mengutamakan kue kering klasik ukuran mini, toples kurma, atau sembako praktis dalam kemasan besek bambu rapi.</p>
+            </article>
+            <article class="hl-tile">
+              <span class="hl-tile-tag">Kategori Menengah</span>
+              <h3>Paket Favorit &amp; Elegan</h3>
+              <div class="hl-tile-price">Rp250.000 – Rp500.000</div>
+              <p>Pilihan paling populer untuk rekan kerja profesional, keluarga dekat, dan sahabat. Mengombinasikan 3–4 toples kue kering wisman premium, artisan tea bunga, sajadah travel eksklusif, atau set cangkir keramik bernuansa islami.</p>
+            </article>
+            <article class="hl-tile">
+              <span class="hl-tile-tag">Kategori Premium VIP</span>
+              <h3>Paket Eksekutif Mewah</h3>
+              <div class="hl-tile-price">Rp500.000 – Rp1.000.000+</div>
+              <p>Ditujukan khusus bagi jajaran direksi, mitra bisnis strategis, atau tokoh senior. Menggunakan rigid hardbox magnetik berbalut hotprint foil emas, kue lapis legit premium, madu murni, mukena sutra, atau peralatan makan porselen mewah.</p>
+            </article>
+            <article class="hl-tile">
+              <span class="hl-tile-tag">Komponen Biaya Total</span>
+              <h3>Kalkulasi Landed Cost</h3>
+              <div class="hl-tile-price">All-in Package</div>
+              <p>Pastikan perhitungan Anda telah mencakup seluruh komponen biaya: harga isi produk, kemasan box luar, bubble wrap proteksi, kartu ucapan, biaya perakitan, dan tarif ekspedisi kurir hingga pintu penerima.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 07 Kurasi Isi -->
+        <section id="isi">
+          <div class="hl-eyebrow">Pilihan Produk</div>
+          <h2>6. Kurasi isi hampers dari kue klasik hingga produk fungsional</h2>
+          <p>
+            Kombinasi isi bingkisan yang berkesan harus mempertimbangkan daya tahan produk, cara pengantaran, dan kemudahan penyimpanan di rumah penerima:
+          </p>
+          <h3>Kue kering klasik nusantara</h3>
+          <p>
+            Nastar wisman nanas lumer, kastengel keju edam gurih, putri salju keju, lidah kucing renyah, dan cookies almond merupakan suguhan wajib hari raya yang disukai segala usia. Pastikan toples bersegel rapat agar kerenyahannya bertahan berbulan-bulan.
+          </p>
+          <h3>Dessert modern dan sajian artisan</h3>
+          <p>
+            Untuk memberikan kesan kontemporer yang unik, padukan dengan cokelat batangan artisan, kurma lapis cokelat kacang mede, brownies panggang fudgy, atau artisan tea chamomile yang memberikan ketenangan setelah berpuasa sebulan penuh.
+          </p>
+          <h3>Perlengkapan ibadah dan barang fungsional</h3>
+          <p>
+            Barang non-makanan memiliki keunggulan masa pakai yang jauh lebih panjang tanpa kekhawatiran kedaluwarsa. Sajadah lipat travel anti air, mukena katun jepang lembut, sarung tenun berkualitas, tumbler insulated tahan panas, serta mangkuk keramik estetis menjadi bingkisan yang terus bermanfaat bagi penerima.
+          </p>
+        </section>
+
+        <!-- 08 Seleksi Vendor Korporat -->
+        <section id="vendor">
+          <div class="hl-eyebrow">Kriteria Vendor</div>
+          <h2>7. Strategi corporate gifting dan seleksi vendor pengadaan</h2>
+          <p>
+            Bagi divisi Human Resources (HR), General Affairs (GA), atau tim procurement perusahaan, seleksi vendor pengadaan hampers wajib memperhatikan aspek legalitas hukum, kapasitas workshop, dan jaminan ketepatan waktu distribusi:
+          </p>
+          <div class="hl-checklist-box">
+            <ul>
+              <li><strong>Legalitas Badan Usaha Terverifikasi</strong> — Pastikan vendor memiliki izin usaha yang jelas, nomor rekening bank resmi atas nama perusahaan, serta sanggup menerbitkan faktur pajak jika dibutuhkan.</li>
+              <li><strong>SOP Garansi Kerusakan Produk</strong> — Perjelas klausul komplain barang rusak atau toples retak di perjalanan, termasuk syarat video unboxing dan kecepatan pengiriman paket pengganti.</li>
+              <li><strong>Kualitas Finishing Cetak &amp; Hotprint</strong> — Periksa kerapian lem sudut hardbox, ketajaman hasil cetakan foil emas logo perusahaan, dan kualitas sekat busa penahan toples.</li>
+              <li><strong>Kapasitas Produksi Nyata</strong> — Pastikan vendor memiliki tim perakit yang memadai untuk menyelesaikan pesanan ratusan paket sebelum cuti bersama hari raya dimulai.</li>
+              <li><strong>Sertifikasi Halal &amp; Higienitas</strong> — Pastikan seluruh produk makanan telah mengantongi sertifikat halal resmi dan izin edar BPOM/P-IRT yang masih aktif.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 09 Packaging & Pengiriman -->
+        <section id="packing">
+          <div class="hl-eyebrow">Proteksi &amp; Logistik</div>
+          <h2>8. Pengemasan eksklusif dan pengiriman yang aman</h2>
+          <p>
+            Keindahan bingkisan harus diimbangi dengan keamanan maksimal selama proses pengiriman kurir. Gunakan bahan kardus pelindung luar (corrugated master box) dengan ketebalan dobel untuk menahan benturan:
+          </p>
+          <div class="hl-tile-grid">
+            <article class="hl-tile">
+              <h3>Perlindungan Keramik &amp; Kaca</h3>
+              <p>Lapisi setiap toples kaca dan piring keramik menggunakan air column cushion atau bubble wrap tebal, serta berikan sekat karton pemisah agar tidak beradu di perjalanan.</p>
+            </article>
+            <article class="hl-tile">
+              <h3>Perlindungan Kue Kering</h3>
+              <p>Rapatkan penutup toples dengan segel isolasi khusus, tata posisi toples terberat di bagian bawah box, dan tempelkan stiker peringatan Fragile pada kardus luar.</p>
+            </article>
+            <article class="hl-tile">
+              <h3>Distribusi Lokal Malang Raya</h3>
+              <p>Gunakan kurir mobil blind van tertutup agar paket tidak terpapar panas matahari langsung atau guyuran air hujan selama proses pengantaran ke rumah penerima.</p>
+            </article>
+            <article class="hl-tile">
+              <h3>Distribusi Ekspedisi Luar Kota</h3>
+              <p>Kirimkan paket melalui layanan ekspedisi kargo terpercaya minimal H-10 sebelum Lebaran guna mengantisipasi overload volume paket di gudang sortir logistik.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10 Checklist Pemesanan -->
+        <section id="checklist">
+          <div class="hl-eyebrow">Daftar Periksa</div>
+          <h2>9. Checklist membeli hampers Lebaran</h2>
+          <div class="hl-checklist-box">
+            <ul>
+              <li>Kelompokkan penerima dan tentukan jumlah pasti paket yang dibutuhkan.</li>
+              <li>Tetapkan plafon batas anggaran total per bingkisan termasuk ongkir kurir.</li>
+              <li>Tentukan apakah kebutuhan cukup dengan ready stock atau memerlukan custom box.</li>
+              <li>Verifikasi ketersediaan stok fisik riil dan varian rasa yang dapat dialokasikan.</li>
+              <li>Pastikan apakah paket sudah selesai dirakit atau masih berupa komponen lepas.</li>
+              <li>Sepakati bagian kemasan yang akan diberi logo perusahaan atau kartu nama.</li>
+              <li>Lakukan approval tertulis pada mockup visual dan spesifikasi teknis barang.</li>
+              <li>Periksa legalitas vendor, invoice resmi, dan jaminan penanganan barang rusak.</li>
+              <li>Validasi tanggal kedaluwarsa kue kering serta sertifikasi halal produk.</li>
+              <li>Kumpulkan database alamat penerima lengkap beserta nomor WhatsApp aktif.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 11 FAQ -->
+        <section id="faq">
+          <div class="hl-eyebrow">Tanya Jawab Populer</div>
+          <h2>10. FAQ Hampers Lebaran Ready Stock dan Custom</h2>
+          <div class="hl-faq-list">
+            <details open>
+              <summary>Apa yang dimaksud dengan hampers Lebaran ready stock?</summary>
+              <p>Hampers ready stock adalah paket bingkisan dengan konfigurasi isi dan desain kemasan yang telah disiapkan sebelumnya oleh vendor. Ketersediaan jumlah slot stok fisik tetap perlu dikonfirmasi langsung sebelum melakukan transaksi pembayaran.</p>
+            </details>
+            <details>
+              <summary>Apakah hampers ready stock bisa ditambahkan logo perusahaan?</summary>
+              <p>Bisa, melalui opsi semi-custom. Logo perusahaan dapat disematkan pada kartu ucapan eksklusif, sleeve selongsong kemasan luar, stiker penutup toples, atau pita satin bercetak logo.</p>
+            </details>
+            <details>
+              <summary>Apa perbedaan mendasar antara hampers ready stock dan hampers custom?</summary>
+              <p>Ready stock menggunakan konfigurasi baku yang cepat diproses namun ruang perubahannya terbatas. Sedangkan custom memberikan kebebasan penuh menentukan ukuran box, varian kue, warna pita, dan ornamen mewah, namun memerlukan waktu pengerjaan lebih lama.</p>
+            </details>
+            <details>
+              <summary>Kapan waktu terbaik memilih hampers custom?</summary>
+              <p>Pilih jalur custom saat Anda membutuhkan bingkisan beridentitas brand kuat untuk klien VIP perusahaan dan waktu pemesanan masih berjarak 3–4 minggu sebelum libur Idulfitri.</p>
+            </details>
+            <details>
+              <summary>Apakah hampers ready stock selalu bisa dikirim di hari yang sama?</summary>
+              <p>Tidak selalu. Waktu pengiriman bergantung pada kesiapan perakitan isi, antrean cetak kartu ucapan nama penerima, serta jadwal kurir pengantaran pada hari tersebut.</p>
+            </details>
+            <details>
+              <summary>Apakah hampers custom selalu berharga lebih mahal daripada ready stock?</summary>
+              <p>Tidak selalu. Biaya custom sangat dipengaruhi oleh jumlah pesanan (volume MOQ), pilihan bahan box, dan gramasi kue. Untuk pemesanan dalam jumlah banyak, harga satuan custom bahkan bisa lebih hemat dibanding paket eceran ready stock.</p>
+            </details>
+          </div>
+        </section>
+
+        <!-- 12 Kesimpulan & Navigasi -->
+        <section id="kesimpulan">
+          <div class="hl-eyebrow">Kesimpulan Panduan</div>
+          <h2>Kesimpulan pilih berdasarkan kepastian kebutuhan</h2>
+          <p>
+            Ready stock dan custom bukanlah dua opsi yang harus dipertentangkan secara kaku. Ready stock menjadi solusi cerdas dan praktis saat waktu persiapan mepet dan paket standar sudah sesuai selera. Sebaliknya, custom adalah pilihan tepat untuk memperkuat hubungan korporat melalui kemasan eksklusif beridentitas brand tinggi.
+          </p>
+          <p>
+            Kunci keberhasilan terletak pada empat informasi dasar yang wajib Anda kunci sejak awal: jumlah paket penerima, spesifikasi isi produk, bagian personalisasi logo, serta batas tanggal barang harus tiba di tujuan.
+          </p>
+          <div class="hl-related-links">
+            <a href="index.html">Panduan Utama Hampers Lebaran 2027</a>
+            <a href="hampers-lebaran-custom.html">Panduan Hampers Lebaran Custom</a>
+            <a href="hampers-lebaran-custom-box.html">Kustomisasi Box &amp; Logo</a>
+            <a href="checklist-membeli-hampers-lebaran.html">Checklist Membeli Hampers</a>
+            <a href="waktu-pemesanan-hampers-lebaran.html">Panduan Waktu Pemesanan</a>
+          </div>
+
+          <!-- CTA Card Banner -->
+          <div class="hl-cta-card" id="cta">
+            <div class="hl-eyebrow" style="color:var(--hl-warm);">Konsultasi Pengadaan</div>
+            <h2>Siapkan Kebutuhan Hampers Lebaran Anda Sekarang</h2>
+            <p>
+              Konsultasikan kebutuhan paket Anda kepada tim Haraya Hampers. Baik pilihan ready stock cepat kirim maupun paket custom eksklusif berlogo instansi, kami siap memberikan kurasi produk terbaik dengan jaminan ketepatan waktu pengiriman.
+            </p>
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
+                class="hl-btn-wa" target="_blank" rel="noopener noreferrer" style="font-size:1rem;padding:0.75rem 1.4rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Konsultasi via WhatsApp
+              </a>
+              <a href="paket.html" class="btn btn-outline-light" style="border-radius:999px;font-size:0.95rem;padding:0.75rem 1.4rem;">
+                Lihat Semua Paket
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- Sticky Table of Contents Sidebar -->
+      <aside class="hl-sidebar" aria-label="Daftar isi panduan">
+        <strong>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Navigasi Halaman
+        </strong>
+        <ol>
+          <li><a href="#jawaban-singkat">Jawaban Singkat</a></li>
+          <li><a href="#arti-ready-stock">Memahami Ready Stock</a></li>
+          <li><a href="#custom">Memahami Custom</a></li>
+          <li><a href="#perbandingan">Perbandingan Kebutuhan</a></li>
+          <li><a href="#gabungan">Pendekatan Gabungan</a></li>
+          <li><a href="#anggaran">Peta Anggaran</a></li>
+          <li><a href="#isi">Kurasi Isi Bingkisan</a></li>
+          <li><a href="#vendor">Seleksi Vendor Korporat</a></li>
+          <li><a href="#packing">Pengemasan &amp; Logistik</a></li>
+          <li><a href="#checklist">Checklist Pemesanan</a></li>
+          <li><a href="#faq">FAQ Tanya Jawab</a></li>
+          <li><a href="#kesimpulan">Kesimpulan Panduan</a></li>
+        </ol>
+      </aside>
+    </div>
   </main>
 
   <!-- ===== FOOTER STANDAR HARAYA ===== -->
-  <footer class="hl-footer">
+  <footer class="hl-footer" aria-label="Footer situs">
     <div class="container">
-      <div class="row g-4">
-        <!-- Kolom 1: Brand & Profil Singkat -->
-        <div class="col-lg-4 col-md-6">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <img src="assets/images/logo.webp" alt="Logo Haraya Hampers Lebaran" width="40" height="40"
-              style="height:40px;width:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(184,151,61,.4);"
-              loading="lazy">
-            <span class="hl-brand-text text-white">Hampers<span class="hl-brand-accent">Lebaran</span></span>
-          </div>
-          <p class="text-white-50 small mb-3">
-            Penyedia hampers Lebaran eksklusif di Malang Raya. Melayani pemesanan retail &amp; corporate dengan
-            pilihan produk premium, kemasan elegan, dan pengiriman tepat waktu ke seluruh Indonesia.
-          </p>
-          <div class="d-flex gap-2">
-            <a href="https://instagram.com" class="hl-social-link" aria-label="Instagram Haraya Hampers"
-              target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </a>
-            <a href="https://tiktok.com" class="hl-social-link" aria-label="TikTok Haraya Hampers"
-              target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.54 3.42-3.35.03-2.89.01-5.78.02-8.67z" />
-              </svg>
-            </a>
-            <a href="https://facebook.com" class="hl-social-link" aria-label="Facebook Haraya Hampers"
-              target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </a>
-          </div>
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-4">
+          <a class="hl-footer__brand" href="index.html" aria-label="Hampers Lebaran — Beranda"
+            style="display:inline-flex;align-items:center;gap:0.65rem;text-decoration:none;margin-bottom:0.75rem;">
+            <img src="assets/images/logo.webp" alt="Logo Haraya Hampers Lebaran" width="44" height="44"
+              style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(184,151,61,.4);">
+            <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--hl-footer-text);line-height:1;">
+              Hampers<span style="color:var(--hl-warm);">Lebaran</span>
+            </span>
+          </a>
+          <p class="hl-footer__desc">Hadiah Lebaran bermakna untuk keluarga, sahabat, dan rekanan bisnis.</p>
         </div>
-
-        <!-- Kolom 2: Navigasi Cepat -->
-        <div class="col-lg-2 col-md-6 col-6">
-          <div class="hl-footer-title">Navigasi</div>
-          <ul class="hl-footer-links">
+        <div class="col-sm-6 col-lg-2">
+          <p class="hl-footer__heading">Navigasi</p>
+          <ul class="hl-footer__links">
             <li><a href="index.html">Beranda</a></li>
-            <li><a href="tentang.html">Tentang Kami</a></li>
-            <li><a href="paket.html">Paket Hampers</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="paket.html">Paket</a></li>
             <li><a href="portofolio.html">Portofolio</a></li>
-            <li><a href="blog.html">Blog &amp; Panduan</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
-
-        <!-- Kolom 3: Layanan & Paket -->
-        <div class="col-lg-2 col-md-6 col-6">
-          <div class="hl-footer-title">Pilihan Paket</div>
-          <ul class="hl-footer-links">
-            <li><a href="paket.html#favorit">Paket Favorit</a></li>
-            <li><a href="paket.html#pilihan">Paket Pilihan</a></li>
-            <li><a href="hampers-lebaran-custom.html">Custom Box &amp; Isi</a></li>
-            <li><a href="hampers-lebaran-kantor.html">Hampers Kantor</a></li>
-            <li><a href="hampers-lebaran-perusahaan.html">Corporate Hampers</a></li>
-            <li><a href="hampers-lebaran-unik.html">Hampers Unik</a></li>
+        <div class="col-sm-6 col-lg-3">
+          <p class="hl-footer__heading">Paket</p>
+          <ul class="hl-footer__links">
+            <li><a href="paket/hampers-premium.html">Hampers Premium</a></li>
+            <li><a href="paket/hampers-kue-camilan.html">Hampers Kue &amp; Camilan</a></li>
+            <li><a href="paket/hampers-perlengkapan-ibadah.html">Hampers Perlengkapan Ibadah</a></li>
+            <li><a href="paket/hampers-custom.html">Hampers Custom / Corporate</a></li>
           </ul>
         </div>
-
-        <!-- Kolom 4: Kontak & Workshop -->
-        <div class="col-lg-4 col-md-6">
-          <div class="hl-footer-title">Workshop &amp; Konsultasi</div>
-          <ul class="hl-footer-contact">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>Jl. Danau Jonge No. H4-E40, Sawojajar, Kota Malang, Jawa Timur 65139</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span>+62 821-3108-7971 (WhatsApp)</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              <span>info@hamperslebaran.biz.id</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Senin - Sabtu: 08.00 - 20.00 WIB</span>
-            </li>
-          </ul>
+        <div class="col-lg-3">
+          <p class="hl-footer__heading">Kontak</p>
+          <div class="hl-footer__contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006 6l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            <a href="https://wa.me/6282131087971" target="_blank" rel="noopener noreferrer">+62 821-3108-7971</a>
+          </div>
+          <div class="hl-footer__contact-item" style="align-items:flex-start;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="margin-top:0.25rem;flex-shrink:0;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Jl. Band. Palmerah No. D3-35B, Cemorokandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65138</span>
+          </div>
+          <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20hampers%20Lebaran."
+            class="hl-btn-wa mt-3 d-inline-flex" target="_blank" rel="noopener noreferrer"
+            style="font-size:0.88rem;min-height:40px;padding:0.6rem 1rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Hubungi via WhatsApp
+          </a>
         </div>
       </div>
-
-      <!-- Bottom Bar -->
-      <div class="hl-footer-bottom">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-            <span class="text-white-50 small">&copy; 2026-2027 Hampers Lebaran. Seluruh hak cipta dilindungi.</span>
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <ul class="list-inline mb-0 small">
-              <li class="list-inline-item"><a href="privasi.html" class="text-white-50 text-decoration-none">Kebijakan Privasi</a></li>
-              <li class="list-inline-item text-white-50">&bull;</li>
-              <li class="list-inline-item"><a href="syarat-ketentuan.html" class="text-white-50 text-decoration-none">Syarat &amp; Ketentuan</a></li>
-              <li class="list-inline-item text-white-50">&bull;</li>
-              <li class="list-inline-item"><a href="sitemap.xml" class="text-white-50 text-decoration-none">Sitemap</a></li>
-            </ul>
-          </div>
-        </div>
+      <hr class="hl-footer__divider">
+      <div class="hl-footer__bottom">
+        <p class="hl-footer__copy">© <span class="js-year"></span> Hampers Lebaran.</p>
+        <nav class="hl-footer__legal-links" aria-label="Tautan legal">
+          <a href="kebijakan-privasi.html">Kebijakan Privasi</a>
+          <a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a>
+        </nav>
       </div>
     </div>
   </footer>
 
-  <!-- Bootstrap 5.3 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="hl-back-to-top js-back-to-top" id="hlBackToTop" aria-label="Kembali ke atas"
+    title="Kembali ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+  <a href="https://wa.me/6282131087971?text=Halo%2C%20saya%20ingin%20berkonsultasi%20tentang%20hampers%20Lebaran%20ready%20stock%20dan%20custom."
+    class="hl-wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat via WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- JavaScript Bundle with Bootstrap & Site Handlers -->
+  <script src="assets/js/main.min.js?v=2" defer></script>
 </body>
 
 </html>
+
