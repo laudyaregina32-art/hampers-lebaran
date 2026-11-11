@@ -1,6 +1,6 @@
 # 📊 Laporan Audit Structured Data & JSON-LD
 **Proyek:** Hampers Lebaran (*hamperslebaran.biz.id*)  
-**Tanggal Audit:** 2026-11-11 06:21:27 WIB  
+**Tanggal Audit:** 2026-11-11 06:35:09 WIB  
 **Engine Validasi:** `@adobe/structured-data-validator` v1.7.0, `@marbec/web-auto-extractor` v2.2.1, & Schema.org Specification  
 
 ---
@@ -16,8 +16,8 @@
 
 | Metrik Audit | Nilai | Status |
 | :--- | :---: | :--- |
-| **Total File HTML Di-scan** | **64** | Tercover seluruhnya secara rekursif |
-| **Halaman dengan JSON-LD** | **63** | Halaman utama, produk, blog, & info |
+| **Total File HTML Di-scan** | **65** | Tercover seluruhnya secara rekursif |
+| **Halaman dengan JSON-LD** | **64** | Halaman utama, produk, blog, & info |
 | **Total Error Kritis (Errors)** | **0** | ✅ 0 Error (Sintaks valid & bersih) |
 | **Total Warnings / Saran Optimasi** | **99** | ⚠️ Properti rekomendasi Google & penempatan skema |
 | **Status Kesiapan SERP Lokal** | **Sangat Baik (Siap Optimasi)** | Struktur data valid & siap tahap penyempurnaan |
@@ -30,19 +30,19 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 | Tipe Schema (@type) | Jumlah Halaman Terkait | Peruntukan Halaman |
 | :--- | :---: | :--- |
-| `ListItem` | 63 | Navigasi & Hierarki Breadcrumb |
-| `BreadcrumbList` | 62 | Navigasi & Hierarki Breadcrumb |
-| `WebPage` | 53 | Struktur Halaman Web |
-| `FAQPage` | 50 | Halaman Tanya Jawab Interaktif |
-| `Question` | 50 | Halaman Tanya Jawab Interaktif |
-| `Answer` | 50 | Halaman Tanya Jawab Interaktif |
-| `Organization` | 36 | Identitas Bisnis & Brand |
-| `WebSite` | 31 | Struktur Halaman Web |
+| `ListItem` | 64 | Navigasi & Hierarki Breadcrumb |
+| `BreadcrumbList` | 63 | Navigasi & Hierarki Breadcrumb |
+| `WebPage` | 54 | Struktur Halaman Web |
+| `FAQPage` | 51 | Halaman Tanya Jawab Interaktif |
+| `Question` | 51 | Halaman Tanya Jawab Interaktif |
+| `Answer` | 51 | Halaman Tanya Jawab Interaktif |
+| `Organization` | 37 | Identitas Bisnis & Brand |
+| `WebSite` | 32 | Struktur Halaman Web |
 | `ImageObject` | 25 | Entitas Pendukung |
 | `Person` | 23 | Entitas Pendukung |
-| `Thing` | 21 | Entitas Pendukung |
+| `Thing` | 22 | Entitas Pendukung |
 | `BlogPosting` | 19 | Artikel Blog & Edukasi |
-| `Article` | 15 | Artikel Blog & Edukasi |
+| `Article` | 16 | Artikel Blog & Edukasi |
 | `MerchantReturnPolicy` | 4 | Entitas Pendukung |
 | `OfferShippingDetails` | 4 | Entitas Pendukung |
 | `MonetaryAmount` | 4 | Entitas Pendukung |
@@ -63,6 +63,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 | `Service` | 2 | Entitas Pendukung |
 | `ItemList` | 2 | Entitas Pendukung |
 | `AdministrativeArea` | 1 | Entitas Pendukung |
+| `City` | 1 | Entitas Pendukung |
 | `PriceSpecification` | 1 | Entitas Pendukung |
 | `ContactPage` | 1 | Struktur Halaman Web |
 | `Country` | 1 | Entitas Pendukung |
@@ -417,6 +418,15 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-ready-stock`
 - **Tipe Schema**: `Article`, `WebSite`, `WebPage`, `Organization`, `Thing`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
+- **Jumlah Blok JSON-LD**: 1
+
+---
+
+### 📄 [hampers-lebaran-surabaya.html](file:///C:/hamperslebaran/hampers-lebaran-surabaya.html)
+
+- **Status**: 🟢 **VALID**
+- **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-surabaya`
+- **Tipe Schema**: `Article`, `WebSite`, `WebPage`, `Organization`, `Thing`, `City`, `BreadcrumbList`, `ListItem`, `FAQPage`, `Question`, `Answer`
 - **Jumlah Blok JSON-LD**: 1
 
 ---
