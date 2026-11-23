@@ -62,3 +62,4 @@ if (!tipsHtml.includes('assets/images/hampers-paket.webp')) {
   fs.writeFileSync('c:/hamperslebaran/blog/tips-memilih-hampers-lebaran-sederhana.html', tipsHtml, 'utf8');
   console.log('Added middle image to tips-memilih-hampers-lebaran-sederhana.html');
 }
+

@@ -1,6 +1,6 @@
 # 📊 Laporan Audit Structured Data & JSON-LD
 **Proyek:** Hampers Lebaran (*hamperslebaran.biz.id*)  
-**Tanggal Audit:** 2026-11-11 11:30:32 WIB  
+**Tanggal Audit:** 2026-11-23 04:36:21 WIB  
 **Engine Validasi:** `@adobe/structured-data-validator` v1.7.0, `@marbec/web-auto-extractor` v2.2.1, & Schema.org Specification  
 
 ---
@@ -76,7 +76,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ## 3. Hasil Audit Rinci per Halaman
 
-### 📄 [blog/bisnis-hampers-lebaran.html](file:///C:/hamperslebaran/blog/bisnis-hampers-lebaran.html)
+### 📄 [blog/bisnis-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/bisnis-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/bisnis-hampers-lebaran`
@@ -85,7 +85,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/cara-membuat-hampers-lebaran-unik.html](file:///C:/hamperslebaran/blog/cara-membuat-hampers-lebaran-unik.html)
+### 📄 [blog/cara-membuat-hampers-lebaran-unik.html](file:///C:/Users/User/Documents/hamperslebaran/blog/cara-membuat-hampers-lebaran-unik.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/cara-membuat-hampers-lebaran-unik`
@@ -94,7 +94,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/hal-penting-sebelum-memesan-hampers-lebaran.html](file:///C:/hamperslebaran/blog/hal-penting-sebelum-memesan-hampers-lebaran.html)
+### 📄 [blog/hal-penting-sebelum-memesan-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/hal-penting-sebelum-memesan-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/hal-penting-sebelum-memesan-hampers-lebaran`
@@ -103,7 +103,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/hampers-lebaran-custom.html](file:///C:/hamperslebaran/blog/hampers-lebaran-custom.html)
+### 📄 [blog/hampers-lebaran-custom.html](file:///C:/Users/User/Documents/hamperslebaran/blog/hampers-lebaran-custom.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/hampers-lebaran-custom`
@@ -112,7 +112,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/hampers-lebaran-korporat.html](file:///C:/hamperslebaran/blog/hampers-lebaran-korporat.html)
+### 📄 [blog/hampers-lebaran-korporat.html](file:///C:/Users/User/Documents/hamperslebaran/blog/hampers-lebaran-korporat.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/hampers-lebaran-korporat`
@@ -121,7 +121,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/hampers-lebaran-sederhana.html)
+### 📄 [blog/hampers-lebaran-sederhana.html](file:///C:/Users/User/Documents/hamperslebaran/blog/hampers-lebaran-sederhana.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/hampers-lebaran-sederhana`
@@ -130,7 +130,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/hampers-lebaran-unik-2027.html](file:///C:/hamperslebaran/blog/hampers-lebaran-unik-2027.html)
+### 📄 [blog/hampers-lebaran-unik-2027.html](file:///C:/Users/User/Documents/hamperslebaran/blog/hampers-lebaran-unik-2027.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/hampers-lebaran-unik-2027`
@@ -139,7 +139,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/hampers-lebaran-untuk-keluarga-sahabat-rekan-kerja.html](file:///C:/hamperslebaran/blog/hampers-lebaran-untuk-keluarga-sahabat-rekan-kerja.html)
+### 📄 [blog/hampers-lebaran-untuk-keluarga-sahabat-rekan-kerja.html](file:///C:/Users/User/Documents/hamperslebaran/blog/hampers-lebaran-untuk-keluarga-sahabat-rekan-kerja.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/hampers-lebaran-untuk-keluarga-sahabat-rekan-kerja`
@@ -148,7 +148,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/ide-hampers-lebaran-malang.html](file:///C:/hamperslebaran/blog/ide-hampers-lebaran-malang.html)
+### 📄 [blog/ide-hampers-lebaran-malang.html](file:///C:/Users/User/Documents/hamperslebaran/blog/ide-hampers-lebaran-malang.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/ide-hampers-lebaran-malang`
@@ -157,7 +157,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/ide-hampers-lebaran-unik-anti-mainstream.html](file:///C:/hamperslebaran/blog/ide-hampers-lebaran-unik-anti-mainstream.html)
+### 📄 [blog/ide-hampers-lebaran-unik-anti-mainstream.html](file:///C:/Users/User/Documents/hamperslebaran/blog/ide-hampers-lebaran-unik-anti-mainstream.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/ide-hampers-lebaran-unik-anti-mainstream`
@@ -166,7 +166,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/isi-hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/isi-hampers-lebaran-sederhana.html)
+### 📄 [blog/isi-hampers-lebaran-sederhana.html](file:///C:/Users/User/Documents/hamperslebaran/blog/isi-hampers-lebaran-sederhana.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/isi-hampers-lebaran-sederhana`
@@ -175,7 +175,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/kemasan-hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/kemasan-hampers-lebaran-sederhana.html)
+### 📄 [blog/kemasan-hampers-lebaran-sederhana.html](file:///C:/Users/User/Documents/hamperslebaran/blog/kemasan-hampers-lebaran-sederhana.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/kemasan-hampers-lebaran-sederhana`
@@ -184,7 +184,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/kue-kering-lebaran-populer.html](file:///C:/hamperslebaran/blog/kue-kering-lebaran-populer.html)
+### 📄 [blog/kue-kering-lebaran-populer.html](file:///C:/Users/User/Documents/hamperslebaran/blog/kue-kering-lebaran-populer.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/kue-kering-lebaran-populer`
@@ -193,7 +193,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/pemesanan-hampers-lebaran-jumlah-besar.html](file:///C:/hamperslebaran/blog/pemesanan-hampers-lebaran-jumlah-besar.html)
+### 📄 [blog/pemesanan-hampers-lebaran-jumlah-besar.html](file:///C:/Users/User/Documents/hamperslebaran/blog/pemesanan-hampers-lebaran-jumlah-besar.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/pemesanan-hampers-lebaran-jumlah-besar`
@@ -202,7 +202,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/perhitungan-hpp-hampers-lebaran.html](file:///C:/hamperslebaran/blog/perhitungan-hpp-hampers-lebaran.html)
+### 📄 [blog/perhitungan-hpp-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/perhitungan-hpp-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/perhitungan-hpp-hampers-lebaran`
@@ -211,7 +211,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/persiapan-produk-modal-bisnis-hampers-lebaran.html](file:///C:/hamperslebaran/blog/persiapan-produk-modal-bisnis-hampers-lebaran.html)
+### 📄 [blog/persiapan-produk-modal-bisnis-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/persiapan-produk-modal-bisnis-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/persiapan-produk-modal-bisnis-hampers-lebaran`
@@ -220,7 +220,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/produsen-hampers-lebaran.html](file:///C:/hamperslebaran/blog/produsen-hampers-lebaran.html)
+### 📄 [blog/produsen-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/produsen-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/produsen-hampers-lebaran`
@@ -229,7 +229,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/rekomendasi-hampers-lebaran-di-malang.html](file:///C:/hamperslebaran/blog/rekomendasi-hampers-lebaran-di-malang.html)
+### 📄 [blog/rekomendasi-hampers-lebaran-di-malang.html](file:///C:/Users/User/Documents/hamperslebaran/blog/rekomendasi-hampers-lebaran-di-malang.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/rekomendasi-hampers-lebaran-di-malang`
@@ -238,7 +238,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/supplier-produk-kemasan-hampers-lebaran.html](file:///C:/hamperslebaran/blog/supplier-produk-kemasan-hampers-lebaran.html)
+### 📄 [blog/supplier-produk-kemasan-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/supplier-produk-kemasan-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/supplier-produk-kemasan-hampers-lebaran`
@@ -247,7 +247,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/tas-hampers-lebaran.html](file:///C:/hamperslebaran/blog/tas-hampers-lebaran.html)
+### 📄 [blog/tas-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/tas-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/tas-hampers-lebaran`
@@ -256,7 +256,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/tips-memilih-hampers-lebaran-sederhana.html](file:///C:/hamperslebaran/blog/tips-memilih-hampers-lebaran-sederhana.html)
+### 📄 [blog/tips-memilih-hampers-lebaran-sederhana.html](file:///C:/Users/User/Documents/hamperslebaran/blog/tips-memilih-hampers-lebaran-sederhana.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/tips-memilih-hampers-lebaran-sederhana`
@@ -265,7 +265,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/tips-memilih-hampers-lebaran.html](file:///C:/hamperslebaran/blog/tips-memilih-hampers-lebaran.html)
+### 📄 [blog/tips-memilih-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/blog/tips-memilih-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/tips-memilih-hampers-lebaran`
@@ -274,7 +274,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog/tren-kemasan-hampers.html](file:///C:/hamperslebaran/blog/tren-kemasan-hampers.html)
+### 📄 [blog/tren-kemasan-hampers.html](file:///C:/Users/User/Documents/hamperslebaran/blog/tren-kemasan-hampers.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog/tren-kemasan-hampers`
@@ -283,7 +283,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [blog.html](file:///C:/hamperslebaran/blog.html)
+### 📄 [blog.html](file:///C:/Users/User/Documents/hamperslebaran/blog.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/blog`
@@ -292,7 +292,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [checklist-membeli-hampers-lebaran.html](file:///C:/hamperslebaran/checklist-membeli-hampers-lebaran.html)
+### 📄 [checklist-membeli-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/checklist-membeli-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/checklist-membeli-hampers-lebaran`
@@ -301,7 +301,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [faq.html](file:///C:/hamperslebaran/faq.html)
+### 📄 [faq.html](file:///C:/Users/User/Documents/hamperslebaran/faq.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/faq`
@@ -310,7 +310,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [googleda0c1c7a31696976.html](file:///C:/hamperslebaran/googleda0c1c7a31696976.html)
+### 📄 [googleda0c1c7a31696976.html](file:///C:/Users/User/Documents/hamperslebaran/googleda0c1c7a31696976.html)
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: *Tidak ditemukan*
@@ -324,7 +324,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-100-ribuan.html](file:///C:/hamperslebaran/hampers-lebaran-100-ribuan.html)
+### 📄 [hampers-lebaran-100-ribuan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-100-ribuan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-100-ribuan`
@@ -333,7 +333,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-250-ribuan.html](file:///C:/hamperslebaran/hampers-lebaran-250-ribuan.html)
+### 📄 [hampers-lebaran-250-ribuan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-250-ribuan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-250-ribuan`
@@ -342,7 +342,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-custom-box.html](file:///C:/hamperslebaran/hampers-lebaran-custom-box.html)
+### 📄 [hampers-lebaran-custom-box.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-custom-box.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-custom-box`
@@ -351,7 +351,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-custom-logo.html](file:///C:/hamperslebaran/hampers-lebaran-custom-logo.html)
+### 📄 [hampers-lebaran-custom-logo.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-custom-logo.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-custom-logo`
@@ -360,7 +360,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-custom.html](file:///C:/hamperslebaran/hampers-lebaran-custom.html)
+### 📄 [hampers-lebaran-custom.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-custom.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-custom`
@@ -369,7 +369,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-estetik.html](file:///C:/hamperslebaran/hampers-lebaran-estetik.html)
+### 📄 [hampers-lebaran-estetik.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-estetik.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-estetik`
@@ -378,7 +378,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-isi-cokelat.html](file:///C:/hamperslebaran/hampers-lebaran-isi-cokelat.html)
+### 📄 [hampers-lebaran-isi-cokelat.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-isi-cokelat.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-isi-cokelat`
@@ -387,7 +387,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-isi-kurma.html](file:///C:/hamperslebaran/hampers-lebaran-isi-kurma.html)
+### 📄 [hampers-lebaran-isi-kurma.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-isi-kurma.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-isi-kurma`
@@ -396,7 +396,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-kartu-ucapan.html](file:///C:/hamperslebaran/hampers-lebaran-kartu-ucapan.html)
+### 📄 [hampers-lebaran-kartu-ucapan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-kartu-ucapan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-kartu-ucapan`
@@ -405,7 +405,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-kemasan-unik.html](file:///C:/hamperslebaran/hampers-lebaran-kemasan-unik.html)
+### 📄 [hampers-lebaran-kemasan-unik.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-kemasan-unik.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-kemasan-unik`
@@ -414,7 +414,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-malang.html](file:///C:/hamperslebaran/hampers-lebaran-malang.html)
+### 📄 [hampers-lebaran-malang.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-malang.html)
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-malang`
@@ -431,7 +431,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-non-kue.html](file:///C:/hamperslebaran/hampers-lebaran-non-kue.html)
+### 📄 [hampers-lebaran-non-kue.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-non-kue.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-non-kue`
@@ -440,7 +440,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-perusahaan.html](file:///C:/hamperslebaran/hampers-lebaran-perusahaan.html)
+### 📄 [hampers-lebaran-perusahaan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-perusahaan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-perusahaan`
@@ -449,7 +449,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-ready-stock.html](file:///C:/hamperslebaran/hampers-lebaran-ready-stock.html)
+### 📄 [hampers-lebaran-ready-stock.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-ready-stock.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-ready-stock`
@@ -458,7 +458,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-surabaya.html](file:///C:/hamperslebaran/hampers-lebaran-surabaya.html)
+### 📄 [hampers-lebaran-surabaya.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-surabaya.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-surabaya`
@@ -467,7 +467,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-untuk-atasan.html](file:///C:/hamperslebaran/hampers-lebaran-untuk-atasan.html)
+### 📄 [hampers-lebaran-untuk-atasan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-untuk-atasan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-untuk-atasan`
@@ -476,7 +476,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-untuk-karyawan.html](file:///C:/hamperslebaran/hampers-lebaran-untuk-karyawan.html)
+### 📄 [hampers-lebaran-untuk-karyawan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-untuk-karyawan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-untuk-karyawan`
@@ -485,7 +485,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-untuk-keluarga.html](file:///C:/hamperslebaran/hampers-lebaran-untuk-keluarga.html)
+### 📄 [hampers-lebaran-untuk-keluarga.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-untuk-keluarga.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-untuk-keluarga`
@@ -494,7 +494,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-untuk-klien.html](file:///C:/hamperslebaran/hampers-lebaran-untuk-klien.html)
+### 📄 [hampers-lebaran-untuk-klien.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-untuk-klien.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-untuk-klien`
@@ -503,7 +503,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [hampers-lebaran-untuk-pelanggan.html](file:///C:/hamperslebaran/hampers-lebaran-untuk-pelanggan.html)
+### 📄 [hampers-lebaran-untuk-pelanggan.html](file:///C:/Users/User/Documents/hamperslebaran/hampers-lebaran-untuk-pelanggan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/hampers-lebaran-untuk-pelanggan`
@@ -512,7 +512,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [harga-hampers-lebaran.html](file:///C:/hamperslebaran/harga-hampers-lebaran.html)
+### 📄 [harga-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/harga-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/harga-hampers-lebaran`
@@ -521,7 +521,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [index.html](file:///C:/hamperslebaran/index.html)
+### 📄 [index.html](file:///C:/Users/User/Documents/hamperslebaran/index.html)
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/`
@@ -550,7 +550,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [isi-hampers-lebaran.html](file:///C:/hamperslebaran/isi-hampers-lebaran.html)
+### 📄 [isi-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/isi-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/isi-hampers-lebaran`
@@ -559,7 +559,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [kebijakan-privasi.html](file:///C:/hamperslebaran/kebijakan-privasi.html)
+### 📄 [kebijakan-privasi.html](file:///C:/Users/User/Documents/hamperslebaran/kebijakan-privasi.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/kebijakan-privasi`
@@ -568,7 +568,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [kontak.html](file:///C:/hamperslebaran/kontak.html)
+### 📄 [kontak.html](file:///C:/Users/User/Documents/hamperslebaran/kontak.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/kontak`
@@ -577,7 +577,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket/hampers-custom.html](file:///C:/hamperslebaran/paket/hampers-custom.html)
+### 📄 [paket/hampers-custom.html](file:///C:/Users/User/Documents/hamperslebaran/paket/hampers-custom.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-custom`
@@ -586,7 +586,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket/hampers-kue-camilan.html](file:///C:/hamperslebaran/paket/hampers-kue-camilan.html)
+### 📄 [paket/hampers-kue-camilan.html](file:///C:/Users/User/Documents/hamperslebaran/paket/hampers-kue-camilan.html)
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-kue-camilan`
@@ -614,7 +614,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket/hampers-perlengkapan-ibadah.html](file:///C:/hamperslebaran/paket/hampers-perlengkapan-ibadah.html)
+### 📄 [paket/hampers-perlengkapan-ibadah.html](file:///C:/Users/User/Documents/hamperslebaran/paket/hampers-perlengkapan-ibadah.html)
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-perlengkapan-ibadah`
@@ -642,7 +642,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket/hampers-premium.html](file:///C:/hamperslebaran/paket/hampers-premium.html)
+### 📄 [paket/hampers-premium.html](file:///C:/Users/User/Documents/hamperslebaran/paket/hampers-premium.html)
 
 - **Status**: 🟡 **WARNING**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket/hampers-premium`
@@ -670,7 +670,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [paket.html](file:///C:/hamperslebaran/paket.html)
+### 📄 [paket.html](file:///C:/Users/User/Documents/hamperslebaran/paket.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/paket`
@@ -679,7 +679,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [pengadaan-hampers-lebaran.html](file:///C:/hamperslebaran/pengadaan-hampers-lebaran.html)
+### 📄 [pengadaan-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/pengadaan-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/pengadaan-hampers-lebaran`
@@ -688,7 +688,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio/hampers-custom-branding-korporat.html](file:///C:/hamperslebaran/portofolio/hampers-custom-branding-korporat.html)
+### 📄 [portofolio/hampers-custom-branding-korporat.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio/hampers-custom-branding-korporat.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio/hampers-custom-branding-korporat`
@@ -697,7 +697,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio/hampers-keluarga-edisi-lebaran.html](file:///C:/hamperslebaran/portofolio/hampers-keluarga-edisi-lebaran.html)
+### 📄 [portofolio/hampers-keluarga-edisi-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio/hampers-keluarga-edisi-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio/hampers-keluarga-edisi-lebaran`
@@ -706,7 +706,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio/hampers-korporat-akhir-tahun.html](file:///C:/hamperslebaran/portofolio/hampers-korporat-akhir-tahun.html)
+### 📄 [portofolio/hampers-korporat-akhir-tahun.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio/hampers-korporat-akhir-tahun.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio/hampers-korporat-akhir-tahun`
@@ -715,7 +715,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio/hampers-kue-basket-rotan.html](file:///C:/hamperslebaran/portofolio/hampers-kue-basket-rotan.html)
+### 📄 [portofolio/hampers-kue-basket-rotan.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio/hampers-kue-basket-rotan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio/hampers-kue-basket-rotan`
@@ -724,7 +724,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio/hampers-lebaran-instansi.html](file:///C:/hamperslebaran/portofolio/hampers-lebaran-instansi.html)
+### 📄 [portofolio/hampers-lebaran-instansi.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio/hampers-lebaran-instansi.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio/hampers-lebaran-instansi`
@@ -733,7 +733,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio/hampers-perlengkapan-ibadah-premium.html](file:///C:/hamperslebaran/portofolio/hampers-perlengkapan-ibadah-premium.html)
+### 📄 [portofolio/hampers-perlengkapan-ibadah-premium.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio/hampers-perlengkapan-ibadah-premium.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio/hampers-perlengkapan-ibadah-premium`
@@ -742,7 +742,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [portofolio.html](file:///C:/hamperslebaran/portofolio.html)
+### 📄 [portofolio.html](file:///C:/Users/User/Documents/hamperslebaran/portofolio.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/portofolio`
@@ -751,7 +751,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [supplier-hampers-lebaran.html](file:///C:/hamperslebaran/supplier-hampers-lebaran.html)
+### 📄 [supplier-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/supplier-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/supplier-hampers-lebaran`
@@ -760,7 +760,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [syarat-ketentuan.html](file:///C:/hamperslebaran/syarat-ketentuan.html)
+### 📄 [syarat-ketentuan.html](file:///C:/Users/User/Documents/hamperslebaran/syarat-ketentuan.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/syarat-ketentuan`
@@ -769,7 +769,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [tentang.html](file:///C:/hamperslebaran/tentang.html)
+### 📄 [tentang.html](file:///C:/Users/User/Documents/hamperslebaran/tentang.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/tentang`
@@ -778,7 +778,7 @@ Berikut adalah ragam entitas structured data yang diterapkan pada situs:
 
 ---
 
-### 📄 [waktu-pemesanan-hampers-lebaran.html](file:///C:/hamperslebaran/waktu-pemesanan-hampers-lebaran.html)
+### 📄 [waktu-pemesanan-hampers-lebaran.html](file:///C:/Users/User/Documents/hamperslebaran/waktu-pemesanan-hampers-lebaran.html)
 
 - **Status**: 🟢 **VALID**
 - **Canonical Link**: `https://hamperslebaran.biz.id/waktu-pemesanan-hampers-lebaran`

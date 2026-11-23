@@ -1127,6 +1127,29 @@
         padding-top: 80px !important;
       }
     }
+  
+    /* Overlapping Navbar & Header Synchronization */
+    .hl-navbar {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom: 1px solid transparent !important;
+      box-shadow: none !important;
+    }
+    .hl-navbar.is-scrolled {
+      background: rgba(248, 247, 244, 0.95) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border-bottom: 1px solid var(--hl-border) !important;
+      box-shadow: 0 4px 20px rgba(23, 35, 30, 0.06) !important;
+    }
+    .hl-page-header {
+      background: linear-gradient(180deg, #edf3ec 0%, #f8f7f4 100%) !important;
+      margin-top: 0 !important;
+      padding-top: clamp(6.25rem, 9.5vw, 8rem) !important;
+      border-bottom: 1px solid var(--hl-border) !important;
+    }
+
   </style>
   <link rel="stylesheet" href="../assets/css/main.min.css">
 

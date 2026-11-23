@@ -55,6 +55,10 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" as="image" href="assets/images/tentang-bg-hampers.webp" type="image/webp">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap">
   <!-- Stylesheets -->
   <!-- Critical CSS Inlined for 0ms Render-Blocking -->
   <style>
@@ -78,7 +82,9 @@
       --hl-shadow-card-hover: 0 16px 40px rgb(33 60 53 / 12%);
       --hl-transition: 200ms ease;
       --hl-gold: #37594f;
-      --hl-font-serif: "Playfair Display", Georgia, serif
+      --hl-font-serif: "Cormorant Garamond", Georgia, serif;
+      --hl-font-sans: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --hl-font-brand: "Montserrat", sans-serif
     }
 
     *,
@@ -100,7 +106,7 @@
       margin: 0;
       background: var(--hl-bg);
       color: var(--hl-text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--hl-font-sans); font-weight: 400;
       font-size: 1.05rem;
       line-height: 1.68;
       -webkit-font-smoothing: antialiased
@@ -1220,7 +1226,50 @@
         padding-top: 80px !important;
       }
     }
-</style>
+
+    /* Theme Typography */
+    h1, h2, h3, h4, .hl-heading, .hl-hero__h1, .hl-page-header .hl-heading, .hl-card__title, .hl-feature__title, .hl-cta-banner h2, .hl-toc__title, .hl-article-faq__title, .hl-author-bio__name {
+      font-family: var(--hl-font-serif) !important;
+      font-weight: 300 !important;
+    }
+    .hl-navbar .navbar-brand, .hl-navbar-brand, .hl-navbar-brand-text, .navbar-brand, .hl-footer__brand, .hl-brand-accent {
+      font-family: var(--hl-font-brand) !important;
+      font-weight: 600 !important;
+    }
+    p, .hl-subtitle, .hl-hero__desc, .hl-page-header__desc, .hl-card__desc, .hl-feature__desc, .hl-step__desc, .hl-info-box, .nav-link, .dropdown-item, .hl-btn-primary, .hl-btn-wa, .hl-btn-outline, .hl-accordion .accordion-button, .hl-accordion .accordion-body, .hl-article-body {
+      font-family: var(--hl-font-sans);
+      font-weight: 400;
+    }
+    small, .small, .hl-small-text, .hl-caption, .hl-footer__copy, .hl-footer__desc, .hl-footer__bottom, .hl-footer__legal-links a, .hl-hero__proof-desc, .hl-hero__guarantee-text, .hl-hero__badge div:last-child div:last-child, .hl-card__meta, .hl-meta, figcaption, .hl-table-hint {
+      font-family: var(--hl-font-sans) !important;
+      font-style: italic !important;
+      font-weight: 400;
+    }
+
+  
+    /* Overlapping Navbar & Header Synchronization */
+    .hl-navbar {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom: 1px solid transparent !important;
+      box-shadow: none !important;
+    }
+    .hl-navbar.is-scrolled {
+      background: rgba(248, 247, 244, 0.95) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border-bottom: 1px solid var(--hl-border) !important;
+      box-shadow: 0 4px 20px rgba(23, 35, 30, 0.06) !important;
+    }
+    .hl-page-header {
+      background: linear-gradient(180deg, #edf3ec 0%, #f8f7f4 100%) !important;
+      margin-top: 0 !important;
+      padding-top: clamp(6.25rem, 9.5vw, 8rem) !important;
+      border-bottom: 1px solid var(--hl-border) !important;
+    }
+
+  </style>
   <link rel="stylesheet" href="assets/css/main.min.css">
 
   <!-- Schema.org JSON-LD (Rich Graph Standard 2027-2027) -->
@@ -1396,6 +1445,21 @@
               seluruh kreasi dirangkai secara
               teliti oleh tim berpengalaman dan siap didistribusikan secara aman ke seluruh kota di Indonesia.
             </p>
+
+            <!-- Penjelasan Khusus: Bagian Resmi dari sakasouvenir.com -->
+            <div style="background: rgba(219, 228, 218, 0.65); border-left: 4px solid var(--hl-accent-dark); border-radius: var(--hl-radius-sm); padding: 1.15rem 1.35rem; margin-top: 1.35rem;">
+              <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--hl-accent-dark); flex-shrink: 0; margin-top: 0.2rem;" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <div>
+                  <h4 style="font-family: var(--hl-font-brand) !important; font-weight: 600 !important; font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--hl-text);">Katalog Khusus &amp; Bagian dari sakasouvenir.com</h4>
+                  <p style="font-family: var(--hl-font-sans); font-weight: 400; font-size: 0.94rem; line-height: 1.65; color: var(--hl-text-muted); margin: 0;">
+                    Website <strong>hamperslebaran.biz.id</strong> ini dihadirkan khusus sebagai katalog resmi hampers Lebaran (Idulfitri) dan merupakan unit spesialis yang terintegrasi langsung dalam naungan <a href="https://sakasouvenir.com" target="_blank" rel="noopener noreferrer" style="color: var(--hl-accent-dark); font-weight: 600; text-decoration: underline;">sakasouvenir.com</a> — penyedia souvenir, merchandise, dan corporate gift terpercaya di Indonesia. Seluruh layanan pengadaan, legalitas usaha, serta jaminan mutu didukung penuh oleh Saka Souvenir.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1539,6 +1603,19 @@
             <div class="accordion hl-accordion" id="tentangFaqAccordion">
               <div class="accordion-item">
                 <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tFaqSaka"
+                    aria-expanded="false" aria-controls="tFaqSaka">
+                    Apakah website ini resmi dan merupakan bagian dari sakasouvenir.com?
+                  </button>
+                </h3>
+                <div id="tFaqSaka" class="accordion-collapse collapse" data-bs-parent="#tentangFaqAccordion">
+                  <div class="accordion-body">
+                    <strong>Ya, betul.</strong> Website ini adalah platform khusus yang didedikasikan sebagai katalog pengadaan hampers Lebaran dan merupakan bagian resmi dari <strong>sakasouvenir.com</strong> (Saka Souvenir). Seluruh standar mutu pengemasan, kurasi produk, manajemen pengiriman, serta jaminan kepuasan didukung penuh oleh keahlian dan kredibilitas Saka Souvenir.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tFaq1"
                     aria-expanded="true" aria-controls="tFaq1">
                     Apakah makanannya halal dan aman dikonsumsi?
@@ -1643,7 +1720,7 @@
             <img src="assets/images/logo.webp" alt="Logo Haraya Hampers Lebaran"
               style="height:44px;width:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(184,151,61,.4);">
             <span
-              style="font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--hl-footer-text);line-height:1;">Hampers<span
+              style="font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:600;color:var(--hl-footer-text);line-height:1;">Hampers<span
                 style="color:var(--hl-warm);">Lebaran</span></span>
           </a>
           <p style="font-size:0.88rem;color:rgba(244,243,238,0.65);line-height:1.65;max-width:260px;">Hadiah Lebaran
